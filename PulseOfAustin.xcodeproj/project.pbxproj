@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */; };
 		752EF735207C571E0046743A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF734207C571E0046743A /* AppDelegate.swift */; };
 		752EF737207C571E0046743A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF736207C571E0046743A /* ViewController.swift */; };
 		752EF73A207C571E0046743A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF738207C571E0046743A /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		752EF73F207C571F0046743A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF73D207C571F0046743A /* LaunchScreen.storyboard */; };
 		752EF74A207C571F0046743A /* PulseOfAustinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF749207C571F0046743A /* PulseOfAustinTests.swift */; };
 		752EF755207C571F0046743A /* PulseOfAustinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF754207C571F0046743A /* PulseOfAustinUITests.swift */; };
+		752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 752EF79E207C5DDB0046743A /* GoogleService-Info.plist */; };
+		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
+		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00E95310D79D8FF36DB70F5A /* Pods-PulseOfAustinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinUITests/Pods-PulseOfAustinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.release.xcconfig"; sourceTree = "<group>"; };
+		31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		752EF731207C571E0046743A /* PulseOfAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseOfAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752EF734207C571E0046743A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752EF736207C571E0046743A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		752EF750207C571F0046743A /* PulseOfAustinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseOfAustinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		752EF754207C571F0046743A /* PulseOfAustinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseOfAustinUITests.swift; sourceTree = "<group>"; };
 		752EF756207C57200046743A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		752EF79E207C5DDB0046743A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
+		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A7B1A558BA891C37B0D6BC /* Pods-PulseOfAustin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.debug.xcconfig"; sourceTree = "<group>"; };
+		D74179BCA617CE73C4797A09 /* Pods-PulseOfAustinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinUITests/Pods-PulseOfAustinUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001ABABBC219A2EF1932A0AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0A7B1A558BA891C37B0D6BC /* Pods-PulseOfAustin.debug.xcconfig */,
+				C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */,
+				31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */,
+				30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */,
+				00E95310D79D8FF36DB70F5A /* Pods-PulseOfAustinUITests.debug.xcconfig */,
+				D74179BCA617CE73C4797A09 /* Pods-PulseOfAustinUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4AB1A171B97E9D3ADF8D5E68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */,
+				F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */,
+				CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		752EF728207C571E0046743A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				752EF748207C571F0046743A /* PulseOfAustinTests */,
 				752EF753207C571F0046743A /* PulseOfAustinUITests */,
 				752EF732207C571E0046743A /* Products */,
+				001ABABBC219A2EF1932A0AA /* Pods */,
+				4AB1A171B97E9D3ADF8D5E68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +139,7 @@
 		752EF733207C571E0046743A /* PulseOfAustin */ = {
 			isa = PBXGroup;
 			children = (
+				752EF79E207C5DDB0046743A /* GoogleService-Info.plist */,
 				752EF734207C571E0046743A /* AppDelegate.swift */,
 				752EF736207C571E0046743A /* ViewController.swift */,
 				752EF738207C571E0046743A /* Main.storyboard */,
@@ -132,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 752EF759207C57200046743A /* Build configuration list for PBXNativeTarget "PulseOfAustin" */;
 			buildPhases = (
+				8E17318E4DCD34A5ED2FC80A /* [CP] Check Pods Manifest.lock */,
 				752EF72D207C571E0046743A /* Sources */,
 				752EF72E207C571E0046743A /* Frameworks */,
 				752EF72F207C571E0046743A /* Resources */,
+				AB47E0E930C40B9BF91ADDB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 752EF75C207C57200046743A /* Build configuration list for PBXNativeTarget "PulseOfAustinTests" */;
 			buildPhases = (
+				C9D6AD3E02E26869CFC69490 /* [CP] Check Pods Manifest.lock */,
 				752EF741207C571F0046743A /* Sources */,
 				752EF742207C571F0046743A /* Frameworks */,
 				752EF743207C571F0046743A /* Resources */,
@@ -167,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 752EF75F207C57200046743A /* Build configuration list for PBXNativeTarget "PulseOfAustinUITests" */;
 			buildPhases = (
+				ACC54FB044B64525B185CA20 /* [CP] Check Pods Manifest.lock */,
 				752EF74C207C571F0046743A /* Sources */,
 				752EF74D207C571F0046743A /* Frameworks */,
 				752EF74E207C571F0046743A /* Resources */,
@@ -230,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				752EF73F207C571F0046743A /* LaunchScreen.storyboard in Resources */,
+				752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */,
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 			);
@@ -250,6 +298,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E17318E4DCD34A5ED2FC80A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulseOfAustin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB47E0E930C40B9BF91ADDB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACC54FB044B64525B185CA20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulseOfAustinUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9D6AD3E02E26869CFC69490 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulseOfAustinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		752EF72D207C571E0046743A /* Sources */ = {
@@ -428,14 +553,12 @@
 		};
 		752EF75A207C57200046743A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A7B1A558BA891C37B0D6BC /* Pods-PulseOfAustin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustin/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,14 +568,12 @@
 		};
 		752EF75B207C57200046743A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustin/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -462,16 +583,13 @@
 		};
 		752EF75D207C57200046743A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustinTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -482,16 +600,13 @@
 		};
 		752EF75E207C57200046743A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustinTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -502,15 +617,12 @@
 		};
 		752EF760207C57200046743A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00E95310D79D8FF36DB70F5A /* Pods-PulseOfAustinUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustinUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -521,15 +633,12 @@
 		};
 		752EF761207C57200046743A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D74179BCA617CE73C4797A09 /* Pods-PulseOfAustinUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PulseOfAustinUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
