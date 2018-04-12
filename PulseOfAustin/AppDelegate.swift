@@ -35,7 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotifications()
         }
         
+        // Set firebase messaging delegate
+        Messaging.messaging().delegate = self
+        
         return true
+    }
+    
+    // Runs when user taps notification
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("didReceiveRemoteNotification: userInfo = \(userInfo)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("didReceiveRemoteNotification:fetchCompletionHandler: userInfo = \(userInfo)")
+        completionHandler(UIBackgroundFetchResult.newData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -60,6 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+// Firebase messaging
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        print(fcmToken)
+        
+        // TODO: if registration token is new, send it to app server
+    }
+}
