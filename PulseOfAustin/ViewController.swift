@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var exploreButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.exploreButton.layer.cornerRadius = self.exploreButton.frame.height / 2
     }
 
     override func didReceiveMemoryWarning() {
