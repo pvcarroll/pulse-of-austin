@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        // Set firebase messaging delegate
+        Messaging.messaging().delegate = self
+        
         // Register for remote notifications
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
@@ -32,11 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
         }
-        
-        // Set firebase messaging delegate
-        Messaging.messaging().delegate = self
+        application.registerForRemoteNotifications()
         
         return true
     }
@@ -80,7 +80,6 @@ extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
-        print(fcmToken)
         
         // TODO: if registration token is new, send it to app server
     }
