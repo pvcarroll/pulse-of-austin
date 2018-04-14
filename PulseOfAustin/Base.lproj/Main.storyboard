@@ -129,8 +129,15 @@
                                     <constraint firstAttribute="trailing" secondItem="3YM-uP-9aD" secondAttribute="trailing" id="lg4-qt-f1M"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-W3-1Ql" userLabel="Border View">
+                                <rect key="frame" x="0.0" y="120" width="375" height="3"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="2UI-0y-LxT"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-4A-ZnS" userLabel="Body View">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="123" width="375" height="495"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRENDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60g-C0-bXU">
                                         <rect key="frame" x="30" y="20" width="165" height="31.5"/>
@@ -142,7 +149,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-Wh-Om6" userLabel="Trending Issues Table View">
-                                        <rect key="frame" x="30" y="71.5" width="315" height="376.5"/>
+                                        <rect key="frame" x="30" y="71.5" width="315" height="373.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
@@ -161,12 +168,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FmE-vN-nX7" firstAttribute="leading" secondItem="WlR-pm-Or2" secondAttribute="leading" id="1LE-ZJ-zkp"/>
-                            <constraint firstItem="gFe-4A-ZnS" firstAttribute="top" secondItem="FmE-vN-nX7" secondAttribute="bottom" id="5qd-KB-2Gg"/>
+                            <constraint firstItem="gFe-4A-ZnS" firstAttribute="top" secondItem="lXA-W3-1Ql" secondAttribute="bottom" id="5qd-KB-2Gg"/>
                             <constraint firstItem="WlR-pm-Or2" firstAttribute="trailing" secondItem="FmE-vN-nX7" secondAttribute="trailing" id="SGP-6k-ZTf"/>
                             <constraint firstItem="WlR-pm-Or2" firstAttribute="trailing" secondItem="gFe-4A-ZnS" secondAttribute="trailing" id="Zfa-eu-1Hc"/>
+                            <constraint firstItem="lXA-W3-1Ql" firstAttribute="top" secondItem="FmE-vN-nX7" secondAttribute="bottom" id="bBs-iA-uUs"/>
                             <constraint firstItem="FmE-vN-nX7" firstAttribute="top" secondItem="WlR-pm-Or2" secondAttribute="top" id="e4o-Lx-yM4"/>
                             <constraint firstItem="gFe-4A-ZnS" firstAttribute="leading" secondItem="WlR-pm-Or2" secondAttribute="leading" id="gMb-0u-wy9"/>
+                            <constraint firstItem="lXA-W3-1Ql" firstAttribute="leading" secondItem="WlR-pm-Or2" secondAttribute="leading" id="l7P-8D-6I3"/>
                             <constraint firstItem="WlR-pm-Or2" firstAttribute="bottom" secondItem="gFe-4A-ZnS" secondAttribute="bottom" id="oYx-rc-udD"/>
+                            <constraint firstItem="WlR-pm-Or2" firstAttribute="trailing" secondItem="lXA-W3-1Ql" secondAttribute="trailing" id="vCA-0C-IPT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WlR-pm-Or2"/>
                     </view>
