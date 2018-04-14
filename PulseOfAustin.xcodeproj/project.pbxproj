@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */; };
 		752EF735207C571E0046743A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF734207C571E0046743A /* AppDelegate.swift */; };
-		752EF737207C571E0046743A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF736207C571E0046743A /* ViewController.swift */; };
+		752EF737207C571E0046743A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF736207C571E0046743A /* HomeViewController.swift */; };
 		752EF73A207C571E0046743A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF738207C571E0046743A /* Main.storyboard */; };
 		752EF73C207C571F0046743A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752EF73B207C571F0046743A /* Assets.xcassets */; };
 		752EF73F207C571F0046743A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF73D207C571F0046743A /* LaunchScreen.storyboard */; };
 		752EF74A207C571F0046743A /* PulseOfAustinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF749207C571F0046743A /* PulseOfAustinTests.swift */; };
 		752EF755207C571F0046743A /* PulseOfAustinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF754207C571F0046743A /* PulseOfAustinUITests.swift */; };
 		752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 752EF79E207C5DDB0046743A /* GoogleService-Info.plist */; };
+		755C7BA020824C6500554399 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755C7B9F20824C6500554399 /* Explore.storyboard */; };
+		755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA120824C8F00554399 /* ExploreViewController.swift */; };
+		755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA42082819E00554399 /* UIView+Extension.swift */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +46,7 @@
 		31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		752EF731207C571E0046743A /* PulseOfAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseOfAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752EF734207C571E0046743A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		752EF736207C571E0046743A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		752EF736207C571E0046743A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		752EF739207C571E0046743A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		752EF73B207C571F0046743A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752EF73E207C571F0046743A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +59,9 @@
 		752EF756207C57200046743A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752EF79E207C5DDB0046743A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulseOfAustin.entitlements; sourceTree = "<group>"; };
+		755C7B9F20824C6500554399 /* Explore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		755C7BA120824C8F00554399 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		755C7BA42082819E00554399 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,10 +146,12 @@
 		752EF733207C571E0046743A /* PulseOfAustin */ = {
 			isa = PBXGroup;
 			children = (
+				755C7BA32082818B00554399 /* Extensions */,
+				755C7B9E20824BCF00554399 /* Explore */,
 				752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */,
 				752EF79E207C5DDB0046743A /* GoogleService-Info.plist */,
 				752EF734207C571E0046743A /* AppDelegate.swift */,
-				752EF736207C571E0046743A /* ViewController.swift */,
+				752EF736207C571E0046743A /* HomeViewController.swift */,
 				752EF738207C571E0046743A /* Main.storyboard */,
 				752EF73B207C571F0046743A /* Assets.xcassets */,
 				752EF73D207C571F0046743A /* LaunchScreen.storyboard */,
@@ -168,6 +176,23 @@
 				752EF756207C57200046743A /* Info.plist */,
 			);
 			path = PulseOfAustinUITests;
+			sourceTree = "<group>";
+		};
+		755C7B9E20824BCF00554399 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				755C7B9F20824C6500554399 /* Explore.storyboard */,
+				755C7BA120824C8F00554399 /* ExploreViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		755C7BA32082818B00554399 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				755C7BA42082819E00554399 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +310,7 @@
 			files = (
 				752EF73F207C571F0046743A /* LaunchScreen.storyboard in Resources */,
 				752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */,
+				755C7BA020824C6500554399 /* Explore.storyboard in Resources */,
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 			);
@@ -390,8 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				752EF737207C571E0046743A /* ViewController.swift in Sources */,
+				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
+				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
+				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

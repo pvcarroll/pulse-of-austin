@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  PulseOfAustin
 //
 //  Created by Paul Carroll on 4/9/18.
@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet var exploreButton: UIButton!
+    
+    @IBAction func exploreTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "toExplore", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
