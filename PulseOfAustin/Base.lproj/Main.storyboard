@@ -18,10 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeScreenStyle" translatesAutoresizingMaskIntoConstraints="NO" id="WBl-NP-taf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUb-8u-ffh">
-                                <rect key="frame" x="82" y="185.5" width="210" height="276"/>
+                                <rect key="frame" x="82" y="193.5" width="210" height="261"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4j0-ZU-KVf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PulseLineIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4j0-ZU-KVf">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="210" id="Pbt-Qr-WZN"/>
@@ -29,28 +32,28 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pulse of Austin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9av-lB-9gY">
-                                        <rect key="frame" x="-19.5" y="50" width="249.5" height="43"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="-29.5" y="50" width="270" height="44.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A simple way to be civically engaged." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Cp-FBD">
-                                        <rect key="frame" x="25" y="103" width="160" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Making civic engagement personal and simple." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Cp-FBD">
+                                        <rect key="frame" x="20" y="104.5" width="170" height="36.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="LWf-t0-l6U"/>
+                                            <constraint firstAttribute="width" constant="170" id="LWf-t0-l6U"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he5-RM-iLM">
-                                        <rect key="frame" x="25" y="226" width="160" height="50"/>
+                                        <rect key="frame" x="25" y="211" width="160" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="NKf-sp-IAd"/>
                                             <constraint firstAttribute="height" constant="50" id="ajE-q0-UIZ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <state key="normal" title="EXPLORE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -64,7 +67,7 @@
                                     <constraint firstAttribute="bottom" secondItem="he5-RM-iLM" secondAttribute="bottom" id="03d-2N-Ppl"/>
                                     <constraint firstItem="KCR-Cp-FBD" firstAttribute="top" secondItem="9av-lB-9gY" secondAttribute="bottom" constant="10" id="9eC-TL-ZSg"/>
                                     <constraint firstItem="9av-lB-9gY" firstAttribute="top" secondItem="4j0-ZU-KVf" secondAttribute="bottom" constant="10" id="IIq-7z-x3q"/>
-                                    <constraint firstItem="he5-RM-iLM" firstAttribute="top" secondItem="KCR-Cp-FBD" secondAttribute="bottom" constant="80" id="JSL-z9-kLx"/>
+                                    <constraint firstItem="he5-RM-iLM" firstAttribute="top" secondItem="KCR-Cp-FBD" secondAttribute="bottom" constant="70" id="JSL-z9-kLx"/>
                                     <constraint firstItem="4j0-ZU-KVf" firstAttribute="leading" secondItem="JUb-8u-ffh" secondAttribute="leading" id="KRv-ym-xdI"/>
                                     <constraint firstAttribute="trailing" secondItem="4j0-ZU-KVf" secondAttribute="trailing" id="MqN-5B-T8V"/>
                                     <constraint firstItem="KCR-Cp-FBD" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="bUH-BE-MbR"/>
@@ -74,10 +77,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.38431372549019605" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JUb-8u-ffh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Mu-W5-VuE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WBl-NP-taf" secondAttribute="trailing" id="Hn1-PT-uS7"/>
                             <constraint firstItem="JUb-8u-ffh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-10" id="Xvd-Qn-b5D"/>
+                            <constraint firstItem="WBl-NP-taf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jOs-ab-J42"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBl-NP-taf" secondAttribute="bottom" id="oLj-PA-5dw"/>
+                            <constraint firstItem="WBl-NP-taf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uF9-y8-oiW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -248,4 +255,8 @@
             <point key="canvasLocation" x="1869.5999999999999" y="61.619190404797607"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HomeScreenStyle" width="750" height="1334"/>
+        <image name="PulseLineIcon" width="332" height="96"/>
+    </resources>
 </document>
