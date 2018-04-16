@@ -8,20 +8,50 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {
-    
+struct Topic {
+    var title: String
+    var description: String
 }
 
-extension ExploreViewController: UITableViewDataSource {
+class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let topics = [
+        Topic(title: "DOCKLESS BIKESHARE", description: "What privatized operations mean for your data"),
+        Topic(title: "AFFORDABLE HOUSING BOND", description: "$161M vs. $300M: Council yet to decide"),
+        Topic(title: "HOLLY POWER PLANT", description: "City seeking input on park transformation"),
+        Topic(title: "STRATEGIC MOBILITY PLAN", description: "Prioritize roads, public transit, or a balance?")
+    ]
+    
+    @IBOutlet var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 140
+        self.tableView.tableFooterView = UIView()
+    }
+    
+    //
+    // MARK: UITableViewDataSource
+    //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as? TopicCell
+        if let topicCell = cell {
+//            topicCell.textLabel?.text = topics[indexPath.row].title
+//            topicCell.detailTextLabel?.text = topics[indexPath.row].description
+            topicCell.titleLabel.text = topics[indexPath.row].title
+            topicCell.descriptionLabel.text = topics[indexPath.row].description
+            return topicCell
+        }
         return UITableViewCell()
     }
-}
-
-extension ExploreViewController: UITableViewDelegate {
     
+    // MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
