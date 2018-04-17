@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var homeTitleLabel: UILabel!
+    @IBOutlet var homeDescriptionLabel: UILabel!
     @IBOutlet var exploreButton: UIButton!
     
     @IBAction func exploreTapped(_ sender: Any) {
@@ -18,6 +20,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.homeTitleLabel.textColor = UIColor.customDarkText
+        self.homeDescriptionLabel.textColor = UIColor.customDarkText
         self.exploreButton.layer.cornerRadius = self.exploreButton.frame.height / 2
     }
 

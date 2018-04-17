@@ -91,6 +91,8 @@
                     <navigationItem key="navigationItem" id="BHU-68-bih"/>
                     <connections>
                         <outlet property="exploreButton" destination="he5-RM-iLM" id="pYo-gg-gTe"/>
+                        <outlet property="homeDescriptionLabel" destination="KCR-Cp-FBD" id="FCv-5z-8GS"/>
+                        <outlet property="homeTitleLabel" destination="9av-lB-9gY" id="LGV-ud-5Sb"/>
                         <segue destination="2ea-r9-CdL" kind="show" identifier="toExplore" id="SBq-Mc-eSL"/>
                     </connections>
                 </viewController>
@@ -171,7 +173,7 @@
                                             <constraint firstAttribute="width" constant="165" id="kcZ-Ms-Kon"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.6099137375" blue="0.27100213229999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-Wh-Om6" userLabel="Trending Issues Table View">
@@ -216,6 +218,8 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="exploreLabel" destination="8Uj-Xm-WWb" id="rM0-ML-WXf"/>
+                        <outlet property="latestLabel" destination="60g-C0-bXU" id="EhO-g4-fba"/>
                         <outlet property="tableView" destination="Dub-Wh-Om6" id="hjc-0H-HTO"/>
                     </connections>
                 </viewController>

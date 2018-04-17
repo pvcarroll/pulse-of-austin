@@ -12,4 +12,9 @@ class TopicCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    
+    override func awakeFromNib() {
+        self.titleLabel.textColor = UIColor.customDarkText
+        self.descriptionLabel.textColor = UIColor.customDarkText
+    }
 }

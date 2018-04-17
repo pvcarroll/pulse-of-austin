@@ -21,10 +21,14 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         Topic(title: "STRATEGIC MOBILITY PLAN", description: "Prioritize roads, public transit, or a balance?")
     ]
     
+    @IBOutlet var exploreLabel: UILabel!
+    @IBOutlet var latestLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.exploreLabel.textColor = UIColor.customDarkText
+        self.latestLabel.textColor = UIColor.customDarkText
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
