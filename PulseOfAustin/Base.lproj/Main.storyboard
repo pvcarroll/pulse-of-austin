@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="972" y="61.619190404797607"/>
         </scene>
-        <!--Beats-->
+        <!--View Controller-->
         <scene sceneID="4SF-Sd-Zh5">
             <objects>
                 <viewController id="s0A-WV-fur" sceneMemberID="viewController">
@@ -108,7 +108,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vMb-0P-jJM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Beats" id="DIZ-Pe-EUg"/>
+                    <tabBarItem key="tabBarItem" title="" image="BeatsIcon" id="DIZ-Pe-EUg">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-14"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Q3-uO-Xxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,7 +210,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WlR-pm-Or2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="mbs-5u-MGI"/>
+                    <tabBarItem key="tabBarItem" title="" image="ExploreIcon" id="mbs-5u-MGI">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-14"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Dub-Wh-Om6" id="hjc-0H-HTO"/>
@@ -218,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="2808.8000000000002" y="61.619190404797607"/>
         </scene>
-        <!--Map-->
+        <!--View Controller-->
         <scene sceneID="ECq-St-oIF">
             <objects>
                 <viewController id="fo4-sg-aS5" sceneMemberID="viewController">
@@ -228,7 +233,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VVn-uW-MvP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="qBC-Pq-48j"/>
+                    <tabBarItem key="tabBarItem" title="" image="MapIcon" id="qBC-Pq-48j">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-14"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0l-ZI-TAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,8 +248,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2ea-r9-CdL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RX0-Q7-IdY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.96862745098039216" green="0.70196078431372544" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="dm6-SO-lmn" kind="relationship" relationship="viewControllers" id="SA8-f6-sFi"/>
@@ -256,7 +265,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BeatsIcon" width="27" height="38"/>
+        <image name="ExploreIcon" width="30" height="38"/>
         <image name="HomeScreenStyle" width="750" height="1334"/>
+        <image name="MapIcon" width="21" height="38"/>
         <image name="PulseLineIcon" width="332" height="96"/>
     </resources>
 </document>
