@@ -236,7 +236,7 @@
                         <outlet property="exploreLabel" destination="8Uj-Xm-WWb" id="rM0-ML-WXf"/>
                         <outlet property="latestLabel" destination="60g-C0-bXU" id="EhO-g4-fba"/>
                         <outlet property="tableView" destination="Dub-Wh-Om6" id="hjc-0H-HTO"/>
-                        <segue destination="X1F-M1-wM9" kind="show" id="gJw-NL-Kl2"/>
+                        <segue destination="X1F-M1-wM9" kind="show" identifier="toTopicIntro" id="gJw-NL-Kl2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPc-N5-eat" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0l-ZI-TAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="788"/>
+            <point key="canvasLocation" x="2817" y="873"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n6H-Dg-7R8">

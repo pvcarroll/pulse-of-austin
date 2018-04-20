@@ -44,18 +44,20 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as? TopicCell
-        if let topicCell = cell {
+        guard let topicCell = cell else { return UITableViewCell() }
 //            topicCell.textLabel?.text = topics[indexPath.row].title
 //            topicCell.detailTextLabel?.text = topics[indexPath.row].description
-            topicCell.titleLabel.text = topics[indexPath.row].title
-            topicCell.descriptionLabel.text = topics[indexPath.row].description
-            return topicCell
-        }
-        return UITableViewCell()
+        topicCell.titleLabel.text = topics[indexPath.row].title
+        topicCell.descriptionLabel.text = topics[indexPath.row].description
+        return topicCell
     }
     
     // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toTopicIntro", sender: self)
     }
 }
