@@ -21,6 +21,7 @@
 		755C7BA72083006E00554399 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755C7BA62083006E00554399 /* TopicCell.xib */; };
 		755C7BA92083A5F400554399 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA82083A5F400554399 /* TopicCell.swift */; };
 		755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAC2085A05400554399 /* UIColor+Extension.swift */; };
+		755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAF2088C69100554399 /* TopicIntroViewController.swift */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		755C7BA62083006E00554399 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		755C7BA82083A5F400554399 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		755C7BAC2085A05400554399 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		755C7BAF2088C69100554399 /* TopicIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIntroViewController.swift; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 			children = (
 				755C7BA32082818B00554399 /* Extensions */,
 				755C7B9E20824BCF00554399 /* Explore */,
+				755C7BAE2088C5EA00554399 /* Topic */,
 				752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */,
 				752EF79E207C5DDB0046743A /* GoogleService-Info.plist */,
 				752EF734207C571E0046743A /* AppDelegate.swift */,
@@ -199,6 +202,14 @@
 				755C7BAC2085A05400554399 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		755C7BAE2088C5EA00554399 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				755C7BAF2088C69100554399 /* TopicIntroViewController.swift */,
+			);
+			path = Topic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
