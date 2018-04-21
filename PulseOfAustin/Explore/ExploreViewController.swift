@@ -21,7 +21,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         Topic(title: "STRATEGIC MOBILITY PLAN", description: "Prioritize roads, public transit, or a balance?")
     ]
     
-    @IBOutlet var exploreLabel: UILabel!
+    @IBOutlet var exploreScreenTitle: UILabel!
     @IBOutlet var latestLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
@@ -32,7 +32,8 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.exploreLabel.textColor = UIColor.customDarkText
+        self.exploreScreenTitle.textColor = UIColor.customDarkText
+        self.exploreScreenTitle.font = UIFont.screenTitle
         self.latestLabel.textColor = UIColor.customDarkText
         
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
@@ -60,6 +61,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
 //            topicCell.textLabel?.text = topics[indexPath.row].title
 //            topicCell.detailTextLabel?.text = topics[indexPath.row].description
         topicCell.titleLabel.text = topics[indexPath.row].title
+        topicCell.titleLabel.font = UIFont.cardTitle
         topicCell.descriptionLabel.text = topics[indexPath.row].description
         return topicCell
     }
