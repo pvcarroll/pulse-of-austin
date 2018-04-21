@@ -130,7 +130,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmE-vN-nX7" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3YM-uP-9aD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3YM-uP-9aD">
                                         <rect key="frame" x="335" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cXs-8Y-tzw"/>
@@ -342,5 +342,6 @@
         <image name="HomeScreenStyle" width="750" height="1334"/>
         <image name="MapIcon" width="21" height="38"/>
         <image name="PulseLineIcon" width="332" height="96"/>
+        <image name="gearIcon" width="128" height="128"/>
     </resources>
 </document>
