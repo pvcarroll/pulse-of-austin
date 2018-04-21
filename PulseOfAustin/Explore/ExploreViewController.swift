@@ -25,19 +25,31 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var latestLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
+    //
+    // MARK: Lifecycle Methods
+    //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.exploreLabel.textColor = UIColor.customDarkText
         self.latestLabel.textColor = UIColor.customDarkText
+        
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
         self.tableView.tableFooterView = UIView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     //
     // MARK: UITableViewDataSource
     //
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topics.count
     }

@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmE-vN-nX7" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3YM-uP-9aD">
                                         <rect key="frame" x="335" y="0.0" width="30" height="30"/>
@@ -143,7 +143,7 @@
                                             <constraint firstAttribute="height" constant="45" id="6k5-5S-VZ9"/>
                                             <constraint firstAttribute="width" constant="174" id="G7H-1r-M7k"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -158,20 +158,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-W3-1Ql" userLabel="Border View">
-                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="0.0"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="2UI-0y-LxT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-4A-ZnS" userLabel="Body View">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExplorePageStyle" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-N8-Vbk">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArmadilloIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-Cf-ggd">
-                                        <rect key="frame" x="45" y="378" width="285" height="140"/>
+                                        <rect key="frame" x="45" y="334" width="285" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="y4P-d5-0we"/>
                                         </constraints>
@@ -186,7 +186,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-Wh-Om6" userLabel="Trending Issues Table View">
-                                        <rect key="frame" x="15" y="65.5" width="345" height="392.5"/>
+                                        <rect key="frame" x="15" y="65.5" width="345" height="348.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -227,10 +227,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WlR-pm-Or2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="ExploreIcon" id="mbs-5u-MGI">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-14"/>
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="2xh-43-SSQ">
+                        <barButtonItem key="backBarButtonItem" title="Explore" id="Iwo-Yu-xBP">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="exploreLabel" destination="8Uj-Xm-WWb" id="rM0-ML-WXf"/>
@@ -241,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPc-N5-eat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2808.8000000000002" y="61.619190404797607"/>
+            <point key="canvasLocation" x="3748" y="61.619190404797607"/>
         </scene>
         <!--Topic Intro View Controller-->
         <scene sceneID="1ge-hp-h2l">
@@ -252,7 +253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fj3-SZ-G9w">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdY-wE-xg6">
                                         <rect key="frame" x="10" y="40" width="365" height="30"/>
@@ -291,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUg-qI-IqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3652" y="67"/>
+            <point key="canvasLocation" x="4591.1999999999998" y="66.11694152923539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ECq-St-oIF">
@@ -324,7 +325,7 @@
                         <color key="selectedImageTintColor" red="0.96862745098039216" green="0.70196078431372544" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dm6-SO-lmn" kind="relationship" relationship="viewControllers" id="SA8-f6-sFi"/>
+                        <segue destination="Cv5-VI-9Uz" kind="relationship" relationship="viewControllers" id="SA8-f6-sFi"/>
                         <segue destination="s0A-WV-fur" kind="relationship" relationship="viewControllers" id="sqc-el-nNA"/>
                         <segue destination="fo4-sg-aS5" kind="relationship" relationship="viewControllers" id="d8a-Xx-5ED"/>
                     </connections>
@@ -332,6 +333,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gce-8t-g6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1869.5999999999999" y="61.619190404797607"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0we-S1-rdN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cv5-VI-9Uz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ExploreIcon" id="mbs-5u-MGI">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-14"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V8r-jN-5g6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dm6-SO-lmn" kind="relationship" relationship="rootViewController" id="eQk-IJ-6e8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edx-Kx-VSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.8000000000002" y="61.619190404797607"/>
         </scene>
     </scenes>
     <resources>
