@@ -19,9 +19,14 @@ class TopicIntroViewController: UIViewController {
     @IBOutlet var topicIntroBodyText: UILabel!
     @IBOutlet var topicIntroPrompt: UILabel!
     @IBOutlet var learnMoreButton: UIButton!
-    @IBOutlet var bottomSheetCollapsed: UIView!
+    @IBOutlet var bottomSheetHandleView: UIView!
+    @IBOutlet var bottomSheetHandleViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var bottomSheetDragHandle: UIView!
     @IBOutlet var bottomSheetLabel: UILabel!
+    @IBOutlet var bottomSheetExpanded: UIView!
+    @IBOutlet var bottomSheetExpandedTitle: UILabel!
+    @IBOutlet var bottomSheetSeparator: UIView!
+    @IBOutlet var bottomSheetBodyText: UILabel!
     
     @IBAction func learnMoreTapped(_ sender: Any) {
     }
@@ -55,22 +60,47 @@ class TopicIntroViewController: UIViewController {
         self.learnMoreButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.learnMoreButton.layer.cornerRadius = (self.learnMoreButton.frame.height / 2)
         
-        self.bottomSheetCollapsed.backgroundColor = UIColor.basicsBarBlue
+        let bottomSheetTouchRecognizer = UITapGestureRecognizer(target: self, action: #selector(bottomSheetHandleTapped(recognizer:)))
+        self.bottomSheetHandleView.addGestureRecognizer(bottomSheetTouchRecognizer)
+        
+        self.bottomSheetHandleView.backgroundColor = UIColor.basicsBarBlue
         self.bottomSheetDragHandle.backgroundColor = UIColor.whiteText
         self.bottomSheetLabel.text = "THE BASICS"
         self.bottomSheetLabel.font = UIFont.buttonFont
         self.bottomSheetLabel.textColor = UIColor.whiteText
+        
+        self.bottomSheetExpanded.isHidden = true
+        self.bottomSheetExpanded.backgroundColor = UIColor.whiteBackground
+        self.bottomSheetExpandedTitle.text = "TRANSPORTATION IN AUSTIN"
+        self.bottomSheetExpandedTitle.font = UIFont.cardTitle
+        self.bottomSheetExpandedTitle.textColor = UIColor.customDarkText
+        self.bottomSheetSeparator.backgroundColor = UIColor.infoCardBackground
+        
+        self.bottomSheetBodyText.attributedText = buildBottomSheetList()
+        self.bottomSheetBodyText.font = UIFont.introCardBody
+        self.bottomSheetBodyText.textColor = UIColor.customDarkText
+    }
+    
+    @objc func bottomSheetHandleTapped(recognizer: UITapGestureRecognizer) {
+        if self.bottomSheetExpanded.isHidden {
+            self.bottomSheetExpanded.isHidden = false
+            self.bottomSheetHandleViewBottomConstraint.constant =  self.bottomSheetExpanded.frame.height
+        } else {
+            self.bottomSheetExpanded.isHidden = true
+            self.bottomSheetHandleViewBottomConstraint.constant =  0
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.infoCardBackgroundImageWidth.constant = self.infoCard.bounds.width * 0.3
-        self.infoCardBackgroundImageHeight.constant = self.infoCard.bounds.height * 0.4
+        self.infoCardBackgroundImageHeight.constant = self.infoCard.bounds.height * 0.45
     }
     
     //
     // MARK: Private Methods
     //
+    
     private func buildBodyText() -> NSMutableAttributedString {
         let paragraph1Text = "The City has kicked off a pilot program for new dockless bike and electric scooter services.\n"
         let paragraph1Attributes = [NSAttributedStringKey.font: UIFont.introCardBody]
@@ -86,5 +116,34 @@ class TopicIntroViewController: UIViewController {
         let bodyText = NSMutableAttributedString(attributedString: paragraph1)
         bodyText.append(paragraph2)
         return bodyText
+    }
+    
+    private func buildBottomSheetList() -> NSAttributedString {
+        let listItems = [
+            "\u{2022} Austin's public bus system is run by Cap Metro. There are 3,000 bus stops and 53 routes.\n\n",
+            "\u{2022} Only 4% of Austinites ride the bus.\n\n",
+            "\u{2022} Austin's traffic is the worst.\n\n",
+            "\u{2022} The city has a bike share program run by B-cycle."
+        ]
+        let bottomSheetAttributedString = NSMutableAttributedString()
+        // Add paragraph style to text for each bullet point to fix indentation
+        for listItem in listItems {
+            let attributedString = NSMutableAttributedString(string: listItem)
+            let listTextParagraphStyle = bottomSheetParagraphStyle()
+            attributedString.addAttributes([NSAttributedStringKey.paragraphStyle: listTextParagraphStyle], range: NSMakeRange(0, attributedString.length))
+            bottomSheetAttributedString.append(attributedString)
+        }
+        return bottomSheetAttributedString
+    }
+    
+    // Indents lines of text to match the first line
+    private func bottomSheetParagraphStyle() -> NSParagraphStyle {
+        let paragraphStyle: NSMutableParagraphStyle
+        paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [NSTextTab.OptionKey : Any])]
+        paragraphStyle.defaultTabInterval = 15
+        paragraphStyle.firstLineHeadIndent = 0
+        paragraphStyle.headIndent = 15
+        return paragraphStyle
     }
 }
