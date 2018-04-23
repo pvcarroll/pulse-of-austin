@@ -1,36 +1,46 @@
 //
-//  TopicIntroViewController.swift
+//  TopicInfoViewController.swift
 //  PulseOfAustin
 //
-//  Created by Paul Carroll on 4/19/18.
+//  Created by Paul Carroll on 4/22/18.
 //  Copyright © 2018 Paul Carroll. All rights reserved.
 //
 
 import UIKit
 
-class TopicIntroViewController: UIViewController {
+struct TopicInfoText {
+    let title: String
+    let body: String
+}
+
+fileprivate let topicInfoMessages: [TopicInfoText] = [
+TopicInfoText(title: "TRANSPARENCY",
+              body: "Data from dockless bikes could help the city prioritize bike infastructure, but a lot of dockless bike companies will not make this data open."),
+TopicInfoText(title: "HONESTY",
+              body: "Ofo, 1 of 10 companies Austin is considering, even reported false data in Aurora, CO, claiming 2.5 daily rides per bike, when they were really clocking 0.18 daily rides."),
+TopicInfoText(title: "PRIVACY",
+              body: "Some dockless bike companies track users even when they are not using the bikes, reserving the right to sell that data to third parties."),
+TopicInfoText(title: "WEIGH IN",
+              body: "What is essential for Austin to consider in its bikeshare data policy?"),
+TopicInfoText(title: "WEIGH IN", body: "")
+]
+
+class TopicInfoViewController: UIViewController {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet var topicIntroScreenTitle: UILabel!
+    @IBOutlet var topicInfoScreenTitle: UILabel!
     @IBOutlet var infoCard: UIView!
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
-    @IBOutlet var topicIntroCardTitle: UILabel!
-    @IBOutlet var topicIntroBodyText: UILabel!
-    @IBOutlet var topicIntroPrompt: UILabel!
-    @IBOutlet var learnMoreButton: UIButton!
-    @IBOutlet var bottomSheetHandleView: UIView!
-    @IBOutlet var bottomSheetHandleViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var bottomSheetDragHandle: UIView!
+    @IBOutlet var topicInfoCardTitle: UILabel!
+    @IBOutlet var topicInfoCardBody: UILabel!
+    @IBOutlet var nextScreenLabel: UILabel!
+    @IBOutlet var bottomSheetHandle: UIView!
+    @IBOutlet var bottomSheetHandleBottomConstraint: NSLayoutConstraint!
     @IBOutlet var bottomSheetHandleLabel: UILabel!
     @IBOutlet var bottomSheetExpanded: UIView!
     @IBOutlet var bottomSheetExpandedTitle: UILabel!
-    @IBOutlet var bottomSheetSeparator: UIView!
     @IBOutlet var bottomSheetBodyText: UILabel!
-    
-    @IBAction func learnMoreTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "toTopicInfo", sender: self)
-    }
     
     //
     // MARK: Lifecycle Methods
@@ -38,34 +48,26 @@ class TopicIntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
         self.contentView.backgroundColor = UIColor.infoCardBackground
-        self.topicIntroScreenTitle.text = "Dockless Bikeshare"
-        self.topicIntroScreenTitle.font = UIFont.screenTitle
-        self.topicIntroScreenTitle.textColor = UIColor.customDarkText
-        self.topicIntroCardTitle.text = "PILOT KICKOFF"
-        self.topicIntroCardTitle.font = UIFont.cardTitle
-        self.topicIntroCardTitle.textColor = UIColor.darkGray
+        self.topicInfoScreenTitle.text = "Dockless Bikeshare"
+        self.topicInfoScreenTitle.font = UIFont.screenTitle
+        self.topicInfoScreenTitle.textColor = UIColor.customDarkText
         
-        self.topicIntroBodyText.attributedText = buildBodyText()
-        self.topicIntroBodyText.textColor = UIColor.customDarkText
-        
-        self.topicIntroPrompt.text = "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"
-        self.topicIntroPrompt.font = UIFont.cardTitle
-        self.topicIntroPrompt.textColor = UIColor.customDarkText
-        
-        self.learnMoreButton.backgroundColor = UIColor.customYellow
-        self.learnMoreButton.setTitle("LEARN MORE", for: .normal)
-        self.learnMoreButton.titleLabel?.font = UIFont.buttonFont
-        self.learnMoreButton.setTitleColor(UIColor.whiteText, for: .normal)
-        self.learnMoreButton.layer.cornerRadius = (self.learnMoreButton.frame.height / 2)
+        // Dynamic card contents
+        self.topicInfoCardTitle.text = topicInfoMessages[0].title
+        self.topicInfoCardTitle.font = UIFont.cardTitle
+        self.topicInfoCardTitle.textColor = UIColor.customDarkText
+        self.topicInfoCardBody.text = topicInfoMessages[0].body
+        self.topicInfoCardBody.font = UIFont.introCardBody
+        self.topicInfoCardBody.textColor = UIColor.customDarkText
+        self.nextScreenLabel.text = topicInfoMessages[1].title
+//        self.nextScreenLabel.font =
+        self.nextScreenLabel.textColor = UIColor.customYellow
         
         let bottomSheetTouchRecognizer = UITapGestureRecognizer(target: self, action: #selector(bottomSheetHandleTapped(recognizer:)))
-        self.bottomSheetHandleView.addGestureRecognizer(bottomSheetTouchRecognizer)
+        self.bottomSheetHandle.addGestureRecognizer(bottomSheetTouchRecognizer)
         
-        self.bottomSheetHandleView.backgroundColor = UIColor.basicsBarBlue
-        self.bottomSheetDragHandle.backgroundColor = UIColor.whiteText
+        self.bottomSheetHandle.backgroundColor = UIColor.basicsBarBlue
         self.bottomSheetHandleLabel.text = "THE BASICS"
         self.bottomSheetHandleLabel.font = UIFont.buttonFont
         self.bottomSheetHandleLabel.textColor = UIColor.whiteText
@@ -75,8 +77,6 @@ class TopicIntroViewController: UIViewController {
         self.bottomSheetExpandedTitle.text = "TRANSPORTATION IN AUSTIN"
         self.bottomSheetExpandedTitle.font = UIFont.cardTitle
         self.bottomSheetExpandedTitle.textColor = UIColor.customDarkText
-        self.bottomSheetSeparator.backgroundColor = UIColor.infoCardBackground
-        
         self.bottomSheetBodyText.attributedText = buildBottomSheetList()
         self.bottomSheetBodyText.font = UIFont.introCardBody
         self.bottomSheetBodyText.textColor = UIColor.customDarkText
@@ -91,23 +91,6 @@ class TopicIntroViewController: UIViewController {
     //
     // MARK: Private Methods
     //
-    
-    private func buildBodyText() -> NSMutableAttributedString {
-        let paragraph1Text = "The City has kicked off a pilot program for new dockless bike and electric scooter services.\n"
-        let paragraph1Attributes = [NSAttributedStringKey.font: UIFont.introCardBody]
-        let paragraph1 = NSMutableAttributedString(string: paragraph1Text, attributes: paragraph1Attributes)
-        let paragraph2Part1Attrs = [NSAttributedStringKey.font: UIFont.introCardBody]
-        let paragraph2Part1 = NSAttributedString(string: "They plan to ", attributes: paragraph2Part1Attrs)
-        let paragraph2Part2 = NSAttributedString(string: "privatize ", attributes: [NSAttributedStringKey.font: UIFont.introCardBodyBold])
-        let paragraph2Part3Text = "these dockless operations, rather than adding on to the city's public B-cycle service."
-        let paragraph2Part3 = NSAttributedString(string: paragraph2Part3Text, attributes: [NSAttributedStringKey.font: UIFont.introCardBody])
-        let paragraph2 = NSMutableAttributedString(attributedString: paragraph2Part1)
-        paragraph2.append(paragraph2Part2)
-        paragraph2.append(paragraph2Part3)
-        let bodyText = NSMutableAttributedString(attributedString: paragraph1)
-        bodyText.append(paragraph2)
-        return bodyText
-    }
     
     private func buildBottomSheetList() -> NSAttributedString {
         let listItems = [
@@ -145,10 +128,10 @@ class TopicIntroViewController: UIViewController {
     @objc func bottomSheetHandleTapped(recognizer: UITapGestureRecognizer) {
         if self.bottomSheetExpanded.isHidden {
             self.bottomSheetExpanded.isHidden = false
-            self.bottomSheetHandleViewBottomConstraint.constant =  self.bottomSheetExpanded.frame.height
+            self.bottomSheetHandleBottomConstraint.constant =  self.bottomSheetExpanded.frame.height
         } else {
             self.bottomSheetExpanded.isHidden = true
-            self.bottomSheetHandleViewBottomConstraint.constant =  0
+            self.bottomSheetHandleBottomConstraint.constant =  0
         }
     }
 }
