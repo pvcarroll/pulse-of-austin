@@ -27,6 +27,8 @@ TopicInfoText(title: "WEIGH IN", body: "")
 
 class TopicInfoViewController: UIViewController {
     
+    private var cardIndex = 0
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet var topicInfoScreenTitle: UILabel!
     @IBOutlet var infoCard: UIView!
@@ -34,6 +36,11 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
     @IBOutlet var topicInfoCardTitle: UILabel!
     @IBOutlet var topicInfoCardBody: UILabel!
+    @IBOutlet var answerChoicesStackView: UIStackView!
+    @IBOutlet var answerChoice1Button: UIButton!
+    @IBOutlet var answerChoice2Button: UIButton!
+    @IBOutlet var answerChoice3Button: UIButton!
+    @IBOutlet var continueView: UIView!
     @IBOutlet var nextScreenLabel: UILabel!
     @IBOutlet var bottomSheetHandle: UIView!
     @IBOutlet var bottomSheetHandleBottomConstraint: NSLayoutConstraint!
@@ -54,13 +61,18 @@ class TopicInfoViewController: UIViewController {
         self.topicInfoScreenTitle.textColor = UIColor.customDarkText
         
         // Dynamic card contents
-        self.topicInfoCardTitle.text = topicInfoMessages[0].title
+        self.topicInfoCardTitle.text = topicInfoMessages[cardIndex].title
+        self.topicInfoCardBody.text = topicInfoMessages[cardIndex].body
+        self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
+        
         self.topicInfoCardTitle.font = UIFont.cardTitle
         self.topicInfoCardTitle.textColor = UIColor.customDarkText
-        self.topicInfoCardBody.text = topicInfoMessages[0].body
         self.topicInfoCardBody.font = UIFont.introCardBody
         self.topicInfoCardBody.textColor = UIColor.customDarkText
-        self.nextScreenLabel.text = topicInfoMessages[1].title
+        
+        let continueGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(continueTapped(recognizer:)))
+        self.continueView.addGestureRecognizer(continueGestureRecognizer)
+        
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
         
@@ -132,6 +144,32 @@ class TopicInfoViewController: UIViewController {
         } else {
             self.bottomSheetExpanded.isHidden = true
             self.bottomSheetHandleBottomConstraint.constant =  0
+        }
+    }
+    
+    // Show messages for next card
+    @objc func continueTapped(recognizer: UITapGestureRecognizer) {
+        let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
+        let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
+        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
+        self.topicInfoCardTitle.text = topicInfoMessages[self.cardIndex].title
+        self.topicInfoCardBody.text = topicInfoMessages[self.cardIndex].body
+        if self.cardIndex < topicInfoMessages.count - 1 {
+            self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
+        }
+        if isWeighInCard1 {
+            self.answerChoice1Button.setTitle("Collect data on bike rides only + share with city", for: .normal)
+            self.answerChoice2Button.setTitle("Collect data for city use only", for: .normal)
+            self.answerChoice3Button.setTitle("Minimize rental cost - allow all data collections", for: .normal)
+            self.answerChoice1Button.setTitleColor(UIColor.customDarkText, for: .normal)
+            self.answerChoice2Button.setTitleColor(UIColor.customDarkText, for: .normal)
+            self.answerChoice3Button.setTitleColor(UIColor.customDarkText, for: .normal)
+            self.answerChoice1Button.backgroundColor = UIColor.infoCardBackground
+            self.answerChoice2Button.backgroundColor = UIColor.infoCardBackground
+            self.answerChoice3Button.backgroundColor = UIColor.infoCardBackground
+            self.answerChoicesStackView.isHidden = false
+        } else {
+            self.answerChoicesStackView.isHidden = true
         }
     }
 }

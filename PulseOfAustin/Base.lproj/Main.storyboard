@@ -491,7 +491,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-gQ-UrT" userLabel="Info Card View">
                                 <rect key="frame" x="20" y="139" width="335" height="399"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KRS-OZ-MIE">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KRS-OZ-MIE" userLabel="Topic Info Stack View">
                                         <rect key="frame" x="20" y="30" width="295" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOPIC INTRO CARD TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMG-7E-gtY">
@@ -506,6 +506,23 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C3F-ga-pqD" userLabel="Weigh In Stack View">
+                                        <rect key="frame" x="30" y="111" width="275" height="238"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="625-ym-Cmp" userLabel="Choice1 Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="72.5"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqE-fS-WNt" userLabel="Choice2 Button">
+                                                <rect key="frame" x="0.0" y="82.5" width="275" height="73"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-9b-bvG" userLabel="Choice3 Button">
+                                                <rect key="frame" x="0.0" y="165.5" width="275" height="72.5"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gur-lg-5BJ" userLabel="Continue View">
@@ -542,7 +559,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gur-lg-5BJ" secondAttribute="trailing" id="65a-A2-2b5"/>
                                     <constraint firstItem="KRS-OZ-MIE" firstAttribute="top" secondItem="rMi-gQ-UrT" secondAttribute="top" constant="30" id="6Z0-Gn-igj"/>
+                                    <constraint firstItem="C3F-ga-pqD" firstAttribute="top" secondItem="KRS-OZ-MIE" secondAttribute="bottom" constant="20" id="9XN-gM-Ub9"/>
                                     <constraint firstAttribute="bottom" secondItem="gur-lg-5BJ" secondAttribute="bottom" constant="30" id="D3M-Q7-ohf"/>
+                                    <constraint firstAttribute="trailing" secondItem="C3F-ga-pqD" secondAttribute="trailing" constant="30" id="V2k-0s-7Qo"/>
+                                    <constraint firstItem="C3F-ga-pqD" firstAttribute="leading" secondItem="rMi-gQ-UrT" secondAttribute="leading" constant="30" id="VhD-nA-hnZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="C3F-ga-pqD" secondAttribute="bottom" constant="50" id="dco-74-Hds"/>
                                     <constraint firstAttribute="trailing" secondItem="KRS-OZ-MIE" secondAttribute="trailing" constant="20" id="vUD-RQ-L63"/>
                                     <constraint firstItem="KRS-OZ-MIE" firstAttribute="leading" secondItem="rMi-gQ-UrT" secondAttribute="leading" constant="20" id="z31-pu-hYJ"/>
                                 </constraints>
@@ -647,6 +668,10 @@
                         <viewLayoutGuide key="safeArea" id="aFZ-qD-S0L"/>
                     </view>
                     <connections>
+                        <outlet property="answerChoice1Button" destination="625-ym-Cmp" id="74a-GU-o2f"/>
+                        <outlet property="answerChoice2Button" destination="eqE-fS-WNt" id="jkR-D8-E4H"/>
+                        <outlet property="answerChoice3Button" destination="h6g-9b-bvG" id="mBY-ps-cOF"/>
+                        <outlet property="answerChoicesStackView" destination="C3F-ga-pqD" id="3yM-ag-Age"/>
                         <outlet property="bottomSheetBodyText" destination="9rt-Xb-MCw" id="WZ7-cP-oPe"/>
                         <outlet property="bottomSheetExpanded" destination="Fbl-n7-Ybw" id="hBF-JE-g76"/>
                         <outlet property="bottomSheetExpandedTitle" destination="0AQ-x8-TzL" id="Oym-gV-N5g"/>
@@ -654,6 +679,7 @@
                         <outlet property="bottomSheetHandleBottomConstraint" destination="6ed-Ca-1nD" id="nma-Z1-Jbg"/>
                         <outlet property="bottomSheetHandleLabel" destination="MVb-kT-iuc" id="NCi-cd-2XW"/>
                         <outlet property="contentView" destination="Vpx-bx-i4u" id="AY6-eV-eyF"/>
+                        <outlet property="continueView" destination="gur-lg-5BJ" id="tuo-al-fwt"/>
                         <outlet property="infoCard" destination="rMi-gQ-UrT" id="yUG-3L-xV2"/>
                         <outlet property="infoCardBackgroundImageHeight" destination="oO1-O9-pA5" id="dZB-0g-pvp"/>
                         <outlet property="infoCardBackgroundImageWidth" destination="tBF-aj-svl" id="6Nr-8v-Oo9"/>
