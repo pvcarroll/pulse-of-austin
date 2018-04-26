@@ -39,6 +39,8 @@ class TopicIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationItem.title = "Explore"
+        self.navigationItem.titleView = UIView()
         
         self.contentView.backgroundColor = UIColor.infoCardBackground
         self.topicIntroScreenTitle.text = "Dockless Bikeshare"

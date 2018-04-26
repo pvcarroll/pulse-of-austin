@@ -37,10 +37,12 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var topicInfoCardTitle: UILabel!
     @IBOutlet var topicInfoCardBody: UILabel!
     @IBOutlet var answerChoicesStackView: UIStackView!
+    @IBOutlet var answerChoicesStackViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var answerChoice1Button: UIButton!
     @IBOutlet var answerChoice2Button: UIButton!
     @IBOutlet var answerChoice3Button: UIButton!
     @IBOutlet var continueView: UIView!
+    @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextScreenLabel: UILabel!
     @IBOutlet var bottomSheetHandle: UIView!
     @IBOutlet var bottomSheetHandleBottomConstraint: NSLayoutConstraint!
@@ -49,6 +51,21 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var bottomSheetExpandedTitle: UILabel!
     @IBOutlet var bottomSheetBodyText: UILabel!
     
+    @IBAction func button1Tapped(_ sender: Any) {
+        self.answerChoice2Button.isHidden = true
+        self.answerChoice3Button.isHidden = true
+        self.continueTapped(recognizer: UITapGestureRecognizer())
+    }
+    @IBAction func button2Tapped(_ sender: Any) {
+        self.answerChoice1Button.isHidden = true
+        self.answerChoice3Button.isHidden = true
+        self.continueTapped(recognizer: UITapGestureRecognizer())
+    }
+    @IBAction func button3Tapped(_ sender: Any) {
+        self.answerChoice1Button.isHidden = true
+        self.answerChoice2Button.isHidden = true
+        self.continueTapped(recognizer: UITapGestureRecognizer())
+    }
     //
     // MARK: Lifecycle Methods
     //
@@ -149,9 +166,10 @@ class TopicInfoViewController: UIViewController {
     
     // Show messages for next card
     @objc func continueTapped(recognizer: UITapGestureRecognizer) {
+        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
+        self.pageControl.currentPage = self.cardIndex
         let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
         let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
-        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
         self.topicInfoCardTitle.text = topicInfoMessages[self.cardIndex].title
         self.topicInfoCardBody.text = topicInfoMessages[self.cardIndex].body
         if self.cardIndex < topicInfoMessages.count - 1 {
@@ -167,9 +185,36 @@ class TopicInfoViewController: UIViewController {
             self.answerChoice1Button.backgroundColor = UIColor.infoCardBackground
             self.answerChoice2Button.backgroundColor = UIColor.infoCardBackground
             self.answerChoice3Button.backgroundColor = UIColor.infoCardBackground
+            self.answerChoice1Button.titleLabel?.numberOfLines = 0
+            self.answerChoice2Button.titleLabel?.numberOfLines = 0
+            self.answerChoice3Button.titleLabel?.numberOfLines = 0
+            self.answerChoice1Button.titleLabel?.textAlignment = .center
+            self.answerChoice2Button.titleLabel?.textAlignment = .center
+            self.answerChoice3Button.titleLabel?.textAlignment = .center
             self.answerChoicesStackView.isHidden = false
+            self.continueView.isHidden = true
+        } else if isWeighInCard2 {
+            self.answerChoicesStackViewBottomConstraint.isActive = false
+            self.continueView.isHidden = true
+            let textView = UITextView(frame: CGRect(x: 20,
+                                                    y: self.answerChoicesStackView.frame.minY + 10,
+                                                    width: self.infoCard.frame.width - 40,
+                                                    height: 50))
+            textView.layer.borderWidth = 1.0
+            textView.layer.cornerRadius = 3.0
+            textView.becomeFirstResponder()
+            let nextButton = UIButton(frame: CGRect(x: self.infoCard.frame.width / 2 - 80,
+                                                    y: textView.frame.maxY + 20,
+                                                    width: 160, height: 40))
+            nextButton.setTitle("NEXT", for: .normal)
+            nextButton.setTitleColor(UIColor.customYellow, for: .normal)
+            nextButton.layer.borderWidth = 0.5
+            nextButton.layer.cornerRadius = nextButton.frame.height / 2
+            self.infoCard.addSubview(textView)
+            self.infoCard.addSubview(nextButton)
         } else {
             self.answerChoicesStackView.isHidden = true
+            self.continueView.isHidden = false
         }
     }
 }

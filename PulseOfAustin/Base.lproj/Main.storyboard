@@ -509,24 +509,36 @@
                                         </subviews>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C3F-ga-pqD" userLabel="Weigh In Stack View">
-                                        <rect key="frame" x="30" y="111" width="275" height="238"/>
+                                        <rect key="frame" x="30" y="111" width="275" height="228"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="625-ym-Cmp" userLabel="Choice1 Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="72.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="69.5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button1Tapped:" destination="erH-Xg-SYG" eventType="touchUpInside" id="IqU-At-k5f"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqE-fS-WNt" userLabel="Choice2 Button">
-                                                <rect key="frame" x="0.0" y="82.5" width="275" height="73"/>
+                                                <rect key="frame" x="0.0" y="79.5" width="275" height="69"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button2Tapped:" destination="erH-Xg-SYG" eventType="touchUpInside" id="a5a-ZQ-f6W"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-9b-bvG" userLabel="Choice3 Button">
-                                                <rect key="frame" x="0.0" y="165.5" width="275" height="72.5"/>
+                                                <rect key="frame" x="0.0" y="158.5" width="275" height="69.5"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button3Tapped:" destination="erH-Xg-SYG" eventType="touchUpInside" id="CS1-xm-gW2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gur-lg-5BJ" userLabel="Continue View">
-                                        <rect key="frame" x="235" y="329" width="100" height="40"/>
+                                        <rect key="frame" x="235" y="339" width="100" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC2-XY-uYd" userLabel="Next Screen Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
@@ -554,16 +566,23 @@
                                             <constraint firstItem="g22-YR-L5c" firstAttribute="centerX" secondItem="gur-lg-5BJ" secondAttribute="centerX" id="oYB-7O-h3H"/>
                                         </constraints>
                                     </view>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="SlS-2n-SkN">
+                                        <rect key="frame" x="132" y="357" width="71" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gur-lg-5BJ" secondAttribute="trailing" id="65a-A2-2b5"/>
                                     <constraint firstItem="KRS-OZ-MIE" firstAttribute="top" secondItem="rMi-gQ-UrT" secondAttribute="top" constant="30" id="6Z0-Gn-igj"/>
                                     <constraint firstItem="C3F-ga-pqD" firstAttribute="top" secondItem="KRS-OZ-MIE" secondAttribute="bottom" constant="20" id="9XN-gM-Ub9"/>
-                                    <constraint firstAttribute="bottom" secondItem="gur-lg-5BJ" secondAttribute="bottom" constant="30" id="D3M-Q7-ohf"/>
+                                    <constraint firstAttribute="bottom" secondItem="gur-lg-5BJ" secondAttribute="bottom" constant="20" id="D3M-Q7-ohf"/>
                                     <constraint firstAttribute="trailing" secondItem="C3F-ga-pqD" secondAttribute="trailing" constant="30" id="V2k-0s-7Qo"/>
                                     <constraint firstItem="C3F-ga-pqD" firstAttribute="leading" secondItem="rMi-gQ-UrT" secondAttribute="leading" constant="30" id="VhD-nA-hnZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="C3F-ga-pqD" secondAttribute="bottom" constant="50" id="dco-74-Hds"/>
+                                    <constraint firstAttribute="bottom" secondItem="C3F-ga-pqD" secondAttribute="bottom" constant="60" id="dco-74-Hds"/>
+                                    <constraint firstAttribute="bottom" secondItem="SlS-2n-SkN" secondAttribute="bottom" constant="5" id="izC-Lk-VC3"/>
+                                    <constraint firstItem="SlS-2n-SkN" firstAttribute="centerX" secondItem="rMi-gQ-UrT" secondAttribute="centerX" id="nao-hJ-ieB"/>
                                     <constraint firstAttribute="trailing" secondItem="KRS-OZ-MIE" secondAttribute="trailing" constant="20" id="vUD-RQ-L63"/>
                                     <constraint firstItem="KRS-OZ-MIE" firstAttribute="leading" secondItem="rMi-gQ-UrT" secondAttribute="leading" constant="20" id="z31-pu-hYJ"/>
                                 </constraints>
@@ -672,6 +691,7 @@
                         <outlet property="answerChoice2Button" destination="eqE-fS-WNt" id="jkR-D8-E4H"/>
                         <outlet property="answerChoice3Button" destination="h6g-9b-bvG" id="mBY-ps-cOF"/>
                         <outlet property="answerChoicesStackView" destination="C3F-ga-pqD" id="3yM-ag-Age"/>
+                        <outlet property="answerChoicesStackViewBottomConstraint" destination="dco-74-Hds" id="qWP-MD-JnL"/>
                         <outlet property="bottomSheetBodyText" destination="9rt-Xb-MCw" id="WZ7-cP-oPe"/>
                         <outlet property="bottomSheetExpanded" destination="Fbl-n7-Ybw" id="hBF-JE-g76"/>
                         <outlet property="bottomSheetExpandedTitle" destination="0AQ-x8-TzL" id="Oym-gV-N5g"/>
@@ -684,6 +704,7 @@
                         <outlet property="infoCardBackgroundImageHeight" destination="oO1-O9-pA5" id="dZB-0g-pvp"/>
                         <outlet property="infoCardBackgroundImageWidth" destination="tBF-aj-svl" id="6Nr-8v-Oo9"/>
                         <outlet property="nextScreenLabel" destination="MC2-XY-uYd" id="JzH-Gc-u9C"/>
+                        <outlet property="pageControl" destination="SlS-2n-SkN" id="gGE-xG-Ur0"/>
                         <outlet property="topicInfoCardBody" destination="kaF-a5-wd2" id="SSS-GA-MLT"/>
                         <outlet property="topicInfoCardTitle" destination="jMG-7E-gtY" id="jVa-P5-RxI"/>
                         <outlet property="topicInfoScreenTitle" destination="ioI-wk-mMt" id="yTR-Nx-fTa"/>
@@ -745,6 +766,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V8r-jN-5g6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
