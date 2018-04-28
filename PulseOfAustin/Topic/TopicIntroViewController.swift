@@ -16,7 +16,8 @@ class TopicIntroViewController: UIViewController {
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
     @IBOutlet var topicIntroCardTitle: UILabel!
-    @IBOutlet var topicIntroBodyText: UILabel!
+    @IBOutlet var topicIntroBodyText: UITextView!
+    @IBOutlet var topicIntroBodyTextHeightConstraint: NSLayoutConstraint!
     @IBOutlet var topicIntroPrompt: UILabel!
     @IBOutlet var learnMoreButton: UIButton!
     @IBOutlet var bottomSheetHandleView: UIView!
@@ -52,6 +53,9 @@ class TopicIntroViewController: UIViewController {
         
         self.topicIntroBodyText.attributedText = buildBodyText()
         self.topicIntroBodyText.textColor = UIColor.customDarkText
+        if self.view.frame.width <= 321.0 {
+            self.topicIntroBodyTextHeightConstraint.constant = 118
+        }
         
         self.topicIntroPrompt.text = "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"
         self.topicIntroPrompt.font = UIFont.cardTitle
@@ -88,6 +92,11 @@ class TopicIntroViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.infoCardBackgroundImageWidth.constant = self.infoCard.bounds.width * 0.3
         self.infoCardBackgroundImageHeight.constant = self.infoCard.bounds.height * 0.45
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.topicIntroBodyText.setContentOffset(CGPoint.zero, animated: false)
     }
     
     //
