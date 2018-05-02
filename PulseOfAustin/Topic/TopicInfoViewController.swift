@@ -27,20 +27,17 @@ TopicInfoText(title: "WEIGH IN", body: "")
 
 class TopicInfoViewController: UIViewController {
     
-    private var cardIndex = 0
-    
     @IBOutlet var contentView: UIView!
     @IBOutlet var topicInfoScreenTitle: UILabel!
+    @IBOutlet var learnButton: UIButton!
+    @IBOutlet var learnButtonUnderline: UIView!
+    @IBOutlet var weighInButton: UIButton!
+    @IBOutlet var weighInButtonUnderline: UIView!
     @IBOutlet var infoCard: UIView!
+    @IBOutlet var infoCardBottomConstraint: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
-    @IBOutlet var topicInfoCardTitle: UILabel!
-    @IBOutlet var topicInfoCardBody: UILabel!
-    @IBOutlet var answerChoicesStackView: UIStackView!
-    @IBOutlet var answerChoicesStackViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var answerChoice1Button: UIButton!
-    @IBOutlet var answerChoice2Button: UIButton!
-    @IBOutlet var answerChoice3Button: UIButton!
+    @IBOutlet var cardContentView: UIView!
     @IBOutlet var continueView: UIView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextScreenLabel: UILabel!
@@ -51,21 +48,19 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var bottomSheetExpandedTitle: UILabel!
     @IBOutlet var bottomSheetBodyText: UILabel!
     
-    @IBAction func button1Tapped(_ sender: Any) {
-        self.answerChoice2Button.isHidden = true
-        self.answerChoice3Button.isHidden = true
-        self.continueTapped(recognizer: UITapGestureRecognizer())
+    private var cardIndex = 0
+    
+    @IBAction func learnButtonTapped(_ sender: Any) {
+        self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
+        self.loadLearnView()
     }
-    @IBAction func button2Tapped(_ sender: Any) {
-        self.answerChoice1Button.isHidden = true
-        self.answerChoice3Button.isHidden = true
-        self.continueTapped(recognizer: UITapGestureRecognizer())
+    @IBAction func weighInButtonTapped(_ sender: Any) {
+        self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
+        self.loadWeighInView()
     }
-    @IBAction func button3Tapped(_ sender: Any) {
-        self.answerChoice1Button.isHidden = true
-        self.answerChoice2Button.isHidden = true
-        self.continueTapped(recognizer: UITapGestureRecognizer())
-    }
+    
     //
     // MARK: Lifecycle Methods
     //
@@ -73,26 +68,34 @@ class TopicInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contentView.backgroundColor = UIColor.infoCardBackground
+        
+        // HEADER
         self.topicInfoScreenTitle.text = "Dockless Bikeshare"
         self.topicInfoScreenTitle.font = UIFont.screenTitle
         self.topicInfoScreenTitle.textColor = UIColor.customDarkText
         
+        self.learnButton.backgroundColor = UIColor.basicsBarBlue
+        self.learnButton.setTitle("LEARN", for: .normal)
+        self.learnButton.setTitleColor(UIColor.whiteText, for: .normal)
+        self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
+        
+        self.weighInButton.backgroundColor = UIColor.basicsBarBlue
+        self.weighInButton.setTitle("WEIGH IN", for: .normal)
+        self.weighInButton.setTitleColor(UIColor.whiteText, for: .normal)
+        self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
+        
         // Dynamic card contents
-        self.topicInfoCardTitle.text = topicInfoMessages[cardIndex].title
-        self.topicInfoCardBody.text = topicInfoMessages[cardIndex].body
         self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
-        
-        self.topicInfoCardTitle.font = UIFont.cardTitle
-        self.topicInfoCardTitle.textColor = UIColor.customDarkText
-        self.topicInfoCardBody.font = UIFont.introCardBody
-        self.topicInfoCardBody.textColor = UIColor.customDarkText
-        
+
         let continueGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(continueTapped(recognizer:)))
         self.continueView.addGestureRecognizer(continueGestureRecognizer)
         
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
         
+        
+        
+        // SLIDE UP PANEL
         let bottomSheetTouchRecognizer = UITapGestureRecognizer(target: self, action: #selector(bottomSheetHandleTapped(recognizer:)))
         self.bottomSheetHandle.addGestureRecognizer(bottomSheetTouchRecognizer)
         
@@ -111,6 +114,12 @@ class TopicInfoViewController: UIViewController {
         self.bottomSheetBodyText.textColor = UIColor.customDarkText
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadWeighInView()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.infoCardBackgroundImageWidth.constant = self.infoCard.bounds.width * 0.3
@@ -120,6 +129,28 @@ class TopicInfoViewController: UIViewController {
     //
     // MARK: Private Methods
     //
+    
+    private func loadWeighInView() {
+        self.bottomSheetHandle.isHidden = true
+        self.infoCardBottomConstraint.constant = 30
+        if let cardContent = UINib(nibName: "WeighInView", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! WeighInView? {
+            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+            cardContent.frame = self.cardContentView.bounds
+            self.cardContentView.addSubview(cardContent)
+        }
+    }
+    
+    private func loadLearnView() {
+        self.bottomSheetHandle.isHidden = false
+        self.infoCardBottomConstraint.constant = 80
+        if let cardContent = UINib(nibName: "LearnView", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnView? {
+            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+            cardContent.frame = self.cardContentView.bounds
+            self.cardContentView.addSubview(cardContent)
+        }
+    }
     
     private func buildBottomSheetList() -> NSAttributedString {
         let listItems = [
@@ -170,50 +201,14 @@ class TopicInfoViewController: UIViewController {
         self.pageControl.currentPage = self.cardIndex
         let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
         let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
-        self.topicInfoCardTitle.text = topicInfoMessages[self.cardIndex].title
-        self.topicInfoCardBody.text = topicInfoMessages[self.cardIndex].body
         if self.cardIndex < topicInfoMessages.count - 1 {
             self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
         }
         if isWeighInCard1 {
-            self.answerChoice1Button.setTitle("Collect data on bike rides only + share with city", for: .normal)
-            self.answerChoice2Button.setTitle("Collect data for city use only", for: .normal)
-            self.answerChoice3Button.setTitle("Minimize rental cost - allow all data collections", for: .normal)
-            self.answerChoice1Button.setTitleColor(UIColor.customDarkText, for: .normal)
-            self.answerChoice2Button.setTitleColor(UIColor.customDarkText, for: .normal)
-            self.answerChoice3Button.setTitleColor(UIColor.customDarkText, for: .normal)
-            self.answerChoice1Button.backgroundColor = UIColor.infoCardBackground
-            self.answerChoice2Button.backgroundColor = UIColor.infoCardBackground
-            self.answerChoice3Button.backgroundColor = UIColor.infoCardBackground
-            self.answerChoice1Button.titleLabel?.numberOfLines = 0
-            self.answerChoice2Button.titleLabel?.numberOfLines = 0
-            self.answerChoice3Button.titleLabel?.numberOfLines = 0
-            self.answerChoice1Button.titleLabel?.textAlignment = .center
-            self.answerChoice2Button.titleLabel?.textAlignment = .center
-            self.answerChoice3Button.titleLabel?.textAlignment = .center
-            self.answerChoicesStackView.isHidden = false
             self.continueView.isHidden = true
         } else if isWeighInCard2 {
-            self.answerChoicesStackViewBottomConstraint.isActive = false
             self.continueView.isHidden = true
-            let textView = UITextView(frame: CGRect(x: 20,
-                                                    y: self.answerChoicesStackView.frame.minY + 10,
-                                                    width: self.infoCard.frame.width - 40,
-                                                    height: 50))
-            textView.layer.borderWidth = 1.0
-            textView.layer.cornerRadius = 3.0
-            textView.becomeFirstResponder()
-            let nextButton = UIButton(frame: CGRect(x: self.infoCard.frame.width / 2 - 80,
-                                                    y: textView.frame.maxY + 20,
-                                                    width: 160, height: 40))
-            nextButton.setTitle("NEXT", for: .normal)
-            nextButton.setTitleColor(UIColor.customYellow, for: .normal)
-            nextButton.layer.borderWidth = 0.5
-            nextButton.layer.cornerRadius = nextButton.frame.height / 2
-            self.infoCard.addSubview(textView)
-            self.infoCard.addSubview(nextButton)
         } else {
-            self.answerChoicesStackView.isHidden = true
             self.continueView.isHidden = false
         }
     }

@@ -24,6 +24,10 @@
 		755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAF2088C69100554399 /* TopicIntroViewController.swift */; };
 		755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB1208B89FF00554399 /* UIFont+Extension.swift */; };
 		755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */; };
+		75B937502097451700221467 /* WeighInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInView.xib */; };
+		75B937522097453500221467 /* WeighInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInView.swift */; };
+		75B937542097E91A00221467 /* LearnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B937532097E91A00221467 /* LearnView.xib */; };
+		75B937562097E92E00221467 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937552097E92E00221467 /* LearnView.swift */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +76,10 @@
 		755C7BAF2088C69100554399 /* TopicIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIntroViewController.swift; sourceTree = "<group>"; };
 		755C7BB1208B89FF00554399 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInfoViewController.swift; sourceTree = "<group>"; };
+		75B9374F2097451700221467 /* WeighInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInView.xib; sourceTree = "<group>"; };
+		75B937512097453500221467 /* WeighInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInView.swift; sourceTree = "<group>"; };
+		75B937532097E91A00221467 /* LearnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnView.xib; sourceTree = "<group>"; };
+		75B937552097E92E00221467 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +222,10 @@
 			children = (
 				755C7BAF2088C69100554399 /* TopicIntroViewController.swift */,
 				755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */,
+				75B9374F2097451700221467 /* WeighInView.xib */,
+				75B937512097453500221467 /* WeighInView.swift */,
+				75B937532097E91A00221467 /* LearnView.xib */,
+				75B937552097E92E00221467 /* LearnView.swift */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -336,6 +348,8 @@
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
+				75B937542097E91A00221467 /* LearnView.xib in Resources */,
+				75B937502097451700221467 /* WeighInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,10 +456,12 @@
 				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
+				75B937562097E92E00221467 /* LearnView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
+				75B937522097453500221467 /* WeighInView.swift in Sources */,
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 			);
