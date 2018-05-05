@@ -41,12 +41,6 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var continueView: UIView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextScreenLabel: UILabel!
-    @IBOutlet var bottomSheetHandle: UIView!
-    @IBOutlet var bottomSheetHandleBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var bottomSheetHandleLabel: UILabel!
-    @IBOutlet var bottomSheetExpanded: UIView!
-    @IBOutlet var bottomSheetExpandedTitle: UILabel!
-    @IBOutlet var bottomSheetBodyText: UILabel!
     
     private var cardIndex = 0
     
@@ -93,37 +87,13 @@ class TopicInfoViewController: UIViewController {
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
         
-        
-        
-        // SLIDE UP PANEL
-        let bottomSheetTouchRecognizer = UITapGestureRecognizer(target: self, action: #selector(bottomSheetHandleTapped(recognizer:)))
-        self.bottomSheetHandle.addGestureRecognizer(bottomSheetTouchRecognizer)
-        
-        self.bottomSheetHandle.backgroundColor = UIColor.basicsBarBlue
-        self.bottomSheetHandleLabel.text = "THE BASICS"
-        self.bottomSheetHandleLabel.font = UIFont.buttonFont
-        self.bottomSheetHandleLabel.textColor = UIColor.whiteText
-        
-        self.bottomSheetExpanded.isHidden = true
-        self.bottomSheetExpanded.backgroundColor = UIColor.whiteBackground
-        self.bottomSheetExpandedTitle.text = "TRANSPORTATION IN AUSTIN"
-        self.bottomSheetExpandedTitle.font = UIFont.cardTitle
-        self.bottomSheetExpandedTitle.textColor = UIColor.customDarkText
-        self.bottomSheetBodyText.attributedText = buildBottomSheetList()
-        self.bottomSheetBodyText.font = UIFont.introCardBody
-        self.bottomSheetBodyText.textColor = UIColor.customDarkText
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.loadWeighInView()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.infoCardBackgroundImageWidth.constant = self.infoCard.bounds.width * 0.3
-        self.infoCardBackgroundImageHeight.constant = self.infoCard.bounds.height * 0.45
+        self.infoCardBackgroundImageWidth.constant = self.view.bounds.width * 0.6
+        self.infoCardBackgroundImageHeight.constant = self.view.bounds.height * 0.5
     }
     
     //
@@ -131,19 +101,20 @@ class TopicInfoViewController: UIViewController {
     //
     
     private func loadWeighInView() {
-        self.bottomSheetHandle.isHidden = true
-        self.infoCardBottomConstraint.constant = 30
+        self.pageControl.numberOfPages = 4
+        self.continueView.isHidden = true
         if let cardContent = UINib(nibName: "WeighInView", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInView? {
             self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
             cardContent.frame = self.cardContentView.bounds
+            cardContent.weighInTextView.isHidden = true
+            cardContent.nextButton.isHidden = true
+            cardContent.skipButton.isHidden = true
             self.cardContentView.addSubview(cardContent)
         }
     }
     
     private func loadLearnView() {
-        self.bottomSheetHandle.isHidden = false
-        self.infoCardBottomConstraint.constant = 80
         if let cardContent = UINib(nibName: "LearnView", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnView? {
             self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
@@ -179,20 +150,6 @@ class TopicInfoViewController: UIViewController {
         paragraphStyle.firstLineHeadIndent = 0
         paragraphStyle.headIndent = 15
         return paragraphStyle
-    }
-    
-    //
-    // MARK: Gesture Handler
-    //
-    
-    @objc func bottomSheetHandleTapped(recognizer: UITapGestureRecognizer) {
-        if self.bottomSheetExpanded.isHidden {
-            self.bottomSheetExpanded.isHidden = false
-            self.bottomSheetHandleBottomConstraint.constant =  self.bottomSheetExpanded.frame.height
-        } else {
-            self.bottomSheetExpanded.isHidden = true
-            self.bottomSheetHandleBottomConstraint.constant =  0
-        }
     }
     
     // Show messages for next card

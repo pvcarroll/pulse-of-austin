@@ -17,28 +17,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-4b-iDj" userLabel="Card Title">
-                    <rect key="frame" x="0.0" y="20" width="375" height="21"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-se-LFp" userLabel="Answer Buttons Stack View">
-                    <rect key="frame" x="20" y="41" width="335" height="318"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-se-LFp" userLabel="Answer Buttons Stack View">
+                    <rect key="frame" x="20" y="60.5" width="335" height="546.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPQ-Ma-tKJ" userLabel="Answer1Button">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="172"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="iN2-iM-lTc"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-Pa-S7F" userLabel="Answer2Button">
+                            <rect key="frame" x="0.0" y="187" width="335" height="172.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XLB-G9-4o8"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-eg-IJg" userLabel="Answer3Button">
+                            <rect key="frame" x="0.0" y="374.5" width="335" height="172"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FJ1-lf-8sO"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-QO-saT" userLabel="Next Button">
-                    <rect key="frame" x="112" y="527" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Lph-Sf-8v1"/>
-                    </constraints>
-                    <state key="normal" title="Next Button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-ZY-Q0T" userLabel="Skip Button">
-                    <rect key="frame" x="112" y="577" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="lLf-mS-q9t"/>
-                    </constraints>
-                    <state key="normal" title="Skip Button"/>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u1K-gQ-M5K" userLabel="Weigh In Text View">
                     <rect key="frame" x="0.0" y="379" width="375" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,6 +58,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-QO-saT" userLabel="Next Button">
+                    <rect key="frame" x="112" y="527" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3jx-En-Lkw"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Lph-Sf-8v1"/>
+                    </constraints>
+                    <state key="normal" title="Next Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-ZY-Q0T" userLabel="Skip Button">
+                    <rect key="frame" x="112" y="577" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Dgr-y0-d7q"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="lLf-mS-q9t"/>
+                    </constraints>
+                    <state key="normal" title="Skip Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -58,19 +83,22 @@
                 <constraint firstItem="dR3-ZY-Q0T" firstAttribute="top" secondItem="fbj-QO-saT" secondAttribute="bottom" constant="20" id="BIl-lQ-BNA"/>
                 <constraint firstItem="fbj-QO-saT" firstAttribute="top" secondItem="u1K-gQ-M5K" secondAttribute="bottom" constant="20" id="FT7-fn-Mky"/>
                 <constraint firstItem="A6l-se-LFp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="GqN-j7-RkY"/>
-                <constraint firstItem="u1K-gQ-M5K" firstAttribute="top" secondItem="A6l-se-LFp" secondAttribute="bottom" constant="20" id="H9m-X2-yya"/>
+                <constraint firstAttribute="bottom" secondItem="A6l-se-LFp" secondAttribute="bottom" constant="20" id="H9m-X2-yya"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BQo-4b-iDj" secondAttribute="trailing" id="bNc-Lz-h5l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dR3-ZY-Q0T" secondAttribute="bottom" constant="20" id="cpf-Pr-oQT"/>
                 <constraint firstItem="BQo-4b-iDj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fDE-vX-064"/>
                 <constraint firstItem="dR3-ZY-Q0T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="h28-n6-5Kx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="u1K-gQ-M5K" secondAttribute="trailing" id="ik3-Wk-Cgi"/>
                 <constraint firstItem="u1K-gQ-M5K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jUk-gb-Aon"/>
-                <constraint firstItem="A6l-se-LFp" firstAttribute="top" secondItem="BQo-4b-iDj" secondAttribute="bottom" id="myq-GX-KzQ"/>
+                <constraint firstItem="A6l-se-LFp" firstAttribute="top" secondItem="BQo-4b-iDj" secondAttribute="bottom" constant="20" id="myq-GX-KzQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="answersButtonsStackView" destination="A6l-se-LFp" id="LeP-Vx-stW"/>
+                <outlet property="answer1Button" destination="BPQ-Ma-tKJ" id="mwK-YB-wA8"/>
+                <outlet property="answer2Button" destination="nc6-Pa-S7F" id="tGy-1o-wwt"/>
+                <outlet property="answer3Button" destination="g7U-eg-IJg" id="275-K4-sMi"/>
+                <outlet property="answerButtonsStackView" destination="A6l-se-LFp" id="aop-Af-WHa"/>
                 <outlet property="cardTitle" destination="BQo-4b-iDj" id="G2E-oK-K1u"/>
                 <outlet property="nextButton" destination="fbj-QO-saT" id="4jk-4r-mLx"/>
                 <outlet property="skipButton" destination="dR3-ZY-Q0T" id="ljL-Kc-3o4"/>
