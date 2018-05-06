@@ -119,8 +119,7 @@ class TopicInfoViewController: UIViewController {
             weighInSelectView.answer1Button.addGestureRecognizer(answer1SelectedGestureRecognizer)
             weighInSelectView.answer2Button.addGestureRecognizer(answer2SelectedGestureRecognizer)
             weighInSelectView.answer3Button.addGestureRecognizer(answer3SelectedGestureRecognizer)
-            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
-            self.cardContentView.addSubview(weighInSelectView)
+            self.updateCardContents(newView: weighInSelectView)
         }
     }
     
@@ -132,16 +131,26 @@ class TopicInfoViewController: UIViewController {
             var cardTitleText = "ELABORATE"
             // TODO: Dynamic "other" text
             if answerText == "Other Thoughts" {
-                elaborateView.submitButton.isEnabled = false
+                elaborateView.submitButton.isUserInteractionEnabled = false
             } else {
                 cardTitleText += " (OPTIONAL)"
             }
             // TODO: Dynamic title
             elaborateView.cardTitle.text = cardTitleText
             elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
+            let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitTapped(recognizer:)))
+            elaborateView.submitButton.addGestureRecognizer(submitGestureRecognizer)
             
-            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
-            self.cardContentView.addSubview(elaborateView)
+            self.updateCardContents(newView: elaborateView)
+        }
+    }
+    
+    private func loadWeighInResults() {
+        self.pageControl.currentPage = 2
+        if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! WeighInResults? {
+            resultsView.frame = self.cardContentView.bounds
+            self.updateCardContents(newView: resultsView)
         }
     }
     
@@ -190,24 +199,30 @@ class TopicInfoViewController: UIViewController {
         return paragraphStyle
     }
     
+    private func updateCardContents(newView: UIView) {
+        self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+        self.cardContentView.addSubview(newView)
+    }
+    
     //
-    // MARK: Gesture Recognizers
+    // MARK: Event Handlers
     //
     
     @objc func answer1Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
-        print(answerText)
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer2Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
-        print(answerText)
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer3Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
-        print(answerText)
         self.loadWeighInElaborate(answerText: answerText)
+    }
+    @objc func submitTapped(recognizer: UITapGestureRecognizer) {
+        // TODO: Save response
+        self.loadWeighInResults()
     }
     
     @objc func continueTapped(recognizer: UITapGestureRecognizer) {

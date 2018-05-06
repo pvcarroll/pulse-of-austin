@@ -30,6 +30,8 @@
 		75B937562097E92E00221467 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937552097E92E00221467 /* LearnView.swift */; };
 		75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD078209E62B8008AD469 /* WeighInElaborate.swift */; };
 		75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */; };
+		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
+		75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD07E209F4F93008AD469 /* WeighInResults.swift */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		75B937552097E92E00221467 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		75BCD078209E62B8008AD469 /* WeighInElaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInElaborate.swift; sourceTree = "<group>"; };
 		75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInElaborate.xib; sourceTree = "<group>"; };
+		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
+		75BCD07E209F4F93008AD469 /* WeighInResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInResults.swift; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +244,8 @@
 				75B937512097453500221467 /* WeighInSelect.swift */,
 				75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */,
 				75BCD078209E62B8008AD469 /* WeighInElaborate.swift */,
+				75BCD07C209F4F82008AD469 /* WeighInResults.xib */,
+				75BCD07E209F4F93008AD469 /* WeighInResults.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				75B937542097E91A00221467 /* LearnView.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
+				75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */,
 				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
