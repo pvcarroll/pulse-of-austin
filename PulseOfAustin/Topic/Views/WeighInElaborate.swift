@@ -27,8 +27,8 @@ class WeighInElaborate: UIView, UITextViewDelegate {
         self.selectedAnswerButton.titleLabel?.font = UIFont.buttonFont
         self.selectedAnswerButton.setTitleColor(UIColor.customDarkText, for: .normal)
         self.selectedAnswerButton.layer.cornerRadius = 5
-        self.selectedAnswerButton.isHidden = true
         
+        self.weighInTextView.delegate = self
         self.weighInTextView.text = "Have more to share on why you made your selection?"
         self.weighInTextView.textColor = UIColor.infoCardBackground
         self.weighInTextView.layer.borderColor = UIColor.customDarkText.cgColor

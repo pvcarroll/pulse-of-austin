@@ -99,15 +99,16 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Private Methods
+    // MARK: Weigh In
     //
     
     private func loadWeighInSelect() {
+        // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 4
         self.continueView.isHidden = true
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInSelect? {
-            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+            
             weighInSelectView.frame = self.cardContentView.bounds
             
             // Add button handlers
@@ -118,9 +119,27 @@ class TopicInfoViewController: UIViewController {
             weighInSelectView.answer1Button.addGestureRecognizer(answer1SelectedGestureRecognizer)
             weighInSelectView.answer2Button.addGestureRecognizer(answer2SelectedGestureRecognizer)
             weighInSelectView.answer3Button.addGestureRecognizer(answer3SelectedGestureRecognizer)
+            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
             self.cardContentView.addSubview(weighInSelectView)
         }
     }
+    
+    private func loadWeighInElaborate(answerText: String) {
+        if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
+            elaborateView.frame = self.cardContentView.bounds
+            // TODO: Dynamic title
+            elaborateView.cardTitle.text = "ELABORATE (OPTIONAL)"
+            elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
+            
+            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+            self.cardContentView.addSubview(elaborateView)
+        }
+    }
+    
+    //
+    // MARK: Learn
+    //
     
     private func loadLearnView() {
         if let cardContent = UINib(nibName: "LearnView", bundle: nil)
@@ -161,33 +180,23 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Weigh In
-    //
-    
-    private func loadWeighInElaborate(answerText: String) {
-        if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
-        }
-    }
-    
-    //
     // MARK: Gesture Recognizers
     //
     
     @objc func answer1Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         print(answerText)
-        self.loadWeighInElaborate(answerText: "answerText")
+        self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer2Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         print(answerText)
-        self.loadWeighInElaborate(answerText: "answerText")
+        self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer3Selected(recognizer: UITapGestureRecognizer) {
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         print(answerText)
-        self.loadWeighInElaborate(answerText: "answerText")
+        self.loadWeighInElaborate(answerText: answerText)
     }
     
     // Show messages for next card

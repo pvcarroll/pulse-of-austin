@@ -32,14 +32,14 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saG-u3-Ehb">
-                    <rect key="frame" x="85" y="240.5" width="150" height="50"/>
+                    <rect key="frame" x="70" y="240.5" width="180" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="YXE-kb-5h4"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Ysu-5y-9fV"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Ysu-5y-9fV"/>
                     </constraints>
                     <state key="normal" title="Submit Button"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-VE-jVa" userLabel="Selected Answer Button">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-VE-jVa" userLabel="Selected Answer Button">
                     <rect key="frame" x="60" y="60.5" width="200" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="gEb-b2-Uax"/>
