@@ -150,6 +150,18 @@ class TopicInfoViewController: UIViewController {
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInResults? {
             resultsView.frame = self.cardContentView.bounds
+            
+            // TODO: Hide 4th response view if only 3 responses
+            resultsView.response4View.isHidden = true
+            
+            // TODO: Dynamic responses text
+            resultsView.response1Label.text = "$300 Million"
+            resultsView.response2Label.text = "$161 Million"
+            resultsView.response3Label.text = "Other"
+            
+            // TODO: response widths based on count
+            
+            
             self.updateCardContents(newView: resultsView)
         }
     }

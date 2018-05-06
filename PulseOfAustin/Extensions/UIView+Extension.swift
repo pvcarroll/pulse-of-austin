@@ -9,5 +9,11 @@
 import UIKit
 
 extension UIView {
-     
+    
+    func addBottomShadow() {
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 1.0
+        self.layer.shadowOpacity = 0.5
+    }
 }
