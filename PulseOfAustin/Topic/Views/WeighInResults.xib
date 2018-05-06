@@ -32,21 +32,21 @@
                         <constraint firstAttribute="width" constant="2" id="nSb-RN-EGl"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-Fw-ELk" userLabel="Responses Stack View">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-Fw-ELk" userLabel="Responses Stack View">
                     <rect key="frame" x="12" y="41" width="288" height="265"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-Dz-fAn" userLabel="Response1 View">
-                            <rect key="frame" x="0.0" y="0.0" width="288" height="57.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="51.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5B-FR-SRt" userLabel="Response1 Talllies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="51.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="hea-sa-GTb"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-BF-UUC" userLabel="Response1 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="57.5"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="51.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -64,17 +64,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-6w-3yb" userLabel="Response2 View">
-                            <rect key="frame" x="0.0" y="69.5" width="288" height="57"/>
+                            <rect key="frame" x="0.0" y="71.5" width="288" height="51"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-ty-WJP" userLabel="Response2 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="51"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="6Ue-Gd-eH9"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRQ-uv-BL1" userLabel="Response2 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="57"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="51"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -92,17 +92,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ge-Dgy" userLabel="Response3 View">
-                            <rect key="frame" x="0.0" y="138.5" width="288" height="57.5"/>
+                            <rect key="frame" x="0.0" y="142.5" width="288" height="51.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCO-c2-VOV" userLabel="Response3 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="51.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="OAD-Ar-va7"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUj-sj-ffk" userLabel="Response3 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="57.5"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="51.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -120,17 +120,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-99-Uga" userLabel="Response4 View">
-                            <rect key="frame" x="0.0" y="208" width="288" height="57"/>
+                            <rect key="frame" x="0.0" y="214" width="288" height="51"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAW-Rr-Fhe" userLabel="Response4 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="51"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="awS-sI-9jb"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3X4-ol-vUI" userLabel="Response4 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="57"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="51"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -160,11 +160,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjT-eX-DLQ" userLabel="Your Input Was Sent View">
                     <rect key="frame" x="112" y="-35" width="248" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-uh-Xlo">
-                            <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input-sent-checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-uh-Xlo">
+                            <rect key="frame" x="5" y="5" width="40" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Hso-ms-ZQf"/>
-                                <constraint firstAttribute="width" constant="30" id="leb-7X-slf"/>
+                                <constraint firstAttribute="height" constant="40" id="Hso-ms-ZQf"/>
+                                <constraint firstAttribute="width" constant="40" id="leb-7X-slf"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR INPUT WAS SENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="GTI-Sp-r1X">
@@ -179,10 +179,10 @@
                         <constraint firstItem="GTI-Sp-r1X" firstAttribute="centerY" secondItem="wjT-eX-DLQ" secondAttribute="centerY" id="4bS-8h-bVM"/>
                         <constraint firstItem="UfM-uh-Xlo" firstAttribute="centerY" secondItem="wjT-eX-DLQ" secondAttribute="centerY" id="5sQ-aq-tkJ"/>
                         <constraint firstAttribute="bottom" secondItem="GTI-Sp-r1X" secondAttribute="bottom" id="DOy-5L-zwm"/>
-                        <constraint firstItem="UfM-uh-Xlo" firstAttribute="leading" secondItem="wjT-eX-DLQ" secondAttribute="leading" constant="10" id="HqG-iV-zHY"/>
+                        <constraint firstItem="UfM-uh-Xlo" firstAttribute="leading" secondItem="wjT-eX-DLQ" secondAttribute="leading" constant="5" id="HqG-iV-zHY"/>
                         <constraint firstItem="GTI-Sp-r1X" firstAttribute="top" secondItem="wjT-eX-DLQ" secondAttribute="top" id="Jrx-dW-tIh"/>
                         <constraint firstAttribute="trailing" secondItem="GTI-Sp-r1X" secondAttribute="trailing" constant="10" id="NRa-nJ-VCh"/>
-                        <constraint firstItem="GTI-Sp-r1X" firstAttribute="leading" secondItem="UfM-uh-Xlo" secondAttribute="trailing" constant="10" id="VSN-0J-eom"/>
+                        <constraint firstItem="GTI-Sp-r1X" firstAttribute="leading" secondItem="UfM-uh-Xlo" secondAttribute="trailing" constant="5" id="VSN-0J-eom"/>
                         <constraint firstAttribute="height" constant="50" id="iIp-75-04M"/>
                     </constraints>
                 </view>
@@ -224,4 +224,7 @@
             <point key="canvasLocation" x="6" y="-85"/>
         </view>
     </objects>
+    <resources>
+        <image name="input-sent-checkmark" width="55" height="54"/>
+    </resources>
 </document>
