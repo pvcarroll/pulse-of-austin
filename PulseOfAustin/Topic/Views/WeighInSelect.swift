@@ -1,5 +1,5 @@
 //
-//  WeighInView.swift
+//  WeighInSelect.swift
 //  PulseOfAustin
 //
 //  Created by Paul Carroll on 4/30/18.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-class WeighInView: UIView {
+class WeighInSelect: UIView {
     
     @IBOutlet var cardTitle: UILabel!
     @IBOutlet var answerButtonsStackView: UIStackView!
     @IBOutlet var answer1Button: UIButton!
     @IBOutlet var answer2Button: UIButton!
     @IBOutlet var answer3Button: UIButton!
-    @IBOutlet var weighInTextView: UITextView!
-    @IBOutlet var nextButton: UIButton!
-    @IBOutlet var skipButton: UIButton!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // TODO: dynamic titles
         self.cardTitle.text = "SELECT CHOICE"
         self.cardTitle.font = UIFont.cardTitle
         self.cardTitle.textColor = UIColor.customDarkText
@@ -27,6 +27,7 @@ class WeighInView: UIView {
         self.answer1Button.backgroundColor = UIColor.infoCardBackground
         self.answer2Button.backgroundColor = UIColor.infoCardBackground
         self.answer3Button.backgroundColor = UIColor.infoCardBackground
+        // TODO: dynamic answer choices
         self.answer1Button.setTitle("$300 Million Bond", for: .normal)
         self.answer2Button.setTitle("$161 Million Bond", for: .normal)
         self.answer3Button.setTitle("Other Thoughts", for: .normal)

@@ -52,7 +52,7 @@ class TopicInfoViewController: UIViewController {
     @IBAction func weighInButtonTapped(_ sender: Any) {
         self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        self.loadWeighInView()
+        self.loadWeighInSelect()
     }
     
     //
@@ -64,17 +64,19 @@ class TopicInfoViewController: UIViewController {
         self.contentView.backgroundColor = UIColor.infoCardBackground
         
         // HEADER
-        self.topicInfoScreenTitle.text = "Dockless Bikeshare"
+        self.topicInfoScreenTitle.text = "Affordability Bond"
         self.topicInfoScreenTitle.font = UIFont.screenTitle
         self.topicInfoScreenTitle.textColor = UIColor.customDarkText
         
         self.learnButton.backgroundColor = UIColor.basicsBarBlue
         self.learnButton.setTitle("LEARN", for: .normal)
+        self.learnButton.titleLabel?.font = UIFont.buttonFont
         self.learnButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         
         self.weighInButton.backgroundColor = UIColor.basicsBarBlue
         self.weighInButton.setTitle("WEIGH IN", for: .normal)
+        self.weighInButton.titleLabel?.font = UIFont.buttonFont
         self.weighInButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
         
@@ -87,7 +89,7 @@ class TopicInfoViewController: UIViewController {
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
         
-        self.loadWeighInView()
+        self.loadWeighInSelect()
     }
 
     override func viewDidLayoutSubviews() {
@@ -100,17 +102,23 @@ class TopicInfoViewController: UIViewController {
     // MARK: Private Methods
     //
     
-    private func loadWeighInView() {
+    private func loadWeighInSelect() {
         self.pageControl.numberOfPages = 4
         self.continueView.isHidden = true
-        if let cardContent = UINib(nibName: "WeighInView", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInView? {
+        if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! WeighInSelect? {
             self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
-            cardContent.frame = self.cardContentView.bounds
-            cardContent.weighInTextView.isHidden = true
-            cardContent.nextButton.isHidden = true
-            cardContent.skipButton.isHidden = true
-            self.cardContentView.addSubview(cardContent)
+            weighInSelectView.frame = self.cardContentView.bounds
+            
+            // Add button handlers
+            let answer1SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer1Selected(recognizer:)))
+            let answer2SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer2Selected(recognizer:)))
+            let answer3SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer3Selected(recognizer:)))
+            
+            weighInSelectView.answer1Button.addGestureRecognizer(answer1SelectedGestureRecognizer)
+            weighInSelectView.answer2Button.addGestureRecognizer(answer2SelectedGestureRecognizer)
+            weighInSelectView.answer3Button.addGestureRecognizer(answer3SelectedGestureRecognizer)
+            self.cardContentView.addSubview(weighInSelectView)
         }
     }
     
@@ -150,6 +158,36 @@ class TopicInfoViewController: UIViewController {
         paragraphStyle.firstLineHeadIndent = 0
         paragraphStyle.headIndent = 15
         return paragraphStyle
+    }
+    
+    //
+    // MARK: Weigh In
+    //
+    
+    private func loadWeighInElaborate(answerText: String) {
+        if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
+        }
+    }
+    
+    //
+    // MARK: Gesture Recognizers
+    //
+    
+    @objc func answer1Selected(recognizer: UITapGestureRecognizer) {
+        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        print(answerText)
+        self.loadWeighInElaborate(answerText: "answerText")
+    }
+    @objc func answer2Selected(recognizer: UITapGestureRecognizer) {
+        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        print(answerText)
+        self.loadWeighInElaborate(answerText: "answerText")
+    }
+    @objc func answer3Selected(recognizer: UITapGestureRecognizer) {
+        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        print(answerText)
+        self.loadWeighInElaborate(answerText: "answerText")
     }
     
     // Show messages for next card
