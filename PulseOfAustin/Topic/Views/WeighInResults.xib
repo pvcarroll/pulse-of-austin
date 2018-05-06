@@ -26,27 +26,27 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbK-Qk-UVB" userLabel="Baseline View">
-                    <rect key="frame" x="10" y="31" width="2" height="216"/>
+                    <rect key="frame" x="10" y="31" width="2" height="285"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="2" id="nSb-RN-EGl"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-Fw-ELk" userLabel="Responses Stack View">
-                    <rect key="frame" x="12" y="41" width="288" height="196"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-Fw-ELk" userLabel="Responses Stack View">
+                    <rect key="frame" x="12" y="41" width="288" height="265"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-Dz-fAn" userLabel="Response1 View">
-                            <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="57.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5B-FR-SRt" userLabel="Response1 Talllies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="hea-sa-GTb"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-BF-UUC" userLabel="Response1 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="40"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="57.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -61,21 +61,20 @@
                                 <constraint firstAttribute="bottom" secondItem="L5B-FR-SRt" secondAttribute="bottom" id="k1a-58-tdH"/>
                                 <constraint firstItem="cVp-BF-UUC" firstAttribute="leading" secondItem="5nj-Dz-fAn" secondAttribute="leading" constant="10" id="pSD-qR-Plh"/>
                                 <constraint firstItem="L5B-FR-SRt" firstAttribute="leading" secondItem="5nj-Dz-fAn" secondAttribute="leading" id="rDO-cT-v7x"/>
-                                <constraint firstAttribute="height" constant="40" id="sPD-2z-CRS"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-6w-3yb" userLabel="Response2 View">
-                            <rect key="frame" x="0.0" y="52" width="288" height="40"/>
+                            <rect key="frame" x="0.0" y="69.5" width="288" height="57"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-ty-WJP" userLabel="Response2 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="6Ue-Gd-eH9"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRQ-uv-BL1" userLabel="Response2 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="40"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="57"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -89,22 +88,21 @@
                                 <constraint firstItem="vRQ-uv-BL1" firstAttribute="top" secondItem="hmK-6w-3yb" secondAttribute="top" id="KE3-Fd-L4Y"/>
                                 <constraint firstAttribute="bottom" secondItem="vRQ-uv-BL1" secondAttribute="bottom" id="S7S-8E-mzX"/>
                                 <constraint firstAttribute="bottom" secondItem="qI4-ty-WJP" secondAttribute="bottom" id="TJj-Qi-D4T"/>
-                                <constraint firstAttribute="height" constant="40" id="ZHX-rf-4fP"/>
                                 <constraint firstAttribute="trailing" secondItem="vRQ-uv-BL1" secondAttribute="trailing" id="ptt-5W-dhY"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ge-Dgy" userLabel="Response3 View">
-                            <rect key="frame" x="0.0" y="104" width="288" height="40"/>
+                            <rect key="frame" x="0.0" y="138.5" width="288" height="57.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCO-c2-VOV" userLabel="Response3 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="OAD-Ar-va7"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUj-sj-ffk" userLabel="Response3 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="40"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="57.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -116,24 +114,23 @@
                                 <constraint firstItem="yCO-c2-VOV" firstAttribute="top" secondItem="2Jg-Ge-Dgy" secondAttribute="top" id="9CF-ya-EM3"/>
                                 <constraint firstItem="qUj-sj-ffk" firstAttribute="leading" secondItem="2Jg-Ge-Dgy" secondAttribute="leading" constant="10" id="DMh-z8-I7O"/>
                                 <constraint firstAttribute="bottom" secondItem="qUj-sj-ffk" secondAttribute="bottom" id="Tnb-db-A1l"/>
-                                <constraint firstAttribute="height" constant="40" id="grq-dz-Q4y"/>
                                 <constraint firstItem="yCO-c2-VOV" firstAttribute="leading" secondItem="2Jg-Ge-Dgy" secondAttribute="leading" id="qyQ-j4-BlB"/>
                                 <constraint firstItem="qUj-sj-ffk" firstAttribute="top" secondItem="2Jg-Ge-Dgy" secondAttribute="top" id="tAt-vU-anr"/>
                                 <constraint firstAttribute="trailing" secondItem="qUj-sj-ffk" secondAttribute="trailing" id="uvJ-r1-OpA"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-99-Uga" userLabel="Response4 View">
-                            <rect key="frame" x="0.0" y="156" width="288" height="40"/>
+                            <rect key="frame" x="0.0" y="208" width="288" height="57"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAW-Rr-Fhe" userLabel="Response4 Tallies View">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="57"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="awS-sI-9jb"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3X4-ol-vUI" userLabel="Response4 Label">
-                                    <rect key="frame" x="10" y="0.0" width="278" height="40"/>
+                                    <rect key="frame" x="10" y="0.0" width="278" height="57"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -141,7 +138,6 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="9YE-8h-FOA"/>
                                 <constraint firstItem="3X4-ol-vUI" firstAttribute="leading" secondItem="3ly-99-Uga" secondAttribute="leading" constant="10" id="FUR-hs-vTF"/>
                                 <constraint firstItem="aAW-Rr-Fhe" firstAttribute="leading" secondItem="3ly-99-Uga" secondAttribute="leading" id="NuS-ne-FJP"/>
                                 <constraint firstItem="aAW-Rr-Fhe" firstAttribute="top" secondItem="3ly-99-Uga" secondAttribute="top" id="Pd1-oZ-hIA"/>
@@ -200,6 +196,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ulh-OS-9Hx" secondAttribute="trailing" id="Z16-Nr-sGB"/>
                 <constraint firstItem="TpL-Fw-ELk" firstAttribute="top" secondItem="ulh-OS-9Hx" secondAttribute="bottom" constant="20" id="Z49-Wt-R2d"/>
                 <constraint firstItem="wjT-eX-DLQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-35" id="f6n-6l-bdS"/>
+                <constraint firstAttribute="bottom" secondItem="YbK-Qk-UVB" secondAttribute="bottom" constant="50" id="gz6-7r-80M"/>
                 <constraint firstItem="ulh-OS-9Hx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lxz-gv-qBi"/>
                 <constraint firstItem="ulh-OS-9Hx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nXu-ZI-zRo"/>
                 <constraint firstAttribute="bottom" secondItem="i00-jX-Bke" secondAttribute="bottom" id="oOa-y3-6ZM"/>
