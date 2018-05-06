@@ -104,7 +104,7 @@ class TopicInfoViewController: UIViewController {
     
     private func loadWeighInSelect() {
         // TODO: Dynamic numberOfPages
-        self.pageControl.numberOfPages = 4
+        self.pageControl.numberOfPages = 3
         self.continueView.isHidden = true
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInSelect? {
@@ -125,11 +125,19 @@ class TopicInfoViewController: UIViewController {
     }
     
     private func loadWeighInElaborate(answerText: String) {
+        self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
             elaborateView.frame = self.cardContentView.bounds
+            var cardTitleText = "ELABORATE"
+            // TODO: Dynamic "other" text
+            if answerText == "Other Thoughts" {
+                elaborateView.submitButton.isEnabled = false
+            } else {
+                cardTitleText += " (OPTIONAL)"
+            }
             // TODO: Dynamic title
-            elaborateView.cardTitle.text = "ELABORATE (OPTIONAL)"
+            elaborateView.cardTitle.text = cardTitleText
             elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
             
             self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
@@ -142,6 +150,9 @@ class TopicInfoViewController: UIViewController {
     //
     
     private func loadLearnView() {
+        // TODO: Dynamic numberOfPages
+        self.pageControl.numberOfPages = 3
+        self.pageControl.currentPage = 0
         if let cardContent = UINib(nibName: "LearnView", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnView? {
             self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
@@ -199,7 +210,6 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInElaborate(answerText: answerText)
     }
     
-    // Show messages for next card
     @objc func continueTapped(recognizer: UITapGestureRecognizer) {
         self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
         self.pageControl.currentPage = self.cardIndex
