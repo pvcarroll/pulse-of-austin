@@ -10,6 +10,8 @@ import UIKit
 
 class TopicIntroViewController: UIViewController {
     
+    var topicInfoData: [TopicIntroData]?
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet var topicIntroScreenTitle: UILabel!
     @IBOutlet var infoCard: UIView!
@@ -39,15 +41,21 @@ class TopicIntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topicInfoData = [TopicIntroData(topicTitle: "Dockless Bikeshare",
+                                         cardTitle: "PILOT KICKOFF",
+                                         cardBodyText: self.buildBodyText(),
+                                         promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?")]
+        
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = "Explore"
         self.navigationItem.titleView = UIView()
         
         self.contentView.backgroundColor = UIColor.infoCardBackground
-        self.topicIntroScreenTitle.text = "Dockless Bikeshare"
+        self.topicIntroScreenTitle.text = self.topicInfoData?[0].topicTitle
         self.topicIntroScreenTitle.font = UIFont.screenTitle
         self.topicIntroScreenTitle.textColor = UIColor.customDarkText
-        self.topicIntroCardTitle.text = "PILOT KICKOFF"
+        self.topicIntroCardTitle.text = self.topicInfoData?[0].cardTitle
         self.topicIntroCardTitle.font = UIFont.cardTitle
         self.topicIntroCardTitle.textColor = UIColor.darkGray
         
@@ -57,7 +65,7 @@ class TopicIntroViewController: UIViewController {
             self.topicIntroBodyTextHeightConstraint.constant = 118
         }
         
-        self.topicIntroPrompt.text = "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"
+        self.topicIntroPrompt.text = self.topicInfoData?[0].promptText
         self.topicIntroPrompt.font = UIFont.cardTitle
         self.topicIntroPrompt.textColor = UIColor.customDarkText
         
@@ -120,6 +128,7 @@ class TopicIntroViewController: UIViewController {
         return bodyText
     }
     
+    // "The Basics"
     private func buildBottomSheetList() -> NSAttributedString {
         let listItems = [
             "\u{2022} Austin's public bus system is run by Cap Metro. There are 3,000 bus stops and 53 routes.\n\n",
@@ -162,4 +171,11 @@ class TopicIntroViewController: UIViewController {
             self.bottomSheetHandleViewBottomConstraint.constant =  0
         }
     }
+}
+
+struct TopicIntroData {
+    let topicTitle: String
+    let cardTitle: String
+    let cardBodyText: NSAttributedString
+    let promptText: String
 }

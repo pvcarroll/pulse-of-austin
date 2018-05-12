@@ -48,7 +48,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     //
-    // MARK: UITableViewDataSource
+    // MARK:- UITableViewDataSource
     //
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,7 +66,10 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         return topicCell
     }
     
-    // MARK: UITableViewDelegate
+    //
+    // MARK:- UITableViewDelegate
+    //
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
