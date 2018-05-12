@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct Topic {
-    var title: String
-    var description: String
-}
-
 class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let topics = [
         Topic(title: "DOCKLESS BIKESHARE", description: "What privatized operations mean for your data"),
@@ -77,4 +72,9 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toTopicIntro", sender: self)
     }
+}
+
+struct Topic {
+    var title: String
+    var description: String
 }

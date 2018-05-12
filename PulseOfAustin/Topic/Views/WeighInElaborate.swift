@@ -21,8 +21,6 @@ class WeighInElaborate: UIView, UITextViewDelegate {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.addGestureRecognizer(tapGestureRecognizer)
         
-        // TODO: dynamic titles
-        self.cardTitle.text = "SELECT CHOICE"
         self.cardTitle.font = UIFont.cardTitle
         self.cardTitle.textColor = UIColor.customDarkText
         

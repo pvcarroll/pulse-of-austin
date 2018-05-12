@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct TopicInfoText {
-    let title: String
-    let body: String
-}
-
 fileprivate let topicInfoMessages: [TopicInfoText] = [
 TopicInfoText(title: "TRANSPARENCY",
               body: "Data from dockless bikes could help the city prioritize bike infastructure, but a lot of dockless bike companies will not make this data open."),
@@ -23,6 +18,10 @@ TopicInfoText(title: "PRIVACY",
 TopicInfoText(title: "WEIGH IN",
               body: "What is essential for Austin to consider in its bikeshare data policy?"),
 TopicInfoText(title: "WEIGH IN", body: "")
+]
+
+fileprivate let weighInSelectData: [WeighInSelectText] = [
+    WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other"])
 ]
 
 class TopicInfoViewController: UIViewController {
@@ -112,7 +111,10 @@ class TopicInfoViewController: UIViewController {
             
             weighInSelectView.frame = self.cardContentView.bounds
             
-            // Add button handlers
+            weighInSelectView.answer1Button.setTitle(weighInSelectData[0].choices[0], for: .normal)
+            weighInSelectView.answer2Button.setTitle(weighInSelectData[0].choices[1], for: .normal)
+            weighInSelectView.answer3Button.setTitle(weighInSelectData[0].choices[2], for: .normal)
+            
             let answer1SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer1Selected(recognizer:)))
             let answer2SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer2Selected(recognizer:)))
             let answer3SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer3Selected(recognizer:)))
@@ -158,9 +160,9 @@ class TopicInfoViewController: UIViewController {
             resultsView.response4View.isHidden = true
             
             // TODO: Dynamic responses text
-            resultsView.response1Label.text = "$300 Million"
-            resultsView.response2Label.text = "$161 Million"
-            resultsView.response3Label.text = "Other"
+            resultsView.response1Label.text = weighInSelectData[0].choices[0]
+            resultsView.response2Label.text = weighInSelectData[0].choices[1]
+            resultsView.response3Label.text = weighInSelectData[0].choices[2]
             
             // TODO: response widths based on count
             
@@ -259,4 +261,15 @@ class TopicInfoViewController: UIViewController {
             self.continueView.isHidden = false
         }
     }
+}
+
+// MARK:- Learn Flow Data Model
+struct TopicInfoText {
+    let title: String
+    let body: String
+}
+
+// MARK:- Weigh In Flow Data Model
+struct WeighInSelectText {
+    let choices: [String]
 }

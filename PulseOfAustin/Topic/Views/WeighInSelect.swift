@@ -19,7 +19,6 @@ class WeighInSelect: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // TODO: dynamic titles
         self.cardTitle.text = "SELECT CHOICE"
         self.cardTitle.font = UIFont.cardTitle
         self.cardTitle.textColor = UIColor.customDarkText
@@ -27,10 +26,6 @@ class WeighInSelect: UIView {
         self.answer1Button.backgroundColor = UIColor.infoCardBackground
         self.answer2Button.backgroundColor = UIColor.infoCardBackground
         self.answer3Button.backgroundColor = UIColor.infoCardBackground
-        // TODO: dynamic answer choices
-        self.answer1Button.setTitle("$300 Million Bond", for: .normal)
-        self.answer2Button.setTitle("$161 Million Bond", for: .normal)
-        self.answer3Button.setTitle("Other Thoughts", for: .normal)
         self.answer1Button.titleLabel?.font = UIFont.buttonFont
         self.answer2Button.titleLabel?.font = UIFont.buttonFont
         self.answer3Button.titleLabel?.font = UIFont.buttonFont
