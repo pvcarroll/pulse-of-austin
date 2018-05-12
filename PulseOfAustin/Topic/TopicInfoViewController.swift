@@ -99,9 +99,10 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Weigh In
+    // MARK: Weigh In Flow
     //
     
+    // Weigh In Screen 1
     private func loadWeighInSelect() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
@@ -123,6 +124,7 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
+    // Weigh In Screen 2
     private func loadWeighInElaborate(answerText: String) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
@@ -145,6 +147,7 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
+    // Weigh In Screen 3
     private func loadWeighInResults() {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
@@ -167,9 +170,10 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Learn
+    // MARK: Learn Flow
     //
     
+    // Learn Screen 1
     private func loadLearnView() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
@@ -181,6 +185,8 @@ class TopicInfoViewController: UIViewController {
             self.cardContentView.addSubview(cardContent)
         }
     }
+    
+    // MARK: Private Methods
     
     private func buildBottomSheetList() -> NSAttributedString {
         let listItems = [

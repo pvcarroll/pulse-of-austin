@@ -18,6 +18,9 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.addGestureRecognizer(tapGestureRecognizer)
+        
         // TODO: dynamic titles
         self.cardTitle.text = "SELECT CHOICE"
         self.cardTitle.font = UIFont.cardTitle
@@ -42,12 +45,27 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     }
     
     //
-    // MARK: UITextViewDelegate
+    // MARK: Private methods
+    //
+    
+    @objc private func dismissKeyboard() {
+        self.weighInTextView.endEditing(true)
+    }
+    
+    //
+    // MARK:- UITextViewDelegate
     //
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.weighInTextView.text = nil
         self.weighInTextView.textColor = UIColor.customDarkText
-        self.submitButton.isUserInteractionEnabled = true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 0 {
+            self.submitButton.isUserInteractionEnabled = true
+        } else {
+            self.submitButton.isUserInteractionEnabled = false
+        }
     }
 }
