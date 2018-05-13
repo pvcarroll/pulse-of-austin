@@ -30,7 +30,6 @@ class TopicIntroViewController: UIViewController {
     @IBOutlet var bottomSheetBodyText: UILabel!
     
     var selectedTopicKey: Int?
-    var topicInfoData: [TopicIntroData]?
     
     @IBAction func learnMoreTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "toTopicInfo", sender: self)
@@ -43,30 +42,27 @@ class TopicIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.topicInfoData = [TopicIntroData(topicTitle: "Dockless Bikeshare",
-                                         cardTitle: "PILOT KICKOFF",
-                                         cardBodyText: self.buildBodyText(),
-                                         promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?")]
+        let topicInfoData = TopicData.topics[self.selectedTopicKey!]?.topicIntroData
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = "Explore"
         self.navigationItem.titleView = UIView()
         
         self.contentView.backgroundColor = UIColor.infoCardBackground
-        self.topicIntroScreenTitle.text = self.topicInfoData?[0].topicTitle
+        self.topicIntroScreenTitle.text = topicInfoData?.topicTitle
         self.topicIntroScreenTitle.font = UIFont.screenTitle
         self.topicIntroScreenTitle.textColor = UIColor.customDarkText
-        self.topicIntroCardTitle.text = self.topicInfoData?[0].cardTitle
+        self.topicIntroCardTitle.text = topicInfoData?.cardTitle
         self.topicIntroCardTitle.font = UIFont.cardTitle
         self.topicIntroCardTitle.textColor = UIColor.darkGray
         
-        self.topicIntroBodyText.attributedText = buildBodyText()
+        self.topicIntroBodyText.attributedText = TopicData.topics[self.selectedTopicKey!]?.topicIntroData.cardBodyText
         self.topicIntroBodyText.textColor = UIColor.customDarkText
         if self.view.frame.width <= 321.0 {
             self.topicIntroBodyTextHeightConstraint.constant = 118
         }
         
-        self.topicIntroPrompt.text = self.topicInfoData?[0].promptText
+        self.topicIntroPrompt.text = topicInfoData?.promptText
         self.topicIntroPrompt.font = UIFont.cardTitle
         self.topicIntroPrompt.textColor = UIColor.customDarkText
         
@@ -111,23 +107,6 @@ class TopicIntroViewController: UIViewController {
     //
     // MARK:- Private Methods
     //
-    
-    private func buildBodyText() -> NSMutableAttributedString {
-        let paragraph1Text = "The City has kicked off a pilot program for new dockless bike and electric scooter services.\n"
-        let paragraph1Attributes = [NSAttributedStringKey.font: UIFont.introCardBody]
-        let paragraph1 = NSMutableAttributedString(string: paragraph1Text, attributes: paragraph1Attributes)
-        let paragraph2Part1Attrs = [NSAttributedStringKey.font: UIFont.introCardBody]
-        let paragraph2Part1 = NSAttributedString(string: "They plan to ", attributes: paragraph2Part1Attrs)
-        let paragraph2Part2 = NSAttributedString(string: "privatize ", attributes: [NSAttributedStringKey.font: UIFont.introCardBodyBold])
-        let paragraph2Part3Text = "these dockless operations, rather than adding on to the city's public B-cycle service."
-        let paragraph2Part3 = NSAttributedString(string: paragraph2Part3Text, attributes: [NSAttributedStringKey.font: UIFont.introCardBody])
-        let paragraph2 = NSMutableAttributedString(attributedString: paragraph2Part1)
-        paragraph2.append(paragraph2Part2)
-        paragraph2.append(paragraph2Part3)
-        let bodyText = NSMutableAttributedString(attributedString: paragraph1)
-        bodyText.append(paragraph2)
-        return bodyText
-    }
     
     // "The Basics"
     private func buildBottomSheetList() -> NSAttributedString {
@@ -179,11 +158,4 @@ class TopicIntroViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as? TopicInfoViewController)?.selectedTopicKey = self.selectedTopicKey
     }
-}
-
-struct TopicIntroData {
-    let topicTitle: String
-    let cardTitle: String
-    let cardBodyText: NSAttributedString
-    let promptText: String
 }

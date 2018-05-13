@@ -20,10 +20,6 @@ TopicInfoText(title: "WEIGH IN",
 TopicInfoText(title: "WEIGH IN", body: "")
 ]
 
-fileprivate let weighInSelectData: [WeighInSelectText] = [
-    WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other"])
-]
-
 class TopicInfoViewController: UIViewController {
     
     @IBOutlet var contentView: UIView!
@@ -43,6 +39,7 @@ class TopicInfoViewController: UIViewController {
     
     var selectedTopicKey: Int?
     private var cardIndex = 0
+    private var weighInText: WeighInSelectText?
     
     @IBAction func learnButtonTapped(_ sender: Any) {
         self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
@@ -61,10 +58,11 @@ class TopicInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.weighInText = TopicData.topics[self.selectedTopicKey!]?.weighIn
         self.contentView.backgroundColor = UIColor.infoCardBackground
         
         // HEADER
-        self.topicInfoScreenTitle.text = "Affordability Bond"
+        self.topicInfoScreenTitle.text = TopicData.topics[self.selectedTopicKey!]?.topicInfoTitle
         self.topicInfoScreenTitle.font = UIFont.screenTitle
         self.topicInfoScreenTitle.textColor = UIColor.customDarkText
         
@@ -112,9 +110,9 @@ class TopicInfoViewController: UIViewController {
             
             weighInSelectView.frame = self.cardContentView.bounds
             
-            weighInSelectView.answer1Button.setTitle(weighInSelectData[0].choices[0], for: .normal)
-            weighInSelectView.answer2Button.setTitle(weighInSelectData[0].choices[1], for: .normal)
-            weighInSelectView.answer3Button.setTitle(weighInSelectData[0].choices[2], for: .normal)
+            weighInSelectView.answer1Button.setTitle(self.weighInText?.choices[0], for: .normal)
+            weighInSelectView.answer2Button.setTitle(self.weighInText?.choices[1], for: .normal)
+            weighInSelectView.answer3Button.setTitle(self.weighInText?.choices[2], for: .normal)
             
             let answer1SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer1Selected(recognizer:)))
             let answer2SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer2Selected(recognizer:)))
@@ -140,7 +138,6 @@ class TopicInfoViewController: UIViewController {
             } else {
                 cardTitleText += " (OPTIONAL)"
             }
-            // TODO: Dynamic title
             elaborateView.cardTitle.text = cardTitleText
             elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
             let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitTapped(recognizer:)))
@@ -160,10 +157,14 @@ class TopicInfoViewController: UIViewController {
             // TODO: Hide 4th response view if only 3 responses
             resultsView.response4View.isHidden = true
             
-            // TODO: Dynamic responses text
-            resultsView.response1Label.text = weighInSelectData[0].choices[0]
-            resultsView.response2Label.text = weighInSelectData[0].choices[1]
-            resultsView.response3Label.text = weighInSelectData[0].choices[2]
+            resultsView.response1Label.text = self.weighInText?.choices[0]
+            resultsView.response2Label.text = self.weighInText?.choices[1]
+            if (self.weighInText?.choices.count)! > 3 {
+                resultsView.response3Label.text = self.weighInText?.choices[2]
+                resultsView.response4Label.text = "Other"
+            } else {
+                resultsView.response3Label.text = "Other"
+            }
             
             // TODO: response widths based on count
             
@@ -262,15 +263,4 @@ class TopicInfoViewController: UIViewController {
             self.continueView.isHidden = false
         }
     }
-}
-
-// MARK:- Learn Flow Data Model
-struct TopicInfoText {
-    let title: String
-    let body: String
-}
-
-// MARK:- Weigh In Flow Data Model
-struct WeighInSelectText {
-    let choices: [String]
 }
