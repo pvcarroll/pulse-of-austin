@@ -9,9 +9,7 @@
 import UIKit
 
 class TopicIntroViewController: UIViewController {
-    
-    var topicInfoData: [TopicIntroData]?
-    
+        
     @IBOutlet var contentView: UIView!
     @IBOutlet var topicIntroScreenTitle: UILabel!
     @IBOutlet var infoCard: UIView!
@@ -31,12 +29,15 @@ class TopicIntroViewController: UIViewController {
     @IBOutlet var bottomSheetSeparator: UIView!
     @IBOutlet var bottomSheetBodyText: UILabel!
     
+    var selectedTopicKey: Int?
+    var topicInfoData: [TopicIntroData]?
+    
     @IBAction func learnMoreTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "toTopicInfo", sender: self)
     }
     
     //
-    // MARK: Lifecycle Methods
+    // MARK:- Lifecycle Methods
     //
     
     override func viewDidLoad() {
@@ -108,7 +109,7 @@ class TopicIntroViewController: UIViewController {
     }
     
     //
-    // MARK: Private Methods
+    // MARK:- Private Methods
     //
     
     private func buildBodyText() -> NSMutableAttributedString {
@@ -159,7 +160,7 @@ class TopicIntroViewController: UIViewController {
     }
     
     //
-    // MARK: Gesture Handler
+    // MARK:- Gesture Handler
     //
     
     @objc func bottomSheetHandleTapped(recognizer: UITapGestureRecognizer) {
@@ -170,6 +171,13 @@ class TopicIntroViewController: UIViewController {
             self.bottomSheetExpanded.isHidden = true
             self.bottomSheetHandleViewBottomConstraint.constant =  0
         }
+    }
+    
+    //
+    // MARK:- Prepare for Segue
+    //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? TopicInfoViewController)?.selectedTopicKey = self.selectedTopicKey
     }
 }
 

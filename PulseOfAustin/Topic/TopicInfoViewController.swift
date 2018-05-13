@@ -41,6 +41,7 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextScreenLabel: UILabel!
     
+    var selectedTopicKey: Int?
     private var cardIndex = 0
     
     @IBAction func learnButtonTapped(_ sender: Any) {

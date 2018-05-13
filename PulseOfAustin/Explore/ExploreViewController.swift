@@ -14,6 +14,8 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var latestLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
+    var selectedTopicKey = -1
+    
     //
     // MARK: Lifecycle Methods
     //
@@ -64,7 +66,14 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedTopicKey = indexPath.row
         self.performSegue(withIdentifier: "toTopicIntro", sender: self)
+    }
+    
+    // MARK:- Prepare for Segue
+    
+    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? TopicIntroViewController)?.selectedTopicKey = self.selectedTopicKey
     }
 }
 
