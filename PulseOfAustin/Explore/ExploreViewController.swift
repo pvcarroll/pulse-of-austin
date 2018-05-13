@@ -9,12 +9,6 @@
 import UIKit
 
 class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let topics = [
-        Topic(title: "DOCKLESS BIKESHARE", description: "What privatized operations mean for your data"),
-        Topic(title: "AFFORDABLE HOUSING BOND", description: "$161M vs. $300M: Council yet to decide"),
-        Topic(title: "HOLLY POWER PLANT", description: "City seeking input on park transformation"),
-        Topic(title: "STRATEGIC MOBILITY PLAN", description: "Prioritize roads, public transit, or a balance?")
-    ]
     
     @IBOutlet var exploreScreenTitle: UILabel!
     @IBOutlet var latestLabel: UILabel!
@@ -47,7 +41,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     //
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topics.count
+        return TopicData.topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,9 +49,9 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let topicCell = cell else { return UITableViewCell() }
 //            topicCell.textLabel?.text = topics[indexPath.row].title
 //            topicCell.detailTextLabel?.text = topics[indexPath.row].description
-        topicCell.titleLabel.text = topics[indexPath.row].title
+        topicCell.titleLabel.text = TopicData.topics[indexPath.row]?.title
         topicCell.titleLabel.font = UIFont.cardTitle
-        topicCell.descriptionLabel.text = topics[indexPath.row].description
+        topicCell.descriptionLabel.text = TopicData.topics[indexPath.row]?.description
         return topicCell
     }
     
@@ -74,7 +68,4 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 }
 
-struct Topic {
-    var title: String
-    var description: String
-}
+

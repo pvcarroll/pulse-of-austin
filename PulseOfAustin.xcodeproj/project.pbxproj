@@ -32,6 +32,7 @@
 		75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */; };
 		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
 		75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD07E209F4F93008AD469 /* WeighInResults.swift */; };
+		75BCD08220A7B741008AD469 /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD08120A7B741008AD469 /* TopicData.swift */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInElaborate.xib; sourceTree = "<group>"; };
 		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
 		75BCD07E209F4F93008AD469 /* WeighInResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInResults.swift; sourceTree = "<group>"; };
+		75BCD08120A7B741008AD469 /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 		752EF733207C571E0046743A /* PulseOfAustin */ = {
 			isa = PBXGroup;
 			children = (
+				75BCD08020A7B6C6008AD469 /* Data */,
 				755C7BA32082818B00554399 /* Extensions */,
 				755C7B9E20824BCF00554399 /* Explore */,
 				755C7BAE2088C5EA00554399 /* Topic */,
@@ -248,6 +251,14 @@
 				75BCD07E209F4F93008AD469 /* WeighInResults.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		75BCD08020A7B6C6008AD469 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				75BCD08120A7B741008AD469 /* TopicData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +499,7 @@
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
+				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
