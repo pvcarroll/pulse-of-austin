@@ -8,17 +8,17 @@
 
 import UIKit
 
-fileprivate let topicInfoMessages: [TopicInfoText] = [
-TopicInfoText(title: "TRANSPARENCY",
-              body: "Data from dockless bikes could help the city prioritize bike infastructure, but a lot of dockless bike companies will not make this data open."),
-TopicInfoText(title: "HONESTY",
-              body: "Ofo, 1 of 10 companies Austin is considering, even reported false data in Aurora, CO, claiming 2.5 daily rides per bike, when they were really clocking 0.18 daily rides."),
-TopicInfoText(title: "PRIVACY",
-              body: "Some dockless bike companies track users even when they are not using the bikes, reserving the right to sell that data to third parties."),
-TopicInfoText(title: "WEIGH IN",
-              body: "What is essential for Austin to consider in its bikeshare data policy?"),
-TopicInfoText(title: "WEIGH IN", body: "")
-]
+//fileprivate let topicInfoMessages: [TopicInfoText] = [
+//TopicInfoText(title: "TRANSPARENCY",
+//              body: "Data from dockless bikes could help the city prioritize bike infastructure, but a lot of dockless bike companies will not make this data open."),
+//TopicInfoText(title: "HONESTY",
+//              body: "Ofo, 1 of 10 companies Austin is considering, even reported false data in Aurora, CO, claiming 2.5 daily rides per bike, when they were really clocking 0.18 daily rides."),
+//TopicInfoText(title: "PRIVACY",
+//              body: "Some dockless bike companies track users even when they are not using the bikes, reserving the right to sell that data to third parties."),
+//TopicInfoText(title: "WEIGH IN",
+//              body: "What is essential for Austin to consider in its bikeshare data policy?"),
+//TopicInfoText(title: "WEIGH IN", body: "")
+//]
 
 class TopicInfoViewController: UIViewController {
     
@@ -79,10 +79,10 @@ class TopicInfoViewController: UIViewController {
         self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
         
         // Dynamic card contents
-        self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
+//        self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
 
-        let continueGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(continueTapped(recognizer:)))
-        self.continueView.addGestureRecognizer(continueGestureRecognizer)
+//        let continueGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(continueTapped(recognizer:)))
+//        self.continueView.addGestureRecognizer(continueGestureRecognizer)
         
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
@@ -247,20 +247,20 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInResults()
     }
     
-    @objc func continueTapped(recognizer: UITapGestureRecognizer) {
-        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
-        self.pageControl.currentPage = self.cardIndex
-        let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
-        let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
-        if self.cardIndex < topicInfoMessages.count - 1 {
-            self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
-        }
-        if isWeighInCard1 {
-            self.continueView.isHidden = true
-        } else if isWeighInCard2 {
-            self.continueView.isHidden = true
-        } else {
-            self.continueView.isHidden = false
-        }
-    }
+//    @objc func continueTapped(recognizer: UITapGestureRecognizer) {
+//        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
+//        self.pageControl.currentPage = self.cardIndex
+//        let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
+//        let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
+//        if self.cardIndex < topicInfoMessages.count - 1 {
+//            self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
+//        }
+//        if isWeighInCard1 {
+//            self.continueView.isHidden = true
+//        } else if isWeighInCard2 {
+//            self.continueView.isHidden = true
+//        } else {
+//            self.continueView.isHidden = false
+//        }
+//    }
 }

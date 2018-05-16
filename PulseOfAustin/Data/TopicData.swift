@@ -79,8 +79,12 @@ struct TopicIntroData {
 
 // MARK:- Learn Flow Data Model
 struct TopicInfoText {
-    let title: String
-    let body: String
+    let overviewP1: String
+    let overviewP2: String
+    let overviewP3: String
+    let infoScreen2Title: String
+    let infoScreen2Body: String
+    let onTheBallotBody: String
 }
 
 // MARK:- Weigh In Flow Data Model

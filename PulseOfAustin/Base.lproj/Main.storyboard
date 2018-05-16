@@ -111,9 +111,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vMb-0P-jJM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Beats" image="TabBar-Beats" id="DIZ-Pe-EUg">
-                        <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Beats" image="TabBar-Beats" id="DIZ-Pe-EUg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Q3-uO-Xxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -648,9 +646,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VVn-uW-MvP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Name" image="TabBar-Profile" id="qBC-Pq-48j">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Name" image="TabBar-Profile" id="qBC-Pq-48j"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0l-ZI-TAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -683,7 +679,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cv5-VI-9Uz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="TabBar-Explore" id="mbs-5u-MGI">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="2"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -710,9 +705,9 @@
         <image name="HomeScreenStyle" width="750" height="1334"/>
         <image name="InfoCardCornerStyle" width="228" height="380"/>
         <image name="PulseLineIcon" width="332" height="96"/>
-        <image name="TabBar-Beats" width="40" height="40"/>
-        <image name="TabBar-Explore" width="40" height="40"/>
-        <image name="TabBar-Profile" width="30" height="40"/>
+        <image name="TabBar-Beats" width="30" height="30"/>
+        <image name="TabBar-Explore" width="30" height="30"/>
+        <image name="TabBar-Profile" width="22" height="30"/>
         <image name="gearIcon" width="128" height="128"/>
     </resources>
 </document>
