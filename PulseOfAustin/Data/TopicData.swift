@@ -10,7 +10,8 @@ import UIKit
 
 enum TopicData {
     static let topics: [Int: Topic] = [
-        0: Topic(title: "DOCKLESS BIKESHARE",
+        0: Topic(topicKey: "docklessBikeshare",
+                 title: "DOCKLESS BIKESHARE",
                  description: "What privatized operations mean for your data",
                  topicIntroData: TopicIntroData(topicTitle: "Dockless Bikeshare",
                                                 cardTitle: "PILOT KICKOFF",
@@ -18,7 +19,8 @@ enum TopicData {
                                                 promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"),
                  topicInfoTitle: "Dockless Bikeshare",
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
-        1: Topic(title: "AFFORDABLE HOUSING BOND",
+        1: Topic(topicKey: "affordableHousingBond",
+                 title: "AFFORDABLE HOUSING BOND",
                  description: "$161M vs. $300M: Council yet to decide",
                  topicIntroData: TopicIntroData(topicTitle: "Affordable Housing",
                                                 cardTitle: "",
@@ -26,7 +28,8 @@ enum TopicData {
                                                 promptText: ""),
                  topicInfoTitle: "Affordable Housing Bond",
                  weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"])),
-        2: Topic(title: "HOLLY POWER PLANT",
+        2: Topic(topicKey: "hollyPowerPlant",
+                 title: "HOLLY POWER PLANT",
                  description: "City seeking input on park transformation",
                  topicIntroData: TopicIntroData(topicTitle: "Holly Power Plant",
                                                 cardTitle: "",
@@ -34,7 +37,8 @@ enum TopicData {
                                                 promptText: ""),
                  topicInfoTitle: "Holly Power Plant",
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
-        3: Topic(title: "STRATEGIC MOBILITY PLAN",
+        3: Topic(topicKey: "strategicMobilityPlan",
+                 title: "STRATEGIC MOBILITY PLAN",
                  description: "Prioritize roads, public transit, or a balance?",
                  topicIntroData: TopicIntroData(topicTitle: "Strategic Mobility Plan",
                                                 cardTitle: "",
@@ -63,6 +67,7 @@ enum TopicData {
 }
 
 struct Topic {
+    var topicKey: String
     var title: String
     var description: String
     var topicIntroData: TopicIntroData

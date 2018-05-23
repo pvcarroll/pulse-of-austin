@@ -8,6 +8,7 @@ target 'PulseOfAustin' do
   # Pods for PulseOfAustin
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Database'
 
   target 'PulseOfAustinTests' do
     inherit! :search_paths

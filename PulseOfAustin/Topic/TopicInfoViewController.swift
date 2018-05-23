@@ -20,6 +20,26 @@ import UIKit
 //TopicInfoText(title: "WEIGH IN", body: "")
 //]
 
+enum AnswerIndex {
+    case answerChoice1
+    case answerChoice2
+    case answerChoice3
+    case answerChoice4
+    
+    func elaborateKey() -> String {
+        switch self {
+        case .answerChoice1:
+            return "elaborate1"
+        case .answerChoice2:
+            return "elaborate2"
+        case .answerChoice3:
+            return "elaborate3"
+        case .answerChoice4:
+            return "elaborate4"
+        }
+    }
+}
+
 class TopicInfoViewController: UIViewController {
     
     @IBOutlet var contentView: UIView!
@@ -39,6 +59,7 @@ class TopicInfoViewController: UIViewController {
     
     var selectedTopicKey: Int?
     private var cardIndex = 0
+    private var selectedAnswer: AnswerIndex?
     private var weighInText: WeighInSelectText?
     
     @IBAction func learnButtonTapped(_ sender: Any) {
@@ -231,22 +252,43 @@ class TopicInfoViewController: UIViewController {
     //
     
     @objc func answer1Selected(recognizer: UITapGestureRecognizer) {
+        self.selectedAnswer = .answerChoice1
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer2Selected(recognizer: UITapGestureRecognizer) {
+        self.selectedAnswer = .answerChoice2
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func answer3Selected(recognizer: UITapGestureRecognizer) {
+        self.selectedAnswer = .answerChoice3
         let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func submitTapped(recognizer: UITapGestureRecognizer) {
-        // TODO: Save response
+        
+        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
+           let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey,
+           let answer = self.selectedAnswer {
+            
+            let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
+            let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
+            
+            dbRef.child(responsesPath).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? NSInteger {
+                    dbRef.child(responsesPath).setValue(value + 1)
+                } else {
+                    dbRef.child(responsesPath).setValue(1)
+                }
+                // TODO: save elaborate text
+                dbRef.child(elaboratePath).childByAutoId().setValue("bullshit")
+            })
+        }
         self.loadWeighInResults()
     }
     
+    // LEARN FLOW
 //    @objc func continueTapped(recognizer: UITapGestureRecognizer) {
 //        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
 //        self.pageControl.currentPage = self.cardIndex
