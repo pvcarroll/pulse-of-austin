@@ -61,6 +61,7 @@ class TopicInfoViewController: UIViewController {
     private var cardIndex = 0
     private var selectedAnswer: AnswerIndex?
     private var weighInText: WeighInSelectText?
+    private var elaborateView: WeighInElaborate?
     
     @IBAction func learnButtonTapped(_ sender: Any) {
         self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
@@ -151,6 +152,7 @@ class TopicInfoViewController: UIViewController {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
+            self.elaborateView = elaborateView
             elaborateView.frame = self.cardContentView.bounds
             var cardTitleText = "ELABORATE"
             // TODO: Dynamic "other" text
@@ -282,7 +284,10 @@ class TopicInfoViewController: UIViewController {
                     dbRef.child(responsesPath).setValue(1)
                 }
                 // TODO: save elaborate text
-                dbRef.child(elaboratePath).childByAutoId().setValue("bullshit")
+                let elaborateResponse = self.elaborateView?.response
+                if !(elaborateResponse ?? "").isEmpty {
+                    dbRef.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
+                }
             })
         }
         self.loadWeighInResults()

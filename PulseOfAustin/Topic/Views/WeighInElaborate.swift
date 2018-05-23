@@ -15,6 +15,8 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     @IBOutlet var weighInTextView: UITextView!
     @IBOutlet var submitButton: UIButton!
     
+    var response = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -61,6 +63,7 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.count > 0 {
+            self.response = textView.text
             self.submitButton.isUserInteractionEnabled = true
         } else {
             self.submitButton.isUserInteractionEnabled = false
