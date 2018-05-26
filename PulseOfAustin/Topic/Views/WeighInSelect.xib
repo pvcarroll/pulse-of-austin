@@ -30,7 +30,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="iN2-iM-lTc"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="answer1ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="n91-He-rpB"/>
                             </connections>
@@ -40,7 +39,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XLB-G9-4o8"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="answer2ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Fr-s5-0iX"/>
                             </connections>
@@ -50,7 +48,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FJ1-lf-8sO"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="answer3ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="14j-g6-fw2"/>
                             </connections>
