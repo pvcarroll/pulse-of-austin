@@ -23,10 +23,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-se-LFp" userLabel="Answer Buttons Stack View">
-                    <rect key="frame" x="20" y="60.5" width="335" height="536.5"/>
+                    <rect key="frame" x="20" y="203.5" width="335" height="220"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPQ-Ma-tKJ" userLabel="Answer1Button">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="165.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="iN2-iM-lTc"/>
                             </constraints>
@@ -35,7 +35,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-Pa-S7F" userLabel="Answer2Button">
-                            <rect key="frame" x="0.0" y="185.5" width="335" height="165.5"/>
+                            <rect key="frame" x="0.0" y="80" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XLB-G9-4o8"/>
                             </constraints>
@@ -44,7 +44,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-eg-IJg" userLabel="Answer3Button">
-                            <rect key="frame" x="0.0" y="371" width="335" height="165.5"/>
+                            <rect key="frame" x="0.0" y="160" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FJ1-lf-8sO"/>
                             </constraints>
@@ -53,15 +53,17 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="1no-yy-umX"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="BQo-4b-iDj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2GP-Bx-TSg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A6l-se-LFp" secondAttribute="trailing" constant="20" id="7Pq-X7-Ny5"/>
+                <constraint firstItem="A6l-se-LFp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D2w-hA-iIF"/>
                 <constraint firstItem="A6l-se-LFp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="GqN-j7-RkY"/>
-                <constraint firstAttribute="bottom" secondItem="A6l-se-LFp" secondAttribute="bottom" constant="30" id="H9m-X2-yya"/>
-                <constraint firstItem="A6l-se-LFp" firstAttribute="top" secondItem="BQo-4b-iDj" secondAttribute="bottom" constant="20" id="KLW-VF-JrM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BQo-4b-iDj" secondAttribute="trailing" id="bNc-Lz-h5l"/>
                 <constraint firstItem="BQo-4b-iDj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fDE-vX-064"/>
             </constraints>

@@ -40,7 +40,8 @@
                     <state key="normal" title="Submit Button"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-VE-jVa" userLabel="Selected Answer Button">
-                    <rect key="frame" x="60" y="60.5" width="200" height="60"/>
+                    <rect key="frame" x="20" y="60.5" width="280" height="60"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="gEb-b2-Uax"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="srI-Cc-uaf"/>
@@ -54,11 +55,13 @@
                 <constraint firstAttribute="trailing" secondItem="kOX-8G-e30" secondAttribute="trailing" id="HR9-qi-gxR"/>
                 <constraint firstItem="saG-u3-Ehb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ix9-1s-xJw"/>
                 <constraint firstItem="c0F-J6-PVT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PP6-57-181"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VHz-VE-jVa" secondAttribute="trailing" constant="20" id="VSa-Ax-ed6"/>
                 <constraint firstItem="VHz-VE-jVa" firstAttribute="top" secondItem="kOX-8G-e30" secondAttribute="bottom" constant="20" id="cfA-yI-uxb"/>
                 <constraint firstItem="VHz-VE-jVa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="duW-kj-KVO"/>
                 <constraint firstItem="saG-u3-Ehb" firstAttribute="top" secondItem="c0F-J6-PVT" secondAttribute="bottom" constant="20" id="lDC-v3-Xnl"/>
                 <constraint firstItem="kOX-8G-e30" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFL-nG-lSl"/>
                 <constraint firstItem="kOX-8G-e30" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rbk-bM-COL"/>
+                <constraint firstItem="VHz-VE-jVa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="v5W-29-GYc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
