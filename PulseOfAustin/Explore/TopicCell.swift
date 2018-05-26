@@ -10,10 +10,13 @@ import UIKit
 
 class TopicCell: UITableViewCell {
     
+    @IBOutlet weak var topicCellBackgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        self.topicCellBackgroundView.addBottomShadow()
         self.titleLabel.textColor = UIColor.customDarkText
         self.descriptionLabel.textColor = UIColor.customDarkText
     }

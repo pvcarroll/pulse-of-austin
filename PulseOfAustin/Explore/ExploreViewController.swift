@@ -49,8 +49,6 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as? TopicCell
         guard let topicCell = cell else { return UITableViewCell() }
-//            topicCell.textLabel?.text = topics[indexPath.row].title
-//            topicCell.detailTextLabel?.text = topics[indexPath.row].description
         topicCell.titleLabel.text = TopicData.topics[indexPath.row]?.title
         topicCell.titleLabel.font = UIFont.cardTitle
         topicCell.descriptionLabel.text = TopicData.topics[indexPath.row]?.description
