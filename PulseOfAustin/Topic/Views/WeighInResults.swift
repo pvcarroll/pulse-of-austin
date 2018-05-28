@@ -13,15 +13,20 @@ class WeighInResults: UIView {
     @IBOutlet var yourInputWasSentView: UIView!
     @IBOutlet var yourInputWasSentLabel: UILabel!
     @IBOutlet var cardTitle: UILabel!
+    @IBOutlet weak var response1View: UIView!
     @IBOutlet var response1Tallies: UIView!
     @IBOutlet var response1Label: UILabel!
+    @IBOutlet weak var response1Count: UILabel!
     @IBOutlet var response2Tallies: UIView!
     @IBOutlet var response2Label: UILabel!
+    @IBOutlet weak var response2Count: UILabel!
     @IBOutlet var response3Tallies: UIView!
     @IBOutlet var response3Label: UILabel!
+    @IBOutlet weak var response3Count: UILabel!
     @IBOutlet var response4View: UIView!
     @IBOutlet var response4Tallies: UIView!
     @IBOutlet var response4Label: UILabel!
+    @IBOutlet weak var response4Count: UILabel!
     @IBOutlet var readVoicesButton: UIButton!
     
     override func awakeFromNib() {

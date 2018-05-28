@@ -189,9 +189,48 @@ class TopicInfoViewController: UIViewController {
                 resultsView.response3Label.text = "Other"
             }
             
-            // TODO: response widths based on count
-            
-            
+            // Set response bar lengths based on count
+            if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
+                let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey {
+                
+                let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
+                
+                dbRef.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
+                    guard let values = snapshot.value as? [String: Any] else {return}
+                    let answerChoice1 = values["answerChoice1"] as? Int
+                    let answerChoice2 = values["answerChoice2"] as? Int
+                    let answerChoice3 = values["answerChoice3"] as? Int
+                    let answerChoice4 = values["answerChoice4"] as? Int
+                    
+                    guard var maxCount = answerChoice1 else {return}
+                    for answerChoiceCount in [answerChoice1, answerChoice2, answerChoice3, answerChoice4] {
+                        if let count = answerChoiceCount, count > maxCount {
+                            maxCount = count
+                        }
+                    }
+                    
+                    // Set counts and bar lengths
+                    let maxWidth = resultsView.response1View.frame.width - resultsView.response1Count.frame.width
+                    
+                    let talliesBarHeight = resultsView.response1Tallies.frame.size.height
+                    if let count1 = answerChoice1 {
+                        resultsView.response1Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count1) / CGFloat(maxCount), height: talliesBarHeight)
+                        resultsView.response1Count.text = String(count1)
+                    }
+                    if let count2 = answerChoice2 {
+                        resultsView.response2Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count2) / CGFloat(maxCount), height: talliesBarHeight)
+                        resultsView.response2Count.text = String(count2)
+                    }
+                    if let count3 = answerChoice3 {
+                        resultsView.response3Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count3) / CGFloat(maxCount), height: talliesBarHeight)
+                        resultsView.response3Count.text = String(count3)
+                    }
+                    if let count4 = answerChoice4 {
+                        resultsView.response4Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count4) / CGFloat(maxCount), height: talliesBarHeight)
+                        resultsView.response4Count.text = String(count4)
+                    }
+                })
+            }
             self.updateCardContents(newView: resultsView)
         }
     }
