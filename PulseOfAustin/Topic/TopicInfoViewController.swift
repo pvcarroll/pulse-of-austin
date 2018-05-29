@@ -163,11 +163,16 @@ class TopicInfoViewController: UIViewController {
             }
             elaborateView.cardTitle.text = cardTitleText
             elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
+            elaborateView.selectedAnswerButton.addTarget(self, action: #selector(self.selectedAnswerButtonTapped), for: .touchUpInside)
             let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitTapped(recognizer:)))
             elaborateView.submitButton.addGestureRecognizer(submitGestureRecognizer)
             
             self.updateCardContents(newView: elaborateView)
         }
+    }
+    
+    @objc private func selectedAnswerButtonTapped() {
+        self.loadWeighInSelect()
     }
     
     // Weigh In Screen 3
