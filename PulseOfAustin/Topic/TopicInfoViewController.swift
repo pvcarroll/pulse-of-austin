@@ -136,13 +136,10 @@ class TopicInfoViewController: UIViewController {
             weighInSelectView.answer2Button.setTitle(self.weighInText?.choices[1], for: .normal)
             weighInSelectView.answer3Button.setTitle(self.weighInText?.choices[2], for: .normal)
             
-            let answer1SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer1Selected(recognizer:)))
-            let answer2SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer2Selected(recognizer:)))
-            let answer3SelectedGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(answer3Selected(recognizer:)))
+            weighInSelectView.answer1Button.addTarget(self, action: #selector(self.answer1Selected), for: .touchUpInside)
+            weighInSelectView.answer2Button.addTarget(self, action: #selector(self.answer2Selected), for: .touchUpInside)
+            weighInSelectView.answer3Button.addTarget(self, action: #selector(self.answer3Selected), for: .touchUpInside)
             
-            weighInSelectView.answer1Button.addGestureRecognizer(answer1SelectedGestureRecognizer)
-            weighInSelectView.answer2Button.addGestureRecognizer(answer2SelectedGestureRecognizer)
-            weighInSelectView.answer3Button.addGestureRecognizer(answer3SelectedGestureRecognizer)
             self.updateCardContents(newView: weighInSelectView)
         }
     }
@@ -297,19 +294,19 @@ class TopicInfoViewController: UIViewController {
     // MARK: Event Handlers
     //
     
-    @objc func answer1Selected(recognizer: UITapGestureRecognizer) {
+    @objc func answer1Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice1
-        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        let answerText = sender.titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
-    @objc func answer2Selected(recognizer: UITapGestureRecognizer) {
+    @objc func answer2Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice2
-        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        let answerText = sender.titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
-    @objc func answer3Selected(recognizer: UITapGestureRecognizer) {
+    @objc func answer3Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice3
-        let answerText = (recognizer.view as! UIButton).titleLabel?.text! ?? ""
+        let answerText = sender.titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func submitTapped(recognizer: UITapGestureRecognizer) {

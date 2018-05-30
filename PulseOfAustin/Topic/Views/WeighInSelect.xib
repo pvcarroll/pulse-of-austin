@@ -30,27 +30,18 @@
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="iN2-iM-lTc"/>
                             </constraints>
-                            <connections>
-                                <action selector="answer1ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="n91-He-rpB"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-Pa-S7F" userLabel="Answer2Button">
                             <rect key="frame" x="0.0" y="80" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XLB-G9-4o8"/>
                             </constraints>
-                            <connections>
-                                <action selector="answer2ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Fr-s5-0iX"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-eg-IJg" userLabel="Answer3Button">
                             <rect key="frame" x="0.0" y="160" width="335" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FJ1-lf-8sO"/>
                             </constraints>
-                            <connections>
-                                <action selector="answer3ButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="14j-g6-fw2"/>
-                            </connections>
                         </button>
                     </subviews>
                     <constraints>
