@@ -241,18 +241,22 @@ class TopicInfoViewController: UIViewController {
     // MARK: Learn Flow
     //
     
-    // Learn Screen 1
+    // Learn Screen 1: Landing
     private func loadLearnView() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
-        if let cardContent = UINib(nibName: "LearnView", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnView? {
-            self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
+        if let cardContent = UINib(nibName: "LearnLanding", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             cardContent.frame = self.cardContentView.bounds
-            self.cardContentView.addSubview(cardContent)
+            self.updateCardContents(newView: cardContent)
         }
     }
+    
+    // Learn Screen 2: Overview
+    // Learn Screen 3: Bond Breakdown
+    // Learn Screen 4: On the Ballot
+    // Learn Screen 5: Perspectives
     
     // MARK: Private Methods
     
