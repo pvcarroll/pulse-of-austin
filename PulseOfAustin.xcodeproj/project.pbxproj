@@ -28,6 +28,10 @@
 		757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */; };
 		757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FB920C4318C0018C560 /* BreakdownView.swift */; };
 		757C0FBC20C431AA0018C560 /* BreakdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FBB20C431AA0018C560 /* BreakdownView.xib */; };
+		757C0FBE20C44DFE0018C560 /* LearnPerspectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FBD20C44DFE0018C560 /* LearnPerspectives.swift */; };
+		757C0FC020C44E0F0018C560 /* LearnPerspectives.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FBF20C44E0F0018C560 /* LearnPerspectives.xib */; };
+		757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FC120C4500C0018C560 /* PerspectiveView.swift */; };
+		757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FC320C450320018C560 /* PerspectiveView.xib */; };
 		75B937502097451700221467 /* WeighInSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInSelect.xib */; };
 		75B937522097453500221467 /* WeighInSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInSelect.swift */; };
 		75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD078209E62B8008AD469 /* WeighInElaborate.swift */; };
@@ -91,6 +95,10 @@
 		757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnBreakdown.xib; sourceTree = "<group>"; };
 		757C0FB920C4318C0018C560 /* BreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakdownView.swift; sourceTree = "<group>"; };
 		757C0FBB20C431AA0018C560 /* BreakdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakdownView.xib; sourceTree = "<group>"; };
+		757C0FBD20C44DFE0018C560 /* LearnPerspectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnPerspectives.swift; sourceTree = "<group>"; };
+		757C0FBF20C44E0F0018C560 /* LearnPerspectives.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnPerspectives.xib; sourceTree = "<group>"; };
+		757C0FC120C4500C0018C560 /* PerspectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveView.swift; sourceTree = "<group>"; };
+		757C0FC320C450320018C560 /* PerspectiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerspectiveView.xib; sourceTree = "<group>"; };
 		75B9374F2097451700221467 /* WeighInSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInSelect.xib; sourceTree = "<group>"; };
 		75B937512097453500221467 /* WeighInSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInSelect.swift; sourceTree = "<group>"; };
 		75BCD078209E62B8008AD469 /* WeighInElaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInElaborate.swift; sourceTree = "<group>"; };
@@ -170,6 +178,8 @@
 				75FE51BA20C38B5400ABE7FD /* LearnOverview.xib */,
 				757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */,
 				757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */,
+				757C0FBD20C44DFE0018C560 /* LearnPerspectives.swift */,
+				757C0FBF20C44E0F0018C560 /* LearnPerspectives.xib */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -270,6 +280,8 @@
 			children = (
 				757C0FB920C4318C0018C560 /* BreakdownView.swift */,
 				757C0FBB20C431AA0018C560 /* BreakdownView.xib */,
+				757C0FC120C4500C0018C560 /* PerspectiveView.swift */,
+				757C0FC320C450320018C560 /* PerspectiveView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,11 +427,13 @@
 				757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */,
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
 				757C0FBC20C431AA0018C560 /* BreakdownView.xib in Resources */,
+				757C0FC020C44E0F0018C560 /* LearnPerspectives.xib in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
 				75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */,
+				757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +542,7 @@
 				75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */,
 				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
+				757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
@@ -538,6 +553,7 @@
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
+				757C0FBE20C44DFE0018C560 /* LearnPerspectives.swift in Sources */,
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,

@@ -195,17 +195,18 @@ class TopicInfoViewController: UIViewController {
         }
         // On the Ballot Card
         if let learnOnTheBallotView = UINib(nibName: "LearnBreakdown", bundle: nil)
-            .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
+                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
             learnOnTheBallotView.frame = CGRect(x: self.cardContentView.bounds.width * 2,
-                                              y: 0,
-                                              width: self.cardContentView.bounds.width,
-                                              height: self.cardContentView.bounds.height)
+                                                y: 0,
+                                                width: self.cardContentView.bounds.width,
+                                                height: self.cardContentView.bounds.height)
             learnOnTheBallotView.breakdownTitle.text = learnText?.onTheBallotTitle
             if let onTheBallotAmountsText = learnText?.onTheBallotAmountsText,
-                let onTheBallotDescriptionsText = learnText?.onTheBallotDescriptionsText {
+               let onTheBallotDescriptionsText = learnText?.onTheBallotDescriptionsText {
+                
                 for i in 0..<onTheBallotAmountsText.count {
                     if let breakdownRow = UINib(nibName: "BreakdownView", bundle: nil)
-                        .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
+                            .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
                         breakdownRow.amountLabel.text = onTheBallotAmountsText[i]
                         breakdownRow.descriptionLabel.text = onTheBallotDescriptionsText[i]
                         breakdownRow.amountLabel.sizeToFit()
@@ -217,6 +218,28 @@ class TopicInfoViewController: UIViewController {
             }
             scrollView.addSubview(learnOnTheBallotView)
             scrollView.contentSize.width += learnOnTheBallotView.frame.width
+        }
+        // Perspectives Card
+        if let perspectivesView = UINib(nibName: "LearnPerspectives", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnPerspectives? {
+            perspectivesView.frame = CGRect(x: self.cardContentView.bounds.width * 3,
+                                            y: 0,
+                                            width: self.cardContentView.bounds.width,
+                                            height: self.cardContentView.bounds.height)
+            if let perspectivesTitles = learnText?.perspectivesTitles,
+               let perspectivesText = learnText?.perspectivesText {
+                
+                for i in 0..<perspectivesTitles.count {
+                    if let perspectiveView = UINib(nibName: "PerspectiveView", bundle: nil)
+                            .instantiate(withOwner: self, options: nil).first as! PerspectiveView? {
+                        perspectiveView.source.text = perspectivesTitles[i]
+                        perspectiveView.perspective.text = perspectivesText[i]
+                        perspectivesView.perspectivesStackView.addArrangedSubview(perspectiveView)
+                    }
+                }
+            }
+            scrollView.addSubview(perspectivesView)
+            scrollView.contentSize.width += perspectivesView.frame.width
         }
         
         self.updateCardContents(newView: scrollView)
