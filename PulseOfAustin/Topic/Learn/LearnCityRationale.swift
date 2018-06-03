@@ -1,5 +1,5 @@
 //
-//  LearnPerspectives.swift
+//  LearnCityRationale.swift
 //  PulseOfAustin
 //
 //  Created by Paul Carroll on 6/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LearnPerspectives: UIView {
+class LearnCityRationale: UIView {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var perspectivesStackView: UIStackView!

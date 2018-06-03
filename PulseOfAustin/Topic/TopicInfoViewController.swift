@@ -219,10 +219,10 @@ class TopicInfoViewController: UIViewController {
             scrollView.addSubview(learnOnTheBallotView)
             scrollView.contentSize.width += learnOnTheBallotView.frame.width
         }
-        // Perspectives Card
-        if let perspectivesView = UINib(nibName: "LearnPerspectives", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnPerspectives? {
-            perspectivesView.frame = CGRect(x: self.cardContentView.bounds.width * 3,
+        // City Rationale Card
+        if let cityRationaleView = UINib(nibName: "LearnCityRationale", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnCityRationale? {
+            cityRationaleView.frame = CGRect(x: self.cardContentView.bounds.width * 3,
                                             y: 0,
                                             width: self.cardContentView.bounds.width,
                                             height: self.cardContentView.bounds.height)
@@ -234,12 +234,12 @@ class TopicInfoViewController: UIViewController {
                             .instantiate(withOwner: self, options: nil).first as! PerspectiveView? {
                         perspectiveView.source.text = perspectivesTitles[i]
                         perspectiveView.perspective.text = perspectivesText[i]
-                        perspectivesView.perspectivesStackView.addArrangedSubview(perspectiveView)
+                        cityRationaleView.perspectivesStackView.addArrangedSubview(perspectiveView)
                     }
                 }
             }
-            scrollView.addSubview(perspectivesView)
-            scrollView.contentSize.width += perspectivesView.frame.width
+            scrollView.addSubview(cityRationaleView)
+            scrollView.contentSize.width += cityRationaleView.frame.width
         }
         
         self.updateCardContents(newView: scrollView)
