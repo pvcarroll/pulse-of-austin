@@ -629,6 +629,7 @@
                         <outlet property="cardContentView" destination="js0-fE-0k6" id="g47-rl-Oeq"/>
                         <outlet property="contentView" destination="Vpx-bx-i4u" id="AY6-eV-eyF"/>
                         <outlet property="continueView" destination="gur-lg-5BJ" id="tuo-al-fwt"/>
+                        <outlet property="headerView" destination="0oH-9A-iIf" id="AJo-4Y-yhi"/>
                         <outlet property="infoCard" destination="rMi-gQ-UrT" id="yUG-3L-xV2"/>
                         <outlet property="infoCardBackgroundImageHeight" destination="oO1-O9-pA5" id="dZB-0g-pvp"/>
                         <outlet property="infoCardBackgroundImageWidth" destination="tBF-aj-svl" id="6Nr-8v-Oo9"/>

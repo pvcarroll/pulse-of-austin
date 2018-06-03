@@ -11,6 +11,7 @@ import UIKit
 class LearnLanding: UIScrollView, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var topicsTableView: UITableView!
+    @IBOutlet weak var milestoneView: UIView!
     @IBOutlet weak var milestonesLabel: UILabel!
     @IBOutlet weak var crestImage1: UIImageView!
     @IBOutlet weak var crestImage2: UIImageView!
@@ -21,6 +22,7 @@ class LearnLanding: UIScrollView, UITableViewDelegate, UITableViewDataSource {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor.infoCardBackground
         self.topicsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.topicsTableView.tableFooterView = UITableView()
         self.topicsTableView.dataSource = self
@@ -34,9 +36,9 @@ class LearnLanding: UIScrollView, UITableViewDelegate, UITableViewDataSource {
         self.crestImage1.layer.cornerRadius = crestImageBackgroundCornerRadius
         self.crestImage2.layer.cornerRadius = crestImageBackgroundCornerRadius
         self.crestImage3.layer.cornerRadius = crestImageBackgroundCornerRadius
-        self.crestImage1.addBottomShadow()
-        self.crestImage2.addBottomShadow()
-        self.crestImage3.addBottomShadow()
+        self.crestImage1.addBottomShadow(shadowColor: UIColor.black, shadowRadius: 4)
+        self.crestImage2.addBottomShadow(shadowColor: UIColor.black, shadowRadius: 4)
+        self.crestImage3.addBottomShadow(shadowColor: UIColor.black, shadowRadius: 4)
         
         self.scopeLabel.backgroundColor = UIColor.customYellow
         self.draftLabel.backgroundColor = UIColor.customYellow
@@ -67,8 +69,9 @@ class LearnLanding: UIScrollView, UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case let row where row % 2 == 1:
             // Spacer cell
+            cell.isUserInteractionEnabled = false
             cell.textLabel?.text = ""
-            cell.layer.backgroundColor = UIColor.clear.cgColor
+            cell.contentView.backgroundColor = UIColor.infoCardBackground
         case 0:
             cell.textLabel?.text = "BOND BREAKDOWN AND POTENTIAL IMPACT"
         case 2:

@@ -16,12 +16,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yBi-fN-waG" userLabel="Topics Table View">
-                    <rect key="frame" x="0.0" y="20" width="375" height="367"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-pf-EkO" userLabel="Table View Container">
+                    <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yBi-fN-waG" userLabel="Topics Table View">
+                            <rect key="frame" x="15" y="15" width="345" height="170"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yBi-fN-waG" firstAttribute="leading" secondItem="SbG-pf-EkO" secondAttribute="leading" constant="15" id="21j-Zb-eQr"/>
+                        <constraint firstAttribute="bottom" secondItem="yBi-fN-waG" secondAttribute="bottom" constant="15" id="6pl-RJ-zYu"/>
+                        <constraint firstAttribute="height" constant="200" id="9hh-bl-B0Q"/>
+                        <constraint firstAttribute="trailing" secondItem="yBi-fN-waG" secondAttribute="trailing" constant="15" id="D5Y-GM-I6n"/>
+                        <constraint firstItem="yBi-fN-waG" firstAttribute="top" secondItem="SbG-pf-EkO" secondAttribute="top" constant="15" id="fDb-El-IUh"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gf5-mj-6bm" userLabel="Milestone View">
-                    <rect key="frame" x="0.0" y="387" width="375" height="280"/>
+                    <rect key="frame" x="0.0" y="220" width="375" height="280"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILESTONES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv4-YS-0Eb" userLabel="Milestones label">
                             <rect key="frame" x="10" y="10" width="345" height="20.5"/>
@@ -119,7 +132,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="3a4-68-CwW" firstAttribute="leading" secondItem="AH1-xx-pMQ" secondAttribute="trailing" id="3Pv-yC-GIE"/>
                                 <constraint firstItem="ue1-vs-dWr" firstAttribute="top" secondItem="dbk-hV-fDk" secondAttribute="bottom" id="4Ja-Qz-akQ"/>
@@ -151,7 +164,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Qv4-YS-0Eb" firstAttribute="top" secondItem="Gf5-mj-6bm" secondAttribute="top" constant="10" id="0jd-Rs-wDd"/>
                         <constraint firstItem="BXP-du-dcp" firstAttribute="top" secondItem="Qv4-YS-0Eb" secondAttribute="bottom" constant="10" id="MtF-Y8-BY5"/>
@@ -165,13 +178,12 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="yBi-fN-waG" firstAttribute="top" secondItem="T1f-oY-HLB" secondAttribute="top" id="7yZ-ds-5GX"/>
-                <constraint firstItem="Gf5-mj-6bm" firstAttribute="top" secondItem="yBi-fN-waG" secondAttribute="bottom" id="HJw-hA-WAp"/>
-                <constraint firstItem="T1f-oY-HLB" firstAttribute="bottom" secondItem="Gf5-mj-6bm" secondAttribute="bottom" id="HKc-7y-lut"/>
-                <constraint firstItem="yBi-fN-waG" firstAttribute="leading" secondItem="T1f-oY-HLB" secondAttribute="leading" id="M1m-xe-lfj"/>
-                <constraint firstItem="T1f-oY-HLB" firstAttribute="trailing" secondItem="Gf5-mj-6bm" secondAttribute="trailing" id="QXO-OX-hyD"/>
-                <constraint firstItem="Gf5-mj-6bm" firstAttribute="leading" secondItem="T1f-oY-HLB" secondAttribute="leading" id="cqV-fE-k03"/>
-                <constraint firstItem="yBi-fN-waG" firstAttribute="trailing" secondItem="T1f-oY-HLB" secondAttribute="trailing" id="moF-4P-AXb"/>
+                <constraint firstItem="Gf5-mj-6bm" firstAttribute="leading" secondItem="T1f-oY-HLB" secondAttribute="leading" id="2pY-he-DfK"/>
+                <constraint firstItem="Gf5-mj-6bm" firstAttribute="top" secondItem="SbG-pf-EkO" secondAttribute="bottom" id="8pU-6y-dab"/>
+                <constraint firstItem="SbG-pf-EkO" firstAttribute="leading" secondItem="T1f-oY-HLB" secondAttribute="leading" id="IWI-36-GfL"/>
+                <constraint firstItem="T1f-oY-HLB" firstAttribute="trailing" secondItem="SbG-pf-EkO" secondAttribute="trailing" id="Jso-AA-emD"/>
+                <constraint firstItem="Gf5-mj-6bm" firstAttribute="trailing" secondItem="T1f-oY-HLB" secondAttribute="trailing" id="YRb-Ow-6SC"/>
+                <constraint firstItem="SbG-pf-EkO" firstAttribute="top" secondItem="T1f-oY-HLB" secondAttribute="top" id="ZId-x3-tTc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="T1f-oY-HLB"/>
             <connections>
@@ -180,6 +192,7 @@
                 <outlet property="crestImage2" destination="dbk-hV-fDk" id="ZFF-gW-eqA"/>
                 <outlet property="crestImage3" destination="IsS-0x-fE4" id="j78-2d-uqI"/>
                 <outlet property="draftLabel" destination="3a4-68-CwW" id="qoc-lc-MAR"/>
+                <outlet property="milestoneView" destination="Gf5-mj-6bm" id="XYg-Ky-4tR"/>
                 <outlet property="milestonesLabel" destination="Qv4-YS-0Eb" id="rvA-OA-7bH"/>
                 <outlet property="scopeLabel" destination="hLv-eX-dHA" id="hc2-QE-zNC"/>
                 <outlet property="topicsTableView" destination="yBi-fN-waG" id="AUB-EX-WfE"/>

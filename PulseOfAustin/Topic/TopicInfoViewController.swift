@@ -48,6 +48,7 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var learnButtonUnderline: UIView!
     @IBOutlet var weighInButton: UIButton!
     @IBOutlet var weighInButtonUnderline: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet var infoCard: UIView!
     @IBOutlet var infoCardBottomConstraint: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
@@ -119,10 +120,38 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
+    // MARK: Learn Flow
+    //
+    
+    // Learn Screen 1: Landing
+    private func loadLearnView() {
+        // TODO: Dynamic numberOfPages
+        self.pageControl.numberOfPages = 3
+        self.pageControl.currentPage = 0
+        if let landingView = UINib(nibName: "LearnLanding", bundle: nil)
+            .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
+            landingView.frame = CGRect(x: 0,
+                                       y: self.headerView.frame.maxY,
+                                       width: self.contentView.frame.width,
+                                       height: self.contentView.frame.height - self.headerView.frame.maxY)
+            let scrollViewHeight = landingView.topicsTableView.frame.height + landingView.milestoneView.frame.height
+            landingView.contentSize = CGSize(width: landingView.frame.width,
+                                             height: scrollViewHeight)
+            landingView.tag = 1
+            self.updateView(newView: landingView)
+        }
+    }
+    
+    // Learn Screen 2: Overview
+    // Learn Screen 3: Bond Breakdown
+    // Learn Screen 4: On the Ballot
+    // Learn Screen 5: Perspectives
+    
+    //
     // MARK: Weigh In Flow
     //
     
-    // Weigh In Screen 1
+    // Weigh In Screen 1: Select
     private func loadWeighInSelect() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
@@ -144,7 +173,7 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    // Weigh In Screen 2
+    // Weigh In Screen 2: Elaborate
     private func loadWeighInElaborate(answerText: String) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
@@ -172,7 +201,7 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInSelect()
     }
     
-    // Weigh In Screen 3
+    // Weigh In Screen 3: Results
     private func loadWeighInResults() {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
@@ -237,27 +266,6 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    //
-    // MARK: Learn Flow
-    //
-    
-    // Learn Screen 1: Landing
-    private func loadLearnView() {
-        // TODO: Dynamic numberOfPages
-        self.pageControl.numberOfPages = 3
-        self.pageControl.currentPage = 0
-        if let cardContent = UINib(nibName: "LearnLanding", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
-            cardContent.frame = self.cardContentView.bounds
-            self.updateCardContents(newView: cardContent)
-        }
-    }
-    
-    // Learn Screen 2: Overview
-    // Learn Screen 3: Bond Breakdown
-    // Learn Screen 4: On the Ballot
-    // Learn Screen 5: Perspectives
-    
     // MARK: Private Methods
     
     private func buildBottomSheetList() -> NSAttributedString {
@@ -290,8 +298,17 @@ class TopicInfoViewController: UIViewController {
     }
     
     private func updateCardContents(newView: UIView) {
+        for subview in self.contentView.subviews {
+            if subview.tag == 1 {
+                subview.removeFromSuperview()
+            }
+        }
         self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
         self.cardContentView.addSubview(newView)
+    }
+    
+    private func updateView(newView: UIView) {
+        self.contentView.insertSubview(newView, at: self.contentView.subviews.count)
     }
     
     //
