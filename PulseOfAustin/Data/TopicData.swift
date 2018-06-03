@@ -22,6 +22,7 @@ enum TopicData {
                                       breakdownTitle: "",
                                       breakdownAmountsText: [],
                                       breakdownDescriptionsText: [],
+                                      onTheBallotTitle: "",
                                       onTheBallotAmountsText: [],
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
@@ -44,8 +45,12 @@ enum TopicData {
                                                                   "Land Acquisition",
                                                                   "Acquisition and Development",
                                                                   "Home Repair Program"],
-                                      onTheBallotAmountsText: [],
-                                      onTheBallotDescriptionsText: [],
+                                      onTheBallotTitle: "ON THE BALLOT",
+                                      onTheBallotAmountsText: ["$112M", "$117M", "$179M", "$281M"],
+                                      onTheBallotDescriptionsText: ["Stormwater (drainage and dams)",
+                                                                    "Parkland and Open Space (water quality protection + new parkland)",
+                                                                    "Transportation Infrastructure (bridges + street reconstruction)",
+                                                                    "Facilities & Assets (Fire Dept., EMS, arts & culture centers, parks & rec, libraries, public health)"],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"])),
@@ -61,6 +66,7 @@ enum TopicData {
                                       breakdownTitle: "",
                                       breakdownAmountsText: [],
                                       breakdownDescriptionsText: [],
+                                      onTheBallotTitle: "",
                                       onTheBallotAmountsText: [],
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
@@ -78,6 +84,7 @@ enum TopicData {
                                       breakdownTitle: "",
                                       breakdownAmountsText: [],
                                       breakdownDescriptionsText: [],
+                                      onTheBallotTitle: "",
                                       onTheBallotAmountsText: [],
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
@@ -135,6 +142,7 @@ struct LearnText {
     let breakdownTitle: String
     let breakdownAmountsText: [String]
     let breakdownDescriptionsText: [String]
+    let onTheBallotTitle: String
     let onTheBallotAmountsText: [String]
     let onTheBallotDescriptionsText: [String]
     let perspectivesTitles: [String]

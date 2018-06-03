@@ -16,9 +16,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8S-ok-LSe" userLabel="Amount Label">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="80"/>
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="QyC-go-OZe"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="QyC-go-OZe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -42,7 +42,7 @@
                 <constraint firstAttribute="trailing" secondItem="Ebm-zC-RD9" secondAttribute="trailing" id="d4S-Om-mzQ"/>
                 <constraint firstAttribute="bottom" secondItem="w8S-ok-LSe" secondAttribute="bottom" id="j7t-o2-OVn"/>
                 <constraint firstItem="Ebm-zC-RD9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jhZ-0G-48W"/>
-                <constraint firstItem="Ebm-zC-RD9" firstAttribute="leading" secondItem="w8S-ok-LSe" secondAttribute="trailing" constant="20" id="xtZ-vy-0Bu"/>
+                <constraint firstItem="Ebm-zC-RD9" firstAttribute="leading" secondItem="w8S-ok-LSe" secondAttribute="trailing" constant="10" id="xtZ-vy-0Bu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -190,16 +190,38 @@ class TopicInfoViewController: UIViewController {
                     }
                 }
             }
-            
             scrollView.addSubview(learnBreakdownView)
             scrollView.contentSize.width += learnBreakdownView.frame.width
+        }
+        // On the Ballot Card
+        if let learnOnTheBallotView = UINib(nibName: "LearnBreakdown", bundle: nil)
+            .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
+            learnOnTheBallotView.frame = CGRect(x: self.cardContentView.bounds.width * 2,
+                                              y: 0,
+                                              width: self.cardContentView.bounds.width,
+                                              height: self.cardContentView.bounds.height)
+            learnOnTheBallotView.breakdownTitle.text = learnText?.onTheBallotTitle
+            if let onTheBallotAmountsText = learnText?.onTheBallotAmountsText,
+                let onTheBallotDescriptionsText = learnText?.onTheBallotDescriptionsText {
+                for i in 0..<onTheBallotAmountsText.count {
+                    if let breakdownRow = UINib(nibName: "BreakdownView", bundle: nil)
+                        .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
+                        breakdownRow.amountLabel.text = onTheBallotAmountsText[i]
+                        breakdownRow.descriptionLabel.text = onTheBallotDescriptionsText[i]
+                        breakdownRow.amountLabel.sizeToFit()
+                        breakdownRow.descriptionLabel.sizeToFit()
+                        breakdownRow.sizeToFit()
+                        learnOnTheBallotView.breakdownStackView.addArrangedSubview(breakdownRow)
+                    }
+                }
+            }
+            scrollView.addSubview(learnOnTheBallotView)
+            scrollView.contentSize.width += learnOnTheBallotView.frame.width
         }
         
         self.updateCardContents(newView: scrollView)
     }
     
-    // Learn Screen 3: Bond Breakdown
-    // Learn Screen 4: On the Ballot
     // Learn Screen 5: Perspectives
     
     //
