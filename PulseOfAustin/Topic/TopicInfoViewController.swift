@@ -245,8 +245,6 @@ class TopicInfoViewController: UIViewController {
         self.updateCardContents(newView: scrollView)
     }
     
-    // Learn Screen 5: Perspectives
-    
     //
     // MARK: Weigh In Flow
     //
