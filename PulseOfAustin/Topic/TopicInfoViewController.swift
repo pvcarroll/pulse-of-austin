@@ -54,9 +54,7 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
     @IBOutlet var cardContentView: UIView!
-    @IBOutlet var continueView: UIView!
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var nextScreenLabel: UILabel!
     
     var selectedTopicKey: Int?
     private var cardIndex = 0
@@ -100,15 +98,6 @@ class TopicInfoViewController: UIViewController {
         self.weighInButton.titleLabel?.font = UIFont.buttonFont
         self.weighInButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        
-        // Dynamic card contents
-//        self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
-
-//        let continueGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(continueTapped(recognizer:)))
-//        self.continueView.addGestureRecognizer(continueGestureRecognizer)
-        
-//        self.nextScreenLabel.font =
-        self.nextScreenLabel.textColor = UIColor.customYellow
         
         self.loadLearnLanding()
     }
@@ -253,7 +242,6 @@ class TopicInfoViewController: UIViewController {
     private func loadWeighInSelect() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
-        self.continueView.isHidden = true
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInSelect? {
             
@@ -452,22 +440,4 @@ class TopicInfoViewController: UIViewController {
         }
         self.loadWeighInResults()
     }
-    
-    // LEARN FLOW
-//    @objc func continueTapped(recognizer: UITapGestureRecognizer) {
-//        self.cardIndex = (cardIndex < topicInfoMessages.count - 1) ? (self.cardIndex + 1) : 0
-//        self.pageControl.currentPage = self.cardIndex
-//        let isWeighInCard1: Bool = (cardIndex == topicInfoMessages.count - 2)
-//        let isWeighInCard2: Bool = (cardIndex == topicInfoMessages.count - 1)
-//        if self.cardIndex < topicInfoMessages.count - 1 {
-//            self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
-//        }
-//        if isWeighInCard1 {
-//            self.continueView.isHidden = true
-//        } else if isWeighInCard2 {
-//            self.continueView.isHidden = true
-//        } else {
-//            self.continueView.isHidden = false
-//        }
-//    }
 }

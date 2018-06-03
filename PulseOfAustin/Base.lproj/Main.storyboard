@@ -563,35 +563,6 @@
                                         <rect key="frame" x="20" y="20" width="295" height="379"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gur-lg-5BJ" userLabel="Continue View">
-                                        <rect key="frame" x="235" y="384" width="100" height="40"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC2-XY-uYd" userLabel="Next Screen Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="g22-YR-L5c" userLabel="Next Arrow Image View">
-                                                <rect key="frame" x="42.5" y="28.5" width="15" height="9"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="15" id="hOB-TF-pSJ"/>
-                                                    <constraint firstAttribute="height" constant="9" id="tsU-cK-RMs"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="MC2-XY-uYd" firstAttribute="top" secondItem="gur-lg-5BJ" secondAttribute="top" id="0fP-fO-rWq"/>
-                                            <constraint firstAttribute="trailing" secondItem="MC2-XY-uYd" secondAttribute="trailing" id="ACq-LG-lsp"/>
-                                            <constraint firstAttribute="height" constant="40" id="QRv-T8-Y9p"/>
-                                            <constraint firstItem="MC2-XY-uYd" firstAttribute="leading" secondItem="gur-lg-5BJ" secondAttribute="leading" id="TSA-Gm-tGl"/>
-                                            <constraint firstAttribute="width" constant="100" id="XZD-Ee-KLO"/>
-                                            <constraint firstItem="MC2-XY-uYd" firstAttribute="centerX" secondItem="gur-lg-5BJ" secondAttribute="centerX" id="ebq-vC-45F"/>
-                                            <constraint firstItem="g22-YR-L5c" firstAttribute="top" secondItem="MC2-XY-uYd" secondAttribute="bottom" constant="8" id="fLh-No-ncT"/>
-                                            <constraint firstItem="g22-YR-L5c" firstAttribute="centerX" secondItem="gur-lg-5BJ" secondAttribute="centerX" id="oYB-7O-h3H"/>
-                                        </constraints>
-                                    </view>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="SlS-2n-SkN">
                                         <rect key="frame" x="132" y="402" width="71" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -600,8 +571,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gur-lg-5BJ" secondAttribute="trailing" id="65a-A2-2b5"/>
-                                    <constraint firstAttribute="bottom" secondItem="gur-lg-5BJ" secondAttribute="bottom" constant="20" id="D3M-Q7-ohf"/>
                                     <constraint firstAttribute="bottom" secondItem="js0-fE-0k6" secondAttribute="bottom" constant="45" id="JsZ-fs-OMl"/>
                                     <constraint firstAttribute="trailing" secondItem="js0-fE-0k6" secondAttribute="trailing" constant="20" id="MnL-T1-GzR"/>
                                     <constraint firstItem="js0-fE-0k6" firstAttribute="top" secondItem="rMi-gQ-UrT" secondAttribute="top" constant="20" id="fLU-l3-akg"/>
@@ -628,7 +597,6 @@
                     <connections>
                         <outlet property="cardContentView" destination="js0-fE-0k6" id="g47-rl-Oeq"/>
                         <outlet property="contentView" destination="Vpx-bx-i4u" id="AY6-eV-eyF"/>
-                        <outlet property="continueView" destination="gur-lg-5BJ" id="tuo-al-fwt"/>
                         <outlet property="headerView" destination="0oH-9A-iIf" id="AJo-4Y-yhi"/>
                         <outlet property="infoCard" destination="rMi-gQ-UrT" id="yUG-3L-xV2"/>
                         <outlet property="infoCardBackgroundImageHeight" destination="oO1-O9-pA5" id="dZB-0g-pvp"/>
@@ -636,7 +604,6 @@
                         <outlet property="infoCardBottomConstraint" destination="299-Dg-VSK" id="dXf-OA-f53"/>
                         <outlet property="learnButton" destination="dlR-0w-OAG" id="N3r-1x-Bwb"/>
                         <outlet property="learnButtonUnderline" destination="S3d-N9-wZO" id="jwZ-hW-RvE"/>
-                        <outlet property="nextScreenLabel" destination="MC2-XY-uYd" id="JzH-Gc-u9C"/>
                         <outlet property="pageControl" destination="SlS-2n-SkN" id="gGE-xG-Ur0"/>
                         <outlet property="topicInfoScreenTitle" destination="ioI-wk-mMt" id="yTR-Nx-fTa"/>
                         <outlet property="weighInButton" destination="ixV-Sz-68p" id="cPi-bJ-inW"/>
@@ -710,7 +677,6 @@
     </scenes>
     <resources>
         <image name="ArmadilloIcon" width="516" height="322"/>
-        <image name="ArrowRight" width="30" height="18"/>
         <image name="BikeIcon" width="236" height="138"/>
         <image name="ExplorePageStyle" width="750" height="1334"/>
         <image name="HomeScreenStyle" width="750" height="1334"/>
