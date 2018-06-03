@@ -67,7 +67,7 @@ class TopicInfoViewController: UIViewController {
     @IBAction func learnButtonTapped(_ sender: Any) {
         self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        self.loadLearnView()
+        self.loadLearnLanding()
     }
     @IBAction func weighInButtonTapped(_ sender: Any) {
         self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
@@ -93,13 +93,13 @@ class TopicInfoViewController: UIViewController {
         self.learnButton.setTitle("LEARN", for: .normal)
         self.learnButton.titleLabel?.font = UIFont.buttonFont
         self.learnButton.setTitleColor(UIColor.whiteText, for: .normal)
-        self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
+        self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
         
         self.weighInButton.backgroundColor = UIColor.basicsBarBlue
         self.weighInButton.setTitle("WEIGH IN", for: .normal)
         self.weighInButton.titleLabel?.font = UIFont.buttonFont
         self.weighInButton.setTitleColor(UIColor.whiteText, for: .normal)
-        self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         
         // Dynamic card contents
 //        self.nextScreenLabel.text = topicInfoMessages[cardIndex + 1].title
@@ -110,7 +110,7 @@ class TopicInfoViewController: UIViewController {
 //        self.nextScreenLabel.font =
         self.nextScreenLabel.textColor = UIColor.customYellow
         
-        self.loadWeighInSelect()
+        self.loadLearnLanding()
     }
 
     override func viewDidLayoutSubviews() {
@@ -124,7 +124,7 @@ class TopicInfoViewController: UIViewController {
     //
     
     // Learn Screen 1: Landing
-    private func loadLearnView() {
+    private func loadLearnLanding() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
@@ -134,7 +134,7 @@ class TopicInfoViewController: UIViewController {
                                        y: self.headerView.frame.maxY,
                                        width: self.contentView.frame.width,
                                        height: self.contentView.frame.height - self.headerView.frame.maxY)
-            let scrollViewHeight = landingView.topicsTableView.frame.height + landingView.milestoneView.frame.height
+            let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
             landingView.tag = 1
