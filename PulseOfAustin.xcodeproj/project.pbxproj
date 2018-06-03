@@ -24,6 +24,10 @@
 		755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAF2088C69100554399 /* TopicIntroViewController.swift */; };
 		755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB1208B89FF00554399 /* UIFont+Extension.swift */; };
 		755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */; };
+		757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */; };
+		757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */; };
+		757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FB920C4318C0018C560 /* BreakdownView.swift */; };
+		757C0FBC20C431AA0018C560 /* BreakdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FBB20C431AA0018C560 /* BreakdownView.xib */; };
 		75B937502097451700221467 /* WeighInSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInSelect.xib */; };
 		75B937522097453500221467 /* WeighInSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInSelect.swift */; };
 		75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD078209E62B8008AD469 /* WeighInElaborate.swift */; };
@@ -83,6 +87,10 @@
 		755C7BAF2088C69100554399 /* TopicIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIntroViewController.swift; sourceTree = "<group>"; };
 		755C7BB1208B89FF00554399 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInfoViewController.swift; sourceTree = "<group>"; };
+		757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBreakdown.swift; sourceTree = "<group>"; };
+		757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnBreakdown.xib; sourceTree = "<group>"; };
+		757C0FB920C4318C0018C560 /* BreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakdownView.swift; sourceTree = "<group>"; };
+		757C0FBB20C431AA0018C560 /* BreakdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakdownView.xib; sourceTree = "<group>"; };
 		75B9374F2097451700221467 /* WeighInSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInSelect.xib; sourceTree = "<group>"; };
 		75B937512097453500221467 /* WeighInSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInSelect.swift; sourceTree = "<group>"; };
 		75BCD078209E62B8008AD469 /* WeighInElaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInElaborate.swift; sourceTree = "<group>"; };
@@ -160,6 +168,8 @@
 				75FE51B220C3020F00ABE7FD /* LearnLanding.xib */,
 				75FE51B820C38B4700ABE7FD /* LearnOverview.swift */,
 				75FE51BA20C38B5400ABE7FD /* LearnOverview.xib */,
+				757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */,
+				757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 				755C7BA32082818B00554399 /* Extensions */,
 				755C7B9E20824BCF00554399 /* Explore */,
 				755C7BAE2088C5EA00554399 /* Topic */,
+				757C0FB820C4313F0018C560 /* Views */,
 				752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */,
 				752EF79E207C5DDB0046743A /* GoogleService-Info.plist */,
 				752EF734207C571E0046743A /* AppDelegate.swift */,
@@ -252,6 +263,15 @@
 				755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */,
 			);
 			path = Topic;
+			sourceTree = "<group>";
+		};
+		757C0FB820C4313F0018C560 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				757C0FB920C4318C0018C560 /* BreakdownView.swift */,
+				757C0FBB20C431AA0018C560 /* BreakdownView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		75BCD077209E628B008AD469 /* WeighIn */ = {
@@ -392,7 +412,9 @@
 				752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */,
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
+				757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */,
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
+				757C0FBC20C431AA0018C560 /* BreakdownView.xib in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
@@ -509,6 +531,7 @@
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
+				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
 				75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */,
@@ -517,6 +540,7 @@
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
+				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

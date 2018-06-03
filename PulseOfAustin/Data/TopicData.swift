@@ -19,8 +19,11 @@ enum TopicData {
                                                 promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"),
                  topicInfoTitle: "Dockless Bikeshare",
                  learnText: LearnText(overviewText: [],
-                                      breakdownText: [],
-                                      onTheBallotText: [],
+                                      breakdownTitle: "",
+                                      breakdownAmountsText: [],
+                                      breakdownDescriptionsText: [],
+                                      onTheBallotAmountsText: [],
+                                      onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
@@ -35,8 +38,14 @@ enum TopicData {
                  learnText: LearnText(overviewText: ["The cost of closing Austin’s Affordable Housing Gap today is around $6.48 Billion (48,000 unit gap).",
                                                      "The cost of closing Austin’s Affordable Housing Gap in 2025 is projected to be $11.18 Billion.",
                                                      "$161M: 1,900 units\n$300M: 7,000+ units"],
-                                      breakdownText: [],
-                                      onTheBallotText: [],
+                                      breakdownTitle: "BOND BREAKDOWN",
+                                      breakdownAmountsText: ["47%", "31%", "11%", "11%"],
+                                      breakdownDescriptionsText: ["Rental Housing Development Assistance Projects",
+                                                                  "Land Acquisition",
+                                                                  "Acquisition and Development",
+                                                                  "Home Repair Program"],
+                                      onTheBallotAmountsText: [],
+                                      onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"])),
@@ -49,8 +58,11 @@ enum TopicData {
                                                 promptText: ""),
                  topicInfoTitle: "Holly Power Plant",
                  learnText: LearnText(overviewText: [],
-                                      breakdownText: [],
-                                      onTheBallotText: [],
+                                      breakdownTitle: "",
+                                      breakdownAmountsText: [],
+                                      breakdownDescriptionsText: [],
+                                      onTheBallotAmountsText: [],
+                                      onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
@@ -63,8 +75,11 @@ enum TopicData {
                                                 promptText: ""),
                  topicInfoTitle: "Strategic Mobility Plan",
                  learnText: LearnText(overviewText: [],
-                                      breakdownText: [],
-                                      onTheBallotText: [],
+                                      breakdownTitle: "",
+                                      breakdownAmountsText: [],
+                                      breakdownDescriptionsText: [],
+                                      onTheBallotAmountsText: [],
+                                      onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"]))
@@ -117,8 +132,11 @@ struct TopicInfoText {
 
 struct LearnText {
     let overviewText: [String]
-    let breakdownText: [String]
-    let onTheBallotText: [String]
+    let breakdownTitle: String
+    let breakdownAmountsText: [String]
+    let breakdownDescriptionsText: [String]
+    let onTheBallotAmountsText: [String]
+    let onTheBallotDescriptionsText: [String]
     let perspectivesTitles: [String]
     let perspectivesText: [String]
 }

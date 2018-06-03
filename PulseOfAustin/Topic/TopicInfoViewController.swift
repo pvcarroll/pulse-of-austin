@@ -142,30 +142,59 @@ class TopicInfoViewController: UIViewController {
     }
     
     // Learn Screen 2: Overview
-    
     @objc private func loadLearnOverview() {
         self.pageControl.numberOfPages = 4
         self.pageControl.currentPage = 0
         let scrollView = UIScrollView(frame: self.cardContentView.bounds)
         scrollView.isPagingEnabled = true
-        if let learnOverview = UINib(nibName: "LearnOverview", bundle: nil)
+        let learnText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText
+        // Overview Card
+        if let learnOverviewView = UINib(nibName: "LearnOverview", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnOverview? {
-            learnOverview.frame = self.cardContentView.frame
-            let overviewText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText.overviewText
-            overviewText?.forEach {
+            learnOverviewView.frame = self.cardContentView.bounds
+            let overviewCardText = learnText?.overviewText
+            overviewCardText?.forEach {
                 let label = UILabel(frame: CGRect(x: 0,
                                                   y: 0,
-                                                  width: self.cardContentView.frame.width,
+                                                  width: 1,
                                                   height: CGFloat.greatestFiniteMagnitude))
                 label.numberOfLines = 0
                 label.lineBreakMode = .byWordWrapping
                 label.font = UIFont.introCardBody
                 label.text = $0
                 label.sizeToFit()
-                learnOverview.bodyTextStackView.addArrangedSubview(label)
+                learnOverviewView.bodyTextStackView.addArrangedSubview(label)
             }
-            scrollView.addSubview(learnOverview)
+            scrollView.addSubview(learnOverviewView)
+            scrollView.contentSize = learnOverviewView.frame.size
         }
+        // Breakdown Card
+        if let learnBreakdownView = UINib(nibName: "LearnBreakdown", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
+            learnBreakdownView.frame = CGRect(x: self.cardContentView.bounds.width,
+                                              y: 0,
+                                              width: self.cardContentView.bounds.width,
+                                              height: self.cardContentView.bounds.height)
+            learnBreakdownView.breakdownTitle.text = learnText?.breakdownTitle
+            if let breakdownAmountsText = learnText?.breakdownAmountsText,
+                let breakdownDescriptionsText = learnText?.breakdownDescriptionsText {
+                for i in 0..<breakdownAmountsText.count {
+                    if let breakdownRow = UINib(nibName: "BreakdownView", bundle: nil)
+                        .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
+                        breakdownRow.amountLabel.text = breakdownAmountsText[i]
+                        breakdownRow.descriptionLabel.text = breakdownDescriptionsText[i]
+                        breakdownRow.amountLabel.sizeToFit()
+                        breakdownRow.descriptionLabel.sizeToFit()
+                        breakdownRow.sizeToFit()
+                        learnBreakdownView.breakdownStackView.addArrangedSubview(breakdownRow)
+                    }
+                }
+            }
+            
+            scrollView.addSubview(learnBreakdownView)
+            scrollView.contentSize.width += learnBreakdownView.frame.width
+        }
+        
         self.updateCardContents(newView: scrollView)
     }
     
