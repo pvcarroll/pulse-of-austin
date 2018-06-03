@@ -18,6 +18,11 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"),
                  topicInfoTitle: "Dockless Bikeshare",
+                 learnText: LearnText(overviewText: [],
+                                      breakdownText: [],
+                                      onTheBallotText: [],
+                                      perspectivesTitles: [],
+                                      perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
         1: Topic(topicKey: "affordableHousingBond",
                  title: "AFFORDABLE HOUSING BOND",
@@ -27,6 +32,13 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: ""),
                  topicInfoTitle: "Affordable Housing Bond",
+                 learnText: LearnText(overviewText: ["The cost of closing Austin’s Affordable Housing Gap today is around $6.48 Billion (48,000 unit gap).",
+                                                     "The cost of closing Austin’s Affordable Housing Gap in 2025 is projected to be $11.18 Billion.",
+                                                     "$161M: 1,900 units\n$300M: 7,000+ units"],
+                                      breakdownText: [],
+                                      onTheBallotText: [],
+                                      perspectivesTitles: [],
+                                      perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"])),
         2: Topic(topicKey: "hollyPowerPlant",
                  title: "HOLLY POWER PLANT",
@@ -36,6 +48,11 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: ""),
                  topicInfoTitle: "Holly Power Plant",
+                 learnText: LearnText(overviewText: [],
+                                      breakdownText: [],
+                                      onTheBallotText: [],
+                                      perspectivesTitles: [],
+                                      perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"])),
         3: Topic(topicKey: "strategicMobilityPlan",
                  title: "STRATEGIC MOBILITY PLAN",
@@ -45,6 +62,11 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: ""),
                  topicInfoTitle: "Strategic Mobility Plan",
+                 learnText: LearnText(overviewText: [],
+                                      breakdownText: [],
+                                      onTheBallotText: [],
+                                      perspectivesTitles: [],
+                                      perspectivesText: []),
                  weighIn: WeighInSelectText(choices: ["", "", "Other"]))
     ]
     
@@ -67,12 +89,13 @@ enum TopicData {
 }
 
 struct Topic {
-    var topicKey: String
-    var title: String
-    var description: String
-    var topicIntroData: TopicIntroData
-    var topicInfoTitle: String
-    var weighIn: WeighInSelectText
+    let topicKey: String
+    let title: String
+    let description: String
+    let topicIntroData: TopicIntroData
+    let topicInfoTitle: String
+    let learnText: LearnText
+    let weighIn: WeighInSelectText
 }
 
 struct TopicIntroData {
@@ -90,6 +113,14 @@ struct TopicInfoText {
     let infoScreen2Title: String
     let infoScreen2Body: String
     let onTheBallotBody: String
+}
+
+struct LearnText {
+    let overviewText: [String]
+    let breakdownText: [String]
+    let onTheBallotText: [String]
+    let perspectivesTitles: [String]
+    let perspectivesText: [String]
 }
 
 // MARK:- Weigh In Flow Data Model

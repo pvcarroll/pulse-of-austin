@@ -125,9 +125,6 @@ class TopicInfoViewController: UIViewController {
     
     // Learn Screen 1: Landing
     private func loadLearnLanding() {
-        // TODO: Dynamic numberOfPages
-        self.pageControl.numberOfPages = 3
-        self.pageControl.currentPage = 0
         if let landingView = UINib(nibName: "LearnLanding", bundle: nil)
             .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             landingView.frame = CGRect(x: 0,
@@ -138,11 +135,40 @@ class TopicInfoViewController: UIViewController {
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
             landingView.tag = 1
+            let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnOverview))
+            landingView.info.addGestureRecognizer(infoRecognizer)
             self.updateView(newView: landingView)
         }
     }
     
     // Learn Screen 2: Overview
+    
+    @objc private func loadLearnOverview() {
+        self.pageControl.numberOfPages = 4
+        self.pageControl.currentPage = 0
+        let scrollView = UIScrollView(frame: self.cardContentView.bounds)
+        scrollView.isPagingEnabled = true
+        if let learnOverview = UINib(nibName: "LearnOverview", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnOverview? {
+            learnOverview.frame = self.cardContentView.frame
+            let overviewText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText.overviewText
+            overviewText?.forEach {
+                let label = UILabel(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: self.cardContentView.frame.width,
+                                                  height: CGFloat.greatestFiniteMagnitude))
+                label.numberOfLines = 0
+                label.lineBreakMode = .byWordWrapping
+                label.font = UIFont.introCardBody
+                label.text = $0
+                label.sizeToFit()
+                learnOverview.bodyTextStackView.addArrangedSubview(label)
+            }
+            scrollView.addSubview(learnOverview)
+        }
+        self.updateCardContents(newView: scrollView)
+    }
+    
     // Learn Screen 3: Bond Breakdown
     // Learn Screen 4: On the Ballot
     // Learn Screen 5: Perspectives

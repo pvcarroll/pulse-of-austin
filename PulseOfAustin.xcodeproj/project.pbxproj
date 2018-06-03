@@ -26,8 +26,6 @@
 		755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */; };
 		75B937502097451700221467 /* WeighInSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInSelect.xib */; };
 		75B937522097453500221467 /* WeighInSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInSelect.swift */; };
-		75B937542097E91A00221467 /* LearnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B937532097E91A00221467 /* LearnView.xib */; };
-		75B937562097E92E00221467 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937552097E92E00221467 /* LearnView.swift */; };
 		75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD078209E62B8008AD469 /* WeighInElaborate.swift */; };
 		75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */; };
 		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
@@ -35,6 +33,8 @@
 		75BCD08220A7B741008AD469 /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD08120A7B741008AD469 /* TopicData.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
+		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
+		75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51BA20C38B5400ABE7FD /* LearnOverview.xib */; };
 		CA6FA69E21AFC2166D0253FE /* Pods_PulseOfAustinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A4FA94A6E3E3DDC6FE669 /* Pods_PulseOfAustinTests.framework */; };
 		D067027E010FB376B0C60023 /* Pods_PulseOfAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */; };
 /* End PBXBuildFile section */
@@ -85,8 +85,6 @@
 		755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInfoViewController.swift; sourceTree = "<group>"; };
 		75B9374F2097451700221467 /* WeighInSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInSelect.xib; sourceTree = "<group>"; };
 		75B937512097453500221467 /* WeighInSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInSelect.swift; sourceTree = "<group>"; };
-		75B937532097E91A00221467 /* LearnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnView.xib; sourceTree = "<group>"; };
-		75B937552097E92E00221467 /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		75BCD078209E62B8008AD469 /* WeighInElaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInElaborate.swift; sourceTree = "<group>"; };
 		75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInElaborate.xib; sourceTree = "<group>"; };
 		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
@@ -94,6 +92,8 @@
 		75BCD08120A7B741008AD469 /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
+		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
+		75FE51BA20C38B5400ABE7FD /* LearnOverview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnOverview.xib; sourceTree = "<group>"; };
 		BCC68766280D23F4FDB3A389 /* Pods_PulseOfAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310411AC8AB4F4D53F8B098 /* Pods-PulseOfAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustin/Pods-PulseOfAustin.release.xcconfig"; sourceTree = "<group>"; };
 		CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseOfAustinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +158,8 @@
 			children = (
 				75FE51B020C301EF00ABE7FD /* LearnLanding.swift */,
 				75FE51B220C3020F00ABE7FD /* LearnLanding.xib */,
+				75FE51B820C38B4700ABE7FD /* LearnOverview.swift */,
+				75FE51BA20C38B5400ABE7FD /* LearnOverview.xib */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -248,8 +250,6 @@
 				75BCD077209E628B008AD469 /* WeighIn */,
 				755C7BAF2088C69100554399 /* TopicIntroViewController.swift */,
 				755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */,
-				75B937532097E91A00221467 /* LearnView.xib */,
-				75B937552097E92E00221467 /* LearnView.swift */,
 			);
 			path = Topic;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
-				75B937542097E91A00221467 /* LearnView.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
+				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
 				75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */,
 			);
@@ -507,8 +507,8 @@
 				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
+				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
-				75B937562097E92E00221467 /* LearnView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
 				75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */,
