@@ -11,7 +11,6 @@ import UIKit
 class TopicIntroViewController: UIViewController {
         
     @IBOutlet var contentView: UIView!
-    @IBOutlet var topicIntroScreenTitle: UILabel!
     @IBOutlet var infoCard: UIView!
     @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
     @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
@@ -44,14 +43,9 @@ class TopicIntroViewController: UIViewController {
         
         let topicInfoData = TopicData.topics[self.selectedTopicKey!]?.topicIntroData
         
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationItem.title = "Explore"
-        self.navigationItem.titleView = UIView()
+        self.title = topicInfoData?.topicTitle
         
         self.contentView.backgroundColor = UIColor.infoCardBackground
-        self.topicIntroScreenTitle.text = topicInfoData?.topicTitle
-        self.topicIntroScreenTitle.font = UIFont.screenTitle
-        self.topicIntroScreenTitle.textColor = UIColor.customDarkText
         self.topicIntroCardTitle.text = topicInfoData?.cardTitle
         self.topicIntroCardTitle.font = UIFont.cardTitle
         self.topicIntroCardTitle.textColor = UIColor.darkGray

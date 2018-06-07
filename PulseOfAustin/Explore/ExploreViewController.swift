@@ -10,7 +10,6 @@ import UIKit
 
 class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var exploreScreenTitle: UILabel!
     @IBOutlet var latestLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
@@ -23,8 +22,8 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.exploreScreenTitle.textColor = UIColor.customDarkText
-        self.exploreScreenTitle.font = UIFont.screenTitle
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gearIcon"), style: .plain, target: self, action: nil)
+        
         self.latestLabel.textColor = UIColor.customDarkText
         
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
@@ -32,12 +31,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         self.tableView.estimatedRowHeight = 140
         self.tableView.tableFooterView = UIView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
+
     //
     // MARK:- UITableViewDataSource
     //

@@ -82,11 +82,9 @@ class TopicInfoViewController: UIViewController {
         self.weighInText = TopicData.topics[self.selectedTopicKey!]?.weighIn
         self.contentView.backgroundColor = UIColor.infoCardBackground
         
-        // HEADER
-        self.topicInfoScreenTitle.text = TopicData.topics[self.selectedTopicKey!]?.topicInfoTitle
-        self.topicInfoScreenTitle.font = UIFont.screenTitle
-        self.topicInfoScreenTitle.textColor = UIColor.customDarkText
-        
+        let screenTitle = TopicData.topics[self.selectedTopicKey!]?.topicInfoTitle
+        self.title = screenTitle
+
         self.learnButton.backgroundColor = UIColor.basicsBarBlue
         self.learnButton.setTitle("LEARN", for: .normal)
         self.learnButton.titleLabel?.font = UIFont.buttonFont
