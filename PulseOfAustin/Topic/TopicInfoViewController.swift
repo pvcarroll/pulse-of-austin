@@ -8,18 +8,6 @@
 
 import UIKit
 
-//fileprivate let topicInfoMessages: [TopicInfoText] = [
-//TopicInfoText(title: "TRANSPARENCY",
-//              body: "Data from dockless bikes could help the city prioritize bike infastructure, but a lot of dockless bike companies will not make this data open."),
-//TopicInfoText(title: "HONESTY",
-//              body: "Ofo, 1 of 10 companies Austin is considering, even reported false data in Aurora, CO, claiming 2.5 daily rides per bike, when they were really clocking 0.18 daily rides."),
-//TopicInfoText(title: "PRIVACY",
-//              body: "Some dockless bike companies track users even when they are not using the bikes, reserving the right to sell that data to third parties."),
-//TopicInfoText(title: "WEIGH IN",
-//              body: "What is essential for Austin to consider in its bikeshare data policy?"),
-//TopicInfoText(title: "WEIGH IN", body: "")
-//]
-
 enum AnswerIndex {
     case answerChoice1
     case answerChoice2
@@ -43,17 +31,13 @@ enum AnswerIndex {
 class TopicInfoViewController: UIViewController {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet var topicInfoScreenTitle: UILabel!
     @IBOutlet var learnButton: UIButton!
     @IBOutlet var learnButtonUnderline: UIView!
     @IBOutlet var weighInButton: UIButton!
     @IBOutlet var weighInButtonUnderline: UIView!
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet var infoCard: UIView!
+    @IBOutlet var topicInfoViewContainer: UIView!
     @IBOutlet var infoCardBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var infoCardBackgroundImageWidth: NSLayoutConstraint!
-    @IBOutlet var infoCardBackgroundImageHeight: NSLayoutConstraint!
-    @IBOutlet var cardContentView: UIView!
     @IBOutlet var pageControl: UIPageControl!
     
     var selectedTopicKey: Int?
@@ -61,6 +45,7 @@ class TopicInfoViewController: UIViewController {
     private var selectedAnswer: AnswerIndex?
     private var weighInText: WeighInSelectText?
     private var elaborateView: WeighInElaborate?
+    private var cardFrame: CGRect?
     
     @IBAction func learnButtonTapped(_ sender: Any) {
         self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
@@ -99,11 +84,13 @@ class TopicInfoViewController: UIViewController {
         
         self.loadLearnLanding()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.infoCardBackgroundImageWidth.constant = self.view.bounds.width * 0.6
-        self.infoCardBackgroundImageHeight.constant = self.view.bounds.height * 0.5
+        self.cardFrame = CGRect(x: 15,
+                                y: 15,
+                                width: self.topicInfoViewContainer.frame.width - 30,
+                                height: self.topicInfoViewContainer.frame.height - 30)
     }
     
     //
@@ -132,13 +119,13 @@ class TopicInfoViewController: UIViewController {
     @objc private func loadLearnOverview() {
         self.pageControl.numberOfPages = 4
         self.pageControl.currentPage = 0
-        let scrollView = UIScrollView(frame: self.cardContentView.bounds)
+        let scrollView = UIScrollView(frame: self.topicInfoViewContainer.bounds)
         scrollView.isPagingEnabled = true
         let learnText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText
         // Overview Card
         if let learnOverviewView = UINib(nibName: "LearnOverview", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnOverview? {
-            learnOverviewView.frame = self.cardContentView.bounds
+            learnOverviewView.frame = self.topicInfoViewContainer.bounds
             let overviewCardText = learnText?.overviewText
             overviewCardText?.forEach {
                 let label = UILabel(frame: CGRect(x: 0,
@@ -157,11 +144,9 @@ class TopicInfoViewController: UIViewController {
         }
         // Breakdown Card
         if let learnBreakdownView = UINib(nibName: "LearnBreakdown", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
-            learnBreakdownView.frame = CGRect(x: self.cardContentView.bounds.width,
-                                              y: 0,
-                                              width: self.cardContentView.bounds.width,
-                                              height: self.cardContentView.bounds.height)
+                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown?,
+                let learnCardFrame = self.cardFrame {
+            learnBreakdownView.frame = learnCardFrame
             learnBreakdownView.breakdownTitle.text = learnText?.breakdownTitle
             if let breakdownAmountsText = learnText?.breakdownAmountsText,
                 let breakdownDescriptionsText = learnText?.breakdownDescriptionsText {
@@ -183,10 +168,10 @@ class TopicInfoViewController: UIViewController {
         // On the Ballot Card
         if let learnOnTheBallotView = UINib(nibName: "LearnBreakdown", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
-            learnOnTheBallotView.frame = CGRect(x: self.cardContentView.bounds.width * 2,
+            learnOnTheBallotView.frame = CGRect(x: self.topicInfoViewContainer.bounds.width * 2,
                                                 y: 0,
-                                                width: self.cardContentView.bounds.width,
-                                                height: self.cardContentView.bounds.height)
+                                                width: self.topicInfoViewContainer.bounds.width,
+                                                height: self.topicInfoViewContainer.bounds.height)
             learnOnTheBallotView.breakdownTitle.text = learnText?.onTheBallotTitle
             if let onTheBallotAmountsText = learnText?.onTheBallotAmountsText,
                let onTheBallotDescriptionsText = learnText?.onTheBallotDescriptionsText {
@@ -209,10 +194,10 @@ class TopicInfoViewController: UIViewController {
         // City Rationale Card
         if let cityRationaleView = UINib(nibName: "LearnCityRationale", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnCityRationale? {
-            cityRationaleView.frame = CGRect(x: self.cardContentView.bounds.width * 3,
+            cityRationaleView.frame = CGRect(x: self.topicInfoViewContainer.bounds.width * 3,
                                             y: 0,
-                                            width: self.cardContentView.bounds.width,
-                                            height: self.cardContentView.bounds.height)
+                                            width: self.topicInfoViewContainer.bounds.width,
+                                            height: self.topicInfoViewContainer.bounds.height)
             if let perspectivesTitles = learnText?.perspectivesTitles,
                let perspectivesText = learnText?.perspectivesText {
                 
@@ -241,9 +226,10 @@ class TopicInfoViewController: UIViewController {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInSelect? {
+                .instantiate(withOwner: self, options: nil).first as! WeighInSelect?,
+                let weightInCardFrame = self.cardFrame {
             
-            weighInSelectView.frame = self.cardContentView.bounds
+            weighInSelectView.frame = weightInCardFrame
             
             weighInSelectView.answer1Button.setTitle(self.weighInText?.choices[0], for: .normal)
             weighInSelectView.answer2Button.setTitle(self.weighInText?.choices[1], for: .normal)
@@ -261,9 +247,10 @@ class TopicInfoViewController: UIViewController {
     private func loadWeighInElaborate(answerText: String) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInElaborate? {
+                .instantiate(withOwner: self, options: nil).first as! WeighInElaborate?,
+                let weightInCardFrame = self.cardFrame {
             self.elaborateView = elaborateView
-            elaborateView.frame = self.cardContentView.bounds
+            elaborateView.frame = weightInCardFrame
             var cardTitleText = "ELABORATE"
             // TODO: Dynamic "other" text
             if answerText == "Other Thoughts" {
@@ -289,8 +276,9 @@ class TopicInfoViewController: UIViewController {
     private func loadWeighInResults() {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInResults? {
-            resultsView.frame = self.cardContentView.bounds
+                .instantiate(withOwner: self, options: nil).first as! WeighInResults?,
+                let weightInCardFrame = self.cardFrame {
+            resultsView.frame = weightInCardFrame
             
             // TODO: Hide 4th response view if only 3 responses
             resultsView.response4View.isHidden = true
@@ -305,6 +293,7 @@ class TopicInfoViewController: UIViewController {
             }
             
             // Set response bar lengths based on count
+            // TODO: Move db code out of VC
             if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
                 let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey {
                 
@@ -352,43 +341,14 @@ class TopicInfoViewController: UIViewController {
     
     // MARK: Private Methods
     
-    private func buildBottomSheetList() -> NSAttributedString {
-        let listItems = [
-            "\u{2022} Austin's public bus system is run by Cap Metro. There are 3,000 bus stops and 53 routes.\n\n",
-            "\u{2022} Only 4% of Austinites ride the bus.\n\n",
-            "\u{2022} Austin's traffic is the worst.\n\n",
-            "\u{2022} The city has a bike share program run by B-cycle."
-        ]
-        let bottomSheetAttributedString = NSMutableAttributedString()
-        // Add paragraph style to text for each bullet point to fix indentation
-        for listItem in listItems {
-            let attributedString = NSMutableAttributedString(string: listItem)
-            let listTextParagraphStyle = bottomSheetParagraphStyle()
-            attributedString.addAttributes([NSAttributedStringKey.paragraphStyle: listTextParagraphStyle], range: NSMakeRange(0, attributedString.length))
-            bottomSheetAttributedString.append(attributedString)
-        }
-        return bottomSheetAttributedString
-    }
-    
-    // Indents lines of text to match the first line
-    private func bottomSheetParagraphStyle() -> NSParagraphStyle {
-        let paragraphStyle: NSMutableParagraphStyle
-        paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [NSTextTab.OptionKey : Any])]
-        paragraphStyle.defaultTabInterval = 15
-        paragraphStyle.firstLineHeadIndent = 0
-        paragraphStyle.headIndent = 15
-        return paragraphStyle
-    }
-    
     private func updateCardContents(newView: UIView) {
         for subview in self.contentView.subviews {
             if subview.tag == 1 {
                 subview.removeFromSuperview()
             }
         }
-        self.cardContentView.subviews.forEach { $0.removeFromSuperview() }
-        self.cardContentView.addSubview(newView)
+        self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
+        self.topicInfoViewContainer.addSubview(newView)
     }
     
     private func updateView(newView: UIView) {

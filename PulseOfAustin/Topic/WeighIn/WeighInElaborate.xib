@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,52 +16,62 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="590"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOX-8G-e30" userLabel="Card Title">
-                    <rect key="frame" x="0.0" y="20" width="320" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-J6-PVT" userLabel="Weigh In Text View">
-                    <rect key="frame" x="0.0" y="140.5" width="320" height="80"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euM-B3-Wjv" userLabel="Content View">
+                    <rect key="frame" x="20" y="50" width="280" height="520"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOX-8G-e30" userLabel="Card Title">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-VE-jVa" userLabel="Selected Answer Button">
+                            <rect key="frame" x="40" y="30.5" width="200" height="60"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="gEb-b2-Uax"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="srI-Cc-uaf"/>
+                            </constraints>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-J6-PVT" userLabel="Weigh In Text View">
+                            <rect key="frame" x="0.0" y="100.5" width="280" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="7Dv-eL-Ht0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saG-u3-Ehb">
+                            <rect key="frame" x="50" y="200.5" width="180" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="YXE-kb-5h4"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Ysu-5y-9fV"/>
+                            </constraints>
+                            <state key="normal" title="Submit Button"/>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="7Dv-eL-Ht0"/>
+                        <constraint firstItem="VHz-VE-jVa" firstAttribute="centerX" secondItem="euM-B3-Wjv" secondAttribute="centerX" id="6BF-sj-gF9"/>
+                        <constraint firstItem="VHz-VE-jVa" firstAttribute="top" secondItem="kOX-8G-e30" secondAttribute="bottom" constant="10" id="GOs-6g-LPN"/>
+                        <constraint firstItem="c0F-J6-PVT" firstAttribute="leading" secondItem="euM-B3-Wjv" secondAttribute="leading" id="JjZ-4E-apL"/>
+                        <constraint firstItem="saG-u3-Ehb" firstAttribute="centerX" secondItem="euM-B3-Wjv" secondAttribute="centerX" id="VPq-mT-RXS"/>
+                        <constraint firstItem="kOX-8G-e30" firstAttribute="leading" secondItem="euM-B3-Wjv" secondAttribute="leading" id="WkE-KT-HuC"/>
+                        <constraint firstItem="c0F-J6-PVT" firstAttribute="top" secondItem="VHz-VE-jVa" secondAttribute="bottom" constant="10" id="aV2-O2-8nT"/>
+                        <constraint firstAttribute="trailing" secondItem="kOX-8G-e30" secondAttribute="trailing" id="j13-gg-FSa"/>
+                        <constraint firstAttribute="trailing" secondItem="c0F-J6-PVT" secondAttribute="trailing" id="kBT-vr-nhn"/>
+                        <constraint firstItem="kOX-8G-e30" firstAttribute="top" secondItem="euM-B3-Wjv" secondAttribute="top" id="mNe-ah-tJP"/>
+                        <constraint firstItem="saG-u3-Ehb" firstAttribute="top" secondItem="c0F-J6-PVT" secondAttribute="bottom" constant="20" id="o22-38-Nbs"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saG-u3-Ehb">
-                    <rect key="frame" x="70" y="240.5" width="180" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="YXE-kb-5h4"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Ysu-5y-9fV"/>
-                    </constraints>
-                    <state key="normal" title="Submit Button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-VE-jVa" userLabel="Selected Answer Button">
-                    <rect key="frame" x="20" y="60.5" width="280" height="60"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="gEb-b2-Uax"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="srI-Cc-uaf"/>
-                    </constraints>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="c0F-J6-PVT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="2uc-lB-xoZ"/>
-                <constraint firstItem="c0F-J6-PVT" firstAttribute="top" secondItem="VHz-VE-jVa" secondAttribute="bottom" constant="20" id="4qf-Y4-IOM"/>
-                <constraint firstAttribute="trailing" secondItem="kOX-8G-e30" secondAttribute="trailing" id="HR9-qi-gxR"/>
-                <constraint firstItem="saG-u3-Ehb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ix9-1s-xJw"/>
-                <constraint firstItem="c0F-J6-PVT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PP6-57-181"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VHz-VE-jVa" secondAttribute="trailing" constant="20" id="VSa-Ax-ed6"/>
-                <constraint firstItem="VHz-VE-jVa" firstAttribute="top" secondItem="kOX-8G-e30" secondAttribute="bottom" constant="20" id="cfA-yI-uxb"/>
-                <constraint firstItem="VHz-VE-jVa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="duW-kj-KVO"/>
-                <constraint firstItem="saG-u3-Ehb" firstAttribute="top" secondItem="c0F-J6-PVT" secondAttribute="bottom" constant="20" id="lDC-v3-Xnl"/>
-                <constraint firstItem="kOX-8G-e30" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFL-nG-lSl"/>
-                <constraint firstItem="kOX-8G-e30" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rbk-bM-COL"/>
-                <constraint firstItem="VHz-VE-jVa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="v5W-29-GYc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="euM-B3-Wjv" secondAttribute="bottom" constant="20" id="Ieg-Pi-FUE"/>
+                <constraint firstItem="euM-B3-Wjv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="OAr-ru-Btc"/>
+                <constraint firstItem="euM-B3-Wjv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dIX-g9-ran"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="euM-B3-Wjv" secondAttribute="trailing" constant="20" id="lZJ-Ho-fqz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -458,32 +458,20 @@
                                     <constraint firstItem="Ao5-Ev-GK2" firstAttribute="leading" secondItem="0oH-9A-iIf" secondAttribute="leading" id="mCG-4d-tg8"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoCardCornerStyle" translatesAutoresizingMaskIntoConstraints="NO" id="4NF-Wg-0lZ">
-                                <rect key="frame" x="125" y="218" width="250" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="oO1-O9-pA5"/>
-                                    <constraint firstAttribute="width" constant="250" id="tBF-aj-svl"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoCardCornerStyle" translatesAutoresizingMaskIntoConstraints="NO" id="KUj-hg-6ol">
+                                <rect key="frame" x="100" y="251" width="275" height="367"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-gQ-UrT" userLabel="Info Card View">
-                                <rect key="frame" x="20" y="166" width="335" height="432"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-gQ-UrT" userLabel="Learn View Container">
+                                <rect key="frame" x="0.0" y="151" width="375" height="467"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="js0-fE-0k6" userLabel="Card Content View">
-                                        <rect key="frame" x="20" y="20" width="295" height="367"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="SlS-2n-SkN">
-                                        <rect key="frame" x="132" y="390" width="71" height="37"/>
+                                        <rect key="frame" x="152" y="425" width="71" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="js0-fE-0k6" secondAttribute="bottom" constant="45" id="JsZ-fs-OMl"/>
-                                    <constraint firstAttribute="trailing" secondItem="js0-fE-0k6" secondAttribute="trailing" constant="20" id="MnL-T1-GzR"/>
-                                    <constraint firstItem="js0-fE-0k6" firstAttribute="top" secondItem="rMi-gQ-UrT" secondAttribute="top" constant="20" id="fLU-l3-akg"/>
-                                    <constraint firstItem="js0-fE-0k6" firstAttribute="leading" secondItem="rMi-gQ-UrT" secondAttribute="leading" constant="20" id="hoT-QY-dcs"/>
                                     <constraint firstAttribute="bottom" secondItem="SlS-2n-SkN" secondAttribute="bottom" constant="5" id="izC-Lk-VC3"/>
                                     <constraint firstItem="SlS-2n-SkN" firstAttribute="centerX" secondItem="rMi-gQ-UrT" secondAttribute="centerX" id="nao-hJ-ieB"/>
                                 </constraints>
@@ -491,29 +479,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="bottom" secondItem="rMi-gQ-UrT" secondAttribute="bottom" constant="20" id="299-Dg-VSK"/>
-                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="bottom" secondItem="4NF-Wg-0lZ" secondAttribute="bottom" id="BKw-sI-Xzw"/>
-                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="trailing" secondItem="rMi-gQ-UrT" secondAttribute="trailing" constant="20" id="FPH-Rl-B2Y"/>
+                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="bottom" secondItem="rMi-gQ-UrT" secondAttribute="bottom" id="299-Dg-VSK"/>
+                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="trailing" secondItem="rMi-gQ-UrT" secondAttribute="trailing" id="FPH-Rl-B2Y"/>
+                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="trailing" secondItem="KUj-hg-6ol" secondAttribute="trailing" id="HCp-iy-eU6"/>
+                            <constraint firstItem="KUj-hg-6ol" firstAttribute="top" secondItem="0oH-9A-iIf" secondAttribute="bottom" constant="100" id="LXK-oP-cDa"/>
+                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="bottom" secondItem="KUj-hg-6ol" secondAttribute="bottom" id="ZyI-5S-t6n"/>
                             <constraint firstItem="0oH-9A-iIf" firstAttribute="trailing" secondItem="aFZ-qD-S0L" secondAttribute="trailing" id="cTH-r9-YOs"/>
-                            <constraint firstItem="rMi-gQ-UrT" firstAttribute="top" secondItem="0oH-9A-iIf" secondAttribute="bottom" constant="15" id="fjR-Vp-9nv"/>
-                            <constraint firstItem="aFZ-qD-S0L" firstAttribute="trailing" secondItem="4NF-Wg-0lZ" secondAttribute="trailing" id="jxV-Xd-zqa"/>
-                            <constraint firstItem="rMi-gQ-UrT" firstAttribute="leading" secondItem="aFZ-qD-S0L" secondAttribute="leading" constant="20" id="lCz-Nf-fsp"/>
+                            <constraint firstItem="rMi-gQ-UrT" firstAttribute="top" secondItem="0oH-9A-iIf" secondAttribute="bottom" id="fjR-Vp-9nv"/>
+                            <constraint firstItem="KUj-hg-6ol" firstAttribute="leading" secondItem="aFZ-qD-S0L" secondAttribute="leading" constant="100" id="kTH-Ed-gwf"/>
+                            <constraint firstItem="rMi-gQ-UrT" firstAttribute="leading" secondItem="aFZ-qD-S0L" secondAttribute="leading" id="lCz-Nf-fsp"/>
                             <constraint firstItem="0oH-9A-iIf" firstAttribute="top" secondItem="aFZ-qD-S0L" secondAttribute="top" id="mhh-Oz-oLF"/>
                             <constraint firstItem="0oH-9A-iIf" firstAttribute="leading" secondItem="aFZ-qD-S0L" secondAttribute="leading" id="sl0-Dv-Mco"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aFZ-qD-S0L"/>
                     </view>
                     <connections>
-                        <outlet property="cardContentView" destination="js0-fE-0k6" id="g47-rl-Oeq"/>
                         <outlet property="contentView" destination="Vpx-bx-i4u" id="AY6-eV-eyF"/>
                         <outlet property="headerView" destination="0oH-9A-iIf" id="AJo-4Y-yhi"/>
-                        <outlet property="infoCard" destination="rMi-gQ-UrT" id="yUG-3L-xV2"/>
-                        <outlet property="infoCardBackgroundImageHeight" destination="oO1-O9-pA5" id="dZB-0g-pvp"/>
-                        <outlet property="infoCardBackgroundImageWidth" destination="tBF-aj-svl" id="6Nr-8v-Oo9"/>
                         <outlet property="infoCardBottomConstraint" destination="299-Dg-VSK" id="dXf-OA-f53"/>
                         <outlet property="learnButton" destination="dlR-0w-OAG" id="N3r-1x-Bwb"/>
                         <outlet property="learnButtonUnderline" destination="S3d-N9-wZO" id="jwZ-hW-RvE"/>
                         <outlet property="pageControl" destination="SlS-2n-SkN" id="gGE-xG-Ur0"/>
+                        <outlet property="topicInfoViewContainer" destination="rMi-gQ-UrT" id="mOd-56-D1m"/>
                         <outlet property="weighInButton" destination="ixV-Sz-68p" id="cPi-bJ-inW"/>
                         <outlet property="weighInButtonUnderline" destination="Hyg-Ue-80z" id="VtD-m1-7h8"/>
                     </connections>
