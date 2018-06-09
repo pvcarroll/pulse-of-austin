@@ -101,17 +101,14 @@ class TopicInfoViewController: UIViewController {
     private func loadLearnLanding() {
         if let landingView = UINib(nibName: "LearnLanding", bundle: nil)
             .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
-            landingView.frame = CGRect(x: 0,
-                                       y: self.headerView.frame.maxY,
-                                       width: self.contentView.frame.width,
-                                       height: self.contentView.frame.height - self.headerView.frame.maxY)
+            landingView.frame = self.topicInfoViewContainer.bounds
+            landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
-            landingView.tag = 1
             let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnOverview))
             landingView.info.addGestureRecognizer(infoRecognizer)
-            self.updateView(newView: landingView)
+            self.updateViewContent(newView: landingView)
         }
     }
     
@@ -214,7 +211,7 @@ class TopicInfoViewController: UIViewController {
             scrollView.contentSize.width += cityRationaleView.frame.width
         }
         
-        self.updateCardContents(newView: scrollView)
+        self.updateViewContent(newView: scrollView)
     }
     
     //
@@ -239,7 +236,7 @@ class TopicInfoViewController: UIViewController {
             weighInSelectView.answer2Button.addTarget(self, action: #selector(self.answer2Selected), for: .touchUpInside)
             weighInSelectView.answer3Button.addTarget(self, action: #selector(self.answer3Selected), for: .touchUpInside)
             
-            self.updateCardContents(newView: weighInSelectView)
+            self.updateViewContent(newView: weighInSelectView)
         }
     }
     
@@ -264,7 +261,7 @@ class TopicInfoViewController: UIViewController {
             let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitTapped(recognizer:)))
             elaborateView.submitButton.addGestureRecognizer(submitGestureRecognizer)
             
-            self.updateCardContents(newView: elaborateView)
+            self.updateViewContent(newView: elaborateView)
         }
     }
     
@@ -335,24 +332,15 @@ class TopicInfoViewController: UIViewController {
                     }
                 })
             }
-            self.updateCardContents(newView: resultsView)
+            self.updateViewContent(newView: resultsView)
         }
     }
     
     // MARK: Private Methods
     
-    private func updateCardContents(newView: UIView) {
-        for subview in self.contentView.subviews {
-            if subview.tag == 1 {
-                subview.removeFromSuperview()
-            }
-        }
+    private func updateViewContent(newView: UIView) {
         self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
         self.topicInfoViewContainer.addSubview(newView)
-    }
-    
-    private func updateView(newView: UIView) {
-        self.contentView.insertSubview(newView, at: self.contentView.subviews.count)
     }
     
     //
