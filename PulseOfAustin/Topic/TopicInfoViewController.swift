@@ -87,8 +87,8 @@ class TopicInfoViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.cardFrame = CGRect(x: 15,
-                                y: 15,
+        self.cardFrame = CGRect(x: 20,
+                                y: 10,
                                 width: self.topicInfoViewContainer.frame.width - 30,
                                 height: self.topicInfoViewContainer.frame.height - 30)
     }
@@ -106,112 +106,45 @@ class TopicInfoViewController: UIViewController {
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
-            let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnOverview))
+            let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnCards))
             landingView.info.addGestureRecognizer(infoRecognizer)
             self.updateViewContent(newView: landingView)
         }
     }
     
-    // Learn Screen 2: Overview
-    @objc private func loadLearnOverview() {
+    // Learn Screen 2: Learn Scroll View
+    @objc private func loadLearnCards() {
         self.pageControl.numberOfPages = 4
         self.pageControl.currentPage = 0
-        let scrollView = UIScrollView(frame: self.topicInfoViewContainer.bounds)
-        scrollView.isPagingEnabled = true
         let learnText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText
-        // Overview Card
-        if let learnOverviewView = UINib(nibName: "LearnOverview", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnOverview? {
-            learnOverviewView.frame = self.topicInfoViewContainer.bounds
-            let overviewCardText = learnText?.overviewText
-            overviewCardText?.forEach {
-                let label = UILabel(frame: CGRect(x: 0,
-                                                  y: 0,
-                                                  width: 1,
-                                                  height: CGFloat.greatestFiniteMagnitude))
-                label.numberOfLines = 0
-                label.lineBreakMode = .byWordWrapping
-                label.font = UIFont.introCardBody
-                label.text = $0
-                label.sizeToFit()
-                learnOverviewView.bodyTextStackView.addArrangedSubview(label)
-            }
-            scrollView.addSubview(learnOverviewView)
-            scrollView.contentSize = learnOverviewView.frame.size
-        }
-        // Breakdown Card
-        if let learnBreakdownView = UINib(nibName: "LearnBreakdown", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown?,
-                let learnCardFrame = self.cardFrame {
-            learnBreakdownView.frame = learnCardFrame
-            learnBreakdownView.breakdownTitle.text = learnText?.breakdownTitle
-            if let breakdownAmountsText = learnText?.breakdownAmountsText,
-                let breakdownDescriptionsText = learnText?.breakdownDescriptionsText {
-                for i in 0..<breakdownAmountsText.count {
-                    if let breakdownRow = UINib(nibName: "BreakdownView", bundle: nil)
-                        .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
-                        breakdownRow.amountLabel.text = breakdownAmountsText[i]
-                        breakdownRow.descriptionLabel.text = breakdownDescriptionsText[i]
-                        breakdownRow.amountLabel.sizeToFit()
-                        breakdownRow.descriptionLabel.sizeToFit()
-                        breakdownRow.sizeToFit()
-                        learnBreakdownView.breakdownStackView.addArrangedSubview(breakdownRow)
-                    }
-                }
-            }
-            scrollView.addSubview(learnBreakdownView)
-            scrollView.contentSize.width += learnBreakdownView.frame.width
-        }
-        // On the Ballot Card
-        if let learnOnTheBallotView = UINib(nibName: "LearnBreakdown", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnBreakdown? {
-            learnOnTheBallotView.frame = CGRect(x: self.topicInfoViewContainer.bounds.width * 2,
-                                                y: 0,
-                                                width: self.topicInfoViewContainer.bounds.width,
-                                                height: self.topicInfoViewContainer.bounds.height)
-            learnOnTheBallotView.breakdownTitle.text = learnText?.onTheBallotTitle
-            if let onTheBallotAmountsText = learnText?.onTheBallotAmountsText,
-               let onTheBallotDescriptionsText = learnText?.onTheBallotDescriptionsText {
-                
-                for i in 0..<onTheBallotAmountsText.count {
-                    if let breakdownRow = UINib(nibName: "BreakdownView", bundle: nil)
-                            .instantiate(withOwner: self, options: nil).first as! BreakdownView? {
-                        breakdownRow.amountLabel.text = onTheBallotAmountsText[i]
-                        breakdownRow.descriptionLabel.text = onTheBallotDescriptionsText[i]
-                        breakdownRow.amountLabel.sizeToFit()
-                        breakdownRow.descriptionLabel.sizeToFit()
-                        breakdownRow.sizeToFit()
-                        learnOnTheBallotView.breakdownStackView.addArrangedSubview(breakdownRow)
-                    }
-                }
-            }
-            scrollView.addSubview(learnOnTheBallotView)
-            scrollView.contentSize.width += learnOnTheBallotView.frame.width
-        }
-        // City Rationale Card
-        if let cityRationaleView = UINib(nibName: "LearnCityRationale", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! LearnCityRationale? {
-            cityRationaleView.frame = CGRect(x: self.topicInfoViewContainer.bounds.width * 3,
-                                            y: 0,
-                                            width: self.topicInfoViewContainer.bounds.width,
-                                            height: self.topicInfoViewContainer.bounds.height)
-            if let perspectivesTitles = learnText?.perspectivesTitles,
-               let perspectivesText = learnText?.perspectivesText {
-                
-                for i in 0..<perspectivesTitles.count {
-                    if let perspectiveView = UINib(nibName: "PerspectiveView", bundle: nil)
-                            .instantiate(withOwner: self, options: nil).first as! PerspectiveView? {
-                        perspectiveView.source.text = perspectivesTitles[i]
-                        perspectiveView.perspective.text = perspectivesText[i]
-                        cityRationaleView.perspectivesStackView.addArrangedSubview(perspectiveView)
-                    }
-                }
-            }
-            scrollView.addSubview(cityRationaleView)
-            scrollView.contentSize.width += cityRationaleView.frame.width
+        guard let learnCardFrame = self.cardFrame else { return }
+        guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
+        cardsContainer.frame = self.topicInfoViewContainer.bounds
+        let cardsScrollView = cardsContainer.scrollView
+        cardsScrollView?.contentSize.height = 1.0
+        
+        // TODO: move html
+        let htmlText = [
+            "<html><body><b>screen</b> 1</body></html>",
+            "screen 2",
+            "<html><body><b>screen</b> 3</body></html>"
+        ]
+        
+        // Create cards and add to scroll view
+        for i in 0..<htmlText.count {
+            guard let card = UINib(nibName: "LearnCard", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCard? else { return }
+            
+            let cardWidth = learnCardFrame.width
+            card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth,
+                                                y: 0),
+                                size: learnCardFrame.size)
+            
+            card.textView.setHTMLAsAttributedString(htmlString: htmlText[i])
+            cardsScrollView?.addSubview(card)
+            cardsScrollView?.contentSize.width += card.frame.width
         }
         
-        self.updateViewContent(newView: scrollView)
+        self.updateViewContent(newView: cardsContainer)
     }
     
     //

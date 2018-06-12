@@ -24,6 +24,11 @@
 		755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAF2088C69100554399 /* TopicIntroViewController.swift */; };
 		755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB1208B89FF00554399 /* UIFont+Extension.swift */; };
 		755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */; };
+		7565F19020CC7B95008DFF27 /* LearnCardsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565F18F20CC7B95008DFF27 /* LearnCardsContainer.swift */; };
+		7565F19220CC7BB6008DFF27 /* LearnCardsContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7565F19120CC7BB6008DFF27 /* LearnCardsContainer.xib */; };
+		7565F19420CC7CA4008DFF27 /* LearnCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565F19320CC7CA4008DFF27 /* LearnCard.swift */; };
+		7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7565F19520CC7CC6008DFF27 /* LearnCard.xib */; };
+		7565F19820CD73F1008DFF27 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565F19720CD73F1008DFF27 /* UITextView+Extension.swift */; };
 		757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */; };
 		757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */; };
 		757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FB920C4318C0018C560 /* BreakdownView.swift */; };
@@ -91,6 +96,11 @@
 		755C7BAF2088C69100554399 /* TopicIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIntroViewController.swift; sourceTree = "<group>"; };
 		755C7BB1208B89FF00554399 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInfoViewController.swift; sourceTree = "<group>"; };
+		7565F18F20CC7B95008DFF27 /* LearnCardsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardsContainer.swift; sourceTree = "<group>"; };
+		7565F19120CC7BB6008DFF27 /* LearnCardsContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnCardsContainer.xib; sourceTree = "<group>"; };
+		7565F19320CC7CA4008DFF27 /* LearnCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCard.swift; sourceTree = "<group>"; };
+		7565F19520CC7CC6008DFF27 /* LearnCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnCard.xib; sourceTree = "<group>"; };
+		7565F19720CD73F1008DFF27 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		757C0FB120C42E9C0018C560 /* LearnBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBreakdown.swift; sourceTree = "<group>"; };
 		757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnBreakdown.xib; sourceTree = "<group>"; };
 		757C0FB920C4318C0018C560 /* BreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakdownView.swift; sourceTree = "<group>"; };
@@ -180,6 +190,10 @@
 				757C0FB320C42ECC0018C560 /* LearnBreakdown.xib */,
 				757C0FBD20C44DFE0018C560 /* LearnCityRationale.swift */,
 				757C0FBF20C44E0F0018C560 /* LearnCityRationale.xib */,
+				7565F18F20CC7B95008DFF27 /* LearnCardsContainer.swift */,
+				7565F19120CC7BB6008DFF27 /* LearnCardsContainer.xib */,
+				7565F19320CC7CA4008DFF27 /* LearnCard.swift */,
+				7565F19520CC7CC6008DFF27 /* LearnCard.xib */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -260,6 +274,7 @@
 				755C7BA42082819E00554399 /* UIView+Extension.swift */,
 				755C7BAC2085A05400554399 /* UIColor+Extension.swift */,
 				755C7BB1208B89FF00554399 /* UIFont+Extension.swift */,
+				7565F19720CD73F1008DFF27 /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,8 +445,10 @@
 				757C0FC020C44E0F0018C560 /* LearnCityRationale.xib in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
+				7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
+				7565F19220CC7BB6008DFF27 /* LearnCardsContainer.xib in Resources */,
 				75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */,
 				757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */,
 			);
@@ -546,10 +563,13 @@
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
+				7565F19420CC7CA4008DFF27 /* LearnCard.swift in Sources */,
 				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
+				7565F19020CC7B95008DFF27 /* LearnCardsContainer.swift in Sources */,
 				75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */,
+				7565F19820CD73F1008DFF27 /* UITextView+Extension.swift in Sources */,
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
