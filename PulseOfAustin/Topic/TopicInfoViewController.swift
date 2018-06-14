@@ -90,7 +90,7 @@ class TopicInfoViewController: UIViewController {
         self.cardFrame = CGRect(x: 20,
                                 y: 10,
                                 width: self.topicInfoViewContainer.frame.width - 30,
-                                height: self.topicInfoViewContainer.frame.height - 30)
+                                height: self.topicInfoViewContainer.frame.height - 40)
     }
     
     //
@@ -114,8 +114,6 @@ class TopicInfoViewController: UIViewController {
     
     // Learn Screen 2: Learn Scroll View
     @objc private func loadLearnCards() {
-        self.pageControl.numberOfPages = 4
-        self.pageControl.currentPage = 0
         let learnText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText
         guard let learnCardFrame = self.cardFrame else { return }
         guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
@@ -125,10 +123,12 @@ class TopicInfoViewController: UIViewController {
         
         // TODO: move html
         let htmlText = [
-            "<html><body><b>screen</b> 1</body></html>",
+            "<b>screen</b> 1",
             "screen 2",
             "<html><body><b>screen</b> 3</body></html>"
         ]
+        cardsContainer.pageControl.numberOfPages = htmlText.count
+        
         
         // Create cards and add to scroll view
         for i in 0..<htmlText.count {
