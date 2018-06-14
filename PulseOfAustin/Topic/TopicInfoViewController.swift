@@ -138,7 +138,8 @@ class TopicInfoViewController: UIViewController {
             card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth,
                                                 y: 0),
                                 size: learnCardFrame.size)
-            
+            // First card opaque, others translucent
+            card.alpha = ((i == 0) ? 1.0 : 0.5)
             card.textView.setHTMLAsAttributedString(htmlString: htmlText[i])
             cardsScrollView?.addSubview(card)
             cardsScrollView?.contentSize.width += card.frame.width

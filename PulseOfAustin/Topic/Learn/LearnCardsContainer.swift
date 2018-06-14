@@ -20,8 +20,13 @@ class LearnCardsContainer: UIView {
 }
 
 extension LearnCardsContainer: UIScrollViewDelegate {
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentPage = scrollView.contentOffset.x / scrollView.frame.width
-        self.pageControl.currentPage = Int(currentPage)
+        let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        self.pageControl.currentPage = currentPage
+        // Make off-screen cards translucent
+        for i in 0..<(scrollView.subviews.count - 1) {
+            scrollView.subviews[i].alpha = ((i == currentPage) ? 1.0 : 0.5)
+        }
     }
 }
