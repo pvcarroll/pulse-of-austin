@@ -59,13 +59,13 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedTopicKey = indexPath.row
-        self.performSegue(withIdentifier: "toTopicIntro", sender: self)
+        self.performSegue(withIdentifier: "toTopicInfo", sender: self)
     }
     
     // MARK:- Prepare for Segue
     
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? TopicIntroViewController)?.selectedTopicKey = self.selectedTopicKey
+        (segue.destination as? TopicInfoViewController)?.selectedTopicKey = self.selectedTopicKey
     }
 }
 

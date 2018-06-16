@@ -29,7 +29,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbK-Qk-UVB" userLabel="Baseline View">
-                            <rect key="frame" x="0.0" y="40.5" width="2" height="245"/>
+                            <rect key="frame" x="0.0" y="38.5" width="2" height="245"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="245" id="5yk-ud-Jpa"/>
@@ -45,7 +45,7 @@
                             <state key="normal" title="Read Voices Button"/>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TpL-Fw-ELk" userLabel="Responses Stack View">
-                            <rect key="frame" x="2" y="45.5" width="278" height="235"/>
+                            <rect key="frame" x="2" y="43.5" width="278" height="235"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-Dz-fAn" userLabel="Response1 View">
                                     <rect key="frame" x="0.0" y="0.0" width="278" height="44"/>
@@ -212,7 +212,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="YbK-Qk-UVB" firstAttribute="centerY" secondItem="060-Hc-ZbJ" secondAttribute="centerY" constant="-5" id="Dmc-pq-1HH"/>
+                        <constraint firstItem="YbK-Qk-UVB" firstAttribute="centerY" secondItem="060-Hc-ZbJ" secondAttribute="centerY" constant="-7" id="Dmc-pq-1HH"/>
                         <constraint firstItem="ulh-OS-9Hx" firstAttribute="top" secondItem="060-Hc-ZbJ" secondAttribute="top" id="It6-gv-PQK"/>
                         <constraint firstAttribute="trailing" secondItem="ulh-OS-9Hx" secondAttribute="trailing" id="Pkm-FI-Dbq"/>
                         <constraint firstItem="i00-jX-Bke" firstAttribute="centerX" secondItem="060-Hc-ZbJ" secondAttribute="centerX" id="RPt-Bl-sFr"/>
