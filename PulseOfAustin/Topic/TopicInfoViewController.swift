@@ -73,13 +73,13 @@ class TopicInfoViewController: UIViewController {
         self.learnButton.backgroundColor = UIColor.basicsBarBlue
         self.learnButton.setTitle("LEARN", for: .normal)
         self.learnButton.titleLabel?.font = UIFont.buttonFont
-        self.learnButton.setTitleColor(UIColor.whiteText, for: .normal)
+        self.learnButton.setTitleColor(UIColor.darkText, for: .normal)
         self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
         
         self.weighInButton.backgroundColor = UIColor.basicsBarBlue
         self.weighInButton.setTitle("WEIGH IN", for: .normal)
         self.weighInButton.titleLabel?.font = UIFont.buttonFont
-        self.weighInButton.setTitleColor(UIColor.whiteText, for: .normal)
+        self.weighInButton.setTitleColor(UIColor.darkText, for: .normal)
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         
         self.loadLearnLanding()
