@@ -55,7 +55,7 @@ class TopicInfoViewController: UIViewController {
     @IBAction func weighInButtonTapped(_ sender: Any) {
         self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        self.loadWeighInSelect()
+        self.loadWeighInLanding()
     }
     
     //
@@ -153,7 +153,22 @@ class TopicInfoViewController: UIViewController {
     // MARK: Weigh In Flow
     //
     
-    // Weigh In Screen 1: Select
+    // Weigh In Screen 1: Landing
+    private func loadWeighInLanding() {
+        if let landingView = UINib(nibName: "WeighInLanding", bundle: nil)
+            .instantiate(withOwner: self, options: nil).first as! WeighInLanding? {
+            landingView.frame = self.topicInfoViewContainer.bounds
+            landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            let scrollViewHeight = landingView.stackView.frame.height + 15 + 15
+            landingView.contentSize = CGSize(width: landingView.frame.width,
+                                             height: scrollViewHeight)
+            let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.startWeighIn))
+            landingView.one.addGestureRecognizer(infoRecognizer)
+            self.updateViewContent(newView: landingView)
+        }
+    }
+    
+    // Weigh In Screen 2: Select
     private func loadWeighInSelect() {
         // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
@@ -175,7 +190,7 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    // Weigh In Screen 2: Elaborate
+    // Weigh In Screen 3: Elaborate
     private func loadWeighInElaborate(answerText: String) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
@@ -204,7 +219,7 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInSelect()
     }
     
-    // Weigh In Screen 3: Results
+    // Weigh In Screen 4: Results
     private func loadWeighInResults() {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
@@ -284,6 +299,9 @@ class TopicInfoViewController: UIViewController {
     
     @objc func learnCardXTapped(sender: UIButton!) {
         self.loadLearnLanding()
+    }
+    @objc func startWeighIn() {
+        self.loadWeighInSelect()
     }
     @objc func answer1Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice1

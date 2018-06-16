@@ -68,5 +68,3 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         (segue.destination as? TopicInfoViewController)?.selectedTopicKey = self.selectedTopicKey
     }
 }
-
-

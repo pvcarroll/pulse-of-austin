@@ -21,7 +21,6 @@
 		755C7BA72083006E00554399 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755C7BA62083006E00554399 /* TopicCell.xib */; };
 		755C7BA92083A5F400554399 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA82083A5F400554399 /* TopicCell.swift */; };
 		755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAC2085A05400554399 /* UIColor+Extension.swift */; };
-		755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BAF2088C69100554399 /* TopicIntroViewController.swift */; };
 		755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB1208B89FF00554399 /* UIFont+Extension.swift */; };
 		755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */; };
 		7565F19020CC7B95008DFF27 /* LearnCardsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565F18F20CC7B95008DFF27 /* LearnCardsContainer.swift */; };
@@ -44,6 +43,8 @@
 		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
 		75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD07E209F4F93008AD469 /* WeighInResults.swift */; };
 		75BCD08220A7B741008AD469 /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD08120A7B741008AD469 /* TopicData.swift */; };
+		75BDBDB920D5701E00BE0E84 /* WeighInLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */; };
+		75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -93,7 +94,6 @@
 		755C7BA62083006E00554399 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		755C7BA82083A5F400554399 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		755C7BAC2085A05400554399 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		755C7BAF2088C69100554399 /* TopicIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIntroViewController.swift; sourceTree = "<group>"; };
 		755C7BB1208B89FF00554399 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInfoViewController.swift; sourceTree = "<group>"; };
 		7565F18F20CC7B95008DFF27 /* LearnCardsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCardsContainer.swift; sourceTree = "<group>"; };
@@ -116,6 +116,8 @@
 		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
 		75BCD07E209F4F93008AD469 /* WeighInResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInResults.swift; sourceTree = "<group>"; };
 		75BCD08120A7B741008AD469 /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
+		75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInLanding.xib; sourceTree = "<group>"; };
+		75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInLanding.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -284,7 +286,6 @@
 			children = (
 				752137E020C2F5DB002C8A89 /* Learn */,
 				75BCD077209E628B008AD469 /* WeighIn */,
-				755C7BAF2088C69100554399 /* TopicIntroViewController.swift */,
 				755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */,
 			);
 			path = Topic;
@@ -304,6 +305,8 @@
 		75BCD077209E628B008AD469 /* WeighIn */ = {
 			isa = PBXGroup;
 			children = (
+				75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */,
+				75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */,
 				75B9374F2097451700221467 /* WeighInSelect.xib */,
 				75B937512097453500221467 /* WeighInSelect.swift */,
 				75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */,
@@ -438,6 +441,7 @@
 				752EF73F207C571F0046743A /* LaunchScreen.storyboard in Resources */,
 				752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */,
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
+				75BDBDB920D5701E00BE0E84 /* WeighInLanding.xib in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 				757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */,
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
@@ -557,7 +561,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */,
-				755C7BB02088C69100554399 /* TopicIntroViewController.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
@@ -577,6 +580,7 @@
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
+				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
