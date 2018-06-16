@@ -141,6 +141,7 @@ class TopicInfoViewController: UIViewController {
             card.textView.setHTMLAsAttributedString(htmlString: htmlText[i])
             card.pageControl.numberOfPages = htmlText.count
             card.pageControl.currentPage = i
+            card.xButton.addTarget(self, action: #selector(TopicInfoViewController.learnCardXTapped), for: .touchDown)
             cardsScrollView?.addSubview(card)
             cardsScrollView?.contentSize.width += card.frame.width
         }
@@ -281,6 +282,9 @@ class TopicInfoViewController: UIViewController {
     // MARK: Event Handlers
     //
     
+    @objc func learnCardXTapped(sender: UIButton!) {
+        self.loadLearnLanding()
+    }
     @objc func answer1Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice1
         let answerText = sender.titleLabel?.text! ?? ""
