@@ -127,8 +127,6 @@ class TopicInfoViewController: UIViewController {
             "screen 2",
             "<html><body><b>screen</b> 3</body></html>"
         ]
-        cardsContainer.pageControl.numberOfPages = htmlText.count
-        
         
         // Create cards and add to scroll view
         for i in 0..<htmlText.count {
@@ -141,6 +139,8 @@ class TopicInfoViewController: UIViewController {
             // First card opaque, others translucent
             card.alpha = ((i == 0) ? 1.0 : 0.5)
             card.textView.setHTMLAsAttributedString(htmlString: htmlText[i])
+            card.pageControl.numberOfPages = htmlText.count
+            card.pageControl.currentPage = i
             cardsScrollView?.addSubview(card)
             cardsScrollView?.contentSize.width += card.frame.width
         }

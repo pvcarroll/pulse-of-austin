@@ -12,10 +12,12 @@ import WebKit
 class LearnCard: UIView {
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.textView.layer.cornerRadius = 3.0
         self.addBottomShadow()
+        self.pageControl.addBottomShadow()
     }
 }

@@ -17,27 +17,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-z5-cgS">
-                    <rect key="frame" x="20" y="40" width="345" height="607"/>
+                    <rect key="frame" x="20" y="40" width="345" height="627"/>
                 </scrollView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-ri-9No">
-                    <rect key="frame" x="168" y="647" width="39" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="J1X-08-vKm"/>
-                    </constraints>
-                </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="UUM-z5-cgS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="1TG-pt-0be"/>
-                <constraint firstItem="Bna-ri-9No" firstAttribute="top" secondItem="UUM-z5-cgS" secondAttribute="bottom" id="XAu-bm-vjY"/>
-                <constraint firstItem="Bna-ri-9No" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aAj-qM-c3y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UUM-z5-cgS" secondAttribute="bottom" id="99d-rZ-JhF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UUM-z5-cgS" secondAttribute="trailing" constant="10" id="jmp-A1-PTj"/>
                 <constraint firstItem="UUM-z5-cgS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="tV4-6H-zMv"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Bna-ri-9No" secondAttribute="bottom" id="vxz-jC-nbY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="pageControl" destination="Bna-ri-9No" id="Ckc-37-SWr"/>
                 <outlet property="scrollView" destination="UUM-z5-cgS" id="8AQ-0t-4YP"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
