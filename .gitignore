@@ -1,3 +1,5 @@
 Pods/
 
 PulseOfAustin\.xcworkspace/xcuserdata/paulcarroll\.xcuserdatad/xcdebugger/Breakpoints_v2\.xcbkptlist
+
+PulseOfAustin/Server/Secrets\.swift

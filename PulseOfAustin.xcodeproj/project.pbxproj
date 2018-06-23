@@ -24,6 +24,7 @@
 		75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */; };
 		75519B4020DEDC2600463BB1 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B3F20DEDC2600463BB1 /* CreateAccount.swift */; };
 		75519B4320DEDC9000463BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4220DEDC9000463BB1 /* User.swift */; };
+		75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4620DEE9C400463BB1 /* Secrets.swift */; };
 		755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA120824C8F00554399 /* ExploreViewController.swift */; };
 		755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA42082819E00554399 /* UIView+Extension.swift */; };
 		755C7BA72083006E00554399 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755C7BA62083006E00554399 /* TopicCell.xib */; };
@@ -105,6 +106,7 @@
 		75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		75519B3F20DEDC2600463BB1 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		75519B4220DEDC9000463BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		75519B4620DEE9C400463BB1 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		755C7BA120824C8F00554399 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		755C7BA42082819E00554399 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		755C7BA62083006E00554399 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		75519B4420DEE1D100463BB1 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				75519B4620DEE9C400463BB1 /* Secrets.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
 				7565F19420CC7CA4008DFF27 /* LearnCard.swift in Sources */,
 				753E25A020D6C5440020307D /* OnboardingWelcome.swift in Sources */,
+				75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */,
 				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
