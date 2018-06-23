@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
+        self.present(vc, animated: true)
     }
     
     @IBAction func onboardingTapped(_ sender: UIButton) {
