@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUb-8u-ffh">
-                                <rect key="frame" x="82" y="168" width="210" height="311"/>
+                                <rect key="frame" x="82" y="96.5" width="210" height="454.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PulseLineIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4j0-ZU-KVf">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
@@ -47,11 +47,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he5-RM-iLM">
-                                        <rect key="frame" x="25" y="211" width="160" height="50"/>
+                                        <rect key="frame" x="0.0" y="291" width="210" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="NKf-sp-IAd"/>
-                                            <constraint firstAttribute="height" constant="50" id="ajE-q0-UIZ"/>
+                                            <constraint firstAttribute="height" constant="44" id="ajE-q0-UIZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <state key="normal" title="EXPLORE">
@@ -62,25 +61,56 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-o1-qba" userLabel="Create Account Button">
-                                        <rect key="frame" x="64.5" y="281" width="81" height="30"/>
+                                        <rect key="frame" x="64.5" y="424.5" width="81" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NAJ-CA-DgU"/>
                                         </constraints>
                                         <state key="normal" title="Onboarding"/>
                                         <connections>
-                                            <action selector="createAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMF-4o-0zV"/>
+                                            <action selector="onboardingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMF-4o-0zV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-Nb-j6z">
+                                        <rect key="frame" x="84" y="351" width="43" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fo7-u4-b9J">
+                                        <rect key="frame" x="30.5" y="371.5" width="150" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="HkK-pm-6nc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="TCT-CA-hDx"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Create Account">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="createAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pyg-OS-Eqf"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="KCR-Cp-FBD" firstAttribute="top" secondItem="9av-lB-9gY" secondAttribute="bottom" constant="10" id="9eC-TL-ZSg"/>
+                                    <constraint firstItem="ZQJ-Nb-j6z" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="AMF-xc-ZEI"/>
                                     <constraint firstAttribute="bottom" secondItem="yOu-o1-qba" secondAttribute="bottom" id="B4f-Wo-QMa"/>
+                                    <constraint firstItem="Fo7-u4-b9J" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="CA6-JW-LG2"/>
                                     <constraint firstItem="9av-lB-9gY" firstAttribute="top" secondItem="4j0-ZU-KVf" secondAttribute="bottom" constant="10" id="IIq-7z-x3q"/>
-                                    <constraint firstItem="he5-RM-iLM" firstAttribute="top" secondItem="KCR-Cp-FBD" secondAttribute="bottom" constant="70" id="JSL-z9-kLx"/>
+                                    <constraint firstItem="he5-RM-iLM" firstAttribute="top" secondItem="KCR-Cp-FBD" secondAttribute="bottom" constant="150" id="JSL-z9-kLx"/>
                                     <constraint firstItem="4j0-ZU-KVf" firstAttribute="leading" secondItem="JUb-8u-ffh" secondAttribute="leading" id="KRv-ym-xdI"/>
+                                    <constraint firstItem="he5-RM-iLM" firstAttribute="leading" secondItem="JUb-8u-ffh" secondAttribute="leading" id="Koq-5F-RdZ"/>
+                                    <constraint firstItem="yOu-o1-qba" firstAttribute="top" secondItem="Fo7-u4-b9J" secondAttribute="bottom" constant="13" id="Lw1-9E-qiB"/>
+                                    <constraint firstItem="Fo7-u4-b9J" firstAttribute="top" secondItem="ZQJ-Nb-j6z" secondAttribute="bottom" id="Mi9-zs-Ksy"/>
                                     <constraint firstAttribute="trailing" secondItem="4j0-ZU-KVf" secondAttribute="trailing" id="MqN-5B-T8V"/>
-                                    <constraint firstItem="yOu-o1-qba" firstAttribute="top" secondItem="he5-RM-iLM" secondAttribute="bottom" constant="20" id="PS7-T7-pH6"/>
+                                    <constraint firstAttribute="trailing" secondItem="he5-RM-iLM" secondAttribute="trailing" id="UDv-pT-jmN"/>
+                                    <constraint firstItem="ZQJ-Nb-j6z" firstAttribute="top" secondItem="he5-RM-iLM" secondAttribute="bottom" constant="16" id="aIl-aB-GZO"/>
                                     <constraint firstItem="yOu-o1-qba" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="bLr-U4-Voa"/>
                                     <constraint firstItem="KCR-Cp-FBD" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="bUH-BE-MbR"/>
                                     <constraint firstItem="he5-RM-iLM" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="gb2-Go-3HW"/>
@@ -102,9 +132,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="BHU-68-bih"/>
                     <connections>
+                        <outlet property="createAccountButton" destination="Fo7-u4-b9J" id="IH5-Cd-IQX"/>
                         <outlet property="exploreButton" destination="he5-RM-iLM" id="pYo-gg-gTe"/>
                         <outlet property="homeDescriptionLabel" destination="KCR-Cp-FBD" id="FCv-5z-8GS"/>
                         <outlet property="landingScreenTitle" destination="9av-lB-9gY" id="LGV-ud-5Sb"/>
+                        <outlet property="newLabel" destination="ZQJ-Nb-j6z" id="XL9-PD-aLj"/>
                         <segue destination="2ea-r9-CdL" kind="show" identifier="toExplore" id="SBq-Mc-eSL"/>
                     </connections>
                 </viewController>

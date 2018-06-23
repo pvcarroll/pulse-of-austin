@@ -29,7 +29,10 @@ extension UIColor {
         return UIColor(red:0.72, green:0.82, blue:0.90, alpha:1.0)
     }
     public class var customDarkText: UIColor {
-        return UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
+        return UIColor(red: 74/255.0, green: 74/255.0, blue: 74/255.0, alpha: 1.0)
+    }
+    public class var homeCreateAccountText: UIColor {
+        return UIColor(red: 67/255.0, green: 62/255.0, blue: 54/255.0, alpha: 1.0)
     }
     public class var customDarkerText: UIColor {
         return UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
