@@ -16,6 +16,11 @@
 		752EF74A207C571F0046743A /* PulseOfAustinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF749207C571F0046743A /* PulseOfAustinTests.swift */; };
 		752EF755207C571F0046743A /* PulseOfAustinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF754207C571F0046743A /* PulseOfAustinUITests.swift */; };
 		752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 752EF79E207C5DDB0046743A /* GoogleService-Info.plist */; };
+		753E259E20D6C4510020307D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753E259D20D6C4510020307D /* Onboarding.storyboard */; };
+		753E25A020D6C5440020307D /* OnboardingWelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E259F20D6C5440020307D /* OnboardingWelcome.swift */; };
+		753E25A220D6D4F90020307D /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E25A120D6D4F90020307D /* OnboardingMain.swift */; };
+		753E25A420DBD8C10020307D /* OnboardingSlideInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753E25A320DBD8C10020307D /* OnboardingSlideInfo.xib */; };
+		753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E25A520DBD8D20020307D /* OnboardingSlideInfo.swift */; };
 		755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA120824C8F00554399 /* ExploreViewController.swift */; };
 		755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA42082819E00554399 /* UIView+Extension.swift */; };
 		755C7BA72083006E00554399 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755C7BA62083006E00554399 /* TopicCell.xib */; };
@@ -89,6 +94,11 @@
 		752EF756207C57200046743A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752EF79E207C5DDB0046743A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulseOfAustin.entitlements; sourceTree = "<group>"; };
+		753E259D20D6C4510020307D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		753E259F20D6C5440020307D /* OnboardingWelcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome.swift; sourceTree = "<group>"; };
+		753E25A120D6D4F90020307D /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
+		753E25A320DBD8C10020307D /* OnboardingSlideInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingSlideInfo.xib; sourceTree = "<group>"; };
+		753E25A520DBD8D20020307D /* OnboardingSlideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideInfo.swift; sourceTree = "<group>"; };
 		755C7BA120824C8F00554399 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		755C7BA42082819E00554399 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		755C7BA62083006E00554399 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -228,6 +238,7 @@
 				75BCD08020A7B6C6008AD469 /* Data */,
 				755C7BA32082818B00554399 /* Extensions */,
 				755C7B9E20824BCF00554399 /* Explore */,
+				753E259C20D6C42D0020307D /* Onboarding */,
 				755C7BAE2088C5EA00554399 /* Topic */,
 				757C0FB820C4313F0018C560 /* Views */,
 				752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */,
@@ -258,6 +269,18 @@
 				752EF756207C57200046743A /* Info.plist */,
 			);
 			path = PulseOfAustinUITests;
+			sourceTree = "<group>";
+		};
+		753E259C20D6C42D0020307D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				753E259D20D6C4510020307D /* Onboarding.storyboard */,
+				753E259F20D6C5440020307D /* OnboardingWelcome.swift */,
+				753E25A120D6D4F90020307D /* OnboardingMain.swift */,
+				753E25A320DBD8C10020307D /* OnboardingSlideInfo.xib */,
+				753E25A520DBD8D20020307D /* OnboardingSlideInfo.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		755C7B9E20824BCF00554399 /* Explore */ = {
@@ -452,7 +475,9 @@
 				7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
+				753E25A420DBD8C10020307D /* OnboardingSlideInfo.xib in Resources */,
 				7565F19220CC7BB6008DFF27 /* LearnCardsContainer.xib in Resources */,
+				753E259E20D6C4510020307D /* Onboarding.storyboard in Resources */,
 				75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */,
 				757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */,
 			);
@@ -567,6 +592,7 @@
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
 				7565F19420CC7CA4008DFF27 /* LearnCard.swift in Sources */,
+				753E25A020D6C5440020307D /* OnboardingWelcome.swift in Sources */,
 				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
@@ -575,6 +601,7 @@
 				7565F19820CD73F1008DFF27 /* UITextView+Extension.swift in Sources */,
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
+				753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */,
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
 				757C0FBE20C44DFE0018C560 /* LearnCityRationale.swift in Sources */,
 				755C7BB2208B89FF00554399 /* UIFont+Extension.swift in Sources */,
@@ -582,6 +609,7 @@
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
 				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
+				753E25A220D6D4F90020307D /* OnboardingMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,11 @@ class HomeViewController: UIViewController {
         self.performSegue(withIdentifier: "toExplore", sender: self)
     }
     
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingWelcome") as! OnboardingWelcome
+        self.present(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

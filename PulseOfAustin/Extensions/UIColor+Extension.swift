@@ -31,6 +31,9 @@ extension UIColor {
     public class var customDarkText: UIColor {
         return UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     }
+    public class var customDarkerText: UIColor {
+        return UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
+    }
     public class var infoCardBackground: UIColor {
         return UIColor(red:0.94, green:0.93, blue:0.91, alpha:1.0)
     }
