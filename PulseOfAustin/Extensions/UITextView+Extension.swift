@@ -19,6 +19,5 @@ extension UITextView {
         } catch {
             print("Error converting html to attributed string: \(error)")
         }
-        
     }
 }

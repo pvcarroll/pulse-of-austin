@@ -40,4 +40,7 @@ extension UIColor {
     public class var infoCardBackground: UIColor {
         return UIColor(red:0.94, green:0.93, blue:0.91, alpha:1.0)
     }
+    public class var textFieldBottomBorder: UIColor {
+        return UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0)
+    }
 }

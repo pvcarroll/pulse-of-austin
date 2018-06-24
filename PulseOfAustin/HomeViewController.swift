@@ -43,8 +43,7 @@ class HomeViewController: UIViewController {
         self.exploreButton.layer.cornerRadius = (self.exploreButton.frame.height / 2)
         newLabel.font = UIFont.futura16
         newLabel.textColor = UIColor.homeCreateAccountText
-        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont.futura16,
-                                  NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
+        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
                                   NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         let createAccountString: NSAttributedString = NSAttributedString(string: "Create Account", attributes: createAccountAttrs)
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)
