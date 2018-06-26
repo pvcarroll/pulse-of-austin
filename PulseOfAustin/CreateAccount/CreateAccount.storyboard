@@ -166,6 +166,7 @@
                         <outlet property="passwordField" destination="GXF-hW-0tz" id="Wft-LU-bqC"/>
                         <outlet property="screenSubtitle" destination="i7Z-PD-yO1" id="yus-3m-9um"/>
                         <outlet property="screenTitle" destination="6hv-zd-60g" id="iAi-wx-AzH"/>
+                        <outlet property="scrollView" destination="wPc-Hz-H9r" id="HAg-lV-v3V"/>
                         <outlet property="zipCodeField" destination="YfQ-vt-3XH" id="lFg-FG-HnA"/>
                     </connections>
                 </viewController>
