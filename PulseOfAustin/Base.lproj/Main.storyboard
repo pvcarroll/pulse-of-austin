@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUb-8u-ffh">
-                                <rect key="frame" x="82" y="96.5" width="210" height="454.5"/>
+                                <rect key="frame" x="82" y="97" width="210" height="453.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PulseLineIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4j0-ZU-KVf">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-o1-qba" userLabel="Create Account Button">
-                                        <rect key="frame" x="64.5" y="424.5" width="81" height="30"/>
+                                        <rect key="frame" x="64.5" y="423.5" width="81" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NAJ-CA-DgU"/>
                                         </constraints>
@@ -71,13 +71,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-Nb-j6z">
-                                        <rect key="frame" x="84" y="351" width="43" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="85.5" y="351" width="40.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fo7-u4-b9J">
-                                        <rect key="frame" x="30.5" y="371.5" width="150" height="40"/>
+                                        <rect key="frame" x="30.5" y="370.5" width="150" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="HkK-pm-6nc"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="TCT-CA-hDx"/>
@@ -86,7 +86,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Create Account">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>

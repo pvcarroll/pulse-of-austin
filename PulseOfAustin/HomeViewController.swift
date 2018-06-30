@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
         self.exploreButton.titleLabel?.font = UIFont.buttonFont
         self.exploreButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.exploreButton.layer.cornerRadius = (self.exploreButton.frame.height / 2)
-        newLabel.font = UIFont.futura16
         newLabel.textColor = UIColor.homeCreateAccountText
         let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
                                   NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
