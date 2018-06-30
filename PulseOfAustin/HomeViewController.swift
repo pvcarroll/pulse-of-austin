@@ -12,17 +12,22 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var landingScreenTitle: UILabel!
     @IBOutlet var homeDescriptionLabel: UILabel!
-    @IBOutlet var exploreButton: UIButton!
+    @IBOutlet var logInButton: UIButton!
     @IBOutlet weak var newLabel: UILabel!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     
-    @IBAction func exploreTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "toExplore", sender: self)
+    @IBAction func loginTapped(_ sender: Any) {
+        
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {
         let vc = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
         self.present(vc, animated: true)
+    }
+    
+    @IBAction func skipTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toExplore", sender: self)
     }
     
     @IBAction func onboardingTapped(_ sender: UIButton) {
@@ -36,16 +41,17 @@ class HomeViewController: UIViewController {
         self.landingScreenTitle.textColor = UIColor.customDarkText
         self.landingScreenTitle.font = UIFont.screenTitle
         self.homeDescriptionLabel.textColor = UIColor.customDarkText
-        self.exploreButton.backgroundColor = UIColor.customYellow
-        self.exploreButton.setTitle("EXPLORE", for: .normal)
-        self.exploreButton.titleLabel?.font = UIFont.buttonFont
-        self.exploreButton.setTitleColor(UIColor.whiteText, for: .normal)
-        self.exploreButton.layer.cornerRadius = (self.exploreButton.frame.height / 2)
+        self.logInButton.backgroundColor = UIColor.customYellow
+        self.logInButton.setTitle("LOG IN", for: .normal)
+        self.logInButton.titleLabel?.font = UIFont.futura13
+        self.logInButton.setTitleColor(UIColor.whiteText, for: .normal)
+        self.logInButton.layer.cornerRadius = (self.logInButton.frame.height / 2)
         newLabel.textColor = UIColor.homeCreateAccountText
         let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
                                   NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         let createAccountString: NSAttributedString = NSAttributedString(string: "Create Account", attributes: createAccountAttrs)
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)
+        skipButton.titleLabel?.font = UIFont.futuraBold13
     }
 
     override func didReceiveMemoryWarning() {

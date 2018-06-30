@@ -19,6 +19,11 @@ extension UIFont {
         guard let font2 = font else { return systemFont(ofSize: 26.0, weight: .bold) }
         return font2
     }
+    class var futuraBold13: UIFont {
+        let font = UIFont(name: "Futura-Bold", size: 13.0)
+        guard let font2 = font else { return systemFont(ofSize: 13.0, weight: .bold) }
+        return font2
+    }
     class var cardTitle: UIFont {
         let cardTitleFont = UIFont(name: "Futura-Bold", size: 16.0)
         guard let font = cardTitleFont else { return systemFont(ofSize: 16.0, weight: .bold) }
