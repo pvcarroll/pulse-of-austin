@@ -123,7 +123,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-o1-qba" userLabel="Onboarding Button">
-                                <rect key="frame" x="147" y="632" width="81" height="30"/>
+                                <rect key="frame" x="10" y="632" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NAJ-CA-DgU"/>
                                 </constraints>
@@ -139,10 +139,10 @@
                             <constraint firstAttribute="bottom" secondItem="yOu-o1-qba" secondAttribute="bottom" constant="5" id="87l-7R-FUz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JUb-8u-ffh" secondAttribute="bottom" id="ELX-nD-LR8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WBl-NP-taf" secondAttribute="trailing" id="Hn1-PT-uS7"/>
-                            <constraint firstItem="yOu-o1-qba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LY0-Ff-TuJ"/>
                             <constraint firstItem="JUb-8u-ffh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SNl-nF-CJ3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JUb-8u-ffh" secondAttribute="trailing" id="bFa-GF-ure"/>
                             <constraint firstItem="JUb-8u-ffh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="eoo-G8-V3u"/>
+                            <constraint firstItem="yOu-o1-qba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="h2v-Lh-rgG"/>
                             <constraint firstItem="WBl-NP-taf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jOs-ab-J42"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBl-NP-taf" secondAttribute="bottom" id="oLj-PA-5dw"/>
                             <constraint firstItem="WBl-NP-taf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uF9-y8-oiW"/>

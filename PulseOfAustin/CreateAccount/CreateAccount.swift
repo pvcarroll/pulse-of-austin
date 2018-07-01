@@ -27,6 +27,8 @@ class CreateAccount: UIViewController {
         // TODO: rm test
         HttpRequests.test()
         
+        self.dismissKeyboardOnMainViewTap()
+        
         screenTitle.font = UIFont.screenTitle
         screenTitle.textColor = UIColor.customDarkText
         screenSubtitle.font = UIFont.futura16
@@ -39,13 +41,10 @@ class CreateAccount: UIViewController {
         
         loginButton.setTitleColor(UIColor.customDarkText, for: .normal)
         
-        let loginButtonAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
+        let loginButtonAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkText67_62_54,
                                                                 NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         let loginTitleString: NSAttributedString = NSAttributedString(string: "Log in", attributes: loginButtonAttributes)
         loginButton.setAttributedTitle(loginTitleString, for: .normal)
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        self.view.addGestureRecognizer(tapRecognizer)
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
@@ -74,9 +73,5 @@ class CreateAccount: UIViewController {
             self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
         }
         self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
-    }
-    
-    @objc private func dismissKeyboard() {
-        self.view.endEditing(true)
     }
 }

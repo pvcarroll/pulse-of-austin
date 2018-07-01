@@ -18,7 +18,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     
     @IBAction func loginTapped(_ sender: Any) {
-        
+        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! Login
+        self.present(vc, animated: true)
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {
@@ -46,10 +47,10 @@ class HomeViewController: UIViewController {
         self.logInButton.titleLabel?.font = UIFont.futura13
         self.logInButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.logInButton.layer.cornerRadius = (self.logInButton.frame.height / 2)
-        newLabel.textColor = UIColor.homeCreateAccountText
-        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.homeCreateAccountText,
-                                  NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
-        let createAccountString: NSAttributedString = NSAttributedString(string: "Create Account", attributes: createAccountAttrs)
+        newLabel.textColor = UIColor.darkText67_62_54
+        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkText67_62_54]
+        let createAccountString: NSMutableAttributedString = NSMutableAttributedString(string: "Create Account", attributes: createAccountAttrs)
+        createAccountString.addUnderline()
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)
         skipButton.titleLabel?.font = UIFont.futuraBold13
     }
