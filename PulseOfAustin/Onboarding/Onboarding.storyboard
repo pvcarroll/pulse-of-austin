@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bXd-6b-BY6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingWelcomeImage" translatesAutoresizingMaskIntoConstraints="NO" id="bXd-6b-BY6">
                                 <rect key="frame" x="64" y="118.5" width="247" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="NCz-iw-TAH"/>
@@ -87,11 +87,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW IT WORKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-k4-HHi" userLabel="How it works">
+                                <rect key="frame" x="0.0" y="40" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OQY-4B-De4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxU-gk-4fg" userLabel="Progress Container View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-us-ank" userLabel="Progress View">
-                                        <rect key="frame" x="66" y="16" width="242" height="28"/>
+                                        <rect key="frame" x="66" y="6" width="242" height="28"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-zI-4zb" userLabel="Screen1 View">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -188,10 +197,10 @@
                                     <constraint firstItem="w3Z-us-ank" firstAttribute="centerY" secondItem="yxU-gk-4fg" secondAttribute="centerY" id="r3c-6Z-zRh"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRW-FM-kYV">
-                                <rect key="frame" x="0.0" y="80" width="375" height="557"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRW-FM-kYV">
+                                <rect key="frame" x="0.0" y="110" width="375" height="527"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-JM-d1z">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-JM-d1z">
                                 <rect key="frame" x="168" y="637" width="39" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CHn-CG-raP"/>
@@ -204,18 +213,23 @@
                         <constraints>
                             <constraint firstItem="0JP-0A-POp" firstAttribute="trailing" secondItem="yxU-gk-4fg" secondAttribute="trailing" id="32t-dZ-OEM"/>
                             <constraint firstItem="zmX-JM-d1z" firstAttribute="centerX" secondItem="Q7F-r6-Tpo" secondAttribute="centerX" id="3ya-JN-VK7"/>
-                            <constraint firstItem="yxU-gk-4fg" firstAttribute="top" secondItem="0JP-0A-POp" secondAttribute="top" id="49w-lD-cdC"/>
                             <constraint firstItem="yxU-gk-4fg" firstAttribute="leading" secondItem="0JP-0A-POp" secondAttribute="leading" id="Fg3-Kt-3rj"/>
                             <constraint firstItem="0JP-0A-POp" firstAttribute="trailing" secondItem="aRW-FM-kYV" secondAttribute="trailing" id="Jkv-1V-Fz6"/>
                             <constraint firstItem="aRW-FM-kYV" firstAttribute="top" secondItem="yxU-gk-4fg" secondAttribute="bottom" id="URz-XB-Ltq"/>
                             <constraint firstItem="aRW-FM-kYV" firstAttribute="leading" secondItem="0JP-0A-POp" secondAttribute="leading" id="WIp-qE-UZt"/>
+                            <constraint firstAttribute="trailing" secondItem="gLd-k4-HHi" secondAttribute="trailing" id="aFY-TW-2rI"/>
                             <constraint firstItem="zmX-JM-d1z" firstAttribute="bottom" secondItem="0JP-0A-POp" secondAttribute="bottom" id="aFh-SF-I0q"/>
+                            <constraint firstItem="gLd-k4-HHi" firstAttribute="leading" secondItem="Q7F-r6-Tpo" secondAttribute="leading" id="er2-8U-K8e"/>
+                            <constraint firstItem="gLd-k4-HHi" firstAttribute="top" secondItem="0JP-0A-POp" secondAttribute="top" constant="20" id="ldf-GT-KOu"/>
                             <constraint firstItem="zmX-JM-d1z" firstAttribute="top" secondItem="aRW-FM-kYV" secondAttribute="bottom" id="o5P-lP-GM2"/>
-                            <constraint firstItem="aRW-FM-kYV" firstAttribute="top" secondItem="0JP-0A-POp" secondAttribute="top" constant="60" id="wIt-sV-ERw"/>
+                            <constraint firstItem="yxU-gk-4fg" firstAttribute="top" secondItem="gLd-k4-HHi" secondAttribute="bottom" id="qga-Gg-l8Z"/>
+                            <constraint firstItem="aRW-FM-kYV" firstAttribute="top" secondItem="0JP-0A-POp" secondAttribute="top" constant="90" id="wIt-sV-ERw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0JP-0A-POp"/>
                     </view>
                     <connections>
+                        <outlet property="pageControl" destination="zmX-JM-d1z" id="lv1-by-uIh"/>
+                        <outlet property="scrollView" destination="aRW-FM-kYV" id="Xya-Ny-9NR"/>
                         <outlet property="stepper1Background" destination="n0x-zI-4zb" id="Qcf-Gf-Pha"/>
                         <outlet property="stepper1Label" destination="bjf-0E-3tQ" id="CgN-Kq-A6G"/>
                         <outlet property="stepper2Background" destination="x0N-j5-5Yl" id="7He-dk-HNV"/>
@@ -229,4 +243,7 @@
             <point key="canvasLocation" x="418.39999999999998" y="101.19940029985008"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="onboardingWelcomeImage" width="474" height="466"/>
+    </resources>
 </document>

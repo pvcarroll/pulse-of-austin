@@ -10,4 +10,7 @@ import UIKit
 
 class OnboardingSlideInfo: UIView {
     
+    @IBOutlet weak var slideTitle: UILabel!
+    @IBOutlet weak var slideImage: UIImageView!
+    @IBOutlet weak var slideBody: UILabel!
 }
