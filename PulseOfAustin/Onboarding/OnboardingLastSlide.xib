@@ -16,81 +16,87 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make an impact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-qX-9Ay">
-                    <rect key="frame" x="63.5" y="30" width="248" height="41"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R16-Ma-zNJ">
-                    <rect key="frame" x="0.0" y="264.5" width="375" height="23.5"/>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgE-ab-G8u">
-                    <rect key="frame" x="50.5" y="307" width="274" height="44"/>
-                    <color key="backgroundColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BZC-9O-VTR">
+                    <rect key="frame" x="0.0" y="20" width="375" height="642"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyu-v3-wJc" userLabel="Spacer View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="bg7-XG-b0O"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Make an impact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-qX-9Ay">
+                            <rect key="frame" x="63.5" y="54" width="248" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="onboardingLastSlideImage" translatesAutoresizingMaskIntoConstraints="NO" id="ji8-FO-BcS">
+                            <rect key="frame" x="0.0" y="147.5" width="375" height="130"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="130" id="AYh-58-MJr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Pulse works closely with city decision makers to amplify your voice." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-YF-Mof">
+                            <rect key="frame" x="30" y="330.5" width="315" height="38.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R16-Ma-zNJ">
+                            <rect key="frame" x="130.5" y="421.5" width="114.5" height="23.5"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="R5F-SF-rAN">
+                            <rect key="frame" x="50.5" y="498" width="274" height="144"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgE-ab-G8u">
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
+                                    <color key="backgroundColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="274" id="MS3-vP-90w"/>
+                                        <constraint firstAttribute="height" constant="44" id="Xya-Uq-jPB"/>
+                                    </constraints>
+                                    <state key="normal" title="CREATE ACCOUNT">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAn-JG-lFd">
+                                    <rect key="frame" x="0.0" y="57" width="274" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="274" id="5H7-bh-m4f"/>
+                                        <constraint firstAttribute="height" constant="44" id="Vth-Ya-uAA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                    <state key="normal" title="LOG IN"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsk-OM-gDI">
+                                    <rect key="frame" x="37" y="114" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="8do-i2-IM1"/>
+                                        <constraint firstAttribute="width" constant="200" id="iEb-RZ-iZx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
+                                    <state key="normal" title="SKIP FOR NOW"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="274" id="MS3-vP-90w"/>
-                        <constraint firstAttribute="height" constant="44" id="Xya-Uq-jPB"/>
+                        <constraint firstAttribute="trailing" secondItem="30Y-YF-Mof" secondAttribute="trailing" constant="30" id="MLy-L2-NJO"/>
+                        <constraint firstItem="30Y-YF-Mof" firstAttribute="leading" secondItem="BZC-9O-VTR" secondAttribute="leading" constant="30" id="iMf-LB-Sdj"/>
                     </constraints>
-                    <state key="normal" title="CREATE ACCOUNT">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAn-JG-lFd">
-                    <rect key="frame" x="50.5" y="367" width="274" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="274" id="5H7-bh-m4f"/>
-                        <constraint firstAttribute="height" constant="44" id="Vth-Ya-uAA"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                    <state key="normal" title="LOG IN"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingLastSlideImage" translatesAutoresizingMaskIntoConstraints="NO" id="ji8-FO-BcS">
-                    <rect key="frame" x="40" y="71" width="295" height="130"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="130" id="AYh-58-MJr"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Pulse works closely with city decision makers to amplify your voice." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-YF-Mof">
-                    <rect key="frame" x="40" y="201" width="295" height="38.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsk-OM-gDI">
-                    <rect key="frame" x="87.5" y="416" width="200" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="8do-i2-IM1"/>
-                        <constraint firstAttribute="width" constant="200" id="iEb-RZ-iZx"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
-                    <state key="normal" title="SKIP FOR NOW"/>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Vsk-OM-gDI" firstAttribute="top" secondItem="BAn-JG-lFd" secondAttribute="bottom" constant="5" id="46c-zW-VAA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R16-Ma-zNJ" secondAttribute="trailing" id="5N7-o0-pK2"/>
-                <constraint firstItem="zgE-ab-G8u" firstAttribute="top" secondItem="R16-Ma-zNJ" secondAttribute="bottom" constant="19" id="7RV-yL-gls"/>
-                <constraint firstItem="BAn-JG-lFd" firstAttribute="top" secondItem="zgE-ab-G8u" secondAttribute="bottom" constant="16" id="9Ga-ur-09K"/>
-                <constraint firstItem="BAn-JG-lFd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SBe-9y-ohh"/>
-                <constraint firstItem="30Y-YF-Mof" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T0M-PN-3AB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ji8-FO-BcS" secondAttribute="trailing" constant="40" id="Yht-k4-0V5"/>
-                <constraint firstItem="ji8-FO-BcS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="ZUh-23-s32"/>
-                <constraint firstItem="R16-Ma-zNJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a57-o3-Lww"/>
-                <constraint firstItem="30Y-YF-Mof" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="aot-4x-Pxu"/>
-                <constraint firstItem="Vsk-OM-gDI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eOJ-5m-zzR"/>
-                <constraint firstAttribute="trailing" secondItem="30Y-YF-Mof" secondAttribute="trailing" constant="40" id="f2z-rv-aQd"/>
-                <constraint firstItem="30Y-YF-Mof" firstAttribute="top" secondItem="ji8-FO-BcS" secondAttribute="bottom" id="gKw-GE-uJl"/>
-                <constraint firstItem="ji8-FO-BcS" firstAttribute="top" secondItem="Aij-qX-9Ay" secondAttribute="bottom" id="mhv-Tc-kMr"/>
-                <constraint firstItem="Aij-qX-9Ay" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oSR-66-mUp"/>
-                <constraint firstItem="R16-Ma-zNJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="s3o-cJ-ESc"/>
-                <constraint firstItem="R16-Ma-zNJ" firstAttribute="top" secondItem="30Y-YF-Mof" secondAttribute="bottom" constant="25" id="shG-ka-rVd"/>
-                <constraint firstItem="Aij-qX-9Ay" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="vIz-mq-vq7"/>
-                <constraint firstItem="zgE-ab-G8u" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zgW-dE-2eT"/>
+                <constraint firstItem="BZC-9O-VTR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NcJ-PP-pyp"/>
+                <constraint firstItem="BZC-9O-VTR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eBd-e8-PII"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BZC-9O-VTR" secondAttribute="bottom" constant="5" id="iz5-Zh-7QG"/>
+                <constraint firstAttribute="trailing" secondItem="BZC-9O-VTR" secondAttribute="trailing" id="pKm-t5-ZJc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
