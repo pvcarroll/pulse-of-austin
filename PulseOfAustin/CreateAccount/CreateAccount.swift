@@ -30,18 +30,18 @@ class CreateAccount: UIViewController {
         self.dismissKeyboardOnMainViewTap()
         
         screenTitle.font = UIFont.screenTitle
-        screenTitle.textColor = UIColor.customDarkText
+        screenTitle.textColor = UIColor.darkGray74
         screenSubtitle.font = UIFont.futura16
-        screenSubtitle.textColor = UIColor.customDarkText
+        screenSubtitle.textColor = UIColor.darkGray74
         
         createAnAccountButton.titleLabel?.font = UIFont.futura13
         createAnAccountButton.setTitleColor(UIColor.whiteText, for: .normal)
         createAnAccountButton.layer.backgroundColor = UIColor.customYellow.cgColor
         createAnAccountButton.layer.cornerRadius = createAnAccountButton.frame.height / 2.0
         
-        loginButton.setTitleColor(UIColor.customDarkText, for: .normal)
+        loginButton.setTitleColor(UIColor.darkGray74, for: .normal)
         
-        let loginButtonAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkText67_62_54,
+        let loginButtonAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkGray67_62_54,
                                                                 NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
         let loginTitleString: NSAttributedString = NSAttributedString(string: "Log in", attributes: loginButtonAttributes)
         loginButton.setAttributedTitle(loginTitleString, for: .normal)

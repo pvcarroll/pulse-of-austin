@@ -24,17 +24,17 @@ class WeighInElaborate: UIView, UITextViewDelegate {
         self.addGestureRecognizer(tapGestureRecognizer)
         
         self.cardTitle.font = UIFont.cardTitle
-        self.cardTitle.textColor = UIColor.customDarkText
+        self.cardTitle.textColor = UIColor.darkGray74
         
         self.selectedAnswerButton.backgroundColor = UIColor.infoCardBackground
         self.selectedAnswerButton.titleLabel?.font = UIFont.buttonFont
-        self.selectedAnswerButton.setTitleColor(UIColor.customDarkText, for: .normal)
+        self.selectedAnswerButton.setTitleColor(UIColor.darkGray74, for: .normal)
         self.selectedAnswerButton.layer.cornerRadius = 5
         
         self.weighInTextView.delegate = self
         self.weighInTextView.text = "Have more to share on why you made your selection?"
         self.weighInTextView.textColor = UIColor.infoCardBackground
-        self.weighInTextView.layer.borderColor = UIColor.customDarkText.cgColor
+        self.weighInTextView.layer.borderColor = UIColor.darkGray74.cgColor
         self.weighInTextView.layer.borderWidth = 0.5
         
         self.submitButton.backgroundColor = UIColor.customYellow
@@ -58,7 +58,7 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.weighInTextView.text = nil
-        self.weighInTextView.textColor = UIColor.customDarkText
+        self.weighInTextView.textColor = UIColor.darkGray74
     }
     
     func textViewDidChange(_ textView: UITextView) {

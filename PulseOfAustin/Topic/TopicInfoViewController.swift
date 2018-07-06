@@ -48,12 +48,12 @@ class TopicInfoViewController: UIViewController {
     private var cardFrame: CGRect?
     
     @IBAction func learnButtonTapped(_ sender: Any) {
-        self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.learnButtonUnderline.backgroundColor = UIColor.darkGray74
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         self.loadLearnLanding()
     }
     @IBAction func weighInButtonTapped(_ sender: Any) {
-        self.weighInButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.weighInButtonUnderline.backgroundColor = UIColor.darkGray74
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         self.loadWeighInLanding()
     }
@@ -74,7 +74,7 @@ class TopicInfoViewController: UIViewController {
         self.learnButton.setTitle("LEARN", for: .normal)
         self.learnButton.titleLabel?.font = UIFont.buttonFont
         self.learnButton.setTitleColor(UIColor.darkText, for: .normal)
-        self.learnButtonUnderline.backgroundColor = UIColor.customDarkText
+        self.learnButtonUnderline.backgroundColor = UIColor.darkGray74
         
         self.weighInButton.backgroundColor = UIColor.basicsBarBlue
         self.weighInButton.setTitle("WEIGH IN", for: .normal)

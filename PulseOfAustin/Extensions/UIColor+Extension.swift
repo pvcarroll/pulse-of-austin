@@ -28,10 +28,10 @@ extension UIColor {
     public class var basicsBarBlue: UIColor {
         return UIColor(red:0.72, green:0.82, blue:0.90, alpha:1.0)
     }
-    public class var customDarkText: UIColor {
+    public class var darkGray74: UIColor {
         return UIColor(red: 74/255.0, green: 74/255.0, blue: 74/255.0, alpha: 1.0)
     }
-    public class var darkText67_62_54: UIColor {
+    public class var darkGray67_62_54: UIColor {
         return UIColor(red: 67/255.0, green: 62/255.0, blue: 54/255.0, alpha: 1.0)
     }
     public class var customDarkerText: UIColor {

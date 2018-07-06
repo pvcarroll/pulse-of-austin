@@ -37,7 +37,7 @@ class WeighInResults: UIView {
         self.yourInputWasSentView.layer.cornerRadius = 5
         
         self.cardTitle.font = UIFont.cardTitle
-        self.cardTitle.textColor = UIColor.customDarkText
+        self.cardTitle.textColor = UIColor.darkGray74
         self.response1Tallies.backgroundColor = UIColor.infoCardBackground
         self.response2Tallies.backgroundColor = UIColor.infoCardBackground
         self.response3Tallies.backgroundColor = UIColor.infoCardBackground

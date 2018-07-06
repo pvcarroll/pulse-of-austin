@@ -21,7 +21,7 @@ class WeighInSelect: UIView {
         
         self.cardTitle.text = "SELECT CHOICE"
         self.cardTitle.font = UIFont.cardTitle
-        self.cardTitle.textColor = UIColor.customDarkText
+        self.cardTitle.textColor = UIColor.darkGray74
 
         self.answer1Button.backgroundColor = UIColor.infoCardBackground
         self.answer2Button.backgroundColor = UIColor.infoCardBackground
@@ -29,9 +29,9 @@ class WeighInSelect: UIView {
         self.answer1Button.titleLabel?.font = UIFont.buttonFont
         self.answer2Button.titleLabel?.font = UIFont.buttonFont
         self.answer3Button.titleLabel?.font = UIFont.buttonFont
-        self.answer1Button.setTitleColor(UIColor.customDarkText, for: .normal)
-        self.answer2Button.setTitleColor(UIColor.customDarkText, for: .normal)
-        self.answer3Button.setTitleColor(UIColor.customDarkText, for: .normal)
+        self.answer1Button.setTitleColor(UIColor.darkGray74, for: .normal)
+        self.answer2Button.setTitleColor(UIColor.darkGray74, for: .normal)
+        self.answer3Button.setTitleColor(UIColor.darkGray74, for: .normal)
         self.answer1Button.layer.cornerRadius = 5
         self.answer2Button.layer.cornerRadius = 5
         self.answer3Button.layer.cornerRadius = 5

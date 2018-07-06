@@ -39,16 +39,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.landingScreenTitle.textColor = UIColor.customDarkText
+        self.landingScreenTitle.textColor = UIColor.darkGray74
         self.landingScreenTitle.font = UIFont.screenTitle
-        self.homeDescriptionLabel.textColor = UIColor.customDarkText
+        self.homeDescriptionLabel.textColor = UIColor.darkGray74
         self.logInButton.backgroundColor = UIColor.customYellow
         self.logInButton.setTitle("LOG IN", for: .normal)
         self.logInButton.titleLabel?.font = UIFont.futura13
         self.logInButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.logInButton.layer.cornerRadius = (self.logInButton.frame.height / 2)
-        newLabel.textColor = UIColor.darkText67_62_54
-        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkText67_62_54]
+        newLabel.textColor = UIColor.darkGray67_62_54
+        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkGray67_62_54]
         let createAccountString: NSMutableAttributedString = NSMutableAttributedString(string: "Create Account", attributes: createAccountAttrs)
         createAccountString.addUnderline()
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)

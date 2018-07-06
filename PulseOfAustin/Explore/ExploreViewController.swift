@@ -24,7 +24,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gearIcon"), style: .plain, target: self, action: nil)
         
-        self.latestLabel.textColor = UIColor.customDarkText
+        self.latestLabel.textColor = UIColor.darkGray74
         
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension

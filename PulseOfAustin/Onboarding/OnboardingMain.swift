@@ -21,6 +21,7 @@ class OnboardingMain: UIViewController {
     
     var slide1: OnboardingSlideInfo?
     var slide2: OnboardingSlideInfo?
+    var slide3: OnboardingLastSlide?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,22 +40,28 @@ class OnboardingMain: UIViewController {
         slide2?.slideTitle.text = "Weigh in"
         slide2?.slideImage.image = #imageLiteral(resourceName: "onboardingImage2")
         slide2?.slideBody.text = "Share your perspective on city initiatives and see what others have to say, too."
+        slide3 = UINib(nibName: "OnboardingLastSlide", bundle: nil).instantiate(withOwner: self, options: nil).first as! OnboardingLastSlide?
         
         scrollView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        let scrollViewWidth = scrollView.frame.width
+        let scrollViewHeight = scrollView.frame.height
         if let slide1 = self.slide1 {
             slide1.frame = scrollView.bounds
             scrollView.addSubview(slide1)
         }
-        
         if let slide2 = self.slide2  {
-            slide2.frame = CGRect(x: scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+            slide2.frame = CGRect(x: scrollViewWidth, y: 0, width: scrollViewWidth, height: scrollViewHeight)
             scrollView.addSubview(slide2)
         }
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * 2, height: scrollView.frame.height)
+        if let slide3 = self.slide3 {
+            slide3.frame = CGRect(x: scrollViewWidth * 2, y: 0, width: scrollViewWidth, height: scrollViewHeight)
+            scrollView.addSubview(slide3)
+        }
+        scrollView.contentSize = CGSize(width: scrollViewWidth * 3, height: scrollViewHeight)
     }
 }
 

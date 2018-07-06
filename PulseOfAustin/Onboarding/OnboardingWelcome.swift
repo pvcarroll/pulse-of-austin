@@ -27,7 +27,7 @@ class OnboardingWelcome: UIViewController {
         
         welcomeMessage.text = "The Pulse is a place to learn about and weigh in on changes happening in our city."
         welcomeMessage.font = UIFont.futura20
-        welcomeMessage.textColor = UIColor.customDarkText
+        welcomeMessage.textColor = UIColor.darkGray74
         
         continueButton.setTitle("SEE HOW IT WORKS", for: .normal)
         continueButton.setTitleColor(UIColor.whiteText, for: .normal)

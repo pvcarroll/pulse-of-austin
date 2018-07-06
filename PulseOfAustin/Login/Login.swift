@@ -26,10 +26,10 @@ class Login: UIViewController {
         loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.backgroundColor = UIColor.customYellow
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
-        let forgotPasswordAttributedTitle: NSMutableAttributedString = NSMutableAttributedString(string: "Forgot Password", attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkText67_62_54])
+        let forgotPasswordAttributedTitle: NSMutableAttributedString = NSMutableAttributedString(string: "Forgot Password", attributes: [NSAttributedStringKey.foregroundColor: UIColor.darkGray67_62_54])
         forgotPasswordAttributedTitle.addUnderline()
         forgotPasswordButton.setAttributedTitle(forgotPasswordAttributedTitle, for: .normal)
-        createAccountButton.setTitleColor(UIColor.darkText67_62_54, for: .normal)
+        createAccountButton.setTitleColor(UIColor.darkGray67_62_54, for: .normal)
         
         // Register for keyboard notifications to adjust scroll view for keyboard
         let notificationCenter = NotificationCenter.default
