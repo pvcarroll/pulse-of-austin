@@ -41,7 +41,9 @@ class OnboardingMain: UIViewController {
         slide2?.slideImage.image = #imageLiteral(resourceName: "onboardingImage2")
         slide2?.slideBody.text = "Share your perspective on city initiatives and see what others have to say, too."
         slide3 = UINib(nibName: "OnboardingLastSlide", bundle: nil).instantiate(withOwner: self, options: nil).first as! OnboardingLastSlide?
-        
+        slide3?.createAccountButton.addTarget(self, action: #selector(self.loadCreateAccount), for: .touchUpInside)
+        slide3?.logInButton.addTarget(self, action: #selector(self.loadLogin), for: .touchUpInside)
+        slide3?.skipForNowButton.addTarget(self, action: #selector(self.loadExplore), for: .touchUpInside)
         scrollView.delegate = self
     }
     
@@ -62,6 +64,22 @@ class OnboardingMain: UIViewController {
             scrollView.addSubview(slide3)
         }
         scrollView.contentSize = CGSize(width: scrollViewWidth * 3, height: scrollViewHeight)
+    }
+    
+    //
+    // MARK: transitions
+    //
+    @objc private func loadCreateAccount(sender: UIButton!) {
+        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
+        self.present(createAccountVC, animated: true, completion: nil)
+    }
+    @objc private func loadLogin(sender: UIButton!) {
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! Login
+        self.present(loginVC, animated: true, completion: nil)
+    }
+    @objc private func loadExplore(sender: UIButton!) {
+        let exploreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+        self.present(exploreVC, animated: true, completion: nil)
     }
 }
 

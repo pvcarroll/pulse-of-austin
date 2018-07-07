@@ -184,7 +184,7 @@
         <!--Explore View Controller-->
         <scene sceneID="n7U-WK-tZM">
             <objects>
-                <viewController id="dm6-SO-lmn" userLabel="Explore View Controller" customClass="ExploreViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dm6-SO-lmn" userLabel="Explore View Controller" customClass="ExploreViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="92X-nS-k1R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="n6H-Dg-7R8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2ea-r9-CdL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2ea-r9-CdL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RX0-Q7-IdY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -422,7 +422,7 @@
         <!--Explore-->
         <scene sceneID="0we-S1-rdN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cv5-VI-9Uz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ExploreNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cv5-VI-9Uz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="TabBar-Explore" id="mbs-5u-MGI">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
