@@ -51,6 +51,7 @@
 		757C0FC020C44E0F0018C560 /* LearnCityRationale.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FBF20C44E0F0018C560 /* LearnCityRationale.xib */; };
 		757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FC120C4500C0018C560 /* PerspectiveView.swift */; };
 		757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FC320C450320018C560 /* PerspectiveView.xib */; };
+		758BF7E820F6EEDC0032C511 /* HTMLStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */; };
 		75B937502097451700221467 /* WeighInSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInSelect.xib */; };
 		75B937522097453500221467 /* WeighInSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInSelect.swift */; };
 		75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD078209E62B8008AD469 /* WeighInElaborate.swift */; };
@@ -141,6 +142,7 @@
 		757C0FBF20C44E0F0018C560 /* LearnCityRationale.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnCityRationale.xib; sourceTree = "<group>"; };
 		757C0FC120C4500C0018C560 /* PerspectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveView.swift; sourceTree = "<group>"; };
 		757C0FC320C450320018C560 /* PerspectiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerspectiveView.xib; sourceTree = "<group>"; };
+		758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStrings.swift; sourceTree = "<group>"; };
 		75B9374F2097451700221467 /* WeighInSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInSelect.xib; sourceTree = "<group>"; };
 		75B937512097453500221467 /* WeighInSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInSelect.swift; sourceTree = "<group>"; };
 		75BCD078209E62B8008AD469 /* WeighInElaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInElaborate.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				75BCD08120A7B741008AD469 /* TopicData.swift */,
+				758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */,
 				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
+				758BF7E820F6EEDC0032C511 /* HTMLStrings.swift in Sources */,
 				752EF735207C571E0046743A /* AppDelegate.swift in Sources */,
 				7565F19020CC7B95008DFF27 /* LearnCardsContainer.swift in Sources */,
 				75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */,

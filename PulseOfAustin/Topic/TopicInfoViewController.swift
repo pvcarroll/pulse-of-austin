@@ -46,6 +46,7 @@ class TopicInfoViewController: UIViewController {
     private var weighInText: WeighInSelectText?
     private var elaborateView: WeighInElaborate?
     private var cardFrame: CGRect?
+    private var learnCardTextViews: [UITextView] = []
     
     @IBAction func learnButtonTapped(_ sender: Any) {
         self.learnButtonUnderline.backgroundColor = UIColor.darkGray74
@@ -91,6 +92,10 @@ class TopicInfoViewController: UIViewController {
                                 y: 10,
                                 width: self.topicInfoViewContainer.frame.width - 30,
                                 height: self.topicInfoViewContainer.frame.height - 40)
+        // Load learn cards with content at top instead of scrolled to bottom
+        self.learnCardTextViews.forEach {
+            $0.setContentOffset(CGPoint.zero, animated: false)
+        }
     }
     
     //
@@ -121,15 +126,15 @@ class TopicInfoViewController: UIViewController {
         let cardsScrollView = cardsContainer.scrollView
         cardsScrollView?.contentSize.height = 1.0
         
-        // TODO: move html
-        let htmlText = [
-            "<b>screen</b> 1",
-            "screen 2",
-            "<html><body><b>screen</b> 3</body></html>"
-        ]
-        
+        // Insert card content for each slide into HTML template
+        var htmlSlides = [String]()
+        let htmlTemplate = HTMLStrings.htmlTemplate
+        for cardContent in HTMLStrings.affordableHousingCardContent {
+            htmlSlides.append(htmlTemplate.replacingOccurrences(of: "#HTML_CONTENT#", with: cardContent))
+        }
+
         // Create cards and add to scroll view
-        for i in 0..<htmlText.count {
+        for i in 0..<htmlSlides.count {
             guard let card = UINib(nibName: "LearnCard", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCard? else { return }
             
             let cardWidth = learnCardFrame.width
@@ -138,8 +143,8 @@ class TopicInfoViewController: UIViewController {
                                 size: learnCardFrame.size)
             // First card opaque, others translucent
             card.alpha = ((i == 0) ? 1.0 : 0.5)
-            card.textView.setHTMLAsAttributedString(htmlString: htmlText[i])
-            card.pageControl.numberOfPages = htmlText.count
+            card.webView.loadHTMLString(htmlSlides[i], baseURL: nil)
+            card.pageControl.numberOfPages = htmlSlides.count
             card.pageControl.currentPage = i
             card.xButton.addTarget(self, action: #selector(TopicInfoViewController.learnCardXTapped), for: .touchDown)
             cardsScrollView?.addSubview(card)

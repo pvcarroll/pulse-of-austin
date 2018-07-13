@@ -12,7 +12,7 @@ import WebKit
 class LearnCard: UIView {
     
     @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var xButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
