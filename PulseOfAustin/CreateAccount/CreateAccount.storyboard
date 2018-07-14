@@ -112,6 +112,9 @@
                                                     <constraint firstAttribute="height" constant="41" id="YST-Pg-ubS"/>
                                                 </constraints>
                                                 <state key="normal" title="CREATE AN ACCOUNT"/>
+                                                <connections>
+                                                    <action selector="createAccount:" destination="lIc-GG-zh9" eventType="touchUpInside" id="aQH-68-7B4"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn6-Ue-UyU">
                                                 <rect key="frame" x="94.5" y="474.5" width="186" height="20"/>

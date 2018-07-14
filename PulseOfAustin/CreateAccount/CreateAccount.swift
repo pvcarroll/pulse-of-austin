@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccount: UIViewController {
     
@@ -21,6 +22,24 @@ class CreateAccount: UIViewController {
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var createAnAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    
+    @IBAction func createAccount(_ sender: UIButton) {
+        // TODO: validate info - passwords fields match, 8 characters, required fields
+        
+        guard passwordField.text == confirmPasswordField.text else {
+            let alert = UIAlertController(title: "YE SUCK", message: "Password and confirm password don't match.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
+        guard let email = emailField.text, let password = passwordField.text else { return }
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            print("CREATE USER")
+            print("authResult = \(authResult)")
+            print("error = \(error)")
+            // TODO: Transition to different screen - Onboarding?
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
