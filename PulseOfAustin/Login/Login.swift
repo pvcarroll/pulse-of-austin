@@ -7,15 +7,39 @@
 //
 
 import UIKit
+import Firebase
 
 class Login: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailUnderbar: UIView!
     @IBOutlet weak var passwordUnderbar: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    
+    @IBAction func login(_ sender: UIButton) {
+        guard let email = emailField.text, let password = passwordField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let error = error {
+                let loginFailedAlert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
+                loginFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(loginFailedAlert, animated: true, completion: nil)
+            } else {
+                // Login successful, transition to Main VC
+                let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                self.present(mainVC, animated: true, completion: nil)
+            }
+        }
+    }
+    @IBAction func forgotPasswordTapped(_ sender: UIButton) {
+    }
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
+        self.present(createAccountVC, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -206,6 +206,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Log in"/>
+                                                <connections>
+                                                    <action selector="loginTapped:" destination="lIc-GG-zh9" eventType="touchUpInside" id="QID-DN-4hw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -40,11 +40,24 @@ class CreateAccount: UIViewController {
         }
         guard let email = emailField.text, let password = passwordField.text else { return }
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            print("CREATE USER")
-            print("authResult = \(authResult)")
-            print("error = \(error)")
-            // TODO: Transition to different screen - Onboarding?
+            if let error = error {
+                let failedToCreateAccountAlert = UIAlertController(title: "Create Account Failed", message: error.localizedDescription, preferredStyle: .alert)
+                failedToCreateAccountAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            } else {
+                let accountCreatedAlert = UIAlertController(title: "Account Created", message: "", preferredStyle: .alert)
+                let continueAction = UIAlertAction(title: "Explore topics", style: .default) { _ in
+                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                    self.present(mainVC, animated: true, completion: nil)
+                }
+                accountCreatedAlert.addAction(continueAction)
+                self.present(accountCreatedAlert, animated: true)
+            }
         }
+    }
+    
+    @IBAction func loginTapped(_ sender: UIButton) {
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login")
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
