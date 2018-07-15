@@ -11,6 +11,12 @@ import Firebase
 
 class CreateAccount: UIViewController {
     
+    @IBOutlet weak var nameBottomBorder: UIView!
+    @IBOutlet weak var emailBottomBorder: UIView!
+    @IBOutlet weak var addressBottomBorder: UIView!
+    @IBOutlet weak var zipcodeBottomBorder: UIView!
+    @IBOutlet weak var passwordBottomBorder: UIView!
+    @IBOutlet weak var confirmPasswordBottomBorder: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var screenTitle: UILabel!
     @IBOutlet weak var screenSubtitle: UILabel!
@@ -48,6 +54,13 @@ class CreateAccount: UIViewController {
         
         self.dismissKeyboardOnMainViewTap()
         
+        nameBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        emailBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        addressBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        zipcodeBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        passwordBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        confirmPasswordBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
+        
         screenTitle.font = UIFont.screenTitle
         screenTitle.textColor = UIColor.darkGray74
         screenSubtitle.font = UIFont.futura16
@@ -68,16 +81,6 @@ class CreateAccount: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        nameField.setBottomBorder()
-        emailField.setBottomBorder()
-        addressField.setBottomBorder()
-        zipCodeField.setBottomBorder()
-        passwordField.setBottomBorder()
-        confirmPasswordField.setBottomBorder()
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
