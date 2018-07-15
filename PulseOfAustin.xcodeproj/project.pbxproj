@@ -22,7 +22,7 @@
 		753E25A420DBD8C10020307D /* OnboardingSlideInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753E25A320DBD8C10020307D /* OnboardingSlideInfo.xib */; };
 		753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E25A520DBD8D20020307D /* OnboardingSlideInfo.swift */; };
 		75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */; };
-		75519B4020DEDC2600463BB1 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B3F20DEDC2600463BB1 /* CreateAccount.swift */; };
+		75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */; };
 		75519B4320DEDC9000463BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4220DEDC9000463BB1 /* User.swift */; };
 		75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4620DEE9C400463BB1 /* Secrets.swift */; };
 		75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4820DF00A200463BB1 /* HttpRequests.swift */; };
@@ -113,7 +113,7 @@
 		753E25A320DBD8C10020307D /* OnboardingSlideInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingSlideInfo.xib; sourceTree = "<group>"; };
 		753E25A520DBD8D20020307D /* OnboardingSlideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideInfo.swift; sourceTree = "<group>"; };
 		75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
-		75519B3F20DEDC2600463BB1 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		75519B4220DEDC9000463BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75519B4620DEE9C400463BB1 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		75519B4820DF00A200463BB1 /* HttpRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequests.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */,
-				75519B3F20DEDC2600463BB1 /* CreateAccount.swift */,
+				75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -688,7 +688,7 @@
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
 				753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */,
 				75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */,
-				75519B4020DEDC2600463BB1 /* CreateAccount.swift in Sources */,
+				75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */,
 				75519B5620E945F700463BB1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,
 				757C0FBE20C44DFE0018C560 /* LearnCityRationale.swift in Sources */,

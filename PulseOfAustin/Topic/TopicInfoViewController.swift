@@ -338,7 +338,6 @@ class TopicInfoViewController: UIViewController {
                 } else {
                     dbRef.child(responsesPath).setValue(1)
                 }
-                // TODO: save elaborate text
                 let elaborateResponse = self.elaborateView?.response
                 if !(elaborateResponse ?? "").isEmpty {
                     dbRef.child(elaboratePath).childByAutoId().setValue(elaborateResponse)

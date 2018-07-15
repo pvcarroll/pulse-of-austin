@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreateAccount: UIViewController {
+class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var nameBottomBorder: UIView!
     @IBOutlet weak var emailBottomBorder: UIView!
@@ -30,7 +30,7 @@ class CreateAccount: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func createAccount(_ sender: UIButton) {
-        // TODO: validate info - passwords fields match, 8 characters, required fields
+        // TODO: validate fields - passwords fields match, 8 characters, required fields
         
         guard passwordField.text == confirmPasswordField.text else {
             let alert = UIAlertController(title: "YE SUCK", message: "Password and confirm password don't match.", preferredStyle: .alert)
@@ -39,18 +39,22 @@ class CreateAccount: UIViewController {
             return
         }
         guard let email = emailField.text, let password = passwordField.text else { return }
+        // Create firebase auth user with email and password
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
                 let failedToCreateAccountAlert = UIAlertController(title: "Create Account Failed", message: error.localizedDescription, preferredStyle: .alert)
                 failedToCreateAccountAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             } else {
-                let accountCreatedAlert = UIAlertController(title: "Account Created", message: "", preferredStyle: .alert)
-                let continueAction = UIAlertAction(title: "Explore topics", style: .default) { _ in
-                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-                    self.present(mainVC, animated: true, completion: nil)
+                // Create user in database with all fields
+                if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
+                    guard let name = self.nameField.text,
+                          let address = self.addressField.text,
+                          let zipCode = self.zipCodeField.text else { return }
+                    let userData = ["name": name, "email": email, "address": address, "zipCode": zipCode]
+                    dbRef.child("users").childByAutoId().setValue(userData)
+                    
+                    self.presentSuccessAlertAndGoToMainScreen()
                 }
-                accountCreatedAlert.addAction(continueAction)
-                self.present(accountCreatedAlert, animated: true)
             }
         }
     }
@@ -108,5 +112,18 @@ class CreateAccount: UIViewController {
             self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
         }
         self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
+    }
+    
+    //
+    // MARK:- Private
+    //
+    private func presentSuccessAlertAndGoToMainScreen() {
+        let accountCreatedAlert = UIAlertController(title: "Account Created", message: "", preferredStyle: .alert)
+        let continueAction = UIAlertAction(title: "Explore topics", style: .default) { _ in
+            let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+            self.present(mainVC, animated: true, completion: nil)
+        }
+        accountCreatedAlert.addAction(continueAction)
+        self.present(accountCreatedAlert, animated: true)
     }
 }

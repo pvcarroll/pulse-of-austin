@@ -70,7 +70,7 @@ class OnboardingMain: UIViewController {
     // MARK: transitions
     //
     @objc private func loadCreateAccount(sender: UIButton!) {
-        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
+        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountViewController") as! CreateAccountViewController
         self.present(createAccountVC, animated: true, completion: nil)
     }
     @objc private func loadLogin(sender: UIButton!) {

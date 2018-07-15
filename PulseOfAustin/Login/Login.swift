@@ -37,7 +37,7 @@ class Login: UIViewController {
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
     }
     @IBAction func createAccountTapped(_ sender: UIButton) {
-        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccount") as! CreateAccount
+        let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountViewController") as! CreateAccountViewController
         self.present(createAccountVC, animated: true, completion: nil)
     }
     
