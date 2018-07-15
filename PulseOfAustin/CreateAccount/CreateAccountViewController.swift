@@ -30,14 +30,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func createAccount(_ sender: UIButton) {
-        // TODO: validate fields - passwords fields match, 8 characters, required fields
+        guard self.validateFields() else { return }
         
-        guard passwordField.text == confirmPasswordField.text else {
-            let alert = UIAlertController(title: "YE SUCK", message: "Password and confirm password don't match.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            return
-        }
         guard let email = emailField.text, let password = passwordField.text else { return }
         // Create firebase auth user with email and password
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -53,7 +47,7 @@ class CreateAccountViewController: UIViewController {
                     let userData = ["name": name, "email": email, "address": address, "zipCode": zipCode]
                     dbRef.child("users").childByAutoId().setValue(userData)
                     
-                    self.presentSuccessAlertAndGoToMainScreen()
+                    self.displaySuccessAlertAndGoToMainScreen()
                 }
             }
         }
@@ -117,7 +111,49 @@ class CreateAccountViewController: UIViewController {
     //
     // MARK:- Private
     //
-    private func presentSuccessAlertAndGoToMainScreen() {
+    private func validateFields() -> Bool {
+        guard let name = self.nameField.text, !name.isEmpty else {
+            self.displayValidationAlert(title: "Name is required", message: "")
+            return false
+        }
+        guard let email = self.emailField.text, !email.isEmpty else {
+            self.displayValidationAlert(title: "Email is required", message: "")
+            return false
+        }
+        guard self.isValidEmail(email: email) else {
+            self.displayValidationAlert(title: "Invalid email", message: "")
+            return false
+        }
+        guard let address = self.addressField.text, !address.isEmpty else {
+            self.displayValidationAlert(title: "Address is required", message: "")
+            return false
+        }
+        guard let zipCode = self.zipCodeField.text, !zipCode.isEmpty else {
+            self.displayValidationAlert(title: "Zip Code is required", message: "")
+            return false
+        }
+        guard let password = self.passwordField.text, !password.isEmpty else {
+            self.displayValidationAlert(title: "Password is required", message: "")
+            return false
+        }
+        guard passwordField.text == confirmPasswordField.text else {
+            self.displayValidationAlert(title: "YE SUCK", message: "Password and confirm password don't match.")
+            return false
+        }
+        return true
+    }
+    private func isValidEmail(email:String?) -> Bool {
+        guard email != nil else { return false }
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return pred.evaluate(with: email)
+    }
+    private func displayValidationAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    private func displaySuccessAlertAndGoToMainScreen() {
         let accountCreatedAlert = UIAlertController(title: "Account Created", message: "", preferredStyle: .alert)
         let continueAction = UIAlertAction(title: "Explore topics", style: .default) { _ in
             let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
