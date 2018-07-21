@@ -25,20 +25,20 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PulseLineIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4j0-ZU-KVf">
-                                        <rect key="frame" x="82.5" y="0.0" width="210" height="40"/>
+                                        <rect key="frame" x="101" y="0.0" width="173" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="210" id="Pbt-Qr-WZN"/>
-                                            <constraint firstAttribute="height" constant="40" id="X66-r6-1FM"/>
+                                            <constraint firstAttribute="width" constant="173" id="Pbt-Qr-WZN"/>
+                                            <constraint firstAttribute="height" constant="49" id="X66-r6-1FM"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Pulse of Austin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="9av-lB-9gY">
-                                        <rect key="frame" x="10" y="50" width="355" height="45"/>
+                                        <rect key="frame" x="10" y="59" width="355" height="45"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Igniting people to shape their city." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Cp-FBD">
-                                        <rect key="frame" x="20" y="95" width="335" height="21"/>
+                                        <rect key="frame" x="20" y="104" width="335" height="21"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
