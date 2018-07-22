@@ -54,7 +54,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login")
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         self.present(loginVC, animated: true, completion: nil)
     }
     

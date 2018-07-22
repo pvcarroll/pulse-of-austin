@@ -28,7 +28,7 @@
 		75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4820DF00A200463BB1 /* HttpRequests.swift */; };
 		75519B4B20DFEF8500463BB1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */; };
 		75519B4E20E924D700463BB1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B4D20E924D700463BB1 /* Login.storyboard */; };
-		75519B5020E924EA00463BB1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4F20E924EA00463BB1 /* Login.swift */; };
+		75519B5020E924EA00463BB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4F20E924EA00463BB1 /* LoginViewController.swift */; };
 		75519B5420E9335300463BB1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B5320E9335300463BB1 /* UIViewController+Extension.swift */; };
 		75519B5620E945F700463BB1 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B5520E945F700463BB1 /* NSMutableAttributedString+Extension.swift */; };
 		755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7BA120824C8F00554399 /* ExploreViewController.swift */; };
@@ -119,7 +119,7 @@
 		75519B4820DF00A200463BB1 /* HttpRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequests.swift; sourceTree = "<group>"; };
 		75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		75519B4D20E924D700463BB1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		75519B4F20E924EA00463BB1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		75519B4F20E924EA00463BB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75519B5320E9335300463BB1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		75519B5520E945F700463BB1 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		755C7BA120824C8F00554399 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				75519B4D20E924D700463BB1 /* Login.storyboard */,
-				75519B4F20E924EA00463BB1 /* Login.swift */,
+				75519B4F20E924EA00463BB1 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 				75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */,
-				75519B5020E924EA00463BB1 /* Login.swift in Sources */,
+				75519B5020E924EA00463BB1 /* LoginViewController.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
 				75519B4320DEDC9000463BB1 /* User.swift in Sources */,

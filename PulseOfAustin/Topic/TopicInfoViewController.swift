@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 enum AnswerIndex {
     case answerChoice1
@@ -119,7 +120,6 @@ class TopicInfoViewController: UIViewController {
     
     // Learn Screen 2: Learn Scroll View
     @objc private func loadLearnCards() {
-        let learnText = TopicData.topics[self.selectedTopicKey ?? 0]?.learnText
         guard let learnCardFrame = self.cardFrame else { return }
         guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
         cardsContainer.frame = self.topicInfoViewContainer.bounds
@@ -213,7 +213,7 @@ class TopicInfoViewController: UIViewController {
             elaborateView.cardTitle.text = cardTitleText
             elaborateView.selectedAnswerButton.setTitle(answerText, for: .normal)
             elaborateView.selectedAnswerButton.addTarget(self, action: #selector(self.selectedAnswerButtonTapped), for: .touchUpInside)
-            let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitTapped(recognizer:)))
+            let submitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(submitWeighInTapped(recognizer:)))
             elaborateView.submitButton.addGestureRecognizer(submitGestureRecognizer)
             
             self.updateViewContent(newView: elaborateView)
@@ -291,13 +291,6 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    // MARK: Private Methods
-    
-    private func updateViewContent(newView: UIView) {
-        self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
-        self.topicInfoViewContainer.addSubview(newView)
-    }
-    
     //
     // MARK: Event Handlers
     //
@@ -323,11 +316,32 @@ class TopicInfoViewController: UIViewController {
         let answerText = sender.titleLabel?.text! ?? ""
         self.loadWeighInElaborate(answerText: answerText)
     }
-    @objc func submitTapped(recognizer: UITapGestureRecognizer) {
+    @objc func submitWeighInTapped(recognizer: UITapGestureRecognizer) {
         
+        guard let currentUser = Auth.auth().currentUser else {
+            self.presentLogin()
+            return
+        }
+        self.saveWeighInResponse()
+    }
+    
+    // MARK: Private Methods
+    
+    private func updateViewContent(newView: UIView) {
+        self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
+        self.topicInfoViewContainer.addSubview(newView)
+    }
+    private func presentLogin() {
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(loginVC, animated: true, completion: {
+            // login complete: save weigh in response, continue to response card
+            self.saveWeighInResponse()
+        })
+    }
+    private func saveWeighInResponse() {
         if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
-           let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey,
-           let answer = self.selectedAnswer {
+            let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey,
+            let answer = self.selectedAnswer {
             
             let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
             let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
@@ -342,8 +356,8 @@ class TopicInfoViewController: UIViewController {
                 if !(elaborateResponse ?? "").isEmpty {
                     dbRef.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
                 }
+                self.loadWeighInResults()
             })
         }
-        self.loadWeighInResults()
     }
 }

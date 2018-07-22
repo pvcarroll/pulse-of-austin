@@ -74,7 +74,7 @@ class OnboardingMain: UIViewController {
         self.present(createAccountVC, animated: true, completion: nil)
     }
     @objc private func loadLogin(sender: UIButton!) {
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! Login
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(loginVC, animated: true, completion: nil)
     }
     @objc private func loadExplore(sender: UIButton!) {

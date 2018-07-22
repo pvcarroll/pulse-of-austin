@@ -18,8 +18,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     
     @IBAction func loginTapped(_ sender: Any) {
-        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! Login
-        self.present(vc, animated: true)
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.fromLanding = true
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {

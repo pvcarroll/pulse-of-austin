@@ -1,5 +1,5 @@
 //
-//  Login.swift
+//  LoginViewController.swift
 //  PulseOfAustin
 //
 //  Created by Paul Carroll on 7/1/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class Login: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailField: UITextField!
@@ -20,6 +20,8 @@ class Login: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     
+    var fromLanding = false
+    
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailField.text, let password = passwordField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
@@ -28,9 +30,14 @@ class Login: UIViewController {
                 loginFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(loginFailedAlert, animated: true, completion: nil)
             } else {
-                // Login successful, transition to Main VC
-                let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-                self.present(mainVC, animated: true, completion: nil)
+                if self.fromLanding {
+                    // Logging in from the landing screen redirects to main screen
+                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                    self.present(mainVC, animated: true, completion: nil)
+                } else {
+                    // Login intervention continues in same flow
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
