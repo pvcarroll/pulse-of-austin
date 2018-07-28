@@ -29,6 +29,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var createAnAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    var isIntervention = false
+    
     @IBAction func createAccount(_ sender: UIButton) {
         guard self.validateFields() else { return }
         
@@ -38,6 +40,7 @@ class CreateAccountViewController: UIViewController {
             if let error = error {
                 let failedToCreateAccountAlert = UIAlertController(title: "Create Account Failed", message: error.localizedDescription, preferredStyle: .alert)
                 failedToCreateAccountAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(failedToCreateAccountAlert, animated: true, completion: nil)
             } else {
                 // Create user in database with all fields
                 if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
@@ -155,9 +158,13 @@ class CreateAccountViewController: UIViewController {
     }
     private func displaySuccessAlertAndGoToMainScreen() {
         let accountCreatedAlert = UIAlertController(title: "Account Created", message: "", preferredStyle: .alert)
-        let continueAction = UIAlertAction(title: "Explore topics", style: .default) { _ in
-            let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-            self.present(mainVC, animated: true, completion: nil)
+        let continueAction = UIAlertAction(title: "Continue", style: .default) { _ in
+            if self.isIntervention {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                self.present(mainVC, animated: true, completion: nil)
+            }
         }
         accountCreatedAlert.addAction(continueAction)
         self.present(accountCreatedAlert, animated: true)

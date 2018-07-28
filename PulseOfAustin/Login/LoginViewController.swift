@@ -20,7 +20,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     
+    var isIntervention = false
     var fromLanding = false
+    var completionHandler: (()->Void)? = nil
     
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailField.text, let password = passwordField.text else { return }
@@ -29,15 +31,13 @@ class LoginViewController: UIViewController {
                 let loginFailedAlert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
                 loginFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(loginFailedAlert, animated: true, completion: nil)
+            } else if self.fromLanding {
+                // Logging in from the landing screen redirects to main screen
+                let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                self.present(mainVC, animated: true, completion: nil)
             } else {
-                if self.fromLanding {
-                    // Logging in from the landing screen redirects to main screen
-                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-                    self.present(mainVC, animated: true, completion: nil)
-                } else {
-                    // Login intervention continues in same flow
-                    self.dismiss(animated: true, completion: nil)
-                }
+                // Login intervention continues in same flow
+                self.dismiss(animated: true, completion: self.completionHandler ?? nil)
             }
         }
     }
@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
     }
     @IBAction func createAccountTapped(_ sender: UIButton) {
         let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountViewController") as! CreateAccountViewController
+        createAccountVC.isIntervention = self.isIntervention
         self.present(createAccountVC, animated: true, completion: nil)
     }
     

@@ -317,7 +317,6 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func submitWeighInTapped(recognizer: UITapGestureRecognizer) {
-        
         guard let currentUser = Auth.auth().currentUser else {
             self.presentLogin()
             return
@@ -333,10 +332,12 @@ class TopicInfoViewController: UIViewController {
     }
     private func presentLogin() {
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(loginVC, animated: true, completion: {
-            // login complete: save weigh in response, continue to response card
-            self.saveWeighInResponse()
-        })
+        loginVC.isIntervention = true
+        loginVC.completionHandler = { [weak self] in
+            // After login completes, save response, and transition to results
+            self?.saveWeighInResponse()
+        }
+        self.present(loginVC, animated: true, completion: nil)
     }
     private func saveWeighInResponse() {
         if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
