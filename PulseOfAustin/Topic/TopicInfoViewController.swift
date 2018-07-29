@@ -114,6 +114,8 @@ class TopicInfoViewController: UIViewController {
                                              height: scrollViewHeight)
             let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnCards))
             landingView.info.addGestureRecognizer(infoRecognizer)
+            let mapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnMap))
+            landingView.map.addGestureRecognizer(mapRecognizer)
             self.updateViewContent(newView: landingView)
         }
     }
@@ -152,6 +154,14 @@ class TopicInfoViewController: UIViewController {
         }
         
         self.updateViewContent(newView: cardsContainer)
+    }
+    
+    // Learn Map
+    @objc private func loadLearnMap() {
+        if let learnMapView = UINib(nibName: "LearnMap", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnMap? {
+            learnMapView.frame = self.topicInfoViewContainer.bounds
+            self.updateViewContent(newView: learnMapView)
+        }
     }
     
     //
