@@ -12,11 +12,17 @@ import Firebase
 class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var nameBottomBorder: UIView!
+    @IBOutlet weak var nameBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var emailBottomBorder: UIView!
+    @IBOutlet weak var emailBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var addressBottomBorder: UIView!
+    @IBOutlet weak var addressBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var zipcodeBottomBorder: UIView!
+    @IBOutlet weak var zipCodeBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var passwordBottomBorder: UIView!
+    @IBOutlet weak var passwordBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var confirmPasswordBottomBorder: UIView!
+    @IBOutlet weak var confirmPasswordBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var screenTitle: UILabel!
     @IBOutlet weak var screenSubtitle: UILabel!
@@ -195,5 +201,43 @@ extension CreateAccountViewController: UITextFieldDelegate {
             self.dismissKeyboard()
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case self.nameField:
+            self.nameBottomBorderHeight.constant = 2.0
+        case self.emailField:
+            self.emailBottomBorderHeight.constant = 2.0
+        case self.addressField:
+            self.addressBottomBorderHeight.constant = 2.0
+        case self.zipCodeField:
+            self.zipCodeBottomBorderHeight.constant = 2.0
+        case self.passwordField:
+            self.passwordBottomBorderHeight.constant = 2.0
+        case self.confirmPasswordField:
+            self.confirmPasswordBottomBorderHeight.constant = 2.0
+        default:
+            return
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case self.nameField:
+            self.nameBottomBorderHeight.constant = 1.0
+        case self.emailField:
+            self.emailBottomBorderHeight.constant = 1.0
+        case self.addressField:
+            self.addressBottomBorderHeight.constant = 1.0
+        case self.zipCodeField:
+            self.zipCodeBottomBorderHeight.constant = 1.0
+        case self.passwordField:
+            self.passwordBottomBorderHeight.constant = 1.0
+        case self.confirmPasswordField:
+            self.confirmPasswordBottomBorderHeight.constant = 1.0
+        default:
+            return
+        }
     }
 }

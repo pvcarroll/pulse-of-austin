@@ -210,10 +210,12 @@
                     </view>
                     <connections>
                         <outlet property="createAccountButton" destination="JgV-xJ-hdM" id="mHc-8E-j4l"/>
+                        <outlet property="emailBottomBorderHeight" destination="MIH-Qq-Ugh" id="fdG-2z-9L7"/>
                         <outlet property="emailField" destination="gsB-b3-KAR" id="Bp9-3b-OxJ"/>
                         <outlet property="emailUnderbar" destination="en7-D5-dc6" id="1bN-In-q7t"/>
                         <outlet property="forgotPasswordButton" destination="DOj-uy-iHj" id="ycS-tW-fSk"/>
                         <outlet property="loginButton" destination="JK2-Mj-4zc" id="WHI-aV-xo7"/>
+                        <outlet property="passwordBottomBorderHeight" destination="6N6-Xx-1G6" id="Gz5-xB-vFd"/>
                         <outlet property="passwordField" destination="SO5-KD-hNL" id="cEG-Eg-Cpi"/>
                         <outlet property="passwordUnderbar" destination="hbU-ri-ToQ" id="IdP-ov-vBL"/>
                         <outlet property="scrollView" destination="VF5-o0-I7L" id="MzH-1C-uiA"/>

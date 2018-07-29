@@ -15,7 +15,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailUnderbar: UIView!
+    @IBOutlet weak var emailBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var passwordUnderbar: UIView!
+    @IBOutlet weak var passwordBottomBorderHeight: NSLayoutConstraint!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
@@ -96,5 +98,27 @@ extension LoginViewController: UITextFieldDelegate {
             self.dismissKeyboard()
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case self.emailField:
+            self.emailBottomBorderHeight.constant = 1.5
+        case self.passwordField:
+            self.passwordBottomBorderHeight.constant = 1.5
+        default:
+            return
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case self.emailField:
+            self.emailBottomBorderHeight.constant = 0.5
+        case self.passwordField:
+            self.passwordBottomBorderHeight.constant = 0.5
+        default:
+            return
+        }
     }
 }

@@ -273,20 +273,26 @@
                     </view>
                     <connections>
                         <outlet property="addressBottomBorder" destination="DQJ-Q9-7MX" id="Tnz-p2-YOo"/>
+                        <outlet property="addressBottomBorderHeight" destination="cf4-2x-Yvx" id="D2p-mo-HQ6"/>
                         <outlet property="addressField" destination="u4J-9r-OcV" id="wVn-nD-SXy"/>
                         <outlet property="confirmPasswordBottomBorder" destination="ifN-d6-SjJ" id="FbL-oi-5AH"/>
+                        <outlet property="confirmPasswordBottomBorderHeight" destination="TUz-Tg-U82" id="yYh-Z8-4YW"/>
                         <outlet property="confirmPasswordField" destination="MGc-Ux-idM" id="LX4-Bb-JWL"/>
                         <outlet property="createAnAccountButton" destination="cA2-Wh-DF6" id="dL2-2U-Dg2"/>
                         <outlet property="emailBottomBorder" destination="Wxf-hs-kCO" id="EYo-Ob-poc"/>
+                        <outlet property="emailBottomBorderHeight" destination="FFE-81-tGU" id="LxU-jx-oEw"/>
                         <outlet property="emailField" destination="eHF-rC-HdH" id="HfV-Em-iFk"/>
                         <outlet property="loginButton" destination="A4d-x0-Z5E" id="HPh-TM-rUW"/>
                         <outlet property="nameBottomBorder" destination="roJ-qq-7qA" id="PbT-yt-Juu"/>
+                        <outlet property="nameBottomBorderHeight" destination="7G2-PS-yw9" id="omI-g2-wvO"/>
                         <outlet property="nameField" destination="gMG-AY-GqE" id="3jN-zu-3h5"/>
                         <outlet property="passwordBottomBorder" destination="PyA-Xr-X4K" id="jzd-0t-y24"/>
+                        <outlet property="passwordBottomBorderHeight" destination="meG-e0-Lw7" id="g3P-Ut-bnx"/>
                         <outlet property="passwordField" destination="GXF-hW-0tz" id="Wft-LU-bqC"/>
                         <outlet property="screenSubtitle" destination="i7Z-PD-yO1" id="yus-3m-9um"/>
                         <outlet property="screenTitle" destination="6hv-zd-60g" id="iAi-wx-AzH"/>
                         <outlet property="scrollView" destination="wPc-Hz-H9r" id="HAg-lV-v3V"/>
+                        <outlet property="zipCodeBottomBorderHeight" destination="Ws0-as-zBc" id="ogb-DN-r0O"/>
                         <outlet property="zipCodeField" destination="YfQ-vt-3XH" id="lFg-FG-HnA"/>
                         <outlet property="zipcodeBottomBorder" destination="cuX-Nx-sXQ" id="alr-dr-Pak"/>
                     </connections>
