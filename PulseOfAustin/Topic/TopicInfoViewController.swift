@@ -340,6 +340,7 @@ class TopicInfoViewController: UIViewController {
         self.present(loginVC, animated: true, completion: nil)
     }
     private func saveWeighInResponse() {
+        // TODO: move db code
         if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
             let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey,
             let answer = self.selectedAnswer {

@@ -52,6 +52,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardOnMainViewTap()
+        emailField.delegate = self
+        passwordField.delegate = self
         emailUnderbar.backgroundColor = UIColor.textFieldBottomBorder
         passwordUnderbar.backgroundColor = UIColor.textFieldBottomBorder
         loginButton.titleLabel?.font = UIFont.futura13
@@ -82,5 +84,17 @@ class LoginViewController: UIViewController {
             self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
         }
         self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case self.emailField:
+            self.passwordField.becomeFirstResponder()
+        default:
+            self.dismissKeyboard()
+        }
+        return true
     }
 }
