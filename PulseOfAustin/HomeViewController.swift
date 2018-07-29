@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -54,6 +55,13 @@ class HomeViewController: UIViewController {
         createAccountString.addUnderline()
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)
         skipButton.titleLabel?.font = UIFont.futuraBold13
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "toExplore", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
