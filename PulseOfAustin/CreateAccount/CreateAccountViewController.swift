@@ -68,6 +68,13 @@ class CreateAccountViewController: UIViewController {
         
         self.dismissKeyboardOnMainViewTap()
         
+        nameField.delegate = self
+        emailField.delegate = self
+        addressField.delegate = self
+        zipCodeField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
+        
         nameBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
         emailBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
         addressBottomBorder.backgroundColor = UIColor.textFieldBottomBorder
@@ -168,5 +175,25 @@ class CreateAccountViewController: UIViewController {
         }
         accountCreatedAlert.addAction(continueAction)
         self.present(accountCreatedAlert, animated: true)
+    }
+}
+
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case self.nameField:
+            self.emailField.becomeFirstResponder()
+        case self.emailField:
+            self.addressField.becomeFirstResponder()
+        case self.addressField:
+            self.zipCodeField.becomeFirstResponder()
+        case self.zipCodeField:
+            self.passwordField.becomeFirstResponder()
+        case self.passwordField:
+            self.confirmPasswordField.becomeFirstResponder()
+        default:
+            self.dismissKeyboard()
+        }
+        return true
     }
 }
