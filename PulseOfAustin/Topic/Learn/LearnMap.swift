@@ -20,5 +20,28 @@ class LearnMap: UIView {
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
         let span = MKCoordinateSpanMake(0.2, 0.3)
         mapView.region = MKCoordinateRegionMake(center, span)
+        
+        // home base
+        let homeBaseCoordinates = CLLocationCoordinate2DMake(30.398599, -97.722067)
+        let homeBaseAnnotation = MKPointAnnotation()
+        homeBaseAnnotation.coordinate = homeBaseCoordinates
+        homeBaseAnnotation.title = "Home Base"
+        homeBaseAnnotation.subtitle = "subtitle"
+        
+        mapView.addAnnotation(homeBaseAnnotation)
+    }
+}
+
+extension LearnMap: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+        }
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("ANNOTATION SELECTED: \(view.annotation?.title)")
     }
 }

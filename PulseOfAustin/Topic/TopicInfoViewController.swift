@@ -44,6 +44,7 @@ class TopicInfoViewController: UIViewController {
     var selectedTopicKey: Int?
     private var cardIndex = 0
     private var selectedAnswer: AnswerIndex?
+    private var learnText: LearnText?
     private var weighInText: WeighInSelectText?
     private var elaborateView: WeighInElaborate?
     private var cardFrame: CGRect?
@@ -66,6 +67,7 @@ class TopicInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.learnText = TopicData.topics[self.selectedTopicKey!]?.learnText
         self.weighInText = TopicData.topics[self.selectedTopicKey!]?.weighIn
         self.contentView.backgroundColor = UIColor.infoCardBackground
         
@@ -109,6 +111,8 @@ class TopicInfoViewController: UIViewController {
             .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             landingView.frame = self.topicInfoViewContainer.bounds
             landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            landingView.infoLabel.text = self.learnText?.landingInfoLabel
+            landingView.mapLabel.text = self.learnText?.landingMapLabel
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)

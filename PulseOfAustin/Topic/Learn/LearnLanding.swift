@@ -33,13 +33,11 @@ class LearnLanding: UIScrollView {
         self.info.addBottomShadow()
         self.map.addBottomShadow()
         self.perspectives.addBottomShadow()
-        self.infoLabel.text = "BOND BREAKDOWN AND POTENTIAL IMPACT"
-        self.mapLabel.text = "MAP: CITY'S LAND ACQUISITION PLANS"
+        
         self.perspectivesLabel.text = "PERSPECTIVES"
         self.infoLabel.font = UIFont.introCardBodyBold
         self.mapLabel.font = UIFont.introCardBodyBold
         self.perspectivesLabel.font = UIFont.introCardBodyBold
-        
         self.milestonesLabel.font = UIFont.introCardBodyBold
         self.crestImage1.backgroundColor = UIColor.infoCardBackground
         self.crestImage2.backgroundColor = UIColor.infoCardBackground

@@ -18,7 +18,9 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"),
                  topicInfoTitle: "Dockless Bikeshare",
-                 learnText: LearnText(overviewText: [],
+                 learnText: LearnText(landingInfoLabel: "Learn about dockless bikeshare",
+                                      landingMapLabel: "Dockless Bikeshare Map",
+                                      overviewText: [],
                                       breakdownTitle: "What this could mean for ridership data?",
                                       breakdownAmountsText: [""],
                                       breakdownDescriptionsText: ["Data from dockless bikes could help the city prioritize bike infrastructure, but a lot of dockless bike companies will not make this data open."],
@@ -36,7 +38,9 @@ enum TopicData {
                                                 cardBodyText: NSAttributedString(string: "Affordable Housing"),
                                                 promptText: ""),
                  topicInfoTitle: "Affordability Bond",
-                 learnText: LearnText(overviewText: ["The cost of closing Austin’s Affordable Housing Gap today is around $6.48 Billion (48,000 unit gap).",
+                 learnText: LearnText(landingInfoLabel: "BOND BREAKDOWN AND POTENTIAL IMPACT",
+                                      landingMapLabel: "MAP: CITY'S LAND ACQUISITION PLANS",
+                                      overviewText: ["The cost of closing Austin’s Affordable Housing Gap today is around $6.48 Billion (48,000 unit gap).",
                                                      "The cost of closing Austin’s Affordable Housing Gap in 2025 is projected to be $11.18 Billion.",
                                                      "$161M: 1,900 units\n$300M: 7,000+ units"],
                                       breakdownTitle: "BOND BREAKDOWN",
@@ -63,7 +67,9 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: ""),
                  topicInfoTitle: "Holly Power Plant",
-                 learnText: LearnText(overviewText: [],
+                 learnText: LearnText(landingInfoLabel: "Learn about Holly power plant",
+                                      landingMapLabel: "Holly Power Plant Map",
+                                      overviewText: [],
                                       breakdownTitle: "",
                                       breakdownAmountsText: [],
                                       breakdownDescriptionsText: [],
@@ -81,7 +87,9 @@ enum TopicData {
                                                 cardBodyText: buildBodyText(),
                                                 promptText: ""),
                  topicInfoTitle: "Strategic Mobility Plan",
-                 learnText: LearnText(overviewText: [],
+                 learnText: LearnText(landingInfoLabel: "Learn about strategic mobility plan",
+                                      landingMapLabel: "Strategic mobility plan map",
+                                      overviewText: [],
                                       breakdownTitle: "",
                                       breakdownAmountsText: [],
                                       breakdownDescriptionsText: [],
@@ -139,6 +147,8 @@ struct TopicInfoText {
 }
 
 struct LearnText {
+    let landingInfoLabel: String
+    let landingMapLabel: String
     let overviewText: [String]
     let breakdownTitle: String
     let breakdownAmountsText: [String]
