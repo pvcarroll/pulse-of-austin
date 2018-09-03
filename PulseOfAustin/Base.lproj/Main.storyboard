@@ -499,7 +499,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="0.8008347602739726" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="byB-cY-DjB" secondAttribute="trailing" id="ALw-bb-G8c"/>
                                                     <constraint firstAttribute="trailing" secondItem="MAC-qe-Kbt" secondAttribute="trailing" constant="24" id="BTO-yv-T9C"/>
@@ -533,7 +533,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="0.79559075342465757" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="rb8-66-3LI" secondAttribute="trailing" constant="24" id="PoF-rf-QmI"/>
                                                     <constraint firstItem="5ic-Ud-ODw" firstAttribute="leading" secondItem="NeX-H9-7RI" secondAttribute="leading" id="agW-Ag-W9a"/>
@@ -546,7 +546,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-TC-Q62" userLabel="Log out Button">
                                                 <rect key="frame" x="0.0" y="593" width="375" height="44"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="0.79628638698630139" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="gIP-dG-zjy"/>
                                                 </constraints>
