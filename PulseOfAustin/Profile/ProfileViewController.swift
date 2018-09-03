@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var pictureContainer: UIView!
     @IBOutlet weak var counselMemberPicture: UIImageView!
     @IBOutlet weak var councilMemberName: UILabel!
+    @IBOutlet weak var pushNotificationsButton: UIButton!
+    @IBOutlet weak var basicInfoButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,17 @@ class ProfileViewController: UIViewController {
         counselMemberPicture.layer.masksToBounds = true
         counselMemberPicture.image = #imageLiteral(resourceName: "02_DeliaGarza")
         
+        // TODO: set council member
         councilMemberName.text = "PIO RENTERIA"
+        
+        let borderColor = UIColor(displayP3Red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0).cgColor
+        
+        pushNotificationsButton.layer.borderColor = borderColor
+        pushNotificationsButton.layer.borderWidth = 1.0
+        basicInfoButton.layer.borderColor = borderColor
+        basicInfoButton.layer.borderWidth = 1.0
+        logOutButton.layer.borderColor = borderColor
+        logOutButton.layer.borderWidth = 1.0
     }
     
 }
