@@ -7,7 +7,21 @@
 //
 
 import UIKit
+import FirebaseAuth
 import MapKit
+
+let councilMembers = [
+    "01_OraHouston",
+    "02_DeliaGarza",
+    "03_SabinoRenteria",
+    "04_GregorioCasar",
+    "05_AnnKitchen",
+    "06_JimmyFlannigan",
+    "07_LesliePool",
+    "08_EllenTroxclair",
+    "09_KathieTovo",
+    "10_AlisonAlter"
+]
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -20,6 +34,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let userName = Auth.auth().currentUser?.displayName {
+            self.title = userName
+        }
+        
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
         let span = MKCoordinateSpanMake(0.2, 0.3)
         mapView.region = MKCoordinateRegionMake(center, span)
@@ -32,7 +51,11 @@ class ProfileViewController: UIViewController {
         counselMemberPicture.layer.cornerRadius = counselMemberPicture.frame.width / 2
         counselMemberPicture.clipsToBounds = true
         counselMemberPicture.layer.masksToBounds = true
-        counselMemberPicture.image = #imageLiteral(resourceName: "02_DeliaGarza")
+        
+        // TODO: set council member picture
+        let randomNumber = Int(arc4random_uniform(10))
+        let image = UIImage(imageLiteralResourceName: councilMembers[randomNumber])
+        counselMemberPicture.image = image
         
         // TODO: set council member
         councilMemberName.text = "PIO RENTERIA"
