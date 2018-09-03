@@ -69,8 +69,6 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: rm test
-        HttpRequests.test()
         
         self.dismissKeyboardOnMainViewTap()
         

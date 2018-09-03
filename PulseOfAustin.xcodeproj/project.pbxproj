@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */; };
+		7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD57213B174B00B648B8 /* ProfileViewController.swift */; };
 		752EF735207C571E0046743A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF734207C571E0046743A /* AppDelegate.swift */; };
 		752EF737207C571E0046743A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF736207C571E0046743A /* HomeViewController.swift */; };
 		752EF73A207C571E0046743A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF738207C571E0046743A /* Main.storyboard */; };
@@ -94,6 +95,7 @@
 		00E95310D79D8FF36DB70F5A /* Pods-PulseOfAustinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinUITests/Pods-PulseOfAustinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.release.xcconfig"; sourceTree = "<group>"; };
 		31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7523BD57213B174B00B648B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		752EF731207C571E0046743A /* PulseOfAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseOfAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752EF734207C571E0046743A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752EF736207C571E0046743A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 			path = Learn;
 			sourceTree = "<group>";
 		};
+		7523BD56213B16D400B648B8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7523BD57213B174B00B648B8 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		752EF728207C571E0046743A = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 				755C7B9E20824BCF00554399 /* Explore */,
 				753E259C20D6C42D0020307D /* Onboarding */,
 				755C7BAE2088C5EA00554399 /* Topic */,
+				7523BD56213B16D400B648B8 /* Profile */,
 				757C0FB820C4313F0018C560 /* Views */,
 				752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */,
 				752EF79E207C5DDB0046743A /* GoogleService-Info.plist */,
@@ -704,6 +715,7 @@
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
 				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
+				7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
 				753E25A220D6D4F90020307D /* OnboardingMain.swift in Sources */,
 			);

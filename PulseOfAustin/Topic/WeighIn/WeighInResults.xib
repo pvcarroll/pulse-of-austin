@@ -64,9 +64,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6u-Nm-Zvy" userLabel="Response1 Count Label">
-                                            <rect key="frame" x="248" y="0.0" width="30" height="44"/>
+                                            <rect key="frame" x="243" y="0.0" width="35" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="R90-3I-BmD"/>
+                                                <constraint firstAttribute="width" constant="35" id="R90-3I-BmD"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -104,9 +104,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-sY-XpE" userLabel="Response2 Count Label">
-                                            <rect key="frame" x="248" y="0.0" width="30" height="43.5"/>
+                                            <rect key="frame" x="243" y="0.0" width="35" height="43.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="gp4-Vh-pVA"/>
+                                                <constraint firstAttribute="width" constant="35" id="gp4-Vh-pVA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -144,9 +144,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-Hn-Vce" userLabel="Response3 Count Label">
-                                            <rect key="frame" x="248" y="0.0" width="30" height="44"/>
+                                            <rect key="frame" x="243" y="0.0" width="35" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="Zfw-hP-yRj"/>
+                                                <constraint firstAttribute="width" constant="35" id="Zfw-hP-yRj"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -184,9 +184,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2m-Eo-JU5" userLabel="Response4 Count Label">
-                                            <rect key="frame" x="248" y="0.0" width="30" height="43.5"/>
+                                            <rect key="frame" x="243" y="0.0" width="35" height="43.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="fQx-ld-p8w"/>
+                                                <constraint firstAttribute="width" constant="35" id="fQx-ld-p8w"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
