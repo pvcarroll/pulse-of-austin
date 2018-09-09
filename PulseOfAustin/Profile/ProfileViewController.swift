@@ -46,7 +46,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.setScreenTitleWithUserName()
 
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
         let span = MKCoordinateSpanMake(0.2, 0.3)
@@ -79,6 +78,22 @@ class ProfileViewController: UIViewController {
         logOutButton.layer.borderWidth = 1.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setScreenTitleWithUserName()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser?.email == nil {
+            let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+            self.present(loginVC, animated: true) {
+                loginVC.presentAlertModal(title: "", message: "You must logged in to view profile")
+            }
+            return
+        }
+    }
+    
     //
     // MARK:- Private
     //
@@ -96,5 +111,4 @@ class ProfileViewController: UIViewController {
                 })
         }
     }
-    
 }
