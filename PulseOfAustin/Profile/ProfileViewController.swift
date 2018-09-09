@@ -32,18 +32,27 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var basicInfoButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBAction func logOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+            self.present(homeVC, animated: true, completion: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let userName = Auth.auth().currentUser?.displayName {
-            self.title = userName
-        }
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.setScreenTitleWithUserName()
+
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
         let span = MKCoordinateSpanMake(0.2, 0.3)
         mapView.region = MKCoordinateRegionMake(center, span)
         
-        // Add shadow around to counsel member picture
+        // Add shadow around to council member picture
         pictureContainer.clipsToBounds = false
         pictureContainer.layer.cornerRadius = pictureContainer.frame.width
         pictureContainer.addBottomShadow(shadowColor: UIColor.black, shadowRadius: 4)
@@ -68,6 +77,24 @@ class ProfileViewController: UIViewController {
         basicInfoButton.layer.borderWidth = 1.0
         logOutButton.layer.borderColor = borderColor
         logOutButton.layer.borderWidth = 1.0
+    }
+    
+    //
+    // MARK:- Private
+    //
+    
+    private func setScreenTitleWithUserName() {
+        if let email = Auth.auth().currentUser?.email,
+            let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
+            dbRef.child("users")
+                .queryOrdered(byChild: "email")
+                .queryEqual(toValue: email)
+                .observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let values = snapshot.value as? [String: Any], let userObject = values.first?.value as! [AnyHashable: Any]?, let userName = userObject["name"] as? String {
+                        self.title = userName
+                    }
+                })
+        }
     }
     
 }

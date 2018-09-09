@@ -14,7 +14,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -554,6 +554,9 @@
                                                 <state key="normal" title="Log out">
                                                     <color key="titleColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logOut:" destination="fo4-sg-aS5" eventType="touchUpInside" id="N5v-wj-5Zb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -609,7 +612,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VVn-uW-MvP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yfx-II-Mfg"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Yfx-II-Mfg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="basicInfoButton" destination="5ic-Ud-ODw" id="fDo-RB-2Lh"/>
