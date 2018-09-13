@@ -32,6 +32,20 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var basicInfoButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
+    private var homeAnnotation: MKPointAnnotation = MKPointAnnotation()
+    private var homeAddress: String = "" {
+        didSet {
+            // Set pin location on map
+            let geoCode = CLGeocoder()
+            geoCode.geocodeAddressString(homeAddress) { (placemarks, error) in
+                if let coordinate = placemarks?[0].location?.coordinate {
+                    self.homeAnnotation.coordinate = coordinate
+                }
+            }
+            
+        }
+    }
+    
     @IBAction func logOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -47,9 +61,14 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
+        // Map
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
         let span = MKCoordinateSpanMake(0.2, 0.3)
         mapView.region = MKCoordinateRegionMake(center, span)
+        
+        // Address pin
+        homeAnnotation.title = "Home Address"
+        mapView.addAnnotation(homeAnnotation)
         
         // Add shadow around to council member picture
         pictureContainer.clipsToBounds = false
@@ -76,6 +95,8 @@ class ProfileViewController: UIViewController {
         basicInfoButton.layer.borderWidth = 1.0
         logOutButton.layer.borderColor = borderColor
         logOutButton.layer.borderWidth = 1.0
+        
+        mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +120,7 @@ class ProfileViewController: UIViewController {
     //
     
     private func setScreenTitleWithUserName() {
+        // TODO: move db query
         if let email = Auth.auth().currentUser?.email,
             let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
             dbRef.child("users")
@@ -107,8 +129,30 @@ class ProfileViewController: UIViewController {
                 .observeSingleEvent(of: .value, with: { (snapshot) in
                     if let values = snapshot.value as? [String: Any], let userObject = values.first?.value as! [AnyHashable: Any]?, let userName = userObject["name"] as? String {
                         self.title = userName
+                        if let address = userObject["address"] as? String {
+                            self.homeAddress = address + ", Austin, TX, "
+                            if let zipCode = userObject["zipCode"] as? String {
+                                self.homeAddress += zipCode
+                            }
+                        }
                     }
                 })
         }
+    }
+}
+
+extension ProfileViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else {return nil}
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        return annotationView
     }
 }
