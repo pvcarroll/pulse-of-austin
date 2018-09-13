@@ -40,6 +40,7 @@ class ProfileViewController: UIViewController {
             geoCode.geocodeAddressString(homeAddress) { (placemarks, error) in
                 if let coordinate = placemarks?[0].location?.coordinate {
                     self.homeAnnotation.coordinate = coordinate
+                    self.mapView.centerCoordinate = coordinate
                 }
             }
             
