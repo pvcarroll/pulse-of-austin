@@ -29,7 +29,9 @@ enum TopicData {
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
-                 weighIn: WeighInSelectText(choices: ["", "", "Other"])),
+                 weighIn: WeighInSelectText(choices: ["", "", "Other"]),
+                 dateUpdated: "9.9.18"
+        ),
         1: Topic(topicKey: "affordableHousingBond",
                  title: "AFFORDABLE HOUSING BOND",
                  description: "$161M vs. $300M: Council yet to decide",
@@ -58,7 +60,9 @@ enum TopicData {
                                       perspectivesTitles: ["Housing Committee:", "Council Member Casar:"],
                                       perspectivesText: ["Fearing residents would reject a larger bond, suggest a $161 million bond focusing on lack of affordability all over town, especially west of I-35",
                                                          "Austin needs to make a significant investment in building new affordable housing, we should be bold by careful.  I support a $300 million bond."]),
-                 weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"])),
+                 weighIn: WeighInSelectText(choices: ["$300 Million", "$161 Million", "Other Thoughts"]),
+                 dateUpdated: "9.9.18"
+        ),
         2: Topic(topicKey: "hollyPowerPlant",
                  title: "HOLLY POWER PLANT",
                  description: "City seeking input on park transformation",
@@ -78,7 +82,9 @@ enum TopicData {
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
-                 weighIn: WeighInSelectText(choices: ["", "", "Other"])),
+                 weighIn: WeighInSelectText(choices: ["", "", "Other"]),
+                 dateUpdated: "9.9.18"
+        ),
         3: Topic(topicKey: "strategicMobilityPlan",
                  title: "STRATEGIC MOBILITY PLAN",
                  description: "Prioritize roads, public transit, or a balance?",
@@ -98,7 +104,9 @@ enum TopicData {
                                       onTheBallotDescriptionsText: [],
                                       perspectivesTitles: [],
                                       perspectivesText: []),
-                 weighIn: WeighInSelectText(choices: ["", "", "Other"]))
+                 weighIn: WeighInSelectText(choices: ["", "", "Other"]),
+                 dateUpdated: "9.9.18"
+        )
     ]
     
     private static func buildBodyText() -> NSMutableAttributedString {
@@ -127,6 +135,7 @@ struct Topic {
     let topicInfoTitle: String
     let learnText: LearnText
     let weighIn: WeighInSelectText
+    let dateUpdated: String
 }
 
 struct TopicIntroData {

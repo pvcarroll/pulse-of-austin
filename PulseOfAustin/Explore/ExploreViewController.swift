@@ -46,6 +46,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         topicCell.titleLabel.text = TopicData.topics[indexPath.row]?.title
         topicCell.titleLabel.font = UIFont.cardTitle
         topicCell.descriptionLabel.text = TopicData.topics[indexPath.row]?.description
+        topicCell.dateUpdated.text = TopicData.topics[indexPath.row]?.dateUpdated
         return topicCell
     }
     

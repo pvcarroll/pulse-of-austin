@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,14 +50,23 @@
                                     <constraint firstAttribute="width" constant="20" id="XXa-6o-h1L"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFU-95-3RA" userLabel="Date">
+                                <rect key="frame" x="479" y="127.5" width="48" height="13"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yFU-95-3RA" firstAttribute="leading" secondItem="wIA-sj-WlT" secondAttribute="trailing" id="2un-f7-Abi"/>
                             <constraint firstAttribute="bottom" secondItem="wIA-sj-WlT" secondAttribute="bottom" constant="10" id="96x-Eo-xik"/>
                             <constraint firstItem="wIA-sj-WlT" firstAttribute="top" secondItem="SNd-Jl-z5h" secondAttribute="top" constant="10" id="BG4-CD-jeJ"/>
+                            <constraint firstAttribute="bottom" secondItem="yFU-95-3RA" secondAttribute="bottom" constant="3" id="XBG-i0-GZP"/>
                             <constraint firstItem="wIA-sj-WlT" firstAttribute="leading" secondItem="SNd-Jl-z5h" secondAttribute="leading" constant="10" id="ajE-mn-1on"/>
                             <constraint firstItem="PY0-xQ-AUy" firstAttribute="centerY" secondItem="SNd-Jl-z5h" secondAttribute="centerY" id="hI0-qE-tmH"/>
                             <constraint firstItem="PY0-xQ-AUy" firstAttribute="leading" secondItem="wIA-sj-WlT" secondAttribute="trailing" constant="20" id="v8f-Ak-cFK"/>
+                            <constraint firstAttribute="trailing" secondItem="yFU-95-3RA" secondAttribute="trailing" constant="2" id="zPT-o0-Y7Q"/>
                             <constraint firstAttribute="trailing" secondItem="PY0-xQ-AUy" secondAttribute="trailing" constant="10" id="zYt-fk-p8T"/>
                         </constraints>
                     </view>
@@ -73,6 +82,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="dateUpdated" destination="yFU-95-3RA" id="afX-hK-642"/>
                 <outlet property="descriptionLabel" destination="HtC-rO-Fbn" id="2L9-L4-rDl"/>
                 <outlet property="titleLabel" destination="kpw-SI-srj" id="lkf-Og-mnP"/>
                 <outlet property="topicCellBackgroundView" destination="SNd-Jl-z5h" id="DZk-RG-aTu"/>

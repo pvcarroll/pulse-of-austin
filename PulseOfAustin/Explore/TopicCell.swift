@@ -13,6 +13,7 @@ class TopicCell: UITableViewCell {
     @IBOutlet weak var topicCellBackgroundView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet weak var dateUpdated: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
