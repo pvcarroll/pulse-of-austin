@@ -57,7 +57,9 @@ class WeighInElaborate: UIView, UITextViewDelegate {
     //
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        self.weighInTextView.text = nil
+        if self.response.isEmpty {
+            self.weighInTextView.text = nil
+        }
         self.weighInTextView.textColor = UIColor.darkGray74
     }
     
