@@ -43,7 +43,6 @@ class ProfileViewController: UIViewController {
                     self.mapView.centerCoordinate = coordinate
                 }
             }
-            
         }
     }
     

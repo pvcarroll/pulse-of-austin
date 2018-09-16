@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */; };
 		7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD57213B174B00B648B8 /* ProfileViewController.swift */; };
+		7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */; };
+		7523BD63214B5BCE00B648B8 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */; };
 		752EF735207C571E0046743A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF734207C571E0046743A /* AppDelegate.swift */; };
 		752EF737207C571E0046743A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF736207C571E0046743A /* HomeViewController.swift */; };
 		752EF73A207C571E0046743A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752EF738207C571E0046743A /* Main.storyboard */; };
@@ -96,6 +98,8 @@
 		30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.release.xcconfig"; sourceTree = "<group>"; };
 		31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7523BD57213B174B00B648B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
+		7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
 		752EF731207C571E0046743A /* PulseOfAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseOfAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752EF734207C571E0046743A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752EF736207C571E0046743A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				7523BD57213B174B00B648B8 /* ProfileViewController.swift */,
+				7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */,
+				7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -715,8 +721,10 @@
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
 				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
+				7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */,
 				7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
+				7523BD63214B5BCE00B648B8 /* BasicInfoViewController.swift in Sources */,
 				753E25A220D6D4F90020307D /* OnboardingMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

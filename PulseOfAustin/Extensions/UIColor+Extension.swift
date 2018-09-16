@@ -43,4 +43,7 @@ extension UIColor {
     public class var textFieldBottomBorder: UIColor {
         return UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0)
     }
+    public class var goldenRod247_179_19: UIColor {
+        return UIColor(red: 247/255.0, green: 179/255.0, blue: 19/255.0, alpha: 1.0)
+    }
 }
