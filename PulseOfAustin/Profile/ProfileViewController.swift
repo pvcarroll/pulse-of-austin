@@ -32,6 +32,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var basicInfoButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
+    private var userData: UserData?
     private var homeAnnotation: MKPointAnnotation = MKPointAnnotation()
     private var homeAddress: String = "" {
         didSet {
@@ -133,11 +134,21 @@ class ProfileViewController: UIViewController {
                             self.homeAddress = address + ", Austin, TX, "
                             if let zipCode = userObject["zipCode"] as? String {
                                 self.homeAddress += zipCode
+                                // Save user data
+                                if let email = userObject["email"] as? String {
+                                    self.userData = UserData(address: address, zipCode: zipCode, email: email)
+                                }
                             }
                         }
                     }
                 })
         }
+    }
+    
+    // MARK:- Prepare for Segue
+    
+    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? BasicInfoViewController)?.userData = self.userData
     }
 }
 
@@ -155,4 +166,10 @@ extension ProfileViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+}
+
+struct UserData {
+    var address: String
+    var zipCode: String
+    var email: String
 }
