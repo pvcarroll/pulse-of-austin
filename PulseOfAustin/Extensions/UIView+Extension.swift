@@ -24,3 +24,16 @@ extension UIView {
         self.layer.shadowOpacity = 0.5
     }
 }
+
+@IBDesignable
+extension UIView {
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+}
