@@ -39,7 +39,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Igniting people to shape their city." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Cp-FBD">
-                                        <rect key="frame" x="20" y="104" width="335" height="21"/>
+                                        <rect key="frame" x="64" y="104" width="247.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247.5" id="Dik-i4-jQb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -87,7 +90,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQW-K0-Gx8" userLabel="Skip Button">
                                         <rect key="frame" x="137.5" y="423" width="100" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Zqq-tn-5S2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Zqq-tn-5S2"/>
                                             <constraint firstAttribute="height" constant="30" id="a46-N2-fWM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
@@ -112,15 +115,12 @@
                                     <constraint firstItem="CQW-K0-Gx8" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="OWT-fW-mnN"/>
                                     <constraint firstAttribute="bottom" secondItem="CQW-K0-Gx8" secondAttribute="bottom" constant="27" id="aDM-JN-3Bq"/>
                                     <constraint firstItem="ZQJ-Nb-j6z" firstAttribute="top" secondItem="he5-RM-iLM" secondAttribute="bottom" constant="16" id="aIl-aB-GZO"/>
-                                    <constraint firstAttribute="trailing" secondItem="KCR-Cp-FBD" secondAttribute="trailing" constant="20" id="aJ7-I3-xcx"/>
                                     <constraint firstItem="KCR-Cp-FBD" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="bUH-BE-MbR"/>
                                     <constraint firstItem="4j0-ZU-KVf" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="cNS-H2-auI"/>
                                     <constraint firstItem="he5-RM-iLM" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="gb2-Go-3HW"/>
                                     <constraint firstAttribute="trailing" secondItem="he5-RM-iLM" secondAttribute="trailing" priority="750" constant="50" id="hde-X3-pSe"/>
                                     <constraint firstAttribute="trailing" secondItem="9av-lB-9gY" secondAttribute="trailing" id="kZT-Se-93U"/>
-                                    <constraint firstItem="9av-lB-9gY" firstAttribute="centerX" secondItem="JUb-8u-ffh" secondAttribute="centerX" id="mcj-yG-25M"/>
                                     <constraint firstAttribute="height" constant="480" id="pKc-Mc-w51"/>
-                                    <constraint firstItem="KCR-Cp-FBD" firstAttribute="leading" secondItem="JUb-8u-ffh" secondAttribute="leading" constant="20" id="uiX-AL-YYN"/>
                                     <constraint firstItem="4j0-ZU-KVf" firstAttribute="top" secondItem="JUb-8u-ffh" secondAttribute="top" id="vhT-bj-tn6"/>
                                 </constraints>
                             </view>
@@ -683,7 +683,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS3-1G-oRT" userLabel="Address Label">
                                                         <rect key="frame" x="20" y="43" width="56.5" height="17"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="56.5" id="2hX-rH-mXr"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56.5" id="2hX-rH-mXr"/>
                                                             <constraint firstAttribute="height" constant="17" id="8MJ-bl-IxB"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
@@ -708,7 +708,7 @@
                                                         <rect key="frame" x="20" y="103" width="62.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="kVK-Dy-0tQ"/>
-                                                            <constraint firstAttribute="width" constant="62.5" id="mca-Bs-cjI"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62.5" id="mca-Bs-cjI"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                         <nil key="textColor"/>
@@ -783,7 +783,7 @@
                                                         <rect key="frame" x="20" y="53" width="38" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="Phc-YG-Gxg"/>
-                                                            <constraint firstAttribute="width" constant="38" id="nuk-7K-Yo3"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="nuk-7K-Yo3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                         <nil key="textColor"/>
@@ -845,7 +845,7 @@
                                                         <rect key="frame" x="20" y="53" width="68.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="WjS-nc-bOp"/>
-                                                            <constraint firstAttribute="width" constant="68.5" id="oFu-sy-OKc"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68.5" id="oFu-sy-OKc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                         <nil key="textColor"/>
