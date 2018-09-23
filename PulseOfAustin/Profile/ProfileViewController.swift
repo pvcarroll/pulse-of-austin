@@ -128,7 +128,7 @@ class ProfileViewController: UIViewController {
                 .queryOrdered(byChild: "email")
                 .queryEqual(toValue: email)
                 .observeSingleEvent(of: .value, with: { (snapshot) in
-                    if let values = snapshot.value as? [String: Any], let userObject = values.first?.value as! [AnyHashable: Any]?, let userName = userObject["name"] as? String {
+                    if let values = snapshot.value as? [String: Any], let userID = values.first?.key, let userObject = values.first?.value as! [AnyHashable: Any]?, let userName = userObject["name"] as? String {
                         self.title = userName
                         if let address = userObject["address"] as? String {
                             self.homeAddress = address + ", Austin, TX, "
@@ -136,7 +136,7 @@ class ProfileViewController: UIViewController {
                                 self.homeAddress += zipCode
                                 // Save user data
                                 if let email = userObject["email"] as? String {
-                                    self.userData = UserData(address: address, zipCode: zipCode, email: email)
+                                    self.userData = UserData(userID: userID, address: address, zipCode: zipCode, email: email)
                                 }
                             }
                         }
@@ -169,6 +169,7 @@ extension ProfileViewController: MKMapViewDelegate {
 }
 
 struct UserData {
+    var userID: String
     var address: String
     var zipCode: String
     var email: String

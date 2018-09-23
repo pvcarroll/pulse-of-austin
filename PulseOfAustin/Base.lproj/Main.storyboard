@@ -678,7 +678,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGC-fJ-QPP" userLabel="Address and zip View">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="141"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="141"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS3-1G-oRT" userLabel="Address Label">
                                                         <rect key="frame" x="20" y="43" width="56.5" height="17"/>
@@ -765,7 +765,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi4-DI-rVM" userLabel="Email View">
-                                                <rect key="frame" x="0.0" y="177" width="375" height="91"/>
+                                                <rect key="frame" x="0.0" y="167" width="375" height="91"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aat-Tq-AjI">
                                                         <rect key="frame" x="275" y="5" width="100" height="30"/>
@@ -820,7 +820,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-bo-hSe" userLabel="Password View">
-                                                <rect key="frame" x="0.0" y="284" width="375" height="91"/>
+                                                <rect key="frame" x="0.0" y="274" width="375" height="91"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8o-R0-nyo">
                                                         <rect key="frame" x="275" y="5" width="100" height="30"/>
@@ -885,13 +885,34 @@
                                             <constraint firstItem="qi4-DI-rVM" firstAttribute="leading" secondItem="T2t-Hz-pbp" secondAttribute="leading" id="bSo-Vu-MQ1"/>
                                             <constraint firstItem="DGC-fJ-QPP" firstAttribute="leading" secondItem="T2t-Hz-pbp" secondAttribute="leading" id="eCH-Hn-K2Y"/>
                                             <constraint firstItem="5Cw-bo-hSe" firstAttribute="top" secondItem="qi4-DI-rVM" secondAttribute="bottom" constant="16" id="wSm-lq-N66"/>
-                                            <constraint firstItem="DGC-fJ-QPP" firstAttribute="top" secondItem="T2t-Hz-pbp" secondAttribute="top" constant="20" id="wgr-wc-6NH"/>
+                                            <constraint firstItem="DGC-fJ-QPP" firstAttribute="top" secondItem="T2t-Hz-pbp" secondAttribute="top" constant="10" id="wgr-wc-6NH"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLq-Wi-HTI">
+                                        <rect key="frame" x="87.5" y="514" width="200" height="30"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LbV-ca-Lbg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bOy-X6-59Y"/>
+                                        </constraints>
+                                        <state key="normal" title="SAVE CHANGES">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="lbl-Dm-yIm" eventType="touchUpInside" id="gJw-4G-8NZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NLq-Wi-HTI" secondAttribute="bottom" constant="10" id="3zh-bw-cLB"/>
                                     <constraint firstItem="T2t-Hz-pbp" firstAttribute="centerY" secondItem="fzh-j5-czt" secondAttribute="centerY" id="FoJ-yL-es4"/>
+                                    <constraint firstItem="NLq-Wi-HTI" firstAttribute="centerX" secondItem="fzh-j5-czt" secondAttribute="centerX" id="Pij-UV-vtp"/>
                                     <constraint firstItem="T2t-Hz-pbp" firstAttribute="centerX" secondItem="fzh-j5-czt" secondAttribute="centerX" id="Wke-Qe-Hif"/>
                                     <constraint firstAttribute="bottom" secondItem="T2t-Hz-pbp" secondAttribute="bottom" id="enI-Oi-CjO"/>
                                     <constraint firstAttribute="trailing" secondItem="T2t-Hz-pbp" secondAttribute="trailing" id="ewb-hS-a9G"/>
@@ -918,6 +939,7 @@
                         <outlet property="addressField" destination="HcI-8C-QHU" id="t0u-gF-yNn"/>
                         <outlet property="emailField" destination="wsb-Ug-3pg" id="qbT-cu-0dm"/>
                         <outlet property="passwordField" destination="NwG-az-JaC" id="tSL-4K-kks"/>
+                        <outlet property="saveButton" destination="NLq-Wi-HTI" id="eQU-fM-Wcd"/>
                         <outlet property="scrollView" destination="fzh-j5-czt" id="62v-yH-uvG"/>
                         <outlet property="zipCodeField" destination="D9g-Zp-ITA" id="s3G-ge-JxL"/>
                     </connections>

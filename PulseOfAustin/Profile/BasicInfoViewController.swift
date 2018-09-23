@@ -15,8 +15,30 @@ class BasicInfoViewController: UIViewController {
     @IBOutlet weak var zipCodeField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var userData: UserData?
+    var originalAddress = ""
+    var originalZipCode = ""
+    var originalEmail = ""
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        if (self.addressField.text == originalAddress) &&
+              (self.zipCodeField.text == originalZipCode) &&
+              (self.emailField.text == originalEmail) {return}
+        guard let userID = self.userData?.userID else {return}
+        guard let newAddress = self.addressField.text else {return}
+        guard let newZipCode = self.zipCodeField.text else {return}
+        guard let newEmail = self.emailField.text else {return}
+        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
+            
+            dbRef.child("users").child(userID).updateChildValues([
+                "address": newAddress,
+                "zipCode": newZipCode,
+                "email": newEmail
+            ])
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +50,9 @@ class BasicInfoViewController: UIViewController {
             self.addressField.text = userData.address
             self.zipCodeField.text = userData.zipCode
             self.emailField.text = userData.email
+            self.originalAddress = userData.address
+            self.originalZipCode = userData.zipCode
+            self.originalEmail = userData.email
         }
         
         // Adjust scroll view when keyboard is visible
