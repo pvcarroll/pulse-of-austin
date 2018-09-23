@@ -68,6 +68,7 @@
 		75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */; };
 		75E29F9220EEFEC20086F4D8 /* OnboardingLastSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */; };
 		75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */; };
+		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -164,6 +165,7 @@
 		75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInLanding.swift; sourceTree = "<group>"; };
 		75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingLastSlide.xib; sourceTree = "<group>"; };
 		75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastSlide.swift; sourceTree = "<group>"; };
+		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				7523BD57213B174B00B648B8 /* ProfileViewController.swift */,
 				7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */,
 				7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */,
+				75F4CC2D2157E95900F017EB /* PasswordViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75519B5420E9335300463BB1 /* UIViewController+Extension.swift in Sources */,
+				75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */,
 				75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */,
 				755C7BAD2085A05400554399 /* UIColor+Extension.swift in Sources */,
 				757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */,
