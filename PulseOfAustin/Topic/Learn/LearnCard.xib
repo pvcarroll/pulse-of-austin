@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,10 +28,10 @@
                             </wkWebViewConfiguration>
                         </wkWebView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrQ-vW-ipT" userLabel="X Button">
-                            <rect key="frame" x="339" y="8" width="20" height="20"/>
+                            <rect key="frame" x="325" y="0.0" width="40" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="F0e-IV-eP8"/>
-                                <constraint firstAttribute="width" constant="20" id="e5g-v9-P01"/>
+                                <constraint firstAttribute="height" constant="36" id="F0e-IV-eP8"/>
+                                <constraint firstAttribute="width" constant="40" id="e5g-v9-P01"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <state key="normal" title="X">
@@ -42,8 +42,8 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="BK0-uo-25X" secondAttribute="trailing" constant="10" id="6aa-CR-rZz"/>
-                        <constraint firstItem="OrQ-vW-ipT" firstAttribute="top" secondItem="Uz9-zO-p5c" secondAttribute="top" constant="8" id="99m-JI-QDj"/>
-                        <constraint firstAttribute="trailing" secondItem="OrQ-vW-ipT" secondAttribute="trailing" constant="6" id="L3G-dt-lWh"/>
+                        <constraint firstItem="OrQ-vW-ipT" firstAttribute="top" secondItem="Uz9-zO-p5c" secondAttribute="top" id="99m-JI-QDj"/>
+                        <constraint firstAttribute="trailing" secondItem="OrQ-vW-ipT" secondAttribute="trailing" id="L3G-dt-lWh"/>
                         <constraint firstAttribute="bottom" secondItem="BK0-uo-25X" secondAttribute="bottom" constant="25" id="pt9-Zt-ahZ"/>
                         <constraint firstItem="BK0-uo-25X" firstAttribute="leading" secondItem="Uz9-zO-p5c" secondAttribute="leading" constant="10" id="qG4-lu-FGC"/>
                         <constraint firstItem="BK0-uo-25X" firstAttribute="top" secondItem="Uz9-zO-p5c" secondAttribute="top" constant="30" id="t8L-pA-2PW"/>
