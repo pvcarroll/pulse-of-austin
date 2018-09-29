@@ -111,13 +111,13 @@ enum TopicData {
     
     private static func buildBodyText() -> NSMutableAttributedString {
         let paragraph1Text = "The City has kicked off a pilot program for new dockless bike and electric scooter services.\n"
-        let paragraph1Attributes = [NSAttributedStringKey.font: UIFont.introCardBody]
+        let paragraph1Attributes = [NSAttributedString.Key.font: UIFont.introCardBody]
         let paragraph1 = NSMutableAttributedString(string: paragraph1Text, attributes: paragraph1Attributes)
-        let paragraph2Part1Attrs = [NSAttributedStringKey.font: UIFont.introCardBody]
+        let paragraph2Part1Attrs = [NSAttributedString.Key.font: UIFont.introCardBody]
         let paragraph2Part1 = NSAttributedString(string: "They plan to ", attributes: paragraph2Part1Attrs)
-        let paragraph2Part2 = NSAttributedString(string: "privatize ", attributes: [NSAttributedStringKey.font: UIFont.introCardBodyBold])
+        let paragraph2Part2 = NSAttributedString(string: "privatize ", attributes: [NSAttributedString.Key.font: UIFont.introCardBodyBold])
         let paragraph2Part3Text = "these dockless operations, rather than adding on to the city's public B-cycle service."
-        let paragraph2Part3 = NSAttributedString(string: paragraph2Part3Text, attributes: [NSAttributedStringKey.font: UIFont.introCardBody])
+        let paragraph2Part3 = NSAttributedString(string: paragraph2Part3Text, attributes: [NSAttributedString.Key.font: UIFont.introCardBody])
         let paragraph2 = NSMutableAttributedString(attributedString: paragraph2Part1)
         paragraph2.append(paragraph2Part2)
         paragraph2.append(paragraph2Part3)

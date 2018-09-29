@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         self.logInButton.setTitleColor(UIColor.whiteText, for: .normal)
         self.logInButton.layer.cornerRadius = (self.logInButton.frame.height / 2)
         newLabel.textColor = UIColor.darkGray67_62_54
-        let createAccountAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.darkGray67_62_54]
+        let createAccountAttrs: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.darkGray67_62_54]
         let createAccountString: NSMutableAttributedString = NSMutableAttributedString(string: "Create Account", attributes: createAccountAttrs)
         createAccountString.addUnderline()
         createAccountButton.setAttributedTitle(createAccountString, for: .normal)

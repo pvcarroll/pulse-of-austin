@@ -27,7 +27,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         self.latestLabel.textColor = UIColor.darkGray74
         
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 140
         self.tableView.tableFooterView = UIView()
     }
@@ -55,7 +55,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     //
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

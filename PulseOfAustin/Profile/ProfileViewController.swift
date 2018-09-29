@@ -64,8 +64,8 @@ class ProfileViewController: UIViewController {
 
         // Map
         let center = CLLocationCoordinate2DMake(30.26, -97.7)
-        let span = MKCoordinateSpanMake(0.2, 0.3)
-        mapView.region = MKCoordinateRegionMake(center, span)
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.2, longitudeDelta: 0.3)
+        mapView.region = MKCoordinateRegion.init(center: center, span: span)
         
         // Address pin
         homeAnnotation.title = "Home Address"

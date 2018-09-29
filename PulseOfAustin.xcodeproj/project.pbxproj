@@ -517,6 +517,7 @@
 				TargetAttributes = {
 					752EF730207C571E0046743A = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -525,10 +526,12 @@
 					};
 					752EF744207C571F0046743A = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 752EF730207C571E0046743A;
 					};
 					752EF74F207C571F0046743A = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 752EF730207C571E0046743A;
 					};
 				};
@@ -913,7 +916,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -933,7 +936,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -953,7 +956,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseOfAustin.app/PulseOfAustin";
 			};
@@ -974,7 +977,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseOfAustin.app/PulseOfAustin";
 			};
@@ -994,7 +997,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PulseOfAustin;
 			};
@@ -1014,7 +1017,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.paulcarroll.PulseOfAustinUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PulseOfAustin;
 			};

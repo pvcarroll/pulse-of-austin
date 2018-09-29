@@ -12,7 +12,7 @@ import Foundation
 extension NSMutableAttributedString {
     
     func addUnderline() {
-        let underlineAttr: [NSAttributedStringKey: Any] = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+        let underlineAttr: [NSAttributedString.Key: Any] = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         self.addAttributes(underlineAttr, range: NSRange(location: 0, length: self.length))
     }
 }
