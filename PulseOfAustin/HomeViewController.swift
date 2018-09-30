@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: Any) {
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        loginVC.fromLanding = true
+        loginVC.redirectToMainAfterLogin = true
         self.present(loginVC, animated: true, completion: nil)
     }
     
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onboardingTapped(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingWelcome") as! OnboardingWelcome
+        let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingWelcome") as! OnboardingWelcomeViewController
         self.present(vc, animated: true)
     }
     

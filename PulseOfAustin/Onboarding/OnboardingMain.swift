@@ -75,6 +75,7 @@ class OnboardingMain: UIViewController {
     }
     @objc private func loadLogin(sender: UIButton!) {
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.redirectToMainAfterLogin = true
         self.present(loginVC, animated: true, completion: nil)
     }
     @objc private func loadExplore(sender: UIButton!) {

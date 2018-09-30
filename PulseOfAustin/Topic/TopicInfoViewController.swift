@@ -108,7 +108,7 @@ class TopicInfoViewController: UIViewController {
     // Learn Screen 1: Landing
     private func loadLearnLanding() {
         if let landingView = UINib(nibName: "LearnLanding", bundle: nil)
-            .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
+                            .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             landingView.frame = self.topicInfoViewContainer.bounds
             landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             landingView.infoLabel.text = self.learnText?.landingInfoLabel

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SRF-QW-yNN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Onboarding Welcome-->
+        <!--Onboarding Welcome View Controller-->
         <scene sceneID="TF5-HK-qOf">
             <objects>
-                <viewController storyboardIdentifier="OnboardingWelcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SRF-QW-yNN" customClass="OnboardingWelcome" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingWelcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SRF-QW-yNN" customClass="OnboardingWelcomeViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7r0-4O-eTO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-us-ank" userLabel="Progress View">
-                                        <rect key="frame" x="66" y="6" width="242" height="28"/>
+                                        <rect key="frame" x="66.5" y="6" width="242" height="28"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-zI-4zb" userLabel="Screen1 View">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -160,7 +160,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-1G-oWF" userLabel="Connector2 View">
-                                                <rect key="frame" x="135" y="13.5" width="79" height="2"/>
+                                                <rect key="frame" x="135" y="13" width="79" height="2"/>
                                                 <color key="backgroundColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="79" id="Ahp-4N-guD"/>

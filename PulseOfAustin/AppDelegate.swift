@@ -12,6 +12,8 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let launchedBeforeKey = "launchedBefore"
 
     var window: UIWindow?
     var dbRef: DatabaseReference!
@@ -41,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase Database
         self.dbRef = Database.database().reference()
         
+        // Present onboarding to first-time users
+        let launchedBefore = UserDefaults.standard.bool(forKey: self.launchedBeforeKey)
+        if !launchedBefore {
+            UserDefaults.standard.set(true, forKey: self.launchedBeforeKey)
+            self.showOnboarding()
+        }
         return true
     }
     
@@ -78,7 +86,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// Firebase messaging
+// MARK:- Onboarding
+extension AppDelegate {
+    func showOnboarding() {
+        if let window = window, let onboardingViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController() as? OnboardingWelcomeViewController {
+            window.makeKeyAndVisible()
+            window.rootViewController?.present(onboardingViewController, animated: false, completion: nil)
+        }
+    }
+}
+
+// MARK:- Firebase messaging
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         let token = Messaging.messaging().fcmToken

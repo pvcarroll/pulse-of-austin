@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     var isIntervention = false
-    var fromLanding = false
+    var redirectToMainAfterLogin = false
     var completionHandler: (()->Void)? = nil
     
     @IBAction func login(_ sender: UIButton) {
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                 let loginFailedAlert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
                 loginFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(loginFailedAlert, animated: true, completion: nil)
-            } else if self.fromLanding {
+            } else if self.redirectToMainAfterLogin {
                 // Logging in from the landing screen redirects to main screen
                 let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
                 self.present(mainVC, animated: true, completion: nil)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingWelcome: UIViewController {
+class OnboardingWelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeTitle: UILabel!
     @IBOutlet weak var image: UIImageView!
