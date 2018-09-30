@@ -25,6 +25,35 @@ class PasswordViewController: UIViewController {
             self.presentAlertModal(title: "", message: "new field and verify field must match")
             return
         }
+        guard let newPassword = self.newPasswordField.text else {
+            self.presentAlertModal(title: "", message: "no new password")
+            return
+        }
+        guard let email = self.email else {
+            self.presentAlertModal(title: "", message: "no current user email")
+            return
+        }
+        guard let currentPassword = self.currentPasswordField?.text, currentPassword == "" else {
+            self.presentAlertModal(title: "", message: "no current password")
+            return
+        }
+        let currentUser = Auth.auth().currentUser
+        let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
+        // verify current password
+        currentUser?.reauthenticate(with: credential) { error in
+            if let err = error {
+                self.presentAlertModal(title: "Reauthentication failed", message: "\(err)")
+            } else {
+                // change password
+                currentUser?.updatePassword(to: newPassword) { error in
+                    if let err = error {
+                        self.presentAlertModal(title: "Error Updating Password", message: "\(err)")
+                    } else {
+                        self.presentAlertModal(title: "", message: "Password Updated")
+                    }
+                }
+            }
+        }
     }
     @IBAction func forgotPasswordTapped(_ sender: Any) {
         guard let email = self.email else { return }
