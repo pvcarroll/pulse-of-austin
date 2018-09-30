@@ -151,7 +151,7 @@ class CreateAccountViewController: UIViewController {
             return false
         }
         guard passwordField.text == confirmPasswordField.text else {
-            self.displayValidationAlert(title: "YE SUCK", message: "Password and confirm password don't match.")
+            self.displayValidationAlert(title: "", message: "Password and confirm password don't match.")
             return false
         }
         return true

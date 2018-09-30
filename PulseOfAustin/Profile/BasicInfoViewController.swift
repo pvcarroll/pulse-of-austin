@@ -74,5 +74,12 @@ class BasicInfoViewController: UIViewController {
         }
         self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
     }
+    
+    // MARK:- Prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? PasswordViewController)?.email = self.userData?.email
+    }
+    
 
 }

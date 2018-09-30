@@ -1105,6 +1105,9 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmTapped:" destination="oll-EU-2cd" eventType="touchUpInside" id="kn2-Xq-5tJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00L-ed-Y6z">
                                                 <rect key="frame" x="112.5" y="360" width="150" height="30"/>
@@ -1161,7 +1164,10 @@
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="4xD-kY-cjl" id="wnu-TZ-iJe"/>
+                        <outlet property="confirmPasswordField" destination="yKC-YV-H6v" id="Rzc-L9-dhM"/>
+                        <outlet property="currentPasswordField" destination="vcB-vw-a43" id="IUK-pr-fhh"/>
                         <outlet property="forgotPasswordButton" destination="00L-ed-Y6z" id="SAc-Fj-2jT"/>
+                        <outlet property="newPasswordField" destination="irk-zM-dzj" id="Hd3-qS-Vwj"/>
                         <outlet property="scrollView" destination="8Tt-vZ-deU" id="U3a-SQ-I80"/>
                     </connections>
                 </viewController>

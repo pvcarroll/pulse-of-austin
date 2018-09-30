@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PasswordViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var currentPasswordField: UITextField!
+    @IBOutlet weak var newPasswordField: UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    var email: String?
+    
+    @IBAction func confirmTapped(_ sender: Any) {
+        guard self.newPasswordField.text == self.confirmPasswordField.text else {
+            self.presentAlertModal(title: "", message: "new field and verify field must match")
+            return
+        }
+    }
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-//        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-//        
-//        }
+        guard let email = self.email else { return }
+        AuthUtils.sendPasswordReset(email: email)
+        self.presentAlertModal(title: "", message: "Reset password email sent")
     }
     
     override func viewDidLoad() {

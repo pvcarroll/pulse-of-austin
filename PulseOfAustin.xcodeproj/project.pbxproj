@@ -56,6 +56,7 @@
 		757C0FC020C44E0F0018C560 /* LearnCityRationale.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FBF20C44E0F0018C560 /* LearnCityRationale.xib */; };
 		757C0FC220C4500C0018C560 /* PerspectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C0FC120C4500C0018C560 /* PerspectiveView.swift */; };
 		757C0FC420C450320018C560 /* PerspectiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757C0FC320C450320018C560 /* PerspectiveView.xib */; };
+		758A3DBE216047B000D9C0D5 /* AuthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A3DBD216047B000D9C0D5 /* AuthUtils.swift */; };
 		758BF7E820F6EEDC0032C511 /* HTMLStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */; };
 		75B937502097451700221467 /* WeighInSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B9374F2097451700221467 /* WeighInSelect.xib */; };
 		75B937522097453500221467 /* WeighInSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B937512097453500221467 /* WeighInSelect.swift */; };
@@ -153,6 +154,7 @@
 		757C0FBF20C44E0F0018C560 /* LearnCityRationale.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnCityRationale.xib; sourceTree = "<group>"; };
 		757C0FC120C4500C0018C560 /* PerspectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveView.swift; sourceTree = "<group>"; };
 		757C0FC320C450320018C560 /* PerspectiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerspectiveView.xib; sourceTree = "<group>"; };
+		758A3DBD216047B000D9C0D5 /* AuthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtils.swift; sourceTree = "<group>"; };
 		758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStrings.swift; sourceTree = "<group>"; };
 		75B9374F2097451700221467 /* WeighInSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInSelect.xib; sourceTree = "<group>"; };
 		75B937512097453500221467 /* WeighInSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInSelect.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		752EF733207C571E0046743A /* PulseOfAustin */ = {
 			isa = PBXGroup;
 			children = (
+				758A3DBC2160479D00D9C0D5 /* Auth */,
 				75BCD08020A7B6C6008AD469 /* Data */,
 				75519B4420DEE1D100463BB1 /* Server */,
 				75519B4120DEDC8200463BB1 /* Model */,
@@ -419,6 +422,14 @@
 				757C0FC320C450320018C560 /* PerspectiveView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		758A3DBC2160479D00D9C0D5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				758A3DBD216047B000D9C0D5 /* AuthUtils.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		75BCD077209E628B008AD469 /* WeighIn */ = {
@@ -719,6 +730,7 @@
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
 				753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */,
+				758A3DBE216047B000D9C0D5 /* AuthUtils.swift in Sources */,
 				75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */,
 				75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */,
 				75519B5620E945F700463BB1 /* NSMutableAttributedString+Extension.swift in Sources */,
