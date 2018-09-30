@@ -37,6 +37,9 @@ class CreateAccountViewController: UIViewController {
     
     var isIntervention = false
     
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.toHome()
+    }
     @IBAction func createAccount(_ sender: UIButton) {
         guard self.validateFields() else { return }
         

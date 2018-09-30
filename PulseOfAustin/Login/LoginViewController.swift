@@ -26,6 +26,9 @@ class LoginViewController: UIViewController {
     var redirectToMainAfterLogin = false
     var completionHandler: (()->Void)? = nil
     
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.toHome()
+    }
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailField.text, let password = passwordField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in

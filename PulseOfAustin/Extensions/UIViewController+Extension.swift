@@ -10,6 +10,11 @@ import UIKit
 
 extension UIViewController {
     
+    func toHome() {
+        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+        self.present(homeVC, animated: true, completion: nil)
+    }
+    
     func dismissKeyboardOnMainViewTap() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tapRecognizer)

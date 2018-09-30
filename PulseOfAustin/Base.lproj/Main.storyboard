@@ -969,6 +969,9 @@
                                                 <state key="normal" title="cancel">
                                                     <color key="titleColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="fo4-sg-aS5" kind="show" id="shA-Vc-IrT"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPDATE PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5R-dt-OaX">
                                                 <rect key="frame" x="15" y="60" width="340" height="17"/>
@@ -1246,4 +1249,7 @@
         <image name="goldenChevron" width="10" height="19"/>
         <image name="pinkRectangles" width="682" height="844"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ow0-BS-vfC"/>
+    </inferredMetricsTieBreakers>
 </document>
