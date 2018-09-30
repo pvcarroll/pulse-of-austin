@@ -13,10 +13,6 @@ enum TopicData {
         0: Topic(topicKey: "docklessBikeshare",
                  title: "DOCKLESS BIKESHARE",
                  description: "What privatized operations mean for your data",
-                 topicIntroData: TopicIntroData(topicTitle: "Dockless Bikeshare",
-                                                cardTitle: "PILOT KICKOFF",
-                                                cardBodyText: buildBodyText(),
-                                                promptText: "WHAT COULD THIS MEAN FOR RIDERSHIP DATA?"),
                  topicInfoTitle: "Dockless Bikeshare",
                  learnText: LearnText(landingInfoLabel: "Learn about dockless bikeshare",
                                       landingMapLabel: "Dockless Bikeshare Map",
@@ -35,10 +31,6 @@ enum TopicData {
         1: Topic(topicKey: "affordableHousingBond",
                  title: "AFFORDABLE HOUSING BOND",
                  description: "$161M vs. $300M: Council yet to decide",
-                 topicIntroData: TopicIntroData(topicTitle: "Affordability Bond",
-                                                cardTitle: "",
-                                                cardBodyText: NSAttributedString(string: "Affordable Housing"),
-                                                promptText: ""),
                  topicInfoTitle: "Affordability Bond",
                  learnText: LearnText(landingInfoLabel: "BOND BREAKDOWN AND POTENTIAL IMPACT",
                                       landingMapLabel: "MAP: CITY'S LAND ACQUISITION PLANS",
@@ -66,10 +58,6 @@ enum TopicData {
         2: Topic(topicKey: "hollyPowerPlant",
                  title: "HOLLY POWER PLANT",
                  description: "City seeking input on park transformation",
-                 topicIntroData: TopicIntroData(topicTitle: "Holly Power Plant",
-                                                cardTitle: "",
-                                                cardBodyText: buildBodyText(),
-                                                promptText: ""),
                  topicInfoTitle: "Holly Power Plant",
                  learnText: LearnText(landingInfoLabel: "Learn about Holly power plant",
                                       landingMapLabel: "Holly Power Plant Map",
@@ -88,10 +76,6 @@ enum TopicData {
         3: Topic(topicKey: "strategicMobilityPlan",
                  title: "STRATEGIC MOBILITY PLAN",
                  description: "Prioritize roads, public transit, or a balance?",
-                 topicIntroData: TopicIntroData(topicTitle: "Strategic Mobility Plan",
-                                                cardTitle: "",
-                                                cardBodyText: buildBodyText(),
-                                                promptText: ""),
                  topicInfoTitle: "Strategic Mobility Plan",
                  learnText: LearnText(landingInfoLabel: "Learn about strategic mobility plan",
                                       landingMapLabel: "Strategic mobility plan map",
@@ -108,41 +92,16 @@ enum TopicData {
                  dateUpdated: "9.9.18"
         )
     ]
-    
-    private static func buildBodyText() -> NSMutableAttributedString {
-        let paragraph1Text = "The City has kicked off a pilot program for new dockless bike and electric scooter services.\n"
-        let paragraph1Attributes = [NSAttributedString.Key.font: UIFont.introCardBody]
-        let paragraph1 = NSMutableAttributedString(string: paragraph1Text, attributes: paragraph1Attributes)
-        let paragraph2Part1Attrs = [NSAttributedString.Key.font: UIFont.introCardBody]
-        let paragraph2Part1 = NSAttributedString(string: "They plan to ", attributes: paragraph2Part1Attrs)
-        let paragraph2Part2 = NSAttributedString(string: "privatize ", attributes: [NSAttributedString.Key.font: UIFont.introCardBodyBold])
-        let paragraph2Part3Text = "these dockless operations, rather than adding on to the city's public B-cycle service."
-        let paragraph2Part3 = NSAttributedString(string: paragraph2Part3Text, attributes: [NSAttributedString.Key.font: UIFont.introCardBody])
-        let paragraph2 = NSMutableAttributedString(attributedString: paragraph2Part1)
-        paragraph2.append(paragraph2Part2)
-        paragraph2.append(paragraph2Part3)
-        let bodyText = NSMutableAttributedString(attributedString: paragraph1)
-        bodyText.append(paragraph2)
-        return bodyText
-    }
 }
 
 struct Topic {
     let topicKey: String
     let title: String
     let description: String
-    let topicIntroData: TopicIntroData
     let topicInfoTitle: String
     let learnText: LearnText
     let weighIn: WeighInSelectText
     let dateUpdated: String
-}
-
-struct TopicIntroData {
-    let topicTitle: String
-    let cardTitle: String
-    let cardBodyText: NSAttributedString
-    let promptText: String
 }
 
 // MARK:- Learn Flow Data Model
