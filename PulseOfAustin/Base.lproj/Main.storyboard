@@ -47,11 +47,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he5-RM-iLM" userLabel="Log In Button">
-                                        <rect key="frame" x="50.5" y="303.5" width="274" height="44"/>
+                                        <rect key="frame" x="50" y="303.5" width="275" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ajE-q0-UIZ"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="274" id="zRB-NI-XwI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="zRB-NI-XwI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <state key="normal" title="LOG IN">
@@ -718,7 +718,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se3-yS-xNR">
                                                         <rect key="frame" x="275" y="5" width="100" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="IaY-AG-Mtb"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="IaY-AG-Mtb"/>
                                                             <constraint firstAttribute="height" constant="30" id="yye-d3-ETG"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
@@ -742,6 +742,7 @@
                                                     <constraint firstItem="D9g-Zp-ITA" firstAttribute="leading" secondItem="S5w-Kg-b9P" secondAttribute="trailing" constant="20" id="NgP-PP-kDl"/>
                                                     <constraint firstItem="uMo-lf-B1r" firstAttribute="top" secondItem="D9g-Zp-ITA" secondAttribute="bottom" id="OsA-Bh-PfR"/>
                                                     <constraint firstItem="MEa-YT-VBy" firstAttribute="top" secondItem="HcI-8C-QHU" secondAttribute="bottom" id="Pu9-wH-poM"/>
+                                                    <constraint firstItem="Se3-yS-xNR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DGC-fJ-QPP" secondAttribute="leading" id="Rf3-dd-QGV"/>
                                                     <constraint firstAttribute="trailing" secondItem="MEa-YT-VBy" secondAttribute="trailing" id="T32-ZQ-D5l"/>
                                                     <constraint firstAttribute="trailing" secondItem="uMo-lf-B1r" secondAttribute="trailing" id="XdB-2i-TzC"/>
                                                     <constraint firstItem="Se3-yS-xNR" firstAttribute="top" secondItem="DGC-fJ-QPP" secondAttribute="top" constant="5" id="cOc-yr-uxs"/>
@@ -757,7 +758,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aat-Tq-AjI">
                                                         <rect key="frame" x="275" y="5" width="100" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="QhF-ig-6kv"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="QhF-ig-6kv"/>
                                                             <constraint firstAttribute="height" constant="30" id="aWh-T3-zoh"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
@@ -804,6 +805,7 @@
                                                     <constraint firstAttribute="height" constant="91" id="mQi-XW-Caa"/>
                                                     <constraint firstAttribute="trailing" secondItem="Aat-Tq-AjI" secondAttribute="trailing" id="o9T-X8-rTF"/>
                                                     <constraint firstAttribute="trailing" secondItem="QBX-EK-uY4" secondAttribute="trailing" id="p2D-Ac-8zZ"/>
+                                                    <constraint firstItem="Aat-Tq-AjI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qi4-DI-rVM" secondAttribute="leading" id="xAR-NS-Pgb"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-bo-hSe" userLabel="Password View">
@@ -813,7 +815,7 @@
                                                         <rect key="frame" x="275" y="5" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="HEz-jq-hRt"/>
-                                                            <constraint firstAttribute="width" constant="100" id="q7v-84-RA3"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="q7v-84-RA3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                         <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -853,6 +855,7 @@
                                                 <constraints>
                                                     <constraint firstItem="NwG-az-JaC" firstAttribute="leading" secondItem="Wcb-vs-g1q" secondAttribute="trailing" constant="20" id="440-TM-J2k"/>
                                                     <constraint firstAttribute="height" constant="91" id="6eY-P0-MC5"/>
+                                                    <constraint firstItem="T8o-R0-nyo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Cw-bo-hSe" secondAttribute="leading" id="ICA-ij-Yh1"/>
                                                     <constraint firstItem="O3L-83-dUd" firstAttribute="leading" secondItem="5Cw-bo-hSe" secondAttribute="leading" constant="20" id="J0V-zW-cVR"/>
                                                     <constraint firstItem="O3L-83-dUd" firstAttribute="top" secondItem="Wcb-vs-g1q" secondAttribute="bottom" id="bup-Ka-PvS"/>
                                                     <constraint firstAttribute="trailing" secondItem="T8o-R0-nyo" secondAttribute="trailing" id="cIf-pH-dqK"/>
@@ -958,7 +961,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hf-jO-hq6" userLabel="Cancel Button">
                                                 <rect key="frame" x="0.0" y="10" width="90" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="6ZH-Sz-FKC"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="6ZH-Sz-FKC"/>
                                                     <constraint firstAttribute="height" constant="40" id="gfH-GR-Krn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
@@ -968,7 +971,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPDATE PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5R-dt-OaX">
-                                                <rect key="frame" x="15" y="60" width="140" height="17"/>
+                                                <rect key="frame" x="15" y="60" width="340" height="17"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -982,7 +985,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNI-DT-fbz" userLabel="Current Password Label">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="18"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="GdD-yB-8pN"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="GdD-yB-8pN"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                                 <nil key="textColor"/>
@@ -1015,7 +1018,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2t4-uZ-qDq" userLabel="New Password Label">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="18"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="S21-EM-mpW"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="S21-EM-mpW"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                                 <nil key="textColor"/>
@@ -1048,7 +1051,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBa-QN-8wW" userLabel="Confirm New Password Label">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="18"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="BHL-Xz-Fdr"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="BHL-Xz-Fdr"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
                                                                 <nil key="textColor"/>
@@ -1081,7 +1084,7 @@
                                                 <rect key="frame" x="105" y="284" width="165" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="165" id="gbG-4b-pbU"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="gbG-4b-pbU"/>
                                                     <constraint firstAttribute="height" constant="44" id="ngZ-iO-w8b"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -1101,7 +1104,7 @@
                                                 <rect key="frame" x="112.5" y="360" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="5xC-Sn-khc"/>
-                                                    <constraint firstAttribute="width" constant="150" id="pYx-T8-qXK"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="pYx-T8-qXK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="Forgot Password"/>
@@ -1112,6 +1115,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Hf-jO-hq6" secondAttribute="trailing" id="1ue-MT-Nyl"/>
+                                            <constraint firstAttribute="trailing" secondItem="V5R-dt-OaX" secondAttribute="trailing" constant="20" id="F4v-vf-atI"/>
                                             <constraint firstAttribute="trailing" secondItem="Y9V-wO-h2i" secondAttribute="trailing" id="HUm-Lp-fwq"/>
                                             <constraint firstItem="Y9V-wO-h2i" firstAttribute="top" secondItem="V5R-dt-OaX" secondAttribute="bottom" constant="20" id="J0c-na-ogd"/>
                                             <constraint firstItem="V5R-dt-OaX" firstAttribute="leading" secondItem="eR2-Ph-wAt" secondAttribute="leading" constant="15" id="R45-mC-0o4"/>

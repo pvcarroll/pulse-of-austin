@@ -42,6 +42,6 @@ extension LearnMap: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("ANNOTATION SELECTED: \(view.annotation?.title)")
+        print("ANNOTATION SELECTED: \(String(describing: view.annotation?.title))")
     }
 }

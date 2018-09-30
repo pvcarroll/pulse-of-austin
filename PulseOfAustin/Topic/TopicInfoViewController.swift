@@ -331,7 +331,7 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInElaborate(answerText: answerText)
     }
     @objc func submitWeighInTapped(recognizer: UITapGestureRecognizer) {
-        guard let currentUser = Auth.auth().currentUser else {
+        guard let _ = Auth.auth().currentUser else {
             self.presentLogin()
             return
         }
