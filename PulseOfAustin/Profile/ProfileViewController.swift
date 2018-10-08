@@ -36,7 +36,11 @@ class ProfileViewController: UIViewController {
     private var homeAnnotation: MKPointAnnotation = MKPointAnnotation()
     private var homeAddress: String = "" {
         didSet {
-            // Set pin location on map
+            // Get district for address
+            HTTPRequests().getCouncilDistrict(address: self.homeAddress, callback: { councilDistrict in
+                self.presentAlertModal(title: "Council District", message: "\(councilDistrict)")
+            })
+            // Set home address pin on map
             let geoCode = CLGeocoder()
             geoCode.geocodeAddressString(homeAddress) { (placemarks, error) in
                 if let coordinate = placemarks?[0].location?.coordinate {
@@ -134,7 +138,6 @@ class ProfileViewController: UIViewController {
                             self.homeAddress = address + ", Austin, TX, "
                             if let zipCode = userObject["zipCode"] as? String {
                                 self.homeAddress += zipCode
-                                // Save user data
                                 if let email = userObject["email"] as? String {
                                     self.userData = UserData(userID: userID, address: address, zipCode: zipCode, email: email)
                                 }
