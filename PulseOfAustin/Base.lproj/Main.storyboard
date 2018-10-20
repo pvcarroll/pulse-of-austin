@@ -610,7 +610,8 @@
                     <connections>
                         <outlet property="basicInfoButton" destination="5ic-Ud-ODw" id="fDo-RB-2Lh"/>
                         <outlet property="councilMemberName" destination="Uq8-gy-YZA" id="ViG-8A-icO"/>
-                        <outlet property="counselMemberPicture" destination="lVu-q3-scU" id="jXA-yG-MfU"/>
+                        <outlet property="councilMemberPicture" destination="lVu-q3-scU" id="jXA-yG-MfU"/>
+                        <outlet property="districtLabel" destination="T8C-tL-gLe" id="wBe-N4-LQq"/>
                         <outlet property="logOutButton" destination="uDt-TC-Q62" id="7o6-Fa-PDh"/>
                         <outlet property="mapView" destination="S05-8Y-9HU" id="Jkw-Yd-MeQ"/>
                         <outlet property="pictureContainer" destination="QMX-oo-DtQ" id="C1T-I0-Typ"/>

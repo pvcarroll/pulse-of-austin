@@ -10,6 +10,18 @@ import UIKit
 import FirebaseAuth
 import MapKit
 
+let councilMemberNames = [
+    "Ora Houston",
+    "Delia Garza",
+    "Sabino Renteria",
+    "Gregorio Casar",
+    "Ann Kitchen",
+    "Jimmy Flannigan",
+    "Leslie Pool",
+    "Ellen Troxclair",
+    "Kathie Tovo",
+    "Alison Alter"
+]
 let councilMembers = [
     "01_OraHouston",
     "02_DeliaGarza",
@@ -24,21 +36,26 @@ let councilMembers = [
 ]
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var districtLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var pictureContainer: UIView!
-    @IBOutlet weak var counselMemberPicture: UIImageView!
+    @IBOutlet weak var councilMemberPicture: UIImageView!
     @IBOutlet weak var councilMemberName: UILabel!
     @IBOutlet weak var pushNotificationsButton: UIButton!
     @IBOutlet weak var basicInfoButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     
+    private var requiresLogin = false
     private var userData: UserData?
     private var homeAnnotation: MKPointAnnotation = MKPointAnnotation()
     private var homeAddress: String = "" {
         didSet {
             // Get district for address
             HTTPRequests().getCouncilDistrict(address: self.homeAddress, callback: { councilDistrict in
-                self.presentAlertModal(title: "Council District", message: "\(councilDistrict)")
+                self.districtLabel.text = "District \(councilDistrict)"
+                self.councilMemberName.text = councilMemberNames[councilDistrict - 1]
+                self.councilMemberPicture.image = UIImage(imageLiteralResourceName: councilMembers[councilDistrict - 1])
+                self.addCouncilDistrictOverlay(councilDistrict: councilDistrict)
             })
             // Set home address pin on map
             let geoCode = CLGeocoder()
@@ -80,17 +97,9 @@ class ProfileViewController: UIViewController {
         pictureContainer.layer.cornerRadius = pictureContainer.frame.width
         pictureContainer.addBottomShadow(shadowColor: UIColor.black, shadowRadius: 4)
         pictureContainer.layer.shadowPath = UIBezierPath(roundedRect: pictureContainer.bounds, cornerRadius: pictureContainer.frame.width / 2).cgPath
-        counselMemberPicture.layer.cornerRadius = counselMemberPicture.frame.width / 2
-        counselMemberPicture.clipsToBounds = true
-        counselMemberPicture.layer.masksToBounds = true
-        
-        // TODO: set council member picture
-        let randomNumber = Int(arc4random_uniform(10))
-        let image = UIImage(imageLiteralResourceName: councilMembers[randomNumber])
-        counselMemberPicture.image = image
-        
-        // TODO: set council member
-        councilMemberName.text = "PIO RENTERIA"
+        councilMemberPicture.layer.cornerRadius = councilMemberPicture.frame.width / 2
+        councilMemberPicture.clipsToBounds = true
+        councilMemberPicture.layer.masksToBounds = true
         
         let borderColor = UIColor(displayP3Red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0).cgColor
         
@@ -101,22 +110,26 @@ class ProfileViewController: UIViewController {
         logOutButton.layer.borderColor = borderColor
         logOutButton.layer.borderWidth = 1.0
         
-        mapView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setScreenTitleWithUserName()
+        self.mapView.delegate = self
+        self.fetchUserInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if self.requiresLogin {
+            // Last time viewDidAppear run, the user wasn't logged in, so user info wasn't fetched
+            self.fetchUserInfo()
+        }
         if Auth.auth().currentUser?.email == nil {
+            self.requiresLogin = true
             let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
             self.present(loginVC, animated: true) {
                 loginVC.presentAlertModal(title: "", message: "You must logged in to view profile")
             }
             return
+        } else {
+            self.requiresLogin = false
         }
     }
     
@@ -124,7 +137,17 @@ class ProfileViewController: UIViewController {
     // MARK:- Private
     //
     
-    private func setScreenTitleWithUserName() {
+    private func addCouncilDistrictOverlay(councilDistrict: Int) {
+        let districtBounds = formatDistrictPoints(councilDistrict: councilDistrict)
+
+        districtBounds.forEach { pointsSet in
+            let points = pointsSet
+            let polygon = MKPolygon(coordinates: points, count: points.count)
+            self.mapView.addOverlay(polygon)
+        }
+    }
+    
+    private func fetchUserInfo() {
         // TODO: move db query
         if let email = Auth.auth().currentUser?.email,
             let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
@@ -168,6 +191,17 @@ extension ProfileViewController: MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolygon {
+            let polygonRenderer = MKPolygonRenderer(overlay: overlay)
+            polygonRenderer.fillColor = UIColor(red: 0, green: 0.847, blue: 1, alpha: 0.25)
+            polygonRenderer.strokeColor = UIColor(red: 0, green: 0.847, blue: 1, alpha: 0.5)
+            polygonRenderer.lineWidth = 2
+            return polygonRenderer
+        }
+        return MKPolygonRenderer(overlay: overlay as! MKPolygon)
     }
 }
 
