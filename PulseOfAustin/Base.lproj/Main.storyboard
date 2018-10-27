@@ -625,7 +625,7 @@
         <!--Push Notifications View Controller-->
         <scene sceneID="K2t-Wa-6tX">
             <objects>
-                <viewController title="Notifications" id="eUe-mu-uvQ" userLabel="Push Notifications View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationsSettingsViewController" title="Notifications" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eUe-mu-uvQ" userLabel="Push Notifications View Controller" customClass="NotificationsSettingsViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QbA-Z1-Gtm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,20 +633,131 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinkRectangles" translatesAutoresizingMaskIntoConstraints="NO" id="UST-AO-rpY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wN-Xl-500">
+                                <rect key="frame" x="295" y="64" width="80" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="9J2-UO-cdr"/>
+                                    <constraint firstAttribute="height" constant="60" id="bXY-gk-5gh"/>
+                                </constraints>
+                                <state key="normal" title="done">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUSH NOTIFICATION SUBSCRIPTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkQ-Bf-yGI">
+                                <rect key="frame" x="15" y="124" width="345" height="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyG-fd-wUs" userLabel="Settings Container View">
+                                <rect key="frame" x="0.0" y="141" width="375" height="183"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-IN-L2w" userLabel="Notification Settings Stack View">
+                                        <rect key="frame" x="15" y="5" width="345" height="128"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dC-KC-vqR">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alerts on latest happenings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-A9-DOc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="d9K-Nj-3Vc" userLabel="goldenCheck1">
+                                                        <rect key="frame" x="324" y="0.0" width="21" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="21" id="iVf-FC-Sgm"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="cwH-SS-zNJ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EK-B4-GNK">
+                                                <rect key="frame" x="0.0" y="44" width="345" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updates on my topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psC-na-Ywn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="L4D-qm-jUa" userLabel="goldenCheck2">
+                                                        <rect key="frame" x="324" y="0.0" width="21" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="21" id="6EF-IC-uYF"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="bsv-o7-NpL"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b18-r2-39a">
+                                                <rect key="frame" x="0.0" y="88" width="345" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pulse Checks from the City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-pq-N7i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="TUm-ae-5yS" userLabel="goldenCheck3">
+                                                        <rect key="frame" x="324" y="0.0" width="21" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="21" id="aqG-k3-o6K"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="VVJ-gx-ZId"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.19767252599999999" green="0.2900390625" blue="0.80913628469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VJc-IN-L2w" secondAttribute="bottom" constant="50" id="Ncs-zw-gb8"/>
+                                    <constraint firstItem="VJc-IN-L2w" firstAttribute="top" secondItem="JyG-fd-wUs" secondAttribute="top" constant="5" id="eet-1s-0mC"/>
+                                    <constraint firstItem="VJc-IN-L2w" firstAttribute="leading" secondItem="JyG-fd-wUs" secondAttribute="leading" constant="15" id="jew-96-cDo"/>
+                                    <constraint firstAttribute="trailing" secondItem="VJc-IN-L2w" secondAttribute="trailing" constant="15" id="uvJ-NF-BIw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uIf-of-sXu" firstAttribute="trailing" secondItem="DkQ-Bf-yGI" secondAttribute="trailing" constant="15" id="1Ye-IG-Qg5"/>
                             <constraint firstItem="uIf-of-sXu" firstAttribute="bottom" secondItem="UST-AO-rpY" secondAttribute="bottom" id="6jh-Hp-okO"/>
+                            <constraint firstItem="3wN-Xl-500" firstAttribute="top" secondItem="uIf-of-sXu" secondAttribute="top" id="95i-uT-W5B"/>
+                            <constraint firstItem="DkQ-Bf-yGI" firstAttribute="top" secondItem="3wN-Xl-500" secondAttribute="bottom" id="Dps-2b-Qjf"/>
+                            <constraint firstAttribute="trailing" secondItem="JyG-fd-wUs" secondAttribute="trailing" id="J4G-uj-ndx"/>
+                            <constraint firstItem="uIf-of-sXu" firstAttribute="trailing" secondItem="3wN-Xl-500" secondAttribute="trailing" id="KCx-oB-7pO"/>
+                            <constraint firstItem="JyG-fd-wUs" firstAttribute="top" secondItem="DkQ-Bf-yGI" secondAttribute="bottom" id="UBs-nh-5lj"/>
                             <constraint firstItem="uIf-of-sXu" firstAttribute="trailing" secondItem="UST-AO-rpY" secondAttribute="trailing" id="Ux4-8I-I8V"/>
                             <constraint firstItem="UST-AO-rpY" firstAttribute="top" secondItem="uIf-of-sXu" secondAttribute="top" id="VQP-j1-ODu"/>
+                            <constraint firstItem="JyG-fd-wUs" firstAttribute="leading" secondItem="QbA-Z1-Gtm" secondAttribute="leading" id="XsB-KJ-qeX"/>
                             <constraint firstItem="UST-AO-rpY" firstAttribute="leading" secondItem="uIf-of-sXu" secondAttribute="leading" id="oHl-MQ-Dqe"/>
+                            <constraint firstItem="DkQ-Bf-yGI" firstAttribute="leading" secondItem="uIf-of-sXu" secondAttribute="leading" constant="15" id="pPz-W9-fnp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIf-of-sXu"/>
                     </view>
+                    <connections>
+                        <outlet property="goldenCheck1" destination="d9K-Nj-3Vc" id="u1u-IQ-1rf"/>
+                        <outlet property="goldenCheck2" destination="L4D-qm-jUa" id="TmI-zb-tY3"/>
+                        <outlet property="goldenCheck3" destination="TUm-ae-5yS" id="lbM-EC-Gff"/>
+                        <outlet property="notificationSetting1StackView" destination="7dC-KC-vqR" id="2Oe-R8-iDZ"/>
+                        <outlet property="notificationSetting2StackView" destination="6EK-B4-GNK" id="KGk-qE-Jgq"/>
+                        <outlet property="notificationSetting3StackView" destination="b18-r2-39a" id="h9y-gB-dQ2"/>
+                        <outlet property="pulseChecksFromTheCityLabel" destination="xwX-pq-N7i" id="d9W-Ri-f87"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piY-vn-esG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4729" y="746"/>
+            <point key="canvasLocation" x="4728.8000000000002" y="745.27736131934034"/>
         </scene>
         <!--Basic Info View Controller-->
         <scene sceneID="XJL-MB-kk6">
@@ -1247,6 +1358,7 @@
         <image name="TabBar-Beats" width="30" height="30"/>
         <image name="TabBar-Explore" width="30" height="30"/>
         <image name="TabBar-Profile" width="22" height="30"/>
+        <image name="goldenCheck" width="21" height="17"/>
         <image name="goldenChevron" width="10" height="19"/>
         <image name="pinkRectangles" width="682" height="844"/>
     </resources>
