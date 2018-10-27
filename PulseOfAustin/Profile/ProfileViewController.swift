@@ -196,9 +196,8 @@ extension ProfileViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolygon {
             let polygonRenderer = MKPolygonRenderer(overlay: overlay)
-            polygonRenderer.fillColor = UIColor(red: 0, green: 0.847, blue: 1, alpha: 0.25)
-            polygonRenderer.strokeColor = UIColor(red: 0, green: 0.847, blue: 1, alpha: 0.5)
-            polygonRenderer.lineWidth = 2
+            polygonRenderer.fillColor = UIColor(red:0.97, green:0.70, blue:0.07, alpha:0.4)
+            polygonRenderer.lineWidth = 0
             return polygonRenderer
         }
         return MKPolygonRenderer(overlay: overlay as! MKPolygon)
