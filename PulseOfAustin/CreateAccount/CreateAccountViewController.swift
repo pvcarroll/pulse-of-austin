@@ -44,22 +44,26 @@ class CreateAccountViewController: UIViewController {
         guard self.validateFields() else { return }
         
         guard let email = emailField.text, let password = passwordField.text else { return }
+        self.createAnAccountButton.isEnabled = false
         // Create firebase auth user with email and password
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
                 let failedToCreateAccountAlert = UIAlertController(title: "Create Account Failed", message: error.localizedDescription, preferredStyle: .alert)
                 failedToCreateAccountAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(failedToCreateAccountAlert, animated: true, completion: nil)
+                self.createAnAccountButton.isEnabled = true
             } else {
                 // Create user in database with all fields
                 if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-                    guard let name = self.nameField.text,
-                          let address = self.addressField.text,
-                          let zipCode = self.zipCodeField.text else { return }
-                    let userData = ["name": name, "email": email, "address": address, "zipCode": zipCode]
-                    dbRef.child("users").childByAutoId().setValue(userData)
-                    
-                    self.displaySuccessAlertAndGoToMainScreen()
+                    guard let name = self.nameField.text
+                        , let address = self.addressField.text
+                        , let zipCode = self.zipCodeField.text else { return }
+                    // Get city council district from address
+                    HTTPRequests().getCouncilDistrict(address: address, callback: { councilDistrict in
+                        let userData = ["name": name, "email": email, "address": address, "zipCode": zipCode, "councilDistrict": councilDistrict] as [String : Any]
+                        dbRef.child("users").childByAutoId().setValue(userData)
+                        self.displaySuccessAlertAndGoToMainScreen()
+                    })
                 }
             }
         }

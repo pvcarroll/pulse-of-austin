@@ -46,17 +46,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     
     private var requiresLogin = false
-    private var userData: UserData?
+    private var userData: UserData? {
+        didSet {
+            guard let councilDistrict = self.userData?.councilDistrict else { return }
+            self.districtLabel.text = "District \(councilDistrict)"
+            self.councilMemberName.text = councilMemberNames[councilDistrict - 1]
+            self.councilMemberPicture.image = UIImage(imageLiteralResourceName: councilMembers[councilDistrict - 1])
+            self.addCouncilDistrictOverlay(councilDistrict: councilDistrict)
+        }
+    }
     private var homeAnnotation: MKPointAnnotation = MKPointAnnotation()
     private var homeAddress: String = "" {
         didSet {
-            // Get district for address
-            HTTPRequests().getCouncilDistrict(address: self.homeAddress, callback: { councilDistrict in
-                self.districtLabel.text = "District \(councilDistrict)"
-                self.councilMemberName.text = councilMemberNames[councilDistrict - 1]
-                self.councilMemberPicture.image = UIImage(imageLiteralResourceName: councilMembers[councilDistrict - 1])
-                self.addCouncilDistrictOverlay(councilDistrict: councilDistrict)
-            })
             // Set home address pin on map
             let geoCode = CLGeocoder()
             geoCode.geocodeAddressString(homeAddress) { (placemarks, error) in
@@ -161,8 +162,9 @@ class ProfileViewController: UIViewController {
                             self.homeAddress = address + ", Austin, TX, "
                             if let zipCode = userObject["zipCode"] as? String {
                                 self.homeAddress += zipCode
-                                if let email = userObject["email"] as? String {
-                                    self.userData = UserData(userID: userID, address: address, zipCode: zipCode, email: email)
+                                if let email = userObject["email"] as? String
+                                    , let councilDistrict = userObject["councilDistrict"] as? Int {
+                                    self.userData = UserData(userID: userID, address: address, zipCode: zipCode, email: email, councilDistrict: councilDistrict)
                                 }
                             }
                         }
@@ -209,4 +211,5 @@ struct UserData {
     var address: String
     var zipCode: String
     var email: String
+    var councilDistrict: Int
 }
