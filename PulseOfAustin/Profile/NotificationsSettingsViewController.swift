@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseMessaging
 
 class NotificationsSettingsViewController: UIViewController {
 
@@ -18,7 +19,35 @@ class NotificationsSettingsViewController: UIViewController {
     @IBOutlet weak var goldenCheck3: UIImageView!
     @IBOutlet weak var pulseChecksFromTheCityLabel: UILabel!
     
-    let goldenCheck = UIImage(named: "goldenCheck")
+    private let goldenCheck = UIImage(named: "goldenCheck")
+    
+    private let latestHappeningsKey = "latestHappenings"
+    private let myTopicsKey = "myTopics"
+    private let pulseChecksKey = "pulseChecks"
+    
+    private var subscribeToLatestHappenings = true
+    private var subscribeToMyTopics = true
+    private var subscribeToPulseChecks = true
+    
+    @IBAction func doneTapped(_ sender: Any) {
+        // Subscribe user to topics
+        if self.subscribeToLatestHappenings {
+            Messaging.messaging().subscribe(toTopic: self.latestHappeningsKey)
+        } else {
+            Messaging.messaging().unsubscribe(fromTopic: self.latestHappeningsKey)
+        }
+        if self.subscribeToMyTopics {
+            Messaging.messaging().subscribe(toTopic: self.myTopicsKey)
+        } else {
+            Messaging.messaging().unsubscribe(fromTopic: self.myTopicsKey)
+        }
+        if self.subscribeToPulseChecks {
+            Messaging.messaging().subscribe(toTopic: self.pulseChecksKey)
+        } else {
+            Messaging.messaging().unsubscribe(fromTopic: self.pulseChecksKey)
+        }
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,24 +73,15 @@ class NotificationsSettingsViewController: UIViewController {
     //
     
     @objc private func latestHappeningsAlertTapped() {
-        if self.goldenCheck1.image == nil {
-            self.goldenCheck1.image = self.goldenCheck
-        } else {
-            self.goldenCheck1.image = nil
-        }
+        self.subscribeToLatestHappenings = !self.subscribeToLatestHappenings
+        self.goldenCheck1.image = (self.subscribeToLatestHappenings ? self.goldenCheck : nil)
     }
     @objc private func myTopicsAlertTapped() {
-        if self.goldenCheck2.image == nil {
-            self.goldenCheck2.image = self.goldenCheck
-        } else {
-            self.goldenCheck2.image = nil
-        }
+        self.subscribeToMyTopics = !self.subscribeToMyTopics
+        self.goldenCheck2.image = (self.subscribeToMyTopics ? self.goldenCheck : nil)
     }
     @objc private func pulseChecksAlertTapped() {
-        if self.goldenCheck3.image == nil {
-            self.goldenCheck3.image = self.goldenCheck
-        } else {
-            self.goldenCheck3.image = nil
-        }
+        self.subscribeToPulseChecks = !self.subscribeToPulseChecks
+        self.goldenCheck3.image = (self.subscribeToPulseChecks ? self.goldenCheck : nil)
     }
 }

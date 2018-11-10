@@ -642,6 +642,9 @@
                                 <state key="normal" title="done">
                                     <color key="titleColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneTapped:" destination="eUe-mu-uvQ" eventType="touchUpInside" id="X2s-ua-XZM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUSH NOTIFICATION SUBSCRIPTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkQ-Bf-yGI">
                                 <rect key="frame" x="15" y="124" width="345" height="17"/>
