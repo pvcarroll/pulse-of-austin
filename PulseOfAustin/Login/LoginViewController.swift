@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var forgotPasswordPopup: UIVisualEffectView!
+    @IBOutlet weak var forgotPasswordPopupEmailField: UITextField!
+    @IBOutlet weak var forgotPasswordPopupOkButton: UIButton!
     
     var isIntervention = false
     var redirectToMainAfterLogin = false
@@ -47,6 +50,20 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+            self.forgotPasswordPopup.alpha = 1
+        }, completion: { (success) in
+            
+        })
+    }
+    @IBAction func forgotPasswordOk(_ sender: UIButton) {
+        if let email = self.forgotPasswordPopupEmailField.text, !email.isEmpty {
+            AuthUtils.sendPasswordReset(email: email)
+            self.presentAlertModal(title: "", message: "Reset password email sent")
+            self.forgotPasswordPopup.alpha = 0
+        } else {
+            self.presentAlertModal(title: "", message: "Enter an email address")
+        }
     }
     @IBAction func createAccountTapped(_ sender: UIButton) {
         let createAccountVC = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateViewController(withIdentifier: "CreateAccountViewController") as! CreateAccountViewController
@@ -57,18 +74,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardOnMainViewTap()
-        emailField.delegate = self
-        passwordField.delegate = self
-        emailUnderbar.backgroundColor = UIColor.textFieldBottomBorder
-        passwordUnderbar.backgroundColor = UIColor.textFieldBottomBorder
-        loginButton.titleLabel?.font = UIFont.futura13
-        loginButton.setTitleColor(UIColor.white, for: .normal)
-        loginButton.backgroundColor = UIColor.customYellow
-        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
+        self.emailUnderbar.backgroundColor = UIColor.textFieldBottomBorder
+        self.passwordUnderbar.backgroundColor = UIColor.textFieldBottomBorder
+        self.loginButton.titleLabel?.font = UIFont.futura13
+        self.loginButton.setTitleColor(UIColor.white, for: .normal)
+        self.loginButton.backgroundColor = UIColor.customYellow
+        self.loginButton.layer.cornerRadius = loginButton.frame.height / 2
         let forgotPasswordAttributedTitle: NSMutableAttributedString = NSMutableAttributedString(string: "Forgot Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray67_62_54])
         forgotPasswordAttributedTitle.addUnderline()
-        forgotPasswordButton.setAttributedTitle(forgotPasswordAttributedTitle, for: .normal)
-        createAccountButton.setTitleColor(UIColor.darkGray67_62_54, for: .normal)
+        self.forgotPasswordButton.setAttributedTitle(forgotPasswordAttributedTitle, for: .normal)
+        self.createAccountButton.setTitleColor(UIColor.darkGray67_62_54, for: .normal)
+        
+        self.forgotPasswordPopup.alpha = 0
+        self.forgotPasswordPopupOkButton.layer.borderColor = UIColor.lightGray.cgColor
+        self.forgotPasswordPopupOkButton.layer.borderWidth = 1
         
         // Register for keyboard notifications to adjust scroll view for keyboard
         let notificationCenter = NotificationCenter.default
