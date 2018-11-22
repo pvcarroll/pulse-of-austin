@@ -60,8 +60,16 @@ class CreateAccountViewController: UIViewController {
                         , let zipCode = self.zipCodeField.text else { return }
                     // Get city council district from address
                     HTTPRequests().getCouncilDistrict(address: address, callback: { councilDistrict in
-                        let userData = ["name": name, "email": email, "address": address, "zipCode": zipCode, "councilDistrict": councilDistrict] as [String : Any]
-                        dbRef.child("users").childByAutoId().setValue(userData)
+                        let userData = [AppConstants.name: name,
+                                        AppConstants.email: email,
+                                        AppConstants.address: address,
+                                        AppConstants.zipCode: zipCode,
+                                        AppConstants.councilDistrict: councilDistrict] as [String : Any]
+                        guard let uid = authResult?.user.uid else {
+                            // TODO: clean up auth user if db user creation fails
+                            return
+                        }
+                        dbRef.child(AppConstants.dbUsersPath).child(uid).setValue(userData)
                         self.displaySuccessAlertAndGoToMainScreen()
                     })
                 }

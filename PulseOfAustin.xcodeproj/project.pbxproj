@@ -81,6 +81,7 @@
 		75E29F9220EEFEC20086F4D8 /* OnboardingLastSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */; };
 		75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */; };
 		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
+		75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F650EC21A6FC020098CFAC /* AppConstants.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -190,6 +191,7 @@
 		75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingLastSlide.xib; sourceTree = "<group>"; };
 		75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastSlide.swift; sourceTree = "<group>"; };
 		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		75F650EC21A6FC020098CFAC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				752EF73B207C571F0046743A /* Assets.xcassets */,
 				752EF73D207C571F0046743A /* LaunchScreen.storyboard */,
 				752EF740207C571F0046743A /* Info.plist */,
+				75F650EC21A6FC020098CFAC /* AppConstants.swift */,
 			);
 			path = PulseOfAustin;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				758A3DBE216047B000D9C0D5 /* AuthUtils.swift in Sources */,
 				75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */,
 				755E71112178C22500E9A229 /* District2.swift in Sources */,
+				75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */,
 				75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */,
 				75519B5620E945F700463BB1 /* NSMutableAttributedString+Extension.swift in Sources */,
 				75B937522097453500221467 /* WeighInSelect.swift in Sources */,

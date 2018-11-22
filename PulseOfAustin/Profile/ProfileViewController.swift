@@ -150,24 +150,20 @@ class ProfileViewController: UIViewController {
     
     private func fetchUserInfo() {
         // TODO: move db query
-        if let email = Auth.auth().currentUser?.email,
-            let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-            dbRef.child("users")
-                .queryOrdered(byChild: "email")
-                .queryEqual(toValue: email)
+        if let uid = Auth.auth().currentUser?.uid
+            , let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
+            dbRef.child(AppConstants.dbUsersPath)
+                .child(uid)
                 .observeSingleEvent(of: .value, with: { (snapshot) in
-                    if let values = snapshot.value as? [String: Any], let userID = values.first?.key, let userObject = values.first?.value as! [AnyHashable: Any]?, let userName = userObject["name"] as? String {
+                    if let values = snapshot.value as? [String: Any]
+                        , let email = values[AppConstants.email] as? String
+                        , let userName = values[AppConstants.name] as? String
+                        , let address = values[AppConstants.address] as? String
+                        , let zipCode = values[AppConstants.zipCode] as? String
+                        , let councilDistrict = values[AppConstants.councilDistrict] as? Int {
                         self.title = userName
-                        if let address = userObject["address"] as? String {
-                            self.homeAddress = address + ", Austin, TX, "
-                            if let zipCode = userObject["zipCode"] as? String {
-                                self.homeAddress += zipCode
-                                if let email = userObject["email"] as? String
-                                    , let councilDistrict = userObject["councilDistrict"] as? Int {
-                                    self.userData = UserData(userID: userID, address: address, zipCode: zipCode, email: email, councilDistrict: councilDistrict)
-                                }
-                            }
-                        }
+                        self.homeAddress = "\(address), Austin, TX \(zipCode)"
+                        self.userData = UserData(userID: uid, address: address, zipCode: zipCode, email: email, councilDistrict: councilDistrict)
                     }
                 })
         }

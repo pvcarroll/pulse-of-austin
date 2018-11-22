@@ -32,11 +32,12 @@ class BasicInfoViewController: UIViewController {
         guard let newEmail = self.emailField.text else {return}
         if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
             
-            dbRef.child("users").child(userID).updateChildValues([
+            dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
                 "address": newAddress,
                 "zipCode": newZipCode,
                 "email": newEmail
             ])
+            // TODO: changes saved confirmation, navigate back
         }
     }
     
@@ -44,6 +45,8 @@ class BasicInfoViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.dismissKeyboardOnMainViewTap()
+        
+        // TODO: saved changes don't appear after navigating back and returning to BasicInfo screen
         
         // Set intial values
         if let userData = self.userData {
