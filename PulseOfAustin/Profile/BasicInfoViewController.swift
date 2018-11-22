@@ -36,8 +36,13 @@ class BasicInfoViewController: UIViewController {
                 "address": newAddress,
                 "zipCode": newZipCode,
                 "email": newEmail
-            ])
-            // TODO: changes saved confirmation, navigate back
+                ], withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        self.presentAlertModal(title: "Update Failed", message: "Changes not saved")
+                    } else {
+                        self.presentAlertModal(title: "Changes Saved", message: "")
+                    }
+            })
         }
     }
     
