@@ -27,7 +27,6 @@
 		75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */; };
 		75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */; };
 		75519B4320DEDC9000463BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4220DEDC9000463BB1 /* User.swift */; };
-		75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4620DEE9C400463BB1 /* Secrets.swift */; };
 		75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4820DF00A200463BB1 /* HttpRequests.swift */; };
 		75519B4B20DFEF8500463BB1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */; };
 		75519B4E20E924D700463BB1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B4D20E924D700463BB1 /* Login.storyboard */; };
@@ -137,7 +136,6 @@
 		75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		75519B4220DEDC9000463BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		75519B4620DEE9C400463BB1 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		75519B4820DF00A200463BB1 /* HttpRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequests.swift; sourceTree = "<group>"; };
 		75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		75519B4D20E924D700463BB1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -389,7 +387,6 @@
 		75519B4420DEE1D100463BB1 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				75519B4620DEE9C400463BB1 /* Secrets.swift */,
 				75519B4820DF00A200463BB1 /* HttpRequests.swift */,
 			);
 			path = Server;
@@ -765,7 +762,6 @@
 				75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */,
 				753E25A020D6C5440020307D /* OnboardingWelcomeViewController.swift in Sources */,
 				75519B4B20DFEF8500463BB1 /* UITextField+Extension.swift in Sources */,
-				75519B4720DEE9C400463BB1 /* Secrets.swift in Sources */,
 				757C0FBA20C4318C0018C560 /* BreakdownView.swift in Sources */,
 				752EF737207C571E0046743A /* HomeViewController.swift in Sources */,
 				758BF7E820F6EEDC0032C511 /* HTMLStrings.swift in Sources */,

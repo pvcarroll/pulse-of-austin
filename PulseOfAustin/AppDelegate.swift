@@ -101,7 +101,5 @@ extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
-        
-        // TODO: if registration token is new, send it to app server
     }
 }

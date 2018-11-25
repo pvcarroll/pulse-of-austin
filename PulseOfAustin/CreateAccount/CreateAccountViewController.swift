@@ -53,6 +53,7 @@ class CreateAccountViewController: UIViewController {
                 self.present(failedToCreateAccountAlert, animated: true, completion: nil)
                 self.createAnAccountButton.isEnabled = true
             } else {
+                // Auth user created
                 // Create user in database with all fields
                 if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
                     guard let name = self.nameField.text
@@ -60,15 +61,21 @@ class CreateAccountViewController: UIViewController {
                         , let zipCode = self.zipCodeField.text else { return }
                     // Get city council district from address
                     HTTPRequests().getCouncilDistrict(address: address, callback: { councilDistrict in
+                        guard let uid = authResult?.user.uid else {
+                            Auth.auth().currentUser?.delete(completion: { error in
+                                if error != nil {
+                                    // Error deleting account
+                                } else {
+                                    // Auth user deleted
+                                }
+                            })
+                            return
+                        }
                         let userData = [AppConstants.name: name,
                                         AppConstants.email: email,
                                         AppConstants.address: address,
                                         AppConstants.zipCode: zipCode,
                                         AppConstants.councilDistrict: councilDistrict] as [String : Any]
-                        guard let uid = authResult?.user.uid else {
-                            // TODO: clean up auth user if db user creation fails
-                            return
-                        }
                         dbRef.child(AppConstants.dbUsersPath).child(uid).setValue(userData)
                         self.displaySuccessAlertAndGoToMainScreen()
                     })
