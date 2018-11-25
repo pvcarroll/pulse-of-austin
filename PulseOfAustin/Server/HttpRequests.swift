@@ -17,14 +17,18 @@ class HTTPRequests {
         let streetParam = address.replacingOccurrences(of: " ", with: "+")
         let url = "\(self.addressToDistrictURL)?street=\(streetParam)&outFields=*&f=pjson"
         Alamofire.request(url).responseJSON(completionHandler: { response in
-            if let json = response.result.value as? NSDictionary {
-                if let candidates = json["candidates"] as? NSArray?, let firstCandidate = candidates?[0] as? NSDictionary {
-                    if let attributes = firstCandidate["attributes"] as? NSDictionary {
-                        if let councilDistrictString = attributes["CouncilDistrict"] as? String, let councilDistrict = Int(councilDistrictString) {
-                            callback(councilDistrict)
-                        }
+            if let json = response.result.value as? NSDictionary
+                , let candidates = json["candidates"] as? NSArray?
+                , let count = candidates?.count
+                , count > 0
+                , let firstCandidate = candidates?[0] as? NSDictionary {
+                if let attributes = firstCandidate["attributes"] as? NSDictionary {
+                    if let councilDistrictString = attributes["CouncilDistrict"] as? String, let councilDistrict = Int(councilDistrictString) {
+                        callback(councilDistrict)
                     }
                 }
+            } else {
+                callback(0)
             }
         })
     }

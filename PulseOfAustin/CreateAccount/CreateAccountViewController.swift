@@ -61,14 +61,15 @@ class CreateAccountViewController: UIViewController {
                         , let zipCode = self.zipCodeField.text else { return }
                     // Get city council district from address
                     HTTPRequests().getCouncilDistrict(address: address, callback: { councilDistrict in
+                        if councilDistrict == 0 {
+                            self.presentAlertModal(title: "Invalid Address",
+                                                   message: "Your address doesn't match any Austin council district")
+                            self.createAnAccountButton.isEnabled = true
+                            self.deleteAuthCurrentUser()
+                            return
+                        }
                         guard let uid = authResult?.user.uid else {
-                            Auth.auth().currentUser?.delete(completion: { error in
-                                if error != nil {
-                                    // Error deleting account
-                                } else {
-                                    // Auth user deleted
-                                }
-                            })
+                            self.deleteAuthCurrentUser()
                             return
                         }
                         let userData = [AppConstants.name: name,
@@ -201,6 +202,18 @@ class CreateAccountViewController: UIViewController {
         }
         accountCreatedAlert.addAction(continueAction)
         self.present(accountCreatedAlert, animated: true)
+    }
+    
+    // Auth user needs to be cleaned up in database user creation fails
+    private func deleteAuthCurrentUser() {
+        Auth.auth().currentUser?.delete(completion: { error in
+            if error != nil {
+                // Error deleting account
+                self.presentAlertModal(title: "Error Deleting Auth User", message: error?.localizedDescription ?? "")
+            } else {
+                // Auth user deleted
+            }
+        })
     }
 }
 
