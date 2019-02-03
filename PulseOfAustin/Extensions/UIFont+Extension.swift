@@ -44,6 +44,11 @@ extension UIFont {
         guard let font2 = font else { return systemFont(ofSize: 20.0, weight: .regular) }
         return font2
     }
+    class var futuraMedium20: UIFont {
+        let font = UIFont(name: "Futura-Medium", size: 20.0)
+        guard let font2 = font else { return systemFont(ofSize: 20.0, weight: .medium) }
+        return font2
+    }
     class var futura16: UIFont {
         let font = UIFont(name: "Futura", size: 16.0)
         guard let font2 = font else { return systemFont(ofSize: 16.0, weight: .regular) }

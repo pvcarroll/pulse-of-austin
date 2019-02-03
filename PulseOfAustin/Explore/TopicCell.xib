@@ -24,8 +24,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wIA-sj-WlT" userLabel="Text Stack View">
                                 <rect key="frame" x="10" y="10" width="479" height="123.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Topic Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-SI-srj">
-                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Topic Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-SI-srj">
+                                        <rect key="frame" x="0.0" y="0.0" width="479" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -41,6 +41,7 @@
                                     <constraint firstItem="HtC-rO-Fbn" firstAttribute="leading" secondItem="wIA-sj-WlT" secondAttribute="leading" id="7gP-xC-Lgj"/>
                                     <constraint firstAttribute="trailing" secondItem="HtC-rO-Fbn" secondAttribute="trailing" id="HE8-kG-0j9"/>
                                     <constraint firstItem="kpw-SI-srj" firstAttribute="leading" secondItem="wIA-sj-WlT" secondAttribute="leading" id="ORq-Wt-Hgr"/>
+                                    <constraint firstAttribute="trailing" secondItem="kpw-SI-srj" secondAttribute="trailing" id="hDL-X5-7ja"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldenChevron" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-xQ-AUy">

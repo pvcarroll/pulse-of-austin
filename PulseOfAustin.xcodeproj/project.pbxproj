@@ -20,6 +20,8 @@
 		752EF74A207C571F0046743A /* PulseOfAustinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF749207C571F0046743A /* PulseOfAustinTests.swift */; };
 		752EF755207C571F0046743A /* PulseOfAustinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF754207C571F0046743A /* PulseOfAustinUITests.swift */; };
 		752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 752EF79E207C5DDB0046743A /* GoogleService-Info.plist */; };
+		753B17722206096D00C9F4EE /* Beats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753B17712206096D00C9F4EE /* Beats.storyboard */; };
+		753B17742206110A00C9F4EE /* BeatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B17732206110A00C9F4EE /* BeatsData.swift */; };
 		753E259E20D6C4510020307D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753E259D20D6C4510020307D /* Onboarding.storyboard */; };
 		753E25A020D6C5440020307D /* OnboardingWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E259F20D6C5440020307D /* OnboardingWelcomeViewController.swift */; };
 		753E25A220D6D4F90020307D /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E25A120D6D4F90020307D /* OnboardingMain.swift */; };
@@ -131,6 +133,8 @@
 		752EF756207C57200046743A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752EF79E207C5DDB0046743A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulseOfAustin.entitlements; sourceTree = "<group>"; };
+		753B17712206096D00C9F4EE /* Beats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Beats.storyboard; sourceTree = "<group>"; };
+		753B17732206110A00C9F4EE /* BeatsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatsData.swift; sourceTree = "<group>"; };
 		753E259D20D6C4510020307D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		753E259F20D6C5440020307D /* OnboardingWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeViewController.swift; sourceTree = "<group>"; };
 		753E25A120D6D4F90020307D /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
@@ -260,7 +264,9 @@
 		751A091221A9C0EC0077ACFC /* Beats */ = {
 			isa = PBXGroup;
 			children = (
+				753B17712206096D00C9F4EE /* Beats.storyboard */,
 				751A091321A9C2700077ACFC /* BeatsViewController.swift */,
+				753B17732206110A00C9F4EE /* BeatsData.swift */,
 			);
 			path = Beats;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
 				757C0FBC20C431AA0018C560 /* BreakdownView.xib in Resources */,
 				757C0FC020C44E0F0018C560 /* LearnCityRationale.xib in Resources */,
+				753B17722206096D00C9F4EE /* Beats.storyboard in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
 				7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */,
@@ -785,6 +792,7 @@
 				7565F19020CC7B95008DFF27 /* LearnCardsContainer.swift in Sources */,
 				75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */,
 				755E711D217B8A1000E9A229 /* District9.swift in Sources */,
+				753B17742206110A00C9F4EE /* BeatsData.swift in Sources */,
 				7565F19820CD73F1008DFF27 /* UITextView+Extension.swift in Sources */,
 				755C7BA52082819E00554399 /* UIView+Extension.swift in Sources */,
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
