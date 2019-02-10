@@ -20,6 +20,7 @@
 		752EF74A207C571F0046743A /* PulseOfAustinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF749207C571F0046743A /* PulseOfAustinTests.swift */; };
 		752EF755207C571F0046743A /* PulseOfAustinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EF754207C571F0046743A /* PulseOfAustinUITests.swift */; };
 		752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 752EF79E207C5DDB0046743A /* GoogleService-Info.plist */; };
+		753A55B6220FB3C000B2614B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55B5220FB3C000B2614B /* Profile.storyboard */; };
 		753B17722206096D00C9F4EE /* Beats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753B17712206096D00C9F4EE /* Beats.storyboard */; };
 		753B17742206110A00C9F4EE /* BeatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B17732206110A00C9F4EE /* BeatsData.swift */; };
 		753E259E20D6C4510020307D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753E259D20D6C4510020307D /* Onboarding.storyboard */; };
@@ -133,6 +134,7 @@
 		752EF756207C57200046743A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752EF79E207C5DDB0046743A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		752EF7A0207DB1F30046743A /* PulseOfAustin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulseOfAustin.entitlements; sourceTree = "<group>"; };
+		753A55B5220FB3C000B2614B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		753B17712206096D00C9F4EE /* Beats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Beats.storyboard; sourceTree = "<group>"; };
 		753B17732206110A00C9F4EE /* BeatsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatsData.swift; sourceTree = "<group>"; };
 		753E259D20D6C4510020307D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		7523BD56213B16D400B648B8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				753A55B5220FB3C000B2614B /* Profile.storyboard */,
 				7523BD57213B174B00B648B8 /* ProfileViewController.swift */,
 				7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */,
 				7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */,
@@ -651,6 +654,7 @@
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
 				75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */,
 				753E25A420DBD8C10020307D /* OnboardingSlideInfo.xib in Resources */,
+				753A55B6220FB3C000B2614B /* Profile.storyboard in Resources */,
 				755B102A210E19650066BAC6 /* LearnMap.xib in Resources */,
 				7565F19220CC7BB6008DFF27 /* LearnCardsContainer.xib in Resources */,
 				753E259E20D6C4510020307D /* Onboarding.storyboard in Resources */,

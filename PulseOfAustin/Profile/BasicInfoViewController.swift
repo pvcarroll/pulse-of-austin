@@ -30,19 +30,19 @@ class BasicInfoViewController: UIViewController {
         guard let newAddress = self.addressField.text else {return}
         guard let newZipCode = self.zipCodeField.text else {return}
         guard let newEmail = self.emailField.text else {return}
-        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-            
-            dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
-                "address": newAddress,
-                "zipCode": newZipCode,
-                "email": newEmail
-                ], withCompletionBlock: { (error, ref) in
-                    if error != nil {
-                        self.presentAlertModal(title: "Update Failed", message: "Changes not saved")
-                    } else {
-                        self.presentAlertModal(title: "Changes Saved", message: "")
-                    }
+        
+        if newAddress != originalAddress {
+            HTTPRequests().getCouncilDistrict(address: newAddress, callback: { councilDistrict in
+                if councilDistrict == 0 {
+                    self.presentAlertModal(title: "",
+                                           message: "We can't find your city council district in the city's records.")
+                    return
+                } else {
+                    self.saveUserInfo(userID: userID, address: newAddress, email: newEmail, zipCode: newZipCode, councilDistrict: councilDistrict)
+                }
             })
+        } else {
+            self.saveUserInfo(userID: userID, address: newAddress, email: newEmail, zipCode: newZipCode, councilDistrict: nil)
         }
     }
     
@@ -50,9 +50,7 @@ class BasicInfoViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.dismissKeyboardOnMainViewTap()
-        
-        // TODO: saved changes don't appear after navigating back and returning to BasicInfo screen
-        
+
         // Set intial values
         if let userData = self.userData {
             self.addressField.text = userData.address
@@ -83,11 +81,40 @@ class BasicInfoViewController: UIViewController {
         self.scrollView.scrollIndicatorInsets = self.scrollView.contentInset
     }
     
+    private func saveUserInfo(userID: String, address: String, email: String, zipCode: String, councilDistrict: Int?) {
+        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
+            if let councilDistrict = councilDistrict {
+                dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
+                    "address": address,
+                    "councilDistrict": councilDistrict,
+                    "zipCode": zipCode,
+                    "email": email
+                    ], withCompletionBlock: { (error, ref) in
+                        self.updateUserCompletion(error: error)
+                })
+            } else {
+                dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
+                    "address": address,
+                    "zipCode": zipCode,
+                    "email": email
+                    ], withCompletionBlock: { (error, ref) in
+                        self.updateUserCompletion(error: error)
+                })
+            }
+        }
+    }
+    
+    private func updateUserCompletion(error: Error?) {
+        if error != nil {
+            self.presentAlertModal(title: "Update Failed", message: "Changes not saved")
+        } else {
+            self.presentAlertModal(title: "Changes Saved", message: "")
+        }
+    }
+    
     // MARK:- Prepare for segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as? PasswordViewController)?.email = self.userData?.email
     }
-    
-
 }

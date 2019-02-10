@@ -62,8 +62,8 @@ class CreateAccountViewController: UIViewController {
                     // Get city council district from address
                     HTTPRequests().getCouncilDistrict(address: address, callback: { councilDistrict in
                         if councilDistrict == 0 {
-                            self.presentAlertModal(title: "Invalid Address",
-                                                   message: "Your address doesn't match any Austin council district")
+                            self.presentAlertModal(title: "",
+                                                   message: "We can't find your city council district in the city's records. Please enter it here: ")
                             self.createAnAccountButton.isEnabled = true
                             self.deleteAuthCurrentUser()
                             return

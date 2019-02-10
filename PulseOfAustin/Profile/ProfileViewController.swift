@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     
     private var requiresLogin = false
+    private var visitedBasicInfo = false
     private var userData: UserData? {
         didSet {
             guard let councilDistrict = self.userData?.councilDistrict else { return }
@@ -115,11 +116,16 @@ class ProfileViewController: UIViewController {
         self.fetchUserInfo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchUserInfo()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if self.requiresLogin {
-            // Last time viewDidAppear run, the user wasn't logged in, so user info wasn't fetched
+            // Last time viewDidAppear ran, the user wasn't logged in, so user info wasn't fetched
             self.fetchUserInfo()
         }
         if Auth.auth().currentUser?.email == nil {
@@ -172,7 +178,12 @@ class ProfileViewController: UIViewController {
     // MARK:- Prepare for Segue
     
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? BasicInfoViewController)?.userData = self.userData
+        if let destination = segue.destination as? BasicInfoViewController {
+            destination.userData = self.userData
+            visitedBasicInfo = true
+        } else {
+            visitedBasicInfo = false
+        }
     }
 }
 
