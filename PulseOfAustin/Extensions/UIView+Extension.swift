@@ -23,6 +23,31 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = 0.5
     }
+    
+    func addActivityIndicatorView(activityIndicatorView: UIActivityIndicatorView) {
+        self.addSubview(activityIndicatorView)
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(
+            item: activityIndicatorView,
+            attribute: NSLayoutConstraint.Attribute.centerX,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: self,
+            attribute: NSLayoutConstraint.Attribute.centerX,
+            multiplier: 1, constant: 0)
+        self.addConstraint(horizontalConstraint)
+        let verticalConstraint = NSLayoutConstraint(
+            item: activityIndicatorView,
+            attribute: NSLayoutConstraint.Attribute.centerY,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: self,
+            attribute: NSLayoutConstraint.Attribute.centerY,
+            multiplier: 1, constant: 0)
+        self.addConstraint(verticalConstraint)
+        activityIndicatorView.color = UIColor.goldenRod247_179_19
+        activityIndicatorView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicatorView.layer.cornerRadius = 5
+        activityIndicatorView.hidesWhenStopped = true
+    }
 }
 
 @IBDesignable

@@ -21,6 +21,7 @@ class BasicInfoViewController: UIViewController {
     var originalAddress = ""
     var originalZipCode = ""
     var originalEmail = ""
+    private let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
     
     @IBAction func saveTapped(_ sender: Any) {
         if (self.addressField.text == originalAddress) &&
@@ -30,7 +31,7 @@ class BasicInfoViewController: UIViewController {
         guard let newAddress = self.addressField.text else {return}
         guard let newZipCode = self.zipCodeField.text else {return}
         guard let newEmail = self.emailField.text else {return}
-        
+        activityIndicatorView.startAnimating()
         if newAddress != originalAddress {
             HTTPRequests().getCouncilDistrict(address: newAddress, callback: { councilDistrict in
                 if councilDistrict == 0 {
@@ -60,6 +61,8 @@ class BasicInfoViewController: UIViewController {
             self.originalZipCode = userData.zipCode
             self.originalEmail = userData.email
         }
+        
+        view.addActivityIndicatorView(activityIndicatorView: activityIndicatorView)
         
         // Adjust scroll view when keyboard is visible
         let notificationCenter = NotificationCenter.default
@@ -105,6 +108,7 @@ class BasicInfoViewController: UIViewController {
     }
     
     private func updateUserCompletion(error: Error?) {
+        activityIndicatorView.stopAnimating()
         if error != nil {
             self.presentAlertModal(title: "Update Failed", message: "Changes not saved")
         } else {

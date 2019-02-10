@@ -36,14 +36,16 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var isIntervention = false
+    private let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.toHome()
     }
     @IBAction func createAccount(_ sender: UIButton) {
         guard self.validateFields() else { return }
-        
         guard let email = emailField.text, let password = passwordField.text else { return }
+        activityIndicatorView.startAnimating()
+        view.layer.backgroundColor = UIColor(white: 0, alpha: 0.1).cgColor
         self.createAnAccountButton.isEnabled = false
         // Create firebase auth user with email and password
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -121,14 +123,22 @@ class CreateAccountViewController: UIViewController {
         
         loginButton.setTitleColor(UIColor.darkGray74, for: .normal)
         
-        let loginButtonAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.darkGray67_62_54,
-                                                                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        let loginButtonAttributes: [NSAttributedString.Key: Any] =
+            [NSAttributedString.Key.foregroundColor: UIColor.darkGray67_62_54,
+             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let loginTitleString: NSAttributedString = NSAttributedString(string: "Log in", attributes: loginButtonAttributes)
         loginButton.setAttributedTitle(loginTitleString, for: .normal)
-        
+
+        view.addActivityIndicatorView(activityIndicatorView: activityIndicatorView)
+
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        activityIndicatorView.stopAnimating()
+        super.viewWillDisappear(animated)
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
@@ -148,6 +158,7 @@ class CreateAccountViewController: UIViewController {
     //
     // MARK:- Private
     //
+    
     private func validateFields() -> Bool {
         guard let name = self.nameField.text, !name.isEmpty else {
             self.displayValidationAlert(title: "Name is required", message: "")

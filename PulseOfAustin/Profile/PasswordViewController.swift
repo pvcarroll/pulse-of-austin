@@ -19,6 +19,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     var email: String?
+    private let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
     
     @IBAction func confirmTapped(_ sender: Any) {
         guard self.newPasswordField.text == self.confirmPasswordField.text else {
@@ -33,19 +34,22 @@ class PasswordViewController: UIViewController {
             self.presentAlertModal(title: "", message: "no current user email")
             return
         }
-        guard let currentPassword = self.currentPasswordField?.text, currentPassword == "" else {
+        guard let currentPassword = self.currentPasswordField?.text, currentPassword != "" else {
             self.presentAlertModal(title: "", message: "no current password")
             return
         }
+        activityIndicatorView.startAnimating()
         let currentUser = Auth.auth().currentUser
         let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
         // verify current password
         currentUser?.reauthenticate(with: credential) { error in
             if let err = error {
+                self.activityIndicatorView.stopAnimating()
                 self.presentAlertModal(title: "Reauthentication failed", message: "\(err)")
             } else {
                 // change password
                 currentUser?.updatePassword(to: newPassword) { error in
+                    self.activityIndicatorView.stopAnimating()
                     if let err = error {
                         self.presentAlertModal(title: "Error Updating Password", message: "\(err)")
                     } else {
@@ -69,6 +73,8 @@ class PasswordViewController: UIViewController {
         let forgotPasswordAttributedTitle: NSMutableAttributedString = NSMutableAttributedString(string: "Forgot Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray67_62_54])
         forgotPasswordAttributedTitle.addUnderline()
         self.forgotPasswordButton.setAttributedTitle(forgotPasswordAttributedTitle, for: .normal)
+        
+        view.addActivityIndicatorView(activityIndicatorView: activityIndicatorView)
         
         // Adjust scroll view when keyboard is visible
         let notificationCenter = NotificationCenter.default
