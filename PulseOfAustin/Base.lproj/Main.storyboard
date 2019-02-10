@@ -145,7 +145,7 @@
                         <outlet property="logInButton" destination="he5-RM-iLM" id="pYo-gg-gTe"/>
                         <outlet property="newLabel" destination="ZQJ-Nb-j6z" id="XL9-PD-aLj"/>
                         <outlet property="skipButton" destination="CQW-K0-Gx8" id="sPN-H2-DRM"/>
-                        <segue destination="2ea-r9-CdL" kind="show" identifier="toExplore" id="SBq-Mc-eSL"/>
+                        <segue destination="2ea-r9-CdL" kind="show" identifier="toExplore" animates="NO" id="SBq-Mc-eSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
