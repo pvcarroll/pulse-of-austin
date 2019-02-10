@@ -118,7 +118,9 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchUserInfo()
+        if visitedBasicInfo {
+            fetchUserInfo()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -146,7 +148,7 @@ class ProfileViewController: UIViewController {
     
     private func addCouncilDistrictOverlay(councilDistrict: Int) {
         let districtBounds = formatDistrictPoints(councilDistrict: councilDistrict)
-
+        mapView.removeOverlays(mapView.overlays)
         districtBounds.forEach { pointsSet in
             let points = pointsSet
             let polygon = MKPolygon(coordinates: points, count: points.count)

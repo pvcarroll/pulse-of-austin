@@ -89,7 +89,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-gy-YZA" userLabel="Council Member Name">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-gy-YZA" userLabel="Council Member Name">
                                                 <rect key="frame" x="173" y="366.5" width="192" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
                                                 <nil key="textColor"/>
@@ -922,6 +922,6 @@
         <image name="pinkRectangles" width="341" height="422"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lky-D2-dfr"/>
+        <segue reference="JJj-z3-fkW"/>
     </inferredMetricsTieBreakers>
 </document>
