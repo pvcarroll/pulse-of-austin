@@ -28,13 +28,16 @@ class LoginViewController: UIViewController {
     var isIntervention = false
     var redirectToMainAfterLogin = false
     var completionHandler: (()->Void)? = nil
+    private let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.toHome()
     }
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailField.text, let password = passwordField.text else { return }
+        activityIndicatorView.startAnimating()
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            self.activityIndicatorView.stopAnimating()
             if let error = error {
                 let loginFailedAlert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
                 loginFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -90,6 +93,8 @@ class LoginViewController: UIViewController {
         self.forgotPasswordPopup.alpha = 0
         self.forgotPasswordPopupOkButton.layer.borderColor = UIColor.lightGray.cgColor
         self.forgotPasswordPopupOkButton.layer.borderWidth = 1
+        
+        view.addActivityIndicatorView(activityIndicatorView: activityIndicatorView)
         
         // Register for keyboard notifications to adjust scroll view for keyboard
         let notificationCenter = NotificationCenter.default
