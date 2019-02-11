@@ -42,7 +42,7 @@ class PasswordViewController: UIViewController {
         let currentUser = Auth.auth().currentUser
         let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
         // verify current password
-        currentUser?.reauthenticate(with: credential) { error in
+        currentUser?.reauthenticateAndRetrieveData(with: credential) { (authResult, error) in
             if let err = error {
                 self.activityIndicatorView.stopAnimating()
                 self.presentAlertModal(title: "Reauthentication failed", message: "\(err)")
