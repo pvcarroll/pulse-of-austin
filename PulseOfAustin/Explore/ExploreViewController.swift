@@ -14,6 +14,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var tableView: UITableView!
     
     var selectedTopicKey = -1
+    private var exploreTopics = [ExploreTopic]()
     
     //
     // MARK: Lifecycle Methods
@@ -21,11 +22,13 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gearIcon"), style: .plain, target: self, action: nil)
         
+        HTTPRequests().fetchExploreTopics { (exploreTopics) in
+            self.exploreTopics = exploreTopics
+            self.tableView.reloadData()
+        }
         self.latestLabel.textColor = UIColor.darkGray74
-        
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 140
@@ -37,16 +40,16 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
     //
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TopicData.topics.count
+        return exploreTopics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as? TopicCell
         guard let topicCell = cell else { return UITableViewCell() }
-        topicCell.titleLabel.text = TopicData.topics[indexPath.row]?.title
-        topicCell.titleLabel.font = UIFont.cardTitle
-        topicCell.descriptionLabel.text = TopicData.topics[indexPath.row]?.description
-        topicCell.dateUpdated.text = TopicData.topics[indexPath.row]?.dateUpdated
+        let exploreTopic: ExploreTopic = exploreTopics[indexPath.row]
+        topicCell.titleLabel.text = exploreTopic.title
+        topicCell.descriptionLabel.text = exploreTopic.desc
+        topicCell.dateUpdated.text = exploreTopic.dateUpdated
         return topicCell
     }
     

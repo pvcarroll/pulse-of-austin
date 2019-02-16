@@ -11,6 +11,7 @@ import Alamofire
 
 class HTTPRequests {
     
+    private let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
     private let addressToDistrictURL = "https://www.austintexas.gov/gis/rest/Geocode/COA_Address_Locator/GeocodeServer/findAddressCandidates"
     
     func getCouncilDistrict(address: String, callback: @escaping (Int) -> ()) {
@@ -31,5 +32,24 @@ class HTTPRequests {
                 callback(0)
             }
         })
+    }
+    
+    //
+    // MARK:- Firebase Database
+    //
+    
+    func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
+        dbRef?.child("topics").observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value as? NSDictionary {
+                var exploreTopics = [ExploreTopic]()
+                value.allKeys.forEach({ (key) in
+                    if let exploreTopicData = value[key] as? NSDictionary {
+                        let exploreTopic = ExploreTopic.convertDataToExploreTopic(exploreTopicData: exploreTopicData)
+                        exploreTopics.append(exploreTopic)
+                    }
+                })
+                callback(exploreTopics)
+            }
+        }
     }
 }

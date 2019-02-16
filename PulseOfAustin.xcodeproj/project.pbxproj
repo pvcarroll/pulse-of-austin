@@ -87,6 +87,7 @@
 		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
 		75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F650EC21A6FC020098CFAC /* AppConstants.swift */; };
 		75FBE7B322185121000EE369 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FBE7B222185121000EE369 /* Explore.storyboard */; };
+		75FBE7B522189548000EE369 /* ExploreTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBE7B422189548000EE369 /* ExploreTopic.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -202,6 +203,7 @@
 		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		75F650EC21A6FC020098CFAC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		75FBE7B222185121000EE369 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		75FBE7B422189548000EE369 /* ExploreTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTopic.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				75519B4220DEDC9000463BB1 /* User.swift */,
+				75FBE7B422189548000EE369 /* ExploreTopic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				755E7117217B839E00E9A229 /* District5.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
 				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
+				75FBE7B522189548000EE369 /* ExploreTopic.swift in Sources */,
 				751A091421A9C2700077ACFC /* BeatsViewController.swift in Sources */,
 				7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */,
 				7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */,

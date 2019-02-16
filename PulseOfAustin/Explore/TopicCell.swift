@@ -18,6 +18,7 @@ class TopicCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.topicCellBackgroundView.addBottomShadow()
+        self.titleLabel.font = UIFont.cardTitle
         self.titleLabel.textColor = UIColor.darkGray74
         self.descriptionLabel.textColor = UIColor.darkGray74
     }

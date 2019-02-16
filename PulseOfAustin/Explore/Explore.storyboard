@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,17 +15,17 @@
             <objects>
                 <viewController storyboardIdentifier="ExploreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dm6-SO-lmn" userLabel="Explore View Controller" customClass="ExploreViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="92X-nS-k1R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-4A-ZnS" userLabel="Body View">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExplorePageStyle" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-N8-Vbk">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArmadilloIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bZ5-Cf-ggd">
-                                        <rect key="frame" x="45" y="362" width="285" height="140"/>
+                                        <rect key="frame" x="45" y="458" width="285" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="y4P-d5-0we"/>
                                         </constraints>
@@ -33,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-Wh-Om6" userLabel="Trending Issues Table View">
-                                        <rect key="frame" x="10" y="66" width="355" height="376"/>
+                                        <rect key="frame" x="10" y="66" width="355" height="472"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -90,11 +94,11 @@
             <objects>
                 <viewController id="erH-Xg-SYG" userLabel="Topic Info View Controller" customClass="TopicInfoViewController" customModule="PulseOfAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vpx-bx-i4u" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oH-9A-iIf" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="116" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="35"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ao5-Ev-GK2" userLabel="Learn/Weigh In Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
@@ -156,13 +160,13 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoCardCornerStyle" translatesAutoresizingMaskIntoConstraints="NO" id="KUj-hg-6ol">
-                                <rect key="frame" x="100" y="251" width="275" height="367"/>
+                                <rect key="frame" x="100" y="155" width="275" height="512"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMi-gQ-UrT" userLabel="Learn View Container">
-                                <rect key="frame" x="0.0" y="151" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="SlS-2n-SkN">
-                                        <rect key="frame" x="152" y="425" width="71" height="37"/>
+                                        <rect key="frame" x="152" y="570" width="71" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" red="0.96862745100000003" green="0.70196078429999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
