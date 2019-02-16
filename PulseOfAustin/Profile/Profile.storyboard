@@ -234,7 +234,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VVn-uW-MvP"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Yfx-II-Mfg"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Yfx-II-Mfg">
+                        <barButtonItem key="backBarButtonItem" title="Profile" id="ylu-4Z-4Gi"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="basicInfoButton" destination="5ic-Ud-ODw" id="fDo-RB-2Lh"/>
@@ -377,6 +379,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIf-of-sXu"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Notifications" id="KHm-dF-nQx">
+                        <barButtonItem key="backBarButtonItem" title="Notifications" id="JnY-qz-vWX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="goldenCheck1" destination="d9K-Nj-3Vc" id="u1u-IQ-1rf"/>
                         <outlet property="goldenCheck2" destination="L4D-qm-jUa" id="TmI-zb-tY3"/>
@@ -672,6 +677,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GsX-3K-D1h"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Basic Info" id="kBH-B8-wBc">
+                        <barButtonItem key="backBarButtonItem" title="Basic Info" id="o8n-uG-WMs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressField" destination="HcI-8C-QHU" id="t0u-gF-yNn"/>
                         <outlet property="emailField" destination="wsb-Ug-3pg" id="qbT-cu-0dm"/>
@@ -902,6 +910,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hPf-cl-aBo"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Password" id="WNJ-Ov-lUO">
+                        <barButtonItem key="backBarButtonItem" title="Password" id="ARO-Xi-1JZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmButton" destination="4xD-kY-cjl" id="wnu-TZ-iJe"/>
                         <outlet property="confirmPasswordField" destination="yKC-YV-H6v" id="Rzc-L9-dhM"/>
