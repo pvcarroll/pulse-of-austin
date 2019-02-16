@@ -86,6 +86,7 @@
 		75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */; };
 		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
 		75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F650EC21A6FC020098CFAC /* AppConstants.swift */; };
+		75FBE7B322185121000EE369 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FBE7B222185121000EE369 /* Explore.storyboard */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -200,6 +201,7 @@
 		75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastSlide.swift; sourceTree = "<group>"; };
 		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		75F650EC21A6FC020098CFAC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		75FBE7B222185121000EE369 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 		755C7B9E20824BCF00554399 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				75FBE7B222185121000EE369 /* Explore.storyboard */,
 				755C7BA120824C8F00554399 /* ExploreViewController.swift */,
 				755C7BA62083006E00554399 /* TopicCell.xib */,
 				755C7BA82083A5F400554399 /* TopicCell.swift */,
@@ -649,6 +652,7 @@
 				753B17722206096D00C9F4EE /* Beats.storyboard in Resources */,
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
+				75FBE7B322185121000EE369 /* Explore.storyboard in Resources */,
 				7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */,
 				75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
