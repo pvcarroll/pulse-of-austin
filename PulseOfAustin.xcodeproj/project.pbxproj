@@ -31,7 +31,6 @@
 		7549D644220481090082320E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7549D643220481090082320E /* Colors.xcassets */; };
 		75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */; };
 		75519B4020DEDC2600463BB1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */; };
-		75519B4320DEDC9000463BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4220DEDC9000463BB1 /* User.swift */; };
 		75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4820DF00A200463BB1 /* HttpRequests.swift */; };
 		75519B4B20DFEF8500463BB1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */; };
 		75519B4E20E924D700463BB1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75519B4D20E924D700463BB1 /* Login.storyboard */; };
@@ -88,6 +87,7 @@
 		75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F650EC21A6FC020098CFAC /* AppConstants.swift */; };
 		75FBE7B322185121000EE369 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FBE7B222185121000EE369 /* Explore.storyboard */; };
 		75FBE7B522189548000EE369 /* ExploreTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBE7B422189548000EE369 /* ExploreTopic.swift */; };
+		75FBE7B722190165000EE369 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBE7B622190165000EE369 /* TopicModel.swift */; };
 		75FE51B120C301EF00ABE7FD /* LearnLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B020C301EF00ABE7FD /* LearnLanding.swift */; };
 		75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FE51B220C3020F00ABE7FD /* LearnLanding.xib */; };
 		75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE51B820C38B4700ABE7FD /* LearnOverview.swift */; };
@@ -147,7 +147,6 @@
 		7549D643220481090082320E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		75519B3D20DEDC1A00463BB1 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		75519B3F20DEDC2600463BB1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		75519B4220DEDC9000463BB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75519B4820DF00A200463BB1 /* HttpRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequests.swift; sourceTree = "<group>"; };
 		75519B4A20DFEF8500463BB1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		75519B4D20E924D700463BB1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -204,6 +203,7 @@
 		75F650EC21A6FC020098CFAC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		75FBE7B222185121000EE369 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		75FBE7B422189548000EE369 /* ExploreTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTopic.swift; sourceTree = "<group>"; };
+		75FBE7B622190165000EE369 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		75FE51B020C301EF00ABE7FD /* LearnLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLanding.swift; sourceTree = "<group>"; };
 		75FE51B220C3020F00ABE7FD /* LearnLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnLanding.xib; sourceTree = "<group>"; };
 		75FE51B820C38B4700ABE7FD /* LearnOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnOverview.swift; sourceTree = "<group>"; };
@@ -406,8 +406,8 @@
 		75519B4120DEDC8200463BB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				75519B4220DEDC9000463BB1 /* User.swift */,
 				75FBE7B422189548000EE369 /* ExploreTopic.swift */,
+				75FBE7B622190165000EE369 /* TopicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -789,7 +789,6 @@
 				75519B5020E924EA00463BB1 /* LoginViewController.swift in Sources */,
 				755C7BB4208CEA3B00554399 /* TopicInfoViewController.swift in Sources */,
 				75FE51B920C38B4700ABE7FD /* LearnOverview.swift in Sources */,
-				75519B4320DEDC9000463BB1 /* User.swift in Sources */,
 				75BCD079209E62B8008AD469 /* WeighInElaborate.swift in Sources */,
 				7565F19420CC7CA4008DFF27 /* LearnCard.swift in Sources */,
 				75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */,
@@ -824,6 +823,7 @@
 				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
 				75FBE7B522189548000EE369 /* ExploreTopic.swift in Sources */,
 				751A091421A9C2700077ACFC /* BeatsViewController.swift in Sources */,
+				75FBE7B722190165000EE369 /* TopicModel.swift in Sources */,
 				7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */,
 				7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */,
 				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,

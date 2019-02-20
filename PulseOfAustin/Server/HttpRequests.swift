@@ -43,13 +43,40 @@ class HTTPRequests {
             if let value = snapshot.value as? NSDictionary {
                 var exploreTopics = [ExploreTopic]()
                 value.allKeys.forEach({ (key) in
-                    if let exploreTopicData = value[key] as? NSDictionary {
-                        let exploreTopic = ExploreTopic.convertDataToExploreTopic(exploreTopicData: exploreTopicData)
+                    if let topicKey = key as? String
+                        , let exploreTopicData = value[key] as? NSDictionary {
+                        let exploreTopic = ExploreTopic.convertDataToExploreTopic(topicKey: topicKey,
+                                                                                  exploreTopicData: exploreTopicData)
                         exploreTopics.append(exploreTopic)
                     }
                 })
                 callback(exploreTopics)
             }
         }
+    }
+    
+    func fetchTopicData(topicKey: String, callback: @escaping (TopicData) -> ()) {
+        dbRef?.child("topicData").child(topicKey).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary
+                , let title = value["title"] as? String
+                , let learnLabel = value["learnLabel"] as? String
+                , let mapLabel = value["mapLabel"] as? String
+                , let weighInPrompt = value["weighInPrompt"] as? String
+                , let choicesDictionary = value["weighInChoices"] as? NSDictionary
+                , let choiceKeys = choicesDictionary.allKeys as? [String] {
+                var weighInChoices = [String]()
+                let sortedChoiceKeys = choiceKeys.sorted {  $0 < $1 }
+                sortedChoiceKeys.forEach({ (key) in
+                    weighInChoices.append(choicesDictionary[key] as! String)
+                })
+                let topicData = TopicData(topicKey: topicKey,
+                                          title: title,
+                                          learnLabel: learnLabel,
+                                          mapLabel: mapLabel,
+                                          weighInPrompt: weighInPrompt,
+                                          weighInChoices: weighInChoices)
+                callback(topicData)
+            }
+        })
     }
 }

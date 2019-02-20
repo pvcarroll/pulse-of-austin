@@ -41,11 +41,10 @@ class TopicInfoViewController: UIViewController {
     @IBOutlet var infoCardBottomConstraint: NSLayoutConstraint!
     @IBOutlet var pageControl: UIPageControl!
     
-    var selectedTopicKey: Int?
+    var topicKey: String?
+    private var topicData: TopicData?
     private var cardIndex = 0
     private var selectedAnswer: AnswerIndex?
-    private var learnText: LearnText?
-    private var weighInText: WeighInSelectText?
     private var elaborateView: WeighInElaborate?
     private var cardFrame: CGRect?
     private var learnCardTextViews: [UITextView] = []
@@ -58,7 +57,7 @@ class TopicInfoViewController: UIViewController {
     @IBAction func weighInButtonTapped(_ sender: Any) {
         self.weighInButtonUnderline.backgroundColor = UIColor.darkGray74
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        self.loadWeighInLanding()
+        self.loadWeighInSelect()
     }
     
     //
@@ -67,13 +66,8 @@ class TopicInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.learnText = TopicData.topics[self.selectedTopicKey!]?.learnText
-        self.weighInText = TopicData.topics[self.selectedTopicKey!]?.weighIn
         self.contentView.backgroundColor = UIColor.infoCardBackground
         
-        let screenTitle = TopicData.topics[self.selectedTopicKey!]?.topicInfoTitle
-        self.title = screenTitle
-
         self.learnButton.backgroundColor = UIColor.basicsBarBlue
         self.learnButton.setTitle("LEARN", for: .normal)
         self.learnButton.titleLabel?.font = UIFont.buttonFont
@@ -86,7 +80,11 @@ class TopicInfoViewController: UIViewController {
         self.weighInButton.setTitleColor(UIColor.darkText, for: .normal)
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         
-        self.loadLearnLanding()
+        HTTPRequests().fetchTopicData(topicKey: self.topicKey!) { (topicData) in
+            self.title = topicData.title
+            self.topicData = topicData
+            self.loadLearnLanding()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -111,8 +109,8 @@ class TopicInfoViewController: UIViewController {
                             .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             landingView.frame = self.topicInfoViewContainer.bounds
             landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            landingView.infoLabel.text = self.learnText?.landingInfoLabel
-            landingView.mapLabel.text = self.learnText?.landingMapLabel
+            landingView.infoLabel.text = self.topicData?.learnLabel
+            landingView.mapLabel.text = self.topicData?.mapLabel
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
@@ -169,27 +167,11 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Weigh In Flow
+    // MARK:- Weigh In Flow
     //
     
-    // Weigh In Screen 1: Landing
-    private func loadWeighInLanding() {
-        if let landingView = UINib(nibName: "WeighInLanding", bundle: nil)
-            .instantiate(withOwner: self, options: nil).first as! WeighInLanding? {
-            landingView.frame = self.topicInfoViewContainer.bounds
-            landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            let scrollViewHeight = landingView.stackView.frame.height + 15 + 15
-            landingView.contentSize = CGSize(width: landingView.frame.width,
-                                             height: scrollViewHeight)
-            let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.startWeighIn))
-            landingView.one.addGestureRecognizer(infoRecognizer)
-            self.updateViewContent(newView: landingView)
-        }
-    }
-    
-    // Weigh In Screen 2: Select
+    // Weigh In Screen 1: Select
     private func loadWeighInSelect() {
-        // TODO: Dynamic numberOfPages
         self.pageControl.numberOfPages = 3
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInSelect?,
@@ -197,10 +179,10 @@ class TopicInfoViewController: UIViewController {
             
             weighInSelectView.frame = weightInCardFrame
             
-            weighInSelectView.answer1Button.setTitle(self.weighInText?.choices[0], for: .normal)
-            weighInSelectView.answer2Button.setTitle(self.weighInText?.choices[1], for: .normal)
-            weighInSelectView.answer3Button.setTitle(self.weighInText?.choices[2], for: .normal)
-            
+            weighInSelectView.answer1Button.setTitle(topicData?.weighInChoices[0], for: .normal)
+            weighInSelectView.answer2Button.setTitle(topicData?.weighInChoices[1], for: .normal)
+            weighInSelectView.answer3Button.setTitle(topicData?.weighInChoices[2], for: .normal)
+
             weighInSelectView.answer1Button.addTarget(self, action: #selector(self.answer1Selected), for: .touchUpInside)
             weighInSelectView.answer2Button.addTarget(self, action: #selector(self.answer2Selected), for: .touchUpInside)
             weighInSelectView.answer3Button.addTarget(self, action: #selector(self.answer3Selected), for: .touchUpInside)
@@ -209,7 +191,7 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    // Weigh In Screen 3: Elaborate
+    // Weigh In Screen 2: Elaborate
     private func loadWeighInElaborate(answerText: String) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
@@ -238,7 +220,7 @@ class TopicInfoViewController: UIViewController {
         self.loadWeighInSelect()
     }
     
-    // Weigh In Screen 4: Results
+    // Weigh In Screen 3: Results
     private func loadWeighInResults() {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
@@ -246,13 +228,13 @@ class TopicInfoViewController: UIViewController {
                 let weightInCardFrame = self.cardFrame {
             resultsView.frame = weightInCardFrame
             
-            // TODO: Hide 4th response view if only 3 responses
-            resultsView.response4View.isHidden = true
+            resultsView.response4View.isHidden = (self.topicData?.weighInChoices.count == 3)
             
-            resultsView.response1Label.text = self.weighInText?.choices[0]
-            resultsView.response2Label.text = self.weighInText?.choices[1]
-            if (self.weighInText?.choices.count)! > 3 {
-                resultsView.response3Label.text = self.weighInText?.choices[2]
+            resultsView.response1Label.text = self.topicData?.weighInChoices[0]
+            resultsView.response2Label.text = self.topicData?.weighInChoices[1]
+
+            if (self.topicData?.weighInChoices.count)! > 3 {
+                resultsView.response3Label.text = self.topicData?.weighInChoices[2]
                 resultsView.response4Label.text = "Other"
             } else {
                 resultsView.response3Label.text = "Other"
@@ -260,9 +242,9 @@ class TopicInfoViewController: UIViewController {
             
             // Set response bar lengths based on count
             // TODO: Move db code out of VC
-            if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
-                let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey {
-                
+            if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
+                , let topicKey = self.topicKey {
+
                 let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
                 
                 dbRef.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -271,34 +253,31 @@ class TopicInfoViewController: UIViewController {
                     let answerChoice2 = values["answerChoice2"] as? Int
                     let answerChoice3 = values["answerChoice3"] as? Int
                     let answerChoice4 = values["answerChoice4"] as? Int
-                    
+
                     guard var maxCount = answerChoice1 else {return}
                     for answerChoiceCount in [answerChoice1, answerChoice2, answerChoice3, answerChoice4] {
                         if let count = answerChoiceCount, count > maxCount {
                             maxCount = count
                         }
                     }
-                    
+
                     // Set counts and bar lengths
                     let maxWidth = resultsView.response1View.frame.width - resultsView.response1Count.frame.width
-                    
+
                     let talliesBarHeight = resultsView.response1Tallies.frame.size.height
-                    if let count1 = answerChoice1 {
-                        resultsView.response1Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count1) / CGFloat(maxCount), height: talliesBarHeight)
-                        resultsView.response1Count.text = String(count1)
-                    }
-                    if let count2 = answerChoice2 {
-                        resultsView.response2Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count2) / CGFloat(maxCount), height: talliesBarHeight)
-                        resultsView.response2Count.text = String(count2)
-                    }
-                    if let count3 = answerChoice3 {
-                        resultsView.response3Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count3) / CGFloat(maxCount), height: talliesBarHeight)
-                        resultsView.response3Count.text = String(count3)
-                    }
-                    if let count4 = answerChoice4 {
-                        resultsView.response4Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count4) / CGFloat(maxCount), height: talliesBarHeight)
-                        resultsView.response4Count.text = String(count4)
-                    }
+
+                    let count1 = answerChoice1 ?? 0
+                    resultsView.response1Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count1) / CGFloat(maxCount), height: talliesBarHeight)
+                    resultsView.response1Count.text = String(count1)
+                    let count2 = answerChoice2 ?? 0
+                    resultsView.response2Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count2) / CGFloat(maxCount), height: talliesBarHeight)
+                    resultsView.response2Count.text = String(count2)
+                    let count3 = answerChoice3 ?? 0
+                    resultsView.response3Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count3) / CGFloat(maxCount), height: talliesBarHeight)
+                    resultsView.response3Count.text = String(count3)
+                    let count4 = answerChoice4 ?? 0
+                    resultsView.response4Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count4) / CGFloat(maxCount), height: talliesBarHeight)
+                    resultsView.response4Count.text = String(count4)
                 })
             }
             self.updateViewContent(newView: resultsView)
@@ -311,9 +290,6 @@ class TopicInfoViewController: UIViewController {
     
     @objc func learnCardXTapped(sender: UIButton!) {
         self.loadLearnLanding()
-    }
-    @objc func startWeighIn() {
-        self.loadWeighInSelect()
     }
     @objc func answer1Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice1
@@ -355,13 +331,13 @@ class TopicInfoViewController: UIViewController {
     }
     private func saveWeighInResponse() {
         // TODO: move db code
-        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef,
-            let topicKey = TopicData.topics[self.selectedTopicKey!]?.topicKey,
-            let answer = self.selectedAnswer {
-            
+        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
+            , let topicKey = self.topicKey
+            , let answer = self.selectedAnswer {
+
             let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
             let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
-            
+
             dbRef.child(responsesPath).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? NSInteger {
                     dbRef.child(responsesPath).setValue(value + 1)
