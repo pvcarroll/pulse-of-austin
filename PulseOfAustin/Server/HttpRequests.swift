@@ -39,7 +39,7 @@ class HTTPRequests {
     //
     
     func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
-        dbRef?.child("topics").observeSingleEvent(of: .value) { (snapshot) in
+        dbRef?.child("exploreTopics").observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? NSDictionary {
                 var exploreTopics = [ExploreTopic]()
                 value.allKeys.forEach({ (key) in
