@@ -91,10 +91,6 @@ class HTTPRequests {
         })
     }
     
-    static func getInfoCards(topicKey: String, completion: @escaping () -> ()) {
-        
-    }
-    
     static func getWeighInResponses(topicKey: String, completion: @escaping ([String : Any]) -> ()) {
         let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
         dbRef?.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
