@@ -157,23 +157,18 @@ class ProfileViewController: UIViewController {
     }
     
     private func fetchUserInfo() {
-        // TODO: move db query
-        if let uid = Auth.auth().currentUser?.uid
-            , let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-            dbRef.child(AppConstants.dbUsersPath)
-                .child(uid)
-                .observeSingleEvent(of: .value, with: { (snapshot) in
-                    if let values = snapshot.value as? [String: Any]
-                        , let email = values[AppConstants.email] as? String
-                        , let userName = values[AppConstants.name] as? String
-                        , let address = values[AppConstants.address] as? String
-                        , let zipCode = values[AppConstants.zipCode] as? String
-                        , let councilDistrict = values[AppConstants.councilDistrict] as? Int {
-                        self.title = userName
-                        self.homeAddress = "\(address), Austin, TX \(zipCode)"
-                        self.userData = UserData(userID: uid, address: address, zipCode: zipCode, email: email, councilDistrict: councilDistrict)
-                    }
-                })
+        if let uid = Auth.auth().currentUser?.uid {
+            HTTPRequests.getUserInfo(uid: uid) { (values) in
+                if let email = values[AppConstants.email] as? String
+                    , let userName = values[AppConstants.name] as? String
+                    , let address = values[AppConstants.address] as? String
+                    , let zipCode = values[AppConstants.zipCode] as? String
+                    , let councilDistrict = values[AppConstants.councilDistrict] as? Int {
+                    self.title = userName
+                    self.homeAddress = "\(address), Austin, TX \(zipCode)"
+                    self.userData = UserData(userID: uid, address: address, zipCode: zipCode, email: email, councilDistrict: councilDistrict)
+                }
+            }
         }
     }
     
