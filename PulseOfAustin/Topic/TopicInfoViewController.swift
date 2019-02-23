@@ -174,10 +174,12 @@ class TopicInfoViewController: UIViewController {
     private func loadWeighInSelect() {
         self.pageControl.numberOfPages = 3
         if let weighInSelectView = UINib(nibName: "WeighInSelect", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInSelect?,
-                let weightInCardFrame = self.cardFrame {
+                .instantiate(withOwner: self, options: nil).first as! WeighInSelect?
+            , let weightInCardFrame = self.cardFrame {
             
             weighInSelectView.frame = weightInCardFrame
+            
+            weighInSelectView.prompt.text = topicData?.weighInPrompt
             
             weighInSelectView.answer1Button.setTitle(topicData?.weighInChoices[0], for: .normal)
             weighInSelectView.answer2Button.setTitle(topicData?.weighInChoices[1], for: .normal)

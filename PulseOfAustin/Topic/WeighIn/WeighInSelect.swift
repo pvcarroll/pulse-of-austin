@@ -11,6 +11,7 @@ import UIKit
 class WeighInSelect: UIView {
     
     @IBOutlet var cardTitle: UILabel!
+    @IBOutlet weak var prompt: UILabel!
     @IBOutlet var answerButtonsStackView: UIStackView!
     @IBOutlet var answer1Button: UIButton!
     @IBOutlet var answer2Button: UIButton!

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,12 +16,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-4b-iDj" userLabel="Card Title">
-                    <rect key="frame" x="20" y="50" width="335" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-d7-X0Y">
+                    <rect key="frame" x="20" y="40" width="335" height="51"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-4b-iDj" userLabel="Card Title">
+                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prompt" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txv-Hl-5Wv" userLabel="Prompt">
+                            <rect key="frame" x="0.0" y="30.5" width="56.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-se-LFp" userLabel="Answer Buttons Stack View">
                     <rect key="frame" x="30" y="203.5" width="315" height="220"/>
                     <subviews>
@@ -51,12 +62,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="BQo-4b-iDj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="2GP-Bx-TSg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A6l-se-LFp" secondAttribute="trailing" constant="30" id="7Pq-X7-Ny5"/>
-                <constraint firstItem="A6l-se-LFp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D2w-hA-iIF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bAM-d7-X0Y" secondAttribute="trailing" constant="20" id="7lf-pX-dpA"/>
+                <constraint firstItem="A6l-se-LFp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="250" id="D2w-hA-iIF"/>
                 <constraint firstItem="A6l-se-LFp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="GqN-j7-RkY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BQo-4b-iDj" secondAttribute="trailing" constant="20" id="bNc-Lz-h5l"/>
-                <constraint firstItem="BQo-4b-iDj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fDE-vX-064"/>
+                <constraint firstItem="A6l-se-LFp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bAM-d7-X0Y" secondAttribute="bottom" constant="10" id="MCb-ZZ-1mh"/>
+                <constraint firstItem="bAM-d7-X0Y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="WE9-J9-XUy"/>
+                <constraint firstItem="bAM-d7-X0Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="mbJ-0t-H52"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -66,8 +78,9 @@
                 <outlet property="answer3Button" destination="g7U-eg-IJg" id="275-K4-sMi"/>
                 <outlet property="answerButtonsStackView" destination="A6l-se-LFp" id="aop-Af-WHa"/>
                 <outlet property="cardTitle" destination="BQo-4b-iDj" id="G2E-oK-K1u"/>
+                <outlet property="prompt" destination="txv-Hl-5Wv" id="u7Q-es-Yyi"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="35.5"/>
+            <point key="canvasLocation" x="32.799999999999997" y="34.632683658170919"/>
         </view>
     </objects>
 </document>
