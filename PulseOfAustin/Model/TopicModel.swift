@@ -13,6 +13,7 @@ struct TopicData {
     let title: String
     let learnLabel: String
     let mapLabel: String
+    let infoSlides: [String]
     let weighInPrompt: String
     let weighInChoices: [String]
 }

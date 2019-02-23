@@ -69,10 +69,21 @@ class HTTPRequests {
                 sortedChoiceKeys.forEach({ (key) in
                     weighInChoices.append(choicesDictionary[key] as! String)
                 })
+                var infoSlides = [String]()
+                if let infoSlidesDict = value["infoSlides"] as? NSDictionary
+                    , let infoSlideKeys = infoSlidesDict.allKeys as? [String] {
+                    infoSlideKeys.sorted(by: { $0 < $1 }).forEach({ (slide) in
+                        if let slideString = infoSlidesDict[slide] as? String {
+                            infoSlides.append(slideString)
+                        }
+                    })
+                }
+                
                 let topicData = TopicData(topicKey: topicKey,
                                           title: title,
                                           learnLabel: learnLabel,
                                           mapLabel: mapLabel,
+                                          infoSlides: infoSlides,
                                           weighInPrompt: weighInPrompt,
                                           weighInChoices: weighInChoices)
                 completion(topicData)

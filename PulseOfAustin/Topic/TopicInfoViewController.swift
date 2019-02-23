@@ -133,7 +133,7 @@ class TopicInfoViewController: UIViewController {
         // Insert card content for each slide into HTML template
         var htmlSlides = [String]()
         let htmlTemplate = HTMLStrings.htmlTemplate
-        for cardContent in HTMLStrings.affordableHousingCardContent {
+        for cardContent in topicData?.infoSlides ?? [] {
             htmlSlides.append(htmlTemplate.replacingOccurrences(of: "#HTML_CONTENT#", with: cardContent))
         }
 
