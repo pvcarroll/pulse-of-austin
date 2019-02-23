@@ -62,7 +62,7 @@ class CreateAccountViewController: UIViewController {
                         , let address = self.addressField.text
                         , let zipCode = self.zipCodeField.text else { return }
                     // Get city council district from address
-                    HTTPRequests().getCouncilDistrict(address: address, completion: { councilDistrict in
+                    HTTPRequests.getCouncilDistrict(address: address, completion: { councilDistrict in
                         if councilDistrict == 0 {
                             self.presentAlertModal(title: "",
                                                    message: "We can't find your city council district in the city's records. Please enter it here: ")

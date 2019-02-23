@@ -33,7 +33,7 @@ class BasicInfoViewController: UIViewController {
         guard let newEmail = self.emailField.text else {return}
         activityIndicatorView.startAnimating()
         if newAddress != originalAddress {
-            HTTPRequests().getCouncilDistrict(address: newAddress, completion: { councilDistrict in
+            HTTPRequests.getCouncilDistrict(address: newAddress, completion: { councilDistrict in
                 if councilDistrict == 0 {
                     self.presentAlertModal(title: "",
                                            message: "We can't find your city council district in the city's records.")

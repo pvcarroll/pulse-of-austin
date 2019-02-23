@@ -24,7 +24,7 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gearIcon"), style: .plain, target: self, action: nil)
         
-        HTTPRequests().fetchExploreTopics { (exploreTopics) in
+        HTTPRequests.fetchExploreTopics { (exploreTopics) in
             self.exploreTopics = exploreTopics
             self.tableView.reloadData()
         }

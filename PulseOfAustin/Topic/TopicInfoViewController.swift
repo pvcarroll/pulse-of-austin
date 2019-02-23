@@ -80,7 +80,7 @@ class TopicInfoViewController: UIViewController {
         self.weighInButton.setTitleColor(UIColor.darkText, for: .normal)
         self.weighInButtonUnderline.backgroundColor = UIColor.basicsBarBlue
         
-        HTTPRequests().fetchTopicData(topicKey: self.topicKey!) { (topicData) in
+        HTTPRequests.fetchTopicData(topicKey: self.topicKey!) { (topicData) in
             self.title = topicData.title
             self.topicData = topicData
             self.loadLearnLanding()
@@ -139,11 +139,11 @@ class TopicInfoViewController: UIViewController {
 
         // Create cards and add to scroll view
         for i in 0..<htmlSlides.count {
-            guard let card = UINib(nibName: "LearnCard", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCard? else { return }
+            guard let card = UINib(nibName: "LearnCard", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnCard? else { return }
             
             let cardWidth = learnCardFrame.width
-            card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth,
-                                                y: 0),
+            card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth, y: 0),
                                 size: learnCardFrame.size)
             // First card opaque, others translucent
             card.alpha = ((i == 0) ? 1.0 : 0.5)
@@ -154,7 +154,6 @@ class TopicInfoViewController: UIViewController {
             cardsScrollView?.addSubview(card)
             cardsScrollView?.contentSize.width += card.frame.width
         }
-        
         self.updateViewContent(newView: cardsContainer)
     }
     
@@ -243,7 +242,7 @@ class TopicInfoViewController: UIViewController {
             
             // Set response bar lengths based on count
             if let topicKey = self.topicKey {
-                HTTPRequests().getWeighInResponses(topicKey: topicKey) { values in
+                HTTPRequests.getWeighInResponses(topicKey: topicKey) { values in
                     
                     let answerChoice1 = values["answerChoice1"] as? Int
                     let answerChoice2 = values["answerChoice2"] as? Int
@@ -330,7 +329,7 @@ class TopicInfoViewController: UIViewController {
     private func saveWeighInResponse() {
         if let topicKey = self.topicKey, let answer = self.selectedAnswer {
             let elaborateResponse = self.elaborateView?.response
-            HTTPRequests().saveWeighInResponse(topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
+            HTTPRequests.saveWeighInResponse(topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
                 self.loadWeighInResults()
             }
         }

@@ -11,12 +11,12 @@ import Alamofire
 
 class HTTPRequests {
     
-    private let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
-    private let addressToDistrictURL = "https://www.austintexas.gov/gis/rest/Geocode/COA_Address_Locator/GeocodeServer/findAddressCandidates"
+    private static let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
     
-    func getCouncilDistrict(address: String, completion: @escaping (Int) -> ()) {
+    static func getCouncilDistrict(address: String, completion: @escaping (Int) -> ()) {
+        let addressToDistrictURL = "https://www.austintexas.gov/gis/rest/Geocode/COA_Address_Locator/GeocodeServer/findAddressCandidates"
         let streetParam = address.replacingOccurrences(of: " ", with: "+")
-        let url = "\(self.addressToDistrictURL)?street=\(streetParam)&outFields=*&f=pjson"
+        let url = "\(addressToDistrictURL)?street=\(streetParam)&outFields=*&f=pjson"
         Alamofire.request(url).responseJSON(completionHandler: { response in
             if let json = response.result.value as? NSDictionary
                 , let candidates = json["candidates"] as? NSArray?
@@ -38,7 +38,7 @@ class HTTPRequests {
     // MARK:- Firebase Database
     //
     
-    func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
+    static func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
         dbRef?.child("exploreTopics").observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? NSDictionary {
                 var exploreTopics = [ExploreTopic]()
@@ -55,7 +55,7 @@ class HTTPRequests {
         }
     }
     
-    func fetchTopicData(topicKey: String, completion: @escaping (TopicData) -> ()) {
+    static func fetchTopicData(topicKey: String, completion: @escaping (TopicData) -> ()) {
         dbRef?.child("topicData").child(topicKey).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? NSDictionary
                 , let title = value["title"] as? String
@@ -80,7 +80,11 @@ class HTTPRequests {
         })
     }
     
-    func getWeighInResponses(topicKey: String, completion: @escaping ([String : Any]) -> ()) {
+    static func getInfoCards(topicKey: String, completion: @escaping () -> ()) {
+        
+    }
+    
+    static func getWeighInResponses(topicKey: String, completion: @escaping ([String : Any]) -> ()) {
         let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
         dbRef?.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
             guard let values = snapshot.value as? [String: Any] else {return}
@@ -88,7 +92,7 @@ class HTTPRequests {
         })
     }
     
-    func saveWeighInResponse(topicKey: String, answer: AnswerIndex, elaborateResponse: String?, completion: @escaping () -> ()) {
+    static func saveWeighInResponse(topicKey: String, answer: AnswerIndex, elaborateResponse: String?, completion: @escaping () -> ()) {
         let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
         let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
         
