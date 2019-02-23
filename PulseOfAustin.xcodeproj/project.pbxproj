@@ -79,8 +79,6 @@
 		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
 		75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD07E209F4F93008AD469 /* WeighInResults.swift */; };
 		75BCD08220A7B741008AD469 /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD08120A7B741008AD469 /* TopicData.swift */; };
-		75BDBDB920D5701E00BE0E84 /* WeighInLanding.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */; };
-		75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */; };
 		75E29F9220EEFEC20086F4D8 /* OnboardingLastSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */; };
 		75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */; };
 		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
@@ -195,8 +193,6 @@
 		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
 		75BCD07E209F4F93008AD469 /* WeighInResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInResults.swift; sourceTree = "<group>"; };
 		75BCD08120A7B741008AD469 /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
-		75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInLanding.xib; sourceTree = "<group>"; };
-		75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInLanding.swift; sourceTree = "<group>"; };
 		75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingLastSlide.xib; sourceTree = "<group>"; };
 		75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastSlide.swift; sourceTree = "<group>"; };
 		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -503,8 +499,6 @@
 		75BCD077209E628B008AD469 /* WeighIn */ = {
 			isa = PBXGroup;
 			children = (
-				75BDBDB820D5701E00BE0E84 /* WeighInLanding.xib */,
-				75BDBDBA20D5702E00BE0E84 /* WeighInLanding.swift */,
 				75B9374F2097451700221467 /* WeighInSelect.xib */,
 				75B937512097453500221467 /* WeighInSelect.swift */,
 				75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */,
@@ -646,7 +640,6 @@
 				752EF79F207C5DDB0046743A /* GoogleService-Info.plist in Resources */,
 				75519B4E20E924D700463BB1 /* Login.storyboard in Resources */,
 				752EF73C207C571F0046743A /* Assets.xcassets in Resources */,
-				75BDBDB920D5701E00BE0E84 /* WeighInLanding.xib in Resources */,
 				752EF73A207C571E0046743A /* Main.storyboard in Resources */,
 				757C0FB420C42ECC0018C560 /* LearnBreakdown.xib in Resources */,
 				75FE51B320C3020F00ABE7FD /* LearnLanding.xib in Resources */,
@@ -820,7 +813,6 @@
 				755C7BA220824C8F00554399 /* ExploreViewController.swift in Sources */,
 				755E7117217B839E00E9A229 /* District5.swift in Sources */,
 				757C0FB220C42E9C0018C560 /* LearnBreakdown.swift in Sources */,
-				75BDBDBB20D5702E00BE0E84 /* WeighInLanding.swift in Sources */,
 				75FBE7B522189548000EE369 /* ExploreTopic.swift in Sources */,
 				751A091421A9C2700077ACFC /* BeatsViewController.swift in Sources */,
 				75FBE7B722190165000EE369 /* TopicModel.swift in Sources */,
