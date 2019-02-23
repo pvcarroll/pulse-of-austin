@@ -192,7 +192,7 @@ class TopicInfoViewController: UIViewController {
     }
     
     // Weigh In Screen 2: Elaborate
-    private func loadWeighInElaborate(answerText: String) {
+    private func loadWeighInElaborate(answerText: String, elaborateRequired: Bool = false) {
         self.pageControl.currentPage = 1
         if let elaborateView = UINib(nibName: "WeighInElaborate", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! WeighInElaborate?,
@@ -200,8 +200,7 @@ class TopicInfoViewController: UIViewController {
             self.elaborateView = elaborateView
             elaborateView.frame = weightInCardFrame
             var cardTitleText = "ELABORATE"
-            // TODO: Dynamic "other" text
-            if answerText == "Other Thoughts" {
+            if elaborateRequired {
                 elaborateView.submitButton.isUserInteractionEnabled = false
             } else {
                 cardTitleText += " (OPTIONAL)"
@@ -304,7 +303,7 @@ class TopicInfoViewController: UIViewController {
     @objc func answer3Selected(sender: UIButton!) {
         self.selectedAnswer = .answerChoice3
         let answerText = sender.titleLabel?.text! ?? ""
-        self.loadWeighInElaborate(answerText: answerText)
+        self.loadWeighInElaborate(answerText: answerText, elaborateRequired: answerText == "Other Thoughts")
     }
     @objc func submitWeighInTapped(recognizer: UITapGestureRecognizer) {
         guard let _ = Auth.auth().currentUser else {
@@ -320,6 +319,7 @@ class TopicInfoViewController: UIViewController {
         self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
         self.topicInfoViewContainer.addSubview(newView)
     }
+    
     private func presentLogin() {
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         loginVC.isIntervention = true
@@ -329,27 +329,13 @@ class TopicInfoViewController: UIViewController {
         }
         self.present(loginVC, animated: true, completion: nil)
     }
+    
     private func saveWeighInResponse() {
-        // TODO: move db code
-        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
-            , let topicKey = self.topicKey
-            , let answer = self.selectedAnswer {
-
-            let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
-            let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
-
-            dbRef.child(responsesPath).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? NSInteger {
-                    dbRef.child(responsesPath).setValue(value + 1)
-                } else {
-                    dbRef.child(responsesPath).setValue(1)
-                }
-                let elaborateResponse = self.elaborateView?.response
-                if !(elaborateResponse ?? "").isEmpty {
-                    dbRef.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
-                }
+        if let topicKey = self.topicKey, let answer = self.selectedAnswer {
+            let elaborateResponse = self.elaborateView?.response
+            HTTPRequests().saveWeighInResponse(topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
                 self.loadWeighInResults()
-            })
+            }
         }
     }
 }

@@ -55,7 +55,7 @@ class HTTPRequests {
         }
     }
     
-    func fetchTopicData(topicKey: String, callback: @escaping (TopicData) -> ()) {
+    func fetchTopicData(topicKey: String, completion: @escaping (TopicData) -> ()) {
         dbRef?.child("topicData").child(topicKey).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? NSDictionary
                 , let title = value["title"] as? String
@@ -75,8 +75,25 @@ class HTTPRequests {
                                           mapLabel: mapLabel,
                                           weighInPrompt: weighInPrompt,
                                           weighInChoices: weighInChoices)
-                callback(topicData)
+                completion(topicData)
             }
+        })
+    }
+    
+    func saveWeighInResponse(topicKey: String, answer: AnswerIndex, elaborateResponse: String?, completion: @escaping () -> ()) {
+        let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
+        let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
+        
+        dbRef?.child(responsesPath).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSInteger {
+                self.dbRef?.child(responsesPath).setValue(value + 1)
+            } else {
+                self.dbRef?.child(responsesPath).setValue(1)
+            }
+            if !(elaborateResponse ?? "").isEmpty {
+                self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
+            }
+            completion()
         })
     }
 }
