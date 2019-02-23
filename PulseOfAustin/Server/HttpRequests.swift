@@ -14,7 +14,7 @@ class HTTPRequests {
     private let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
     private let addressToDistrictURL = "https://www.austintexas.gov/gis/rest/Geocode/COA_Address_Locator/GeocodeServer/findAddressCandidates"
     
-    func getCouncilDistrict(address: String, callback: @escaping (Int) -> ()) {
+    func getCouncilDistrict(address: String, completion: @escaping (Int) -> ()) {
         let streetParam = address.replacingOccurrences(of: " ", with: "+")
         let url = "\(self.addressToDistrictURL)?street=\(streetParam)&outFields=*&f=pjson"
         Alamofire.request(url).responseJSON(completionHandler: { response in
@@ -25,11 +25,11 @@ class HTTPRequests {
                 , let firstCandidate = candidates?[0] as? NSDictionary {
                 if let attributes = firstCandidate["attributes"] as? NSDictionary {
                     if let councilDistrictString = attributes["CouncilDistrict"] as? String, let councilDistrict = Int(councilDistrictString) {
-                        callback(councilDistrict)
+                        completion(councilDistrict)
                     }
                 }
             } else {
-                callback(0)
+                completion(0)
             }
         })
     }
@@ -77,6 +77,14 @@ class HTTPRequests {
                                           weighInChoices: weighInChoices)
                 completion(topicData)
             }
+        })
+    }
+    
+    func getWeighInResponses(topicKey: String, completion: @escaping ([String : Any]) -> ()) {
+        let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
+        dbRef?.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let values = snapshot.value as? [String: Any] else {return}
+            completion(values)
         })
     }
     

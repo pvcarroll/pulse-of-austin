@@ -240,31 +240,26 @@ class TopicInfoViewController: UIViewController {
             }
             
             // Set response bar lengths based on count
-            // TODO: Move db code out of VC
-            if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef
-                , let topicKey = self.topicKey {
-
-                let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
-                
-                dbRef.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
-                    guard let values = snapshot.value as? [String: Any] else {return}
+            if let topicKey = self.topicKey {
+                HTTPRequests().getWeighInResponses(topicKey: topicKey) { values in
+                    
                     let answerChoice1 = values["answerChoice1"] as? Int
                     let answerChoice2 = values["answerChoice2"] as? Int
                     let answerChoice3 = values["answerChoice3"] as? Int
                     let answerChoice4 = values["answerChoice4"] as? Int
-
+                    
                     guard var maxCount = answerChoice1 else {return}
                     for answerChoiceCount in [answerChoice1, answerChoice2, answerChoice3, answerChoice4] {
                         if let count = answerChoiceCount, count > maxCount {
                             maxCount = count
                         }
                     }
-
+                    
                     // Set counts and bar lengths
                     let maxWidth = resultsView.response1View.frame.width - resultsView.response1Count.frame.width
-
+                    
                     let talliesBarHeight = resultsView.response1Tallies.frame.size.height
-
+                    
                     let count1 = answerChoice1 ?? 0
                     resultsView.response1Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count1) / CGFloat(maxCount), height: talliesBarHeight)
                     resultsView.response1Count.text = String(count1)
@@ -277,7 +272,7 @@ class TopicInfoViewController: UIViewController {
                     let count4 = answerChoice4 ?? 0
                     resultsView.response4Tallies.frame.size = CGSize(width: maxWidth * CGFloat(count4) / CGFloat(maxCount), height: talliesBarHeight)
                     resultsView.response4Count.text = String(count4)
-                })
+                }
             }
             self.updateViewContent(newView: resultsView)
         }
