@@ -38,6 +38,11 @@ class HTTPRequests {
     // MARK:- Firebase Database
     //
     
+    static func saveNewUser(uid: String, userData: [String : Any], completion: @escaping () -> ()) {
+        dbRef?.child(AppConstants.dbUsersPath).child(uid).setValue(userData)
+        completion()
+    }
+    
     static func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
         dbRef?.child("exploreTopics").observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? NSDictionary {

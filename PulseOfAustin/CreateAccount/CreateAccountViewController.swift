@@ -56,33 +56,39 @@ class CreateAccountViewController: UIViewController {
                 self.createAnAccountButton.isEnabled = true
             } else {
                 // Auth user created
-                // Create user in database with all fields
-                if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-                    guard let name = self.nameField.text
-                        , let address = self.addressField.text
-                        , let zipCode = self.zipCodeField.text else { return }
-                    // Get city council district from address
-                    HTTPRequests.getCouncilDistrict(address: address, completion: { councilDistrict in
-                        if councilDistrict == 0 {
-                            self.presentAlertModal(title: "",
-                                                   message: "We can't find your city council district in the city's records. Please enter it here: ")
-                            self.createAnAccountButton.isEnabled = true
-                            self.deleteAuthCurrentUser()
-                            return
-                        }
-                        guard let uid = authResult?.user.uid else {
-                            self.deleteAuthCurrentUser()
-                            return
-                        }
-                        let userData = [AppConstants.name: name,
-                                        AppConstants.email: email,
-                                        AppConstants.address: address,
-                                        AppConstants.zipCode: zipCode,
-                                        AppConstants.councilDistrict: councilDistrict] as [String : Any]
-                        dbRef.child(AppConstants.dbUsersPath).child(uid).setValue(userData)
-                        self.displaySuccessAlertAndGoToMainScreen()
-                    })
+                guard let uid = authResult?.user.uid else {
+                    self.deleteAuthCurrentUser()
+                    return
                 }
+                guard let name = self.nameField.text
+                    , let address = self.addressField.text
+                    , let zipCode = self.zipCodeField.text else { return }
+                // Get city council district from address
+                HTTPRequests.getCouncilDistrict(address: address, completion: { councilDistrict in
+                    if councilDistrict == 0 {
+                        let alert = UIAlertController(title: "",
+                                                      message: "We can't find your city council district in the city's records. Please enter it here: ",
+                                                      preferredStyle: .alert)
+                        alert.addTextField(configurationHandler: { (textField) in
+                            textField.placeholder = "District"
+                            textField.keyboardType = .numberPad
+                        })
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                            if let district = Int(alert?.textFields![0].text ?? "0")
+                                , (1...10).contains(district) {
+                                self.saveUser(uid: uid, name: name, email: email, address: address, zipCode: zipCode, councilDistrict: district)
+                            } else {
+                                self.presentAlertModal(title: "", message: "Austin city council districts are numbered 1-10")
+                                self.deleteAuthCurrentUser()
+                            }
+                        }))
+                        self.present(alert, animated: true)
+                        self.createAnAccountButton.isEnabled = true
+                        self.activityIndicatorView.stopAnimating()
+                    } else {
+                        self.saveUser(uid: uid, name: name, email: email, address: address, zipCode: zipCode, councilDistrict: councilDistrict)
+                    }
+                })
             }
         }
     }
@@ -225,6 +231,17 @@ class CreateAccountViewController: UIViewController {
                 // Auth user deleted
             }
         })
+    }
+    
+    private func saveUser(uid: String, name: String, email: String, address: String, zipCode: String, councilDistrict: Int) {
+        let userData = [AppConstants.name: name,
+                        AppConstants.email: email,
+                        AppConstants.address: address,
+                        AppConstants.zipCode: zipCode,
+                        AppConstants.councilDistrict: councilDistrict] as [String : Any]
+        HTTPRequests.saveNewUser(uid: uid, userData: userData) {
+            self.displaySuccessAlertAndGoToMainScreen()
+        }
     }
 }
 
