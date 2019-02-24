@@ -67,7 +67,7 @@ class CreateAccountViewController: UIViewController {
                 HTTPRequests.getCouncilDistrict(address: address, completion: { councilDistrict in
                     if councilDistrict == 0 {
                         let alert = UIAlertController(title: "",
-                                                      message: "We can't find your city council district in the city's records. Please enter it here: ",
+                                                      message: "We can't find your city council district (1-10) in the city's records. Please enter it here: ",
                                                       preferredStyle: .alert)
                         alert.addTextField(configurationHandler: { (textField) in
                             textField.placeholder = "District"

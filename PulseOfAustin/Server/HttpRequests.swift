@@ -43,6 +43,27 @@ class HTTPRequests {
         completion()
     }
     
+    static func saveUserInfo(userID: String, address: String, email: String, zipCode: String, councilDistrict: Int?, completion: @escaping (_ error: Error?) -> ()) {
+        if let councilDistrict = councilDistrict {
+            dbRef?.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
+                "address": address,
+                "councilDistrict": councilDistrict,
+                "zipCode": zipCode,
+                "email": email
+                ], withCompletionBlock: { (error, ref) in
+                    completion(error)
+            })
+        } else {
+            dbRef?.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
+                "address": address,
+                "zipCode": zipCode,
+                "email": email
+                ], withCompletionBlock: { (error, ref) in
+                    completion(error)
+            })
+        }
+    }
+    
     static func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
         dbRef?.child("exploreTopics").observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? NSDictionary {

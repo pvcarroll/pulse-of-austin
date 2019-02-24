@@ -84,25 +84,8 @@ class BasicInfoViewController: UIViewController {
     }
     
     private func saveUserInfo(userID: String, address: String, email: String, zipCode: String, councilDistrict: Int?) {
-        if let dbRef = (UIApplication.shared.delegate as! AppDelegate).dbRef {
-            if let councilDistrict = councilDistrict {
-                dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
-                    "address": address,
-                    "councilDistrict": councilDistrict,
-                    "zipCode": zipCode,
-                    "email": email
-                    ], withCompletionBlock: { (error, ref) in
-                        self.updateUserCompletion(error: error)
-                })
-            } else {
-                dbRef.child(AppConstants.dbUsersPath).child(userID).updateChildValues([
-                    "address": address,
-                    "zipCode": zipCode,
-                    "email": email
-                    ], withCompletionBlock: { (error, ref) in
-                        self.updateUserCompletion(error: error)
-                })
-            }
+        HTTPRequests.saveUserInfo(userID: userID, address: address, email: email, zipCode: zipCode, councilDistrict: councilDistrict) { error in
+            self.updateUserCompletion(error: error)
         }
     }
     
