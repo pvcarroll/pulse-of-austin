@@ -35,6 +35,7 @@ class WeighInResults: UIView {
         self.yourInputWasSentLabel.font = UIFont.buttonFont
         self.yourInputWasSentLabel.textColor = UIColor.whiteText
         self.yourInputWasSentView.layer.cornerRadius = 5
+        self.yourInputWasSentView.isHidden = true
         
         self.cardTitle.font = UIFont.cardTitle
         self.cardTitle.textColor = UIColor.darkGray74
@@ -61,7 +62,10 @@ class WeighInResults: UIView {
         self.readVoicesButton.layer.cornerRadius = self.readVoicesButton.frame.height / 2
         
         self.readVoicesButton.addBottomShadow()
-        
+    }
+    
+    func showInputWasSentToast() {
+        self.yourInputWasSentView.isHidden = false
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in
             self.yourInputWasSentView.isHidden = true
         })

@@ -10,6 +10,7 @@ import Foundation
 
 class AppConstants {
     static let dbUsersPath = "users"
+    static let dbTopicsAnswered = "topicsAnswered"
     
     // DB user fields
     static let name = "name"

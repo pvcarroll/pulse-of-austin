@@ -57,7 +57,19 @@ class TopicInfoViewController: UIViewController {
     @IBAction func weighInButtonTapped(_ sender: Any) {
         self.weighInButtonUnderline.backgroundColor = UIColor.darkGray74
         self.learnButtonUnderline.backgroundColor = UIColor.basicsBarBlue
-        self.loadWeighInSelect()
+        
+        if let userID = Auth.auth().currentUser?.uid
+            , let topicKey = topicData?.topicKey {
+            HTTPRequests.checkIfTopicAnswered(userID: userID, topicKey: topicKey) { (answered) in
+                if answered {
+                    self.loadWeighInResults(alreadyAnswered: true)
+                } else {
+                    self.loadWeighInSelect()
+                }
+            }
+        } else {
+            self.loadWeighInSelect()
+        }
     }
     
     //
@@ -221,11 +233,14 @@ class TopicInfoViewController: UIViewController {
     }
     
     // Weigh In Screen 3: Results
-    private func loadWeighInResults() {
+    private func loadWeighInResults(alreadyAnswered: Bool = false) {
         self.pageControl.currentPage = 2
         if let resultsView = UINib(nibName: "WeighInResults", bundle: nil)
-                .instantiate(withOwner: self, options: nil).first as! WeighInResults?,
-                let weightInCardFrame = self.cardFrame {
+                .instantiate(withOwner: self, options: nil).first as! WeighInResults?
+            , let weightInCardFrame = self.cardFrame {
+            if !alreadyAnswered {
+                resultsView.showInputWasSentToast()
+            }
             resultsView.frame = weightInCardFrame
             
             resultsView.response4View.isHidden = (self.topicData?.weighInChoices.count == 3)
@@ -327,9 +342,11 @@ class TopicInfoViewController: UIViewController {
     }
     
     private func saveWeighInResponse() {
-        if let topicKey = self.topicKey, let answer = self.selectedAnswer {
+        if let topicKey = self.topicKey
+            , let answer = self.selectedAnswer
+            , let uid = Auth.auth().currentUser?.uid {
             let elaborateResponse = self.elaborateView?.response
-            HTTPRequests.saveWeighInResponse(topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
+            HTTPRequests.saveWeighInResponse(uid: uid, topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
                 self.loadWeighInResults()
             }
         }

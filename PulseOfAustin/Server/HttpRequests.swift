@@ -64,7 +64,7 @@ class HTTPRequests {
         }
     }
     
-    static func fetchExploreTopics(callback: @escaping ([ExploreTopic]) -> ()) {
+    static func fetchExploreTopics(completion: @escaping ([ExploreTopic]) -> ()) {
         dbRef?.child("exploreTopics").observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? NSDictionary {
                 var exploreTopics = [ExploreTopic]()
@@ -76,7 +76,7 @@ class HTTPRequests {
                         exploreTopics.append(exploreTopic)
                     }
                 })
-                callback(exploreTopics)
+                completion(exploreTopics)
             }
         }
     }
@@ -125,7 +125,20 @@ class HTTPRequests {
         })
     }
     
-    static func saveWeighInResponse(topicKey: String, answer: AnswerIndex, elaborateResponse: String?, completion: @escaping () -> ()) {
+    static func checkIfTopicAnswered(userID: String, topicKey: String, completion: @escaping (Bool) -> ()) {
+        dbRef?.child(AppConstants.dbUsersPath).child(userID)
+            .child(AppConstants.dbTopicsAnswered).child(topicKey)
+            .observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let answered = snapshot.value as? Bool else {
+                    completion(false)
+                    return
+                }
+                completion(true)
+            })
+    }
+    
+    static func saveWeighInResponse(uid: String, topicKey: String, answer: AnswerIndex,
+                                    elaborateResponse: String?, completion: @escaping () -> ()) {
         let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
         let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
         
@@ -138,6 +151,11 @@ class HTTPRequests {
             if !(elaborateResponse ?? "").isEmpty {
                 self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
             }
+            dbRef?.child(AppConstants.dbUsersPath)
+                .child(uid)
+                .child(AppConstants.dbTopicsAnswered)
+                .child(topicKey)
+                .setValue(1)
             completion()
         })
     }
