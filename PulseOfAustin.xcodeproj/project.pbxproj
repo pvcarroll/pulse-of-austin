@@ -78,7 +78,6 @@
 		75BCD07B209E62CA008AD469 /* WeighInElaborate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */; };
 		75BCD07D209F4F82008AD469 /* WeighInResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BCD07C209F4F82008AD469 /* WeighInResults.xib */; };
 		75BCD07F209F4F93008AD469 /* WeighInResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD07E209F4F93008AD469 /* WeighInResults.swift */; };
-		75BCD08220A7B741008AD469 /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCD08120A7B741008AD469 /* TopicData.swift */; };
 		75E29F9220EEFEC20086F4D8 /* OnboardingLastSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */; };
 		75E29F9420EEFED50086F4D8 /* OnboardingLastSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */; };
 		75F4CC2E2157E95900F017EB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CC2D2157E95900F017EB /* PasswordViewController.swift */; };
@@ -192,7 +191,6 @@
 		75BCD07A209E62CA008AD469 /* WeighInElaborate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInElaborate.xib; sourceTree = "<group>"; };
 		75BCD07C209F4F82008AD469 /* WeighInResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeighInResults.xib; sourceTree = "<group>"; };
 		75BCD07E209F4F93008AD469 /* WeighInResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighInResults.swift; sourceTree = "<group>"; };
-		75BCD08120A7B741008AD469 /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
 		75E29F9120EEFEC20086F4D8 /* OnboardingLastSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingLastSlide.xib; sourceTree = "<group>"; };
 		75E29F9320EEFED50086F4D8 /* OnboardingLastSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastSlide.swift; sourceTree = "<group>"; };
 		75F4CC2D2157E95900F017EB /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				75B8BD712175859900059700 /* CouncilDistrictDefinitions */,
-				75BCD08120A7B741008AD469 /* TopicData.swift */,
 				758BF7E720F6EEDC0032C511 /* HTMLStrings.swift */,
 				75B8BD6F2171A4E800059700 /* CouncilDistrictDefinitions.swift */,
 			);
@@ -818,7 +815,6 @@
 				75FBE7B722190165000EE369 /* TopicModel.swift in Sources */,
 				7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */,
 				7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */,
-				75BCD08220A7B741008AD469 /* TopicData.swift in Sources */,
 				7523BD63214B5BCE00B648B8 /* BasicInfoViewController.swift in Sources */,
 				755E710F2177FE5200E9A229 /* District1.swift in Sources */,
 				755E7113217B732700E9A229 /* District3.swift in Sources */,
