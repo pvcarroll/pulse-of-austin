@@ -177,7 +177,7 @@
         <scene sceneID="0we-S1-rdN">
             <objects>
                 <navigationController storyboardIdentifier="ExploreNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cv5-VI-9Uz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="TabBar-Explore" id="mbs-5u-MGI">
+                    <tabBarItem key="tabBarItem" title="Explore" image="tabBarExploreUnselected" selectedImage="tabBarExploreSelected" id="mbs-5u-MGI">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -281,7 +281,8 @@
         <image name="HomeScreenStyle" width="750" height="1334"/>
         <image name="PulseLineIcon" width="332" height="96"/>
         <image name="TabBar-Beats" width="30" height="30"/>
-        <image name="TabBar-Explore" width="30" height="30"/>
         <image name="TabBar-Profile" width="22" height="30"/>
+        <image name="tabBarExploreSelected" width="31" height="31"/>
+        <image name="tabBarExploreUnselected" width="27" height="27"/>
     </resources>
 </document>

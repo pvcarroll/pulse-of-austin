@@ -54,7 +54,7 @@ class WeighInResults: UIView {
         self.response4Label.font = UIFont.introCardBody
         
         self.readVoicesButton.backgroundColor = UIColor.white
-        self.readVoicesButton.setTitle("READ VOICES", for: .normal)
+        self.readVoicesButton.setTitle("Perspectives", for: .normal)
         self.readVoicesButton.titleLabel?.font = UIFont.buttonFont
         self.readVoicesButton.setTitleColor(UIColor.customYellow, for: .normal)
         self.readVoicesButton.layer.borderColor = UIColor.lightGray.cgColor
