@@ -15,6 +15,7 @@ struct TopicData {
     let visualizeLabel: String
     let viewpointsLabel: String
     let milestonesLabel: String
+    let dateUpdated: String
     let infoSlides: [String]
     let weighInPrompt: String
     let weighInChoices: [String]

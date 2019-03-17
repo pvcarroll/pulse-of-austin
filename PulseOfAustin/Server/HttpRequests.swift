@@ -89,6 +89,7 @@ class HTTPRequests {
                 , let visualizeLabel = value["visualizeLabel"] as? String
                 , let viewpointsLabel = value["viewpointsLabel"] as? String
                 , let milestonesLabel = value["milestonesLabel"] as? String
+                , let dateUpdated = value["dateUpdated"] as? String
                 , let weighInPrompt = value["weighInPrompt"] as? String
                 , let choicesDictionary = value["weighInChoices"] as? NSDictionary
                 , let choiceKeys = choicesDictionary.allKeys as? [String] {
@@ -113,6 +114,7 @@ class HTTPRequests {
                                           visualizeLabel: visualizeLabel,
                                           viewpointsLabel: viewpointsLabel,
                                           milestonesLabel: milestonesLabel,
+                                          dateUpdated: dateUpdated,
                                           infoSlides: infoSlides,
                                           weighInPrompt: weighInPrompt,
                                           weighInChoices: weighInChoices)

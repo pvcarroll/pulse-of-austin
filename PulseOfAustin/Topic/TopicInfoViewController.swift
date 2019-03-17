@@ -122,9 +122,13 @@ class TopicInfoViewController: UIViewController {
             landingView.frame = self.topicInfoViewContainer.bounds
             landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             landingView.readUpLabel.text = self.topicData?.readUpLabel
+            landingView.readUpDateLabel.text = self.topicData?.dateUpdated
             landingView.mapLabel.text = self.topicData?.visualizeLabel
+            landingView.mapDateLabel.text = self.topicData?.dateUpdated
             landingView.viewpointsLabel.text = self.topicData?.viewpointsLabel
+            landingView.viewpointsDateLabel.text = self.topicData?.dateUpdated
             landingView.milestonesLabel.text = self.topicData?.milestonesLabel
+            landingView.milestonesDateLabel.text = self.topicData?.dateUpdated
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)

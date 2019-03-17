@@ -379,15 +379,19 @@
                 <outlet property="crestImage3" destination="IsS-0x-fE4" id="j78-2d-uqI"/>
                 <outlet property="draftLabel" destination="3a4-68-CwW" id="qoc-lc-MAR"/>
                 <outlet property="mapCell" destination="KiZ-uB-Jha" id="m8E-gh-sCR"/>
+                <outlet property="mapDateLabel" destination="4ve-jm-XuX" id="r5f-ak-kvw"/>
                 <outlet property="mapLabel" destination="bYl-FV-oMO" id="gnD-y9-HZy"/>
                 <outlet property="milestoneView" destination="Gf5-mj-6bm" id="XYg-Ky-4tR"/>
                 <outlet property="milestonesCell" destination="39x-Sp-4lH" id="CHq-5Z-45i"/>
+                <outlet property="milestonesDateLabel" destination="lzc-Cl-c7Z" id="Msk-Xs-64V"/>
                 <outlet property="milestonesLabel" destination="c9l-SG-Cuo" id="GbJ-tF-0z8"/>
                 <outlet property="readUpCell" destination="Irs-VZ-4ti" id="PpT-yv-8z7"/>
+                <outlet property="readUpDateLabel" destination="sU1-xS-F3Y" id="bc6-LZ-uxK"/>
                 <outlet property="readUpLabel" destination="Vgy-UC-pkr" id="pyi-eb-38f"/>
                 <outlet property="scopeLabel" destination="hLv-eX-dHA" id="hc2-QE-zNC"/>
                 <outlet property="stackView" destination="ZyK-xS-5dG" id="jm9-sP-kW2"/>
                 <outlet property="viewpointsCell" destination="Evh-dp-aYd" id="bYZ-20-9Xl"/>
+                <outlet property="viewpointsDateLabel" destination="mqq-dR-JSp" id="m65-aJ-mcC"/>
                 <outlet property="viewpointsLabel" destination="y5n-3u-COM" id="tR1-28-aYn"/>
             </connections>
             <point key="canvasLocation" x="31.199999999999999" y="-2.6986506746626691"/>

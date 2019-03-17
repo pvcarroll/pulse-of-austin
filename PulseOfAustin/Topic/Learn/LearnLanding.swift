@@ -13,13 +13,17 @@ class LearnLanding: UIScrollView {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var readUpCell: UIView!
     @IBOutlet weak var readUpLabel: UILabel!
+    @IBOutlet weak var readUpDateLabel: UILabel!
     @IBOutlet weak var mapCell: UIView!
     @IBOutlet weak var mapLabel: UILabel!
+    @IBOutlet weak var mapDateLabel: UILabel!
     @IBOutlet weak var viewpointsCell: UIView!
     @IBOutlet weak var viewpointsLabel: UILabel!
+    @IBOutlet weak var viewpointsDateLabel: UILabel!
     @IBOutlet weak var milestonesCell: UIView!
     @IBOutlet weak var milestoneView: UIView!
     @IBOutlet weak var milestonesLabel: UILabel!
+    @IBOutlet weak var milestonesDateLabel: UILabel!
     @IBOutlet weak var crestImage1: UIImageView!
     @IBOutlet weak var crestImage2: UIImageView!
     @IBOutlet weak var crestImage3: UIImageView!
