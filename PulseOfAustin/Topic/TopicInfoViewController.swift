@@ -121,15 +121,17 @@ class TopicInfoViewController: UIViewController {
                             .instantiate(withOwner: self, options: nil).first as! LearnLanding? {
             landingView.frame = self.topicInfoViewContainer.bounds
             landingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            landingView.infoLabel.text = self.topicData?.learnLabel
-            landingView.mapLabel.text = self.topicData?.mapLabel
+            landingView.readUpLabel.text = self.topicData?.readUpLabel
+            landingView.mapLabel.text = self.topicData?.visualizeLabel
+            landingView.viewpointsLabel.text = self.topicData?.viewpointsLabel
+            landingView.milestonesLabel.text = self.topicData?.milestonesLabel
             let scrollViewHeight = landingView.stackView.frame.height + landingView.milestoneView.frame.height + 40
             landingView.contentSize = CGSize(width: landingView.frame.width,
                                              height: scrollViewHeight)
             let infoRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnCards))
-            landingView.info.addGestureRecognizer(infoRecognizer)
+            landingView.readUpCell.addGestureRecognizer(infoRecognizer)
             let mapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnMap))
-            landingView.map.addGestureRecognizer(mapRecognizer)
+            landingView.mapCell.addGestureRecognizer(mapRecognizer)
             self.updateViewContent(newView: landingView)
         }
     }

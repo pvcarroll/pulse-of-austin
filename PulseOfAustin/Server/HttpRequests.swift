@@ -85,8 +85,10 @@ class HTTPRequests {
         dbRef?.child("topicData").child(topicKey).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? NSDictionary
                 , let title = value["title"] as? String
-                , let learnLabel = value["learnLabel"] as? String
-                , let mapLabel = value["mapLabel"] as? String
+                , let readUpLabel = value["readUpLabel"] as? String
+                , let visualizeLabel = value["visualizeLabel"] as? String
+                , let viewpointsLabel = value["viewpointsLabel"] as? String
+                , let milestonesLabel = value["milestonesLabel"] as? String
                 , let weighInPrompt = value["weighInPrompt"] as? String
                 , let choicesDictionary = value["weighInChoices"] as? NSDictionary
                 , let choiceKeys = choicesDictionary.allKeys as? [String] {
@@ -107,8 +109,10 @@ class HTTPRequests {
                 
                 let topicData = TopicData(topicKey: topicKey,
                                           title: title,
-                                          learnLabel: learnLabel,
-                                          mapLabel: mapLabel,
+                                          readUpLabel: readUpLabel,
+                                          visualizeLabel: visualizeLabel,
+                                          viewpointsLabel: viewpointsLabel,
+                                          milestonesLabel: milestonesLabel,
                                           infoSlides: infoSlides,
                                           weighInPrompt: weighInPrompt,
                                           weighInChoices: weighInChoices)

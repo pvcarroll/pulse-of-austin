@@ -11,12 +11,13 @@ import UIKit
 class LearnLanding: UIScrollView {
     
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var info: UIView!
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var map: UIView!
+    @IBOutlet weak var readUpCell: UIView!
+    @IBOutlet weak var readUpLabel: UILabel!
+    @IBOutlet weak var mapCell: UIView!
     @IBOutlet weak var mapLabel: UILabel!
-    @IBOutlet weak var perspectives: UIView!
-    @IBOutlet weak var perspectivesLabel: UILabel!
+    @IBOutlet weak var viewpointsCell: UIView!
+    @IBOutlet weak var viewpointsLabel: UILabel!
+    @IBOutlet weak var milestonesCell: UIView!
     @IBOutlet weak var milestoneView: UIView!
     @IBOutlet weak var milestonesLabel: UILabel!
     @IBOutlet weak var crestImage1: UIImageView!
@@ -30,15 +31,10 @@ class LearnLanding: UIScrollView {
         super.awakeFromNib()
         self.backgroundColor = UIColor.infoCardBackground
         
-        self.info.addBottomShadow()
-        self.map.addBottomShadow()
-        self.perspectives.addBottomShadow()
+        self.readUpCell.addBottomShadow()
+        self.mapCell.addBottomShadow()
+        self.viewpointsCell.addBottomShadow()
         
-        self.perspectivesLabel.text = "PERSPECTIVES"
-        self.infoLabel.font = UIFont.introCardBodyBold
-        self.mapLabel.font = UIFont.introCardBodyBold
-        self.perspectivesLabel.font = UIFont.introCardBodyBold
-        self.milestonesLabel.font = UIFont.introCardBodyBold
         self.crestImage1.backgroundColor = UIColor.infoCardBackground
         self.crestImage2.backgroundColor = UIColor.infoCardBackground
         self.crestImage3.backgroundColor = UIColor.infoCardBackground

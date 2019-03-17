@@ -11,8 +11,10 @@ import Foundation
 struct TopicData {
     let topicKey: String
     let title: String
-    let learnLabel: String
-    let mapLabel: String
+    let readUpLabel: String
+    let visualizeLabel: String
+    let viewpointsLabel: String
+    let milestonesLabel: String
     let infoSlides: [String]
     let weighInPrompt: String
     let weighInChoices: [String]
