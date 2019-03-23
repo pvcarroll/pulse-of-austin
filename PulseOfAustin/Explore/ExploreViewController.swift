@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ExploreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -28,6 +29,13 @@ class ExploreViewController: UIViewController, UITableViewDataSource, UITableVie
             self.exploreTopics = exploreTopics
             self.tableView.reloadData()
         }
+        // Set profile tab bar item title with logged in user's name
+        if let uid = Auth.auth().currentUser?.uid {
+            HTTPRequests.getUserName(uid: uid) { (name) in
+                self.tabBarController?.tabBar.items?[2].title = name
+            }
+        }
+
         self.latestLabel.textColor = UIColor.darkGray74
         tableView.register(UINib(nibName: "TopicCell", bundle: nil), forCellReuseIdentifier: "topicCell")
         self.tableView.rowHeight = UITableView.automaticDimension

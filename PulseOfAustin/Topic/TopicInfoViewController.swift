@@ -72,10 +72,6 @@ class TopicInfoViewController: UIViewController {
         }
     }
     
-    //
-    // MARK: Lifecycle Methods
-    //
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contentView.backgroundColor = UIColor.infoCardBackground
@@ -112,7 +108,7 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Learn Flow
+    // MARK:- Learn Flow
     //
     
     // Learn Screen 1: Landing
@@ -301,7 +297,7 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
-    // MARK: Event Handlers
+    // MARK:- Event Handlers
     //
     
     @objc func learnCardXTapped(sender: UIButton!) {
@@ -330,7 +326,7 @@ class TopicInfoViewController: UIViewController {
         self.saveWeighInResponse()
     }
     
-    // MARK: Private Methods
+    // MARK:- Private Methods
     
     private func updateViewContent(newView: UIView) {
         self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }

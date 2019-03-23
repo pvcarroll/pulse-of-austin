@@ -166,6 +166,15 @@ class HTTPRequests {
         })
     }
     
+    static func getUserName(uid: String, completion: @escaping (String) -> ()) {
+        dbRef?.child(AppConstants.dbUsersPath).child(uid).child(AppConstants.name)
+            .observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? String {
+                    completion(value)
+                }
+            })
+    }
+    
     static func getUserInfo(uid: String, completion: @escaping ([String: Any]) -> ()) {
         dbRef?.child(AppConstants.dbUsersPath).child(uid)
             .observeSingleEvent(of: .value, with: { (snapshot) in
