@@ -133,13 +133,15 @@ class TopicInfoViewController: UIViewController {
             let mapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.loadLearnMap))
             landingView.mapCell.addGestureRecognizer(mapRecognizer)
             self.updateViewContent(newView: landingView)
+            landingView.viewpointsCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loadViewpoints)))
         }
     }
     
     // Learn Screen 2: Learn Scroll View
     @objc private func loadLearnCards() {
         guard let learnCardFrame = self.cardFrame else { return }
-        guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil).instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
+        guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil)
+            .instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
         cardsContainer.frame = self.topicInfoViewContainer.bounds
         let cardsScrollView = cardsContainer.scrollView
         cardsScrollView?.contentSize.height = 1.0
@@ -297,6 +299,42 @@ class TopicInfoViewController: UIViewController {
     }
     
     //
+    // MARK:- Viewpoints
+    //
+    
+    @objc private func loadViewpoints() {
+        let numberOfPerspectivesCards = 4
+        guard let topicKey = self.topicKey else { return }
+        HTTPRequests.getViewPointsForTopic(topicKey: topicKey) { (viewpoints) in
+            guard let cardFrame = self.cardFrame else { return }
+            guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil)
+                .instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
+            
+            cardsContainer.frame = self.topicInfoViewContainer.bounds
+            let cardsScrollView = cardsContainer.scrollView
+            cardsScrollView?.contentSize.height = 1.0
+
+            // Create cards and add to scroll view
+            for i in 0..<numberOfPerspectivesCards {
+                guard let card = UINib(nibName: "PerspectivesCard", bundle: nil)
+                    .instantiate(withOwner: self, options: nil).first as! PerspectivesCard? else { return }
+
+                let cardWidth = cardFrame.width
+                card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth, y: 0),
+                                    size: cardFrame.size)
+                // First card opaque, others translucent
+                card.alpha = ((i == 0) ? 1.0 : 0.5)
+                card.pageControl.numberOfPages = numberOfPerspectivesCards
+                card.pageControl.currentPage = i
+                card.xButton.addTarget(self, action: #selector(TopicInfoViewController.learnCardXTapped), for: .touchDown)
+                cardsScrollView?.addSubview(card)
+                cardsScrollView?.contentSize.width += card.frame.width
+            }
+            self.updateViewContent(newView: cardsContainer)
+        }
+    }
+    
+    //
     // MARK:- Event Handlers
     //
     
@@ -326,7 +364,9 @@ class TopicInfoViewController: UIViewController {
         self.saveWeighInResponse()
     }
     
+    //
     // MARK:- Private Methods
+    //
     
     private func updateViewContent(newView: UIView) {
         self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }

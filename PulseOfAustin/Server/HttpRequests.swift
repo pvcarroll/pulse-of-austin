@@ -126,8 +126,22 @@ class HTTPRequests {
     static func getWeighInResponses(topicKey: String, completion: @escaping ([String : Any]) -> ()) {
         let answerCountsPath = "weighIn/\(topicKey)/answerChoiceCounts"
         dbRef?.child(answerCountsPath).observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let values = snapshot.value as? [String: Any] else {return}
+            guard let values = snapshot.value as? [String: Any] else { return }
             completion(values)
+        })
+    }
+    
+    static func getViewPointsForTopic(topicKey: String, completion: @escaping ([String]) -> ()) {
+        let viewpointsPath = "weighIn/\(topicKey)/elaborateResponses"
+        dbRef?.child(viewpointsPath).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let values = snapshot.value as? [String: Any] else { return }
+            var viewpoints = [String]()
+            values.forEach({ (key, value) in
+                (value as? [String: String])?.forEach({ (key, value) in
+                    viewpoints.append(value)
+                })
+            })
+            completion(viewpoints)
         })
     }
     

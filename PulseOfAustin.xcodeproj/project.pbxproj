@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1729DF49812CC001A7AD4155 /* Pods_PulseOfAustinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82091359B9ADBCBD629B71 /* Pods_PulseOfAustinUITests.framework */; };
 		751A091421A9C2700077ACFC /* BeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A091321A9C2700077ACFC /* BeatsViewController.swift */; };
+		75217F7F2246F851008E9518 /* PerspectivesCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75217F7E2246F851008E9518 /* PerspectivesCard.xib */; };
+		75217F812246F8A5008E9518 /* PerspectivesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75217F802246F8A5008E9518 /* PerspectivesCard.swift */; };
 		7523BD58213B174B00B648B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD57213B174B00B648B8 /* ProfileViewController.swift */; };
 		7523BD61214B5B7900B648B8 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */; };
 		7523BD63214B5BCE00B648B8 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */; };
@@ -115,6 +117,8 @@
 		30C670D4521ABF043271430D /* Pods-PulseOfAustinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.release.xcconfig"; sourceTree = "<group>"; };
 		31B611E7E7965329B57117F1 /* Pods-PulseOfAustinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseOfAustinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PulseOfAustinTests/Pods-PulseOfAustinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		751A091321A9C2700077ACFC /* BeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatsViewController.swift; sourceTree = "<group>"; };
+		75217F7E2246F851008E9518 /* PerspectivesCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerspectivesCard.xib; sourceTree = "<group>"; };
+		75217F802246F8A5008E9518 /* PerspectivesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectivesCard.swift; sourceTree = "<group>"; };
 		7523BD57213B174B00B648B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7523BD60214B5B7900B648B8 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
 		7523BD62214B5BCE00B648B8 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +296,15 @@
 			path = Learn;
 			sourceTree = "<group>";
 		};
+		75217F7D2246F7AA008E9518 /* Perspectives */ = {
+			isa = PBXGroup;
+			children = (
+				75217F7E2246F851008E9518 /* PerspectivesCard.xib */,
+				75217F802246F8A5008E9518 /* PerspectivesCard.swift */,
+			);
+			path = Perspectives;
+			sourceTree = "<group>";
+		};
 		7523BD56213B16D400B648B8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +466,7 @@
 			children = (
 				752137E020C2F5DB002C8A89 /* Learn */,
 				75BCD077209E628B008AD469 /* WeighIn */,
+				75217F7D2246F7AA008E9518 /* Perspectives */,
 				755C7BB3208CEA3B00554399 /* TopicInfoViewController.swift */,
 			);
 			path = Topic;
@@ -646,6 +660,7 @@
 				755C7BA72083006E00554399 /* TopicCell.xib in Resources */,
 				75B937502097451700221467 /* WeighInSelect.xib in Resources */,
 				75FBE7B322185121000EE369 /* Explore.storyboard in Resources */,
+				75217F7F2246F851008E9518 /* PerspectivesCard.xib in Resources */,
 				7565F19620CC7CC6008DFF27 /* LearnCard.xib in Resources */,
 				75519B3E20DEDC1A00463BB1 /* CreateAccount.storyboard in Resources */,
 				75FE51BB20C38B5400ABE7FD /* LearnOverview.xib in Resources */,
@@ -798,6 +813,7 @@
 				755C7BA92083A5F400554399 /* TopicCell.swift in Sources */,
 				753E25A620DBD8D20020307D /* OnboardingSlideInfo.swift in Sources */,
 				758A3DBE216047B000D9C0D5 /* AuthUtils.swift in Sources */,
+				75217F812246F8A5008E9518 /* PerspectivesCard.swift in Sources */,
 				75519B4920DF00A200463BB1 /* HttpRequests.swift in Sources */,
 				755E71112178C22500E9A229 /* District2.swift in Sources */,
 				75F650ED21A6FC020098CFAC /* AppConstants.swift in Sources */,

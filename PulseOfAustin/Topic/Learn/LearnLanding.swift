@@ -38,6 +38,7 @@ class LearnLanding: UIScrollView {
         self.readUpCell.addBottomShadow()
         self.mapCell.addBottomShadow()
         self.viewpointsCell.addBottomShadow()
+        self.milestonesCell.addBottomShadow()
         
         self.crestImage1.backgroundColor = UIColor.infoCardBackground
         self.crestImage2.backgroundColor = UIColor.infoCardBackground
