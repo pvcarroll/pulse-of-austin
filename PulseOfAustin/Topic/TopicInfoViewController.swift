@@ -303,9 +303,17 @@ class TopicInfoViewController: UIViewController {
     //
     
     @objc private func loadViewpoints() {
-        let numberOfPerspectivesCards = 4
+        let maxNumberOfPerspectivesCards = 4
+        let maxNumberOfViewpoints = maxNumberOfPerspectivesCards * 2
         guard let topicKey = self.topicKey else { return }
         HTTPRequests.getViewPointsForTopic(topicKey: topicKey) { (viewpoints) in
+            let randomViewpoints: [String]
+            if viewpoints.count > maxNumberOfViewpoints {
+                randomViewpoints = self.getRandomViewpoints(viewpoints: viewpoints, number: maxNumberOfViewpoints)
+            } else {
+                randomViewpoints = viewpoints
+            }
+            
             guard let cardFrame = self.cardFrame else { return }
             guard let cardsContainer = UINib(nibName: "LearnCardsContainer", bundle: nil)
                 .instantiate(withOwner: self, options: nil).first as! LearnCardsContainer? else { return }
@@ -314,6 +322,7 @@ class TopicInfoViewController: UIViewController {
             let cardsScrollView = cardsContainer.scrollView
             cardsScrollView?.contentSize.height = 1.0
 
+            let numberOfPerspectivesCards = min(maxNumberOfPerspectivesCards, Int(ceil(Double(viewpoints.count) / 2.0)))
             // Create cards and add to scroll view
             for i in 0..<numberOfPerspectivesCards {
                 guard let card = UINib(nibName: "PerspectivesCard", bundle: nil)
@@ -322,11 +331,19 @@ class TopicInfoViewController: UIViewController {
                 let cardWidth = cardFrame.width
                 card.frame = CGRect(origin: CGPoint(x: CGFloat(i) * cardWidth, y: 0),
                                     size: cardFrame.size)
-                // First card opaque, others translucent
-                card.alpha = ((i == 0) ? 1.0 : 0.5)
+                card.xButton.addTarget(self, action: #selector(TopicInfoViewController.learnCardXTapped), for: .touchDown)
                 card.pageControl.numberOfPages = numberOfPerspectivesCards
                 card.pageControl.currentPage = i
-                card.xButton.addTarget(self, action: #selector(TopicInfoViewController.learnCardXTapped), for: .touchDown)
+                // First card opaque, others translucent
+                card.alpha = ((i == 0) ? 1.0 : 0.5)
+                
+                card.titleSummaryView.isHidden = (i != 0)
+                
+                let viewpoint1Index = (i + 1) * 2 - 2
+                let viewpoint2Index = (i + 1) * 2 - 1
+                card.viewpoint1Label.text = randomViewpoints[viewpoint1Index]
+                card.viewpoint2Label.text = randomViewpoints[viewpoint2Index]
+                
                 cardsScrollView?.addSubview(card)
                 cardsScrollView?.contentSize.width += card.frame.width
             }
@@ -371,6 +388,16 @@ class TopicInfoViewController: UIViewController {
     private func updateViewContent(newView: UIView) {
         self.topicInfoViewContainer.subviews.forEach { $0.removeFromSuperview() }
         self.topicInfoViewContainer.addSubview(newView)
+    }
+    
+    private func getRandomViewpoints(viewpoints: [String], number: Int) -> [String] {
+        var randomViewpoints = Set<String>()
+        while randomViewpoints.count < number {
+            if let randomItem = viewpoints.randomElement() {
+                randomViewpoints.insert(randomItem)
+            }
+        }
+        return Array(randomViewpoints)
     }
     
     private func presentLogin() {
