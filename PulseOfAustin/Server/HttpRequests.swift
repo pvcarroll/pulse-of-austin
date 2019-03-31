@@ -131,15 +131,21 @@ class HTTPRequests {
         })
     }
     
-    static func getViewPointsForTopic(topicKey: String, completion: @escaping ([String]) -> ()) {
+    static func getViewPointsForTopic(topicKey: String, completion: @escaping ([Viewpoint]) -> ()) {
         let viewpointsPath = "weighIn/\(topicKey)/elaborateResponses"
         dbRef?.child(viewpointsPath).observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let values = snapshot.value as? [String: Any] else { return }
-            var viewpoints = [String]()
-            values.forEach({ (key, value) in
-                (value as? [String: String])?.forEach({ (key, value) in
-                    viewpoints.append(value)
-                })
+            guard let elaborateResponsesData = snapshot.value as? [String: Any] else { return }
+            var viewpoints = [Viewpoint]()
+            elaborateResponsesData.values.forEach({ (elaborateResponseData) in
+                if let data = elaborateResponseData as? [String : Any]
+                    , let viewpointData = data.values.first as? [String : Any]
+                    , let text = viewpointData["text"] as? String
+                    , let latitude = viewpointData["latitude"] as? Float
+                    , let longitude = viewpointData["longitude"] as? Float
+                    , let date = viewpointData["date"] as? String {
+                        let elaborateResponse = Viewpoint(text: text, latitude: latitude, longitude: longitude, date: date)
+                        viewpoints.append(elaborateResponse)
+                }
             })
             completion(viewpoints)
         })
@@ -158,7 +164,7 @@ class HTTPRequests {
     }
     
     static func saveWeighInResponse(uid: String, topicKey: String, answer: AnswerIndex,
-                                    elaborateResponse: String?, completion: @escaping () -> ()) {
+                                    elaborateResponse: Viewpoint?, completion: @escaping () -> ()) {
         let responsesPath = "weighIn/\(topicKey)/answerChoiceCounts/\(answer)"
         let elaboratePath = "weighIn/\(topicKey)/elaborateResponses/\(answer.elaborateKey())"
         
@@ -168,8 +174,12 @@ class HTTPRequests {
             } else {
                 self.dbRef?.child(responsesPath).setValue(1)
             }
-            if !(elaborateResponse ?? "").isEmpty {
-                self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateResponse)
+            if (elaborateResponse != nil) && (elaborateResponse?.text != "") {
+                let elaborateReponseDictionary = ["text": elaborateResponse?.text,
+                                                  "latitude": elaborateResponse?.latitude,
+                                                  "longitude": elaborateResponse?.longitude,
+                                                  "date": elaborateResponse?.date] as [String : Any]
+                self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateReponseDictionary)
             }
             dbRef?.child(AppConstants.dbUsersPath)
                 .child(uid)

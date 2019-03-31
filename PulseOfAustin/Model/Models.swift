@@ -20,3 +20,10 @@ struct TopicData {
     let weighInPrompt: String
     let weighInChoices: [String]
 }
+
+struct Viewpoint: Hashable {
+    let text: String
+    let latitude: Float
+    let longitude: Float
+    let date: String
+}

@@ -307,7 +307,7 @@ class TopicInfoViewController: UIViewController {
         let maxNumberOfViewpoints = maxNumberOfPerspectivesCards * 2
         guard let topicKey = self.topicKey else { return }
         HTTPRequests.getViewPointsForTopic(topicKey: topicKey) { (viewpoints) in
-            let randomViewpoints: [String]
+            let randomViewpoints: [Viewpoint]
             if viewpoints.count > maxNumberOfViewpoints {
                 randomViewpoints = self.getRandomViewpoints(viewpoints: viewpoints, number: maxNumberOfViewpoints)
             } else {
@@ -339,11 +339,23 @@ class TopicInfoViewController: UIViewController {
                 
                 card.titleSummaryView.isHidden = (i != 0)
                 
+                // Set viewpoint text
                 let viewpoint1Index = (i + 1) * 2 - 2
                 let viewpoint2Index = (i + 1) * 2 - 1
-                card.viewpoint1Label.text = randomViewpoints[viewpoint1Index]
-                card.viewpoint2Label.text = randomViewpoints[viewpoint2Index]
+                let viewpoint1 = randomViewpoints[viewpoint1Index]
+                card.viewpoint1Label.text = viewpoint1.text
+                card.viewpoint1DateLabel.text = viewpoint1.date
                 
+                if viewpoint2Index < viewpoints.count {
+                    let viewpoint2 = randomViewpoints[viewpoint2Index]
+                    card.viewpoint2Label.text = viewpoint2.text
+                    card.viewpoint2DateLabel.text = viewpoint2.date
+                } else {
+                    card.viewpoint2Label.text = ""
+                    card.viewpoint2ResponderLabel.text = ""
+                    card.viewpoint2DateLabel.text = ""
+                }
+
                 cardsScrollView?.addSubview(card)
                 cardsScrollView?.contentSize.width += card.frame.width
             }
@@ -390,8 +402,8 @@ class TopicInfoViewController: UIViewController {
         self.topicInfoViewContainer.addSubview(newView)
     }
     
-    private func getRandomViewpoints(viewpoints: [String], number: Int) -> [String] {
-        var randomViewpoints = Set<String>()
+    private func getRandomViewpoints(viewpoints: [Viewpoint], number: Int) -> [Viewpoint] {
+        var randomViewpoints = Set<Viewpoint>()
         while randomViewpoints.count < number {
             if let randomItem = viewpoints.randomElement() {
                 randomViewpoints.insert(randomItem)
@@ -414,7 +426,13 @@ class TopicInfoViewController: UIViewController {
         if let topicKey = self.topicKey
             , let answer = self.selectedAnswer
             , let uid = Auth.auth().currentUser?.uid {
-            let elaborateResponse = self.elaborateView?.response
+            let responseText = self.elaborateView?.response ?? ""
+
+            let df = DateFormatter()
+            df.dateFormat = "MM.dd.yy"
+            let dateString = df.string(from: Date())
+            
+            let elaborateResponse = Viewpoint(text: responseText, latitude: 0, longitude: 0, date: dateString)
             HTTPRequests.saveWeighInResponse(uid: uid, topicKey: topicKey, answer: answer, elaborateResponse: elaborateResponse) {
                 self.loadWeighInResults()
             }
