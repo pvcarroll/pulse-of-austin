@@ -23,7 +23,7 @@ struct TopicData {
 
 struct Viewpoint: Hashable {
     let text: String
-    let latitude: Float
-    let longitude: Float
+    let latitude: Double
+    let longitude: Double
     let date: String
 }

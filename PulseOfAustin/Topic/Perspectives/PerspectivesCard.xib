@@ -76,13 +76,13 @@
                                                 <constraint firstAttribute="width" constant="150" id="yvu-n9-s2Q"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Gray155"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-Q4-f11">
                                             <rect key="frame" x="275.5" y="110.5" width="49.5" height="13"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Gray155"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -120,13 +120,13 @@
                                                 <constraint firstAttribute="width" constant="150" id="hQ6-0W-8k0"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Gray155"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-qs-fjJ">
                                             <rect key="frame" x="275.5" y="110.5" width="49.5" height="13"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Gray155"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -197,6 +197,9 @@
     <resources>
         <namedColor name="GoldenRod247_179_19">
             <color red="0.96862745098039216" green="0.70196078431372544" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray155">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

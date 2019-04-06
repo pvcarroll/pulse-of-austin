@@ -344,11 +344,15 @@ class TopicInfoViewController: UIViewController {
                 let viewpoint2Index = (i + 1) * 2 - 1
                 let viewpoint1 = randomViewpoints[viewpoint1Index]
                 card.viewpoint1Label.text = viewpoint1.text
+                card.viewpoint1ResponderLabel.text = self.coordinatesToRegion(latitude: viewpoint1.latitude,
+                                                                              longitude: viewpoint1.longitude)
                 card.viewpoint1DateLabel.text = viewpoint1.date
                 
                 if viewpoint2Index < viewpoints.count {
                     let viewpoint2 = randomViewpoints[viewpoint2Index]
                     card.viewpoint2Label.text = viewpoint2.text
+                    card.viewpoint2ResponderLabel.text = self.coordinatesToRegion(latitude: viewpoint2.latitude,
+                                                                                  longitude: viewpoint2.longitude)
                     card.viewpoint2DateLabel.text = viewpoint2.date
                 } else {
                     card.viewpoint2Label.text = ""
@@ -360,6 +364,38 @@ class TopicInfoViewController: UIViewController {
                 cardsScrollView?.contentSize.width += card.frame.width
             }
             self.updateViewContent(newView: cardsContainer)
+        }
+    }
+    
+    private func coordinatesToRegion(latitude: Double, longitude: Double) -> String {
+        let northLatitude = 30.379050
+        let southLatitude = 30.247359
+        let westLongitude = -97.756324
+        let eastLongitude = -97.706909
+        if latitude > northLatitude {
+            if longitude < westLongitude {
+                return "nw austinite"
+            } else if longitude > eastLongitude {
+                return "ne austinite"
+            } else {
+                return "north austinite"
+            }
+        } else if latitude < southLatitude {
+            if longitude < westLongitude {
+                return "sw austinite"
+            } else if longitude > eastLongitude {
+                return "se austinite"
+            } else {
+                return "south austinite"
+            }
+        } else {
+            if longitude < westLongitude {
+                return "west austinite"
+            } else if longitude > eastLongitude {
+                return "east austinite"
+            } else {
+                return "central austinite"
+            }
         }
     }
     

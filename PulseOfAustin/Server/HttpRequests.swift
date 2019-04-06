@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MapKit
 
 class HTTPRequests {
     
@@ -140,8 +141,8 @@ class HTTPRequests {
                 if let data = elaborateResponseData as? [String : Any]
                     , let viewpointData = data.values.first as? [String : Any]
                     , let text = viewpointData["text"] as? String
-                    , let latitude = viewpointData["latitude"] as? Float
-                    , let longitude = viewpointData["longitude"] as? Float
+                    , let latitude = viewpointData["latitude"] as? Double
+                    , let longitude = viewpointData["longitude"] as? Double
                     , let date = viewpointData["date"] as? String {
                         let elaborateResponse = Viewpoint(text: text, latitude: latitude, longitude: longitude, date: date)
                         viewpoints.append(elaborateResponse)
@@ -175,11 +176,27 @@ class HTTPRequests {
                 self.dbRef?.child(responsesPath).setValue(1)
             }
             if (elaborateResponse != nil) && (elaborateResponse?.text != "") {
-                let elaborateReponseDictionary = ["text": elaborateResponse?.text,
-                                                  "latitude": elaborateResponse?.latitude,
-                                                  "longitude": elaborateResponse?.longitude,
-                                                  "date": elaborateResponse?.date] as [String : Any]
-                self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateReponseDictionary)
+                // Get user's address
+                dbRef?.child(AppConstants.dbUsersPath).child(uid).child(AppConstants.address)
+                    .observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let address = snapshot.value as? String {
+                            let geoCode = CLGeocoder()
+                            // Convert user's address to latitude, longitude
+                            geoCode.geocodeAddressString(address) { (placemarks, error) in
+                                if let coordinate = placemarks?[0].location?.coordinate {
+                                    let latitude = coordinate.latitude
+                                    let longitude = coordinate.longitude
+                                    let elaborateReponseDictionary = ["text": elaborateResponse?.text,
+                                                                      "latitude": latitude,
+                                                                      "longitude": longitude,
+                                                                      "date": elaborateResponse?.date] as [String : Any]
+                                    self.dbRef?.child(elaboratePath).childByAutoId().setValue(elaborateReponseDictionary)
+                                }
+                            }
+                        }
+                    }, withCancel: { (error) in
+                        // TODO: save response without lat/long
+                    })
             }
             dbRef?.child(AppConstants.dbUsersPath)
                 .child(uid)
